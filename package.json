@@ -1,16 +1,25 @@
 {
-  "name": "astro-component-name",
-  "version": "0.1.0",
+  "name": "astro-reactive-form",
+  "version": "0.0.0",
+  "repository": "https://github.com/ayoayco/astro-reactive-form",
+  "homepage": "https://github.com/ayoayco/astro-reactive-form",
   "type": "module",
   "exports": {
     ".": "./index.ts"
+  },
+  "author": {
+    "name": "Ayo Ayco",
+    "email": "ramon.aycojr@gmail.com",
+    "url": "https://ayco.io"
   },
   "files": [
     "src",
     "index.ts"
   ],
   "keywords": [
-    "astro-component"
+    "astro-component",
+    "css",
+    "ui"
   ],
   "scripts": {
     "test": "mocha --parallel --timeout 15000",

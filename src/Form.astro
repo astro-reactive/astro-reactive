@@ -1,0 +1,8 @@
+---
+import {FormGroup} from './form-group';
+const form: FormGroup = Astro.props.formGroup;
+---
+<form>
+  <label>{form.controls[0].label}</label>
+	<input type={form.controls[0].type} value={form.controls[0].value} />
+</form>
