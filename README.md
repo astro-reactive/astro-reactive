@@ -1,8 +1,12 @@
 # Astro Reactive Form 🔥
+[![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
+[![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
+[![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
+[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-form)
 
 The Reactive Form component for [Astro](https://astro.build) 🔥
 
-*All contributions are welcome. Let's make the fastest web form component powered by Astro*
+*[All contributions are welcome. Let's make the fastest web form component powered by Astro](https://github.com/ayoayco/astro-reactive-form/issues)*
 
 ## Installation
 
