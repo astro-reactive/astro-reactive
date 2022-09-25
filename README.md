@@ -2,6 +2,8 @@
 
 The Reactive Form component for [Astro](https://astro.build) 🔥
 
+*All contributions are welcome. Let's make the fastest web form component powered by Astro*
+
 ## Installation
 
 ```
@@ -40,9 +42,9 @@ Currently this only supports very basic form creation, but the goal of the proje
     1. setValue(value) - set the value of the control programmatically
     1. statusChanges - observable that emits the control status when it changes
     1. valueChanges - observable that emits the control value when it changes
+    1. value - property that reflects the control value
 
 ... and so much more
 
-**All contributions are welcome. Let's make the fastest web form component powered by Astro**
-
+*All contributions are welcome. Let's make the fastest web form component powered by Astro*
 

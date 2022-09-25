@@ -2,7 +2,7 @@
   "name": "astro-reactive-form",
   "version": "0.0.2",
   "repository": "https://github.com/ayoayco/astro-reactive-form",
-  "homepage": "https://github.com/ayoayco/astro-reactive-form",
+  "homepage": "https://ayco.io/showcase/astro-reactive-form",
   "type": "module",
   "exports": {
     ".": "./index.ts"
