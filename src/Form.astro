@@ -3,7 +3,7 @@ import {FormGroup} from './form-group';
 const form: FormGroup = Astro.props.formGroup;
 ---
 <form>
-		{form.controls.map(control => (
+		{form?.controls?.map(control => (
 			<field>
 						<label for={control.name}>{control.label}</label>
 						<input name={control.name} id={control.name} type={control.type} value={control.value} />
