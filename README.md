@@ -21,17 +21,36 @@ npm i astro-reactive-form
 ---
 import Form, { FormGroup } from "astro-reactive-form";
 
-const form = new FormGroup([
+
+// example of a form control
+const radio: FormControl = {
+  name: 'is-good-looking',
+  type: 'radio',
+  label: 'Is Good Looking?',
+  value: 'checked',
+  labelPosition: 'right',
+}
+
+const form = new FormGroup([ // this is just an array of FormControl
   {
     name: 'first-name',
     value: 'Ayo',
     label: 'First Name',
+                
   },
   {
     name: 'last-name',
     value: 'Ayco',
     label: 'Last Name',
   },
+  {
+    name: 'is-awesome',
+    type: 'checkbox',
+    label: "Is Awesome?",
+    value: 'checked',
+    labelPosition: 'right',
+  },
+  radio // the form control we declared earlier
 ]);
 ---
 <Form formGroup={form} />
