@@ -3,4 +3,5 @@ export class FormControl {
   type?: 'text' | 'checkbox' | 'radio' = 'text'; // add more
   value?: string | number | null | string[];
 	label?: string;
+	labelPosition?: 'right' | 'left' = 'left';
 }
