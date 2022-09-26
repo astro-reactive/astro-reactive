@@ -19,7 +19,7 @@ npm i astro-reactive-form
 
 ```astro
 ---
-import Form, { FormGroup } from "astro-reactive-form";
+import Form, { FormControl, FormGroup } from "astro-reactive-form";
 
 
 // example of a form control
