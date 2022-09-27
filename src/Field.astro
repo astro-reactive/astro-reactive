@@ -1,0 +1,31 @@
+---
+import { FormControl } from './core/form-control';
+
+export interface Props {
+	control: FormControl;
+}
+
+const { control } = Astro.props;
+---
+
+<div>
+	{
+		control.label && (!control.labelPosition || control.labelPosition === 'left') ? (
+			<label for={control.name}>{control.label}</label>
+		) : null
+	}
+
+	<input
+		name={control.name}
+		id={control.name}
+		type={control.type}
+		value={control.value}
+		checked={control.value === 'checked'}
+	/>
+
+	{
+		control.label && control.labelPosition === 'right' ? (
+			<label for={control.name}>{control.label}</label>
+		) : null
+	}
+</div>

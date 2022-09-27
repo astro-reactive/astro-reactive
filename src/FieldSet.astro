@@ -1,0 +1,15 @@
+---
+import Field from './Field.astro';
+import { FormGroup } from './core/form-group';
+
+export interface Props {
+	group: FormGroup;
+}
+
+const { group } = Astro.props;
+---
+
+<fieldset>
+	{group.name && <legend>{group.name}</legend>}
+	{group?.controls?.map((control) => <Field control={control} />)}
+</fieldset>
