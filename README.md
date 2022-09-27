@@ -53,12 +53,18 @@ const form = new FormGroup([
 ]);
 ---
 
-<Form formGroup={form} />
+<Form formGroups={[form]} />
 ```
 
-### Result:
+# Screenshots
+
+Result of example above:
 
 ![Screen Shot 2022-09-27 at 5 41 46 PM](https://user-images.githubusercontent.com/4262489/192572310-f83af2cc-53b9-4024-9ada-e64b34b66a15.png)
+
+Example of multiple form groups:
+
+![Screen Shot 2022-09-27 at 10 44 03 PM](https://user-images.githubusercontent.com/4262489/192631524-3139ac60-8d84-4c12-9231-fe2d49962756.png)
 
 # Future Plans
 
