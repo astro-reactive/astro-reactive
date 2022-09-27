@@ -1,13 +1,13 @@
 # Astro Reactive Form 🔥
 
-The Reactive Form component for [Astro](https://astro.build) 🔥
-
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-form)
 
-*[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-form/issues)*
+The Reactive Form component for [Astro](https://astro.build) 🔥
+
+_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-form/issues)_
 
 ## Installation
 
@@ -19,8 +19,7 @@ npm i astro-reactive-form
 
 ```astro
 ---
-import Form, { FormControl, FormGroup } from "astro-reactive-form";
-
+import Form, { FormControl, FormGroup } from 'astro-reactive-form';
 
 // example of a form control
 const radio: FormControl = {
@@ -29,14 +28,14 @@ const radio: FormControl = {
   label: 'Is Good Looking?',
   value: 'checked',
   labelPosition: 'right',
-}
+};
 
-const form = new FormGroup([ // this is just an array of FormControl
+const form = new FormGroup([
+  // this is just an array of FormControl
   {
     name: 'first-name',
     value: 'Ayo',
     label: 'First Name',
-                
   },
   {
     name: 'last-name',
@@ -46,29 +45,36 @@ const form = new FormGroup([ // this is just an array of FormControl
   {
     name: 'is-awesome',
     type: 'checkbox',
-    label: "Is Awesome?",
+    label: 'Is Awesome?',
     value: 'checked',
     labelPosition: 'right',
   },
-  radio // the form control we declared earlier
+  radio, // the form control we declared earlier
 ]);
 ---
+
 <Form formGroup={form} />
 ```
 
+### Result:
+
+![Screen Shot 2022-09-27 at 5 41 46 PM](https://user-images.githubusercontent.com/4262489/192572310-f83af2cc-53b9-4024-9ada-e64b34b66a15.png)
+
 # Future Plans
+
 Currently this only supports very basic form creation, but the goal of the project is ambitious:
+
 1. FormGroup class
-    1. get(controlName: string) - returns the FormControl with matching name
-    1. statusChanges - observable that emits the form status when it changes
-    1. valueChanges - observable that emits the values of all controls when they change
+   1. `get(controlName: string)` - returns the FormControl with matching name
+   1. `statusChanges` - observable that emits the form status when it changes
+   1. `valueChanges` - observable that emits the values of all controls when they change
 1. FormControl class
-    1. setValue(value) - set the value of the control programmatically
-    1. statusChanges - observable that emits the control status when it changes
-    1. valueChanges - observable that emits the control value when it changes
-    1. value - property that reflects the control value
+   1. `setValue(value)` - set the value of the control programmatically
+   1. `statusChanges` - observable that emits the control status when it changes
+   1. `valueChanges` - observable that emits the control value when it changes
+   1. `value` - property that reflects the control value
+1. Validator library for common validation scenarios
 
 ... and so much more
 
-*All contributions are welcome. Let's make the fastest web form component powered by Astro*
-
+_All contributions are welcome. Let's make the fastest web form component powered by Astro_
