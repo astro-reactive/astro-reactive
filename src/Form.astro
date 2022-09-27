@@ -1,24 +1,32 @@
 ---
-import {FormGroup} from './form-group';
+import { FormGroup } from './form-group';
 export interface Props {
 	formGroup: FormGroup;
 }
 
 const form: FormGroup = Astro.props.formGroup;
 ---
+
 <form>
-		{form?.controls?.map(control => (
+	{
+		form?.controls?.map((control) => (
 			<div>
-						{(control.labelPosition === 'left')
-							? <label for={control.name}>{control.label}</label>
-							: null}
+				{control.label && (!control.labelPosition || control.labelPosition === 'left') ? (
+					<label for={control.name}>{control.label}</label>
+				) : null}
 
-						<input name={control.name} id={control.name} type={control.type} value={control.value} checked={control.value==='checked'} />
+				<input
+					name={control.name}
+					id={control.name}
+					type={control.type}
+					value={control.value}
+					checked={control.value === 'checked'}
+				/>
 
-						{(control.labelPosition === 'right')
-							? <label for={control.name}>{control.label}</label>
-							: null}
-
+				{control.label && control.labelPosition === 'right' ? (
+					<label for={control.name}>{control.label}</label>
+				) : null}
 			</div>
-		))}
+		))
+	}
 </form>
