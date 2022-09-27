@@ -64,6 +64,7 @@ const form = new FormGroup([
 
 Currently this only supports very basic form creation, but the goal of the project is ambitious:
 
+1. Themes - unstyled, light mode, dark mode, compact, large
 1. FormGroup class
    1. `get(controlName: string)` - returns the FormControl with matching name
    1. `statusChanges` - observable that emits the form status when it changes
