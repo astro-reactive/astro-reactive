@@ -1,5 +1,4 @@
-![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419373-25c78b2c-23a0-4eb9-b46e-c01df73826d4.png)
-
+![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419437-6e437743-47bf-482b-8f7e-de3c7f5285f8.png)
 
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
