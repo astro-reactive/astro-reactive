@@ -16,10 +16,11 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 | astro-reactive-validator | 🛠 in-progress | 🛠 in-progress |
 
 # Running the demo app
-To run the demo app locally:
+To run the project's demo app locally:
 1. Clone/Fork the project 
 1. Install deps: `npm i`
 1. Run the demo app: `npm run demo`
+1. Open on browser: `http://localhost:3000`
 
 *[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
 
