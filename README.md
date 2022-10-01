@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-form)
+[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
 
 # Components and utilities for building reactive user interfaces 🔥
 Build blazing-fast user interfaces with native [Astro](https://astro.build) components and architecture.
@@ -12,7 +12,7 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 
 | Packages | Version | Docs |
 | --- | --- | --- |
-| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-form/tree/main/packages/astro-reactive-form) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
+| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
 | astro-reactive-validator | 🛠 in-progress | 🛠 in-progress |
 
 # Running the demo app

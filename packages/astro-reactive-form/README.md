@@ -3,11 +3,11 @@
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-form)
+[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
 
 The Reactive Form component for [Astro](https://astro.build) 🔥
 
-_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-form/issues)_
+_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-library/issues)_
 
 ## Installation
 
