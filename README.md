@@ -1,4 +1,4 @@
-<img width="889" alt="Screen Shot 2022-10-01 at 4 19 36 PM" src="https://user-images.githubusercontent.com/4262489/193413897-69c671f1-6871-498d-afa8-50b98d113d88.png">
+<img width="890" alt="Screen Shot 2022-10-01 at 4 24 32 PM" src="https://user-images.githubusercontent.com/4262489/193414138-78f615c7-320c-4104-91c5-b02a13bce70c.png">
 
 # Astro Reactive Library 🔥
 
