@@ -24,6 +24,7 @@
   "license": "ISC",
   "workspaces": [
     "demo",
-    "packages/astro-reactive-form"
+    "packages/astro-reactive-form",
+    "packages/astro-reactive-validator"
   ]
 }

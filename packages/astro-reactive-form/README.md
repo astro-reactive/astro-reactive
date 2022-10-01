@@ -19,7 +19,8 @@ npm i astro-reactive-form
 
 ```astro
 ---
-import Form, { FormControl, FormGroup } from 'astro-reactive-form';
+import type { FormControl, FormGroup } from 'astro-reactive-form/core';
+import Form from 'astro-reactive-form';
 
 // example of a form control
 const radio: FormControl = {

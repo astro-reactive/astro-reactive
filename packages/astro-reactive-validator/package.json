@@ -1,0 +1,26 @@
+{
+  "name": "astro-reactive-validator",
+  "version": "0.0.0",
+  "description": "Validation Library for Astro Reactive Form 🔥",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoayco/astro-reactive-form.git"
+  },
+  "keywords": [
+    "astro-components",
+    "ui",
+    "form",
+    "validation"
+  ],
+  "author": "Ayo Ayco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayoayco/astro-reactive-form/issues"
+  },
+  "homepage": "https://github.com/ayoayco/astro-reactive-form#readme"
+}
