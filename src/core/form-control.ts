@@ -1,6 +1,29 @@
+type FormControlType =
+	| 'text'
+	| 'checkbox'
+	| 'radio'
+	| 'password'
+	| 'button'
+	| 'color'
+	| 'date'
+	| 'datetime-local'
+	| 'email'
+	| 'file'
+	| 'hidden'
+	| 'image'
+	| 'month'
+	| 'number'
+	| 'range'
+	| 'search'
+	| 'submit'
+	| 'tel'
+	| 'time'
+	| 'url'
+	| 'week';
+
 export class FormControl {
 	name: string;
-	type?: 'text' | 'checkbox' | 'radio' | 'password' = 'text'; // add more
+	type?: FormControlType = 'text';
 	value?: string | number | null | string[];
 	label?: string;
 	labelPosition?: 'right' | 'left' = 'left';
