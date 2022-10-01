@@ -14,11 +14,6 @@
     "url": "https://ayco.io"
   },
   "scripts": {
-    "test": "mocha --parallel --timeout 15000",
-    "test:watch": "mocha --watch --parallel --timeout 15000",
-    "format": "prettier -w .",
-    "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint --fix . --ext .ts,.js",
     "demo": "npm run dev -w demo"
   },
   "license": "ISC",
@@ -26,5 +21,8 @@
     "demo",
     "packages/astro-reactive-form",
     "packages/astro-reactive-validator"
-  ]
+  ],
+  "dependencies": {
+    "astro": "^1.4.2"
+  }
 }

@@ -1,5 +1,6 @@
 {
-  "name": "@example/minimal",
+  "name": "demo-astro-reactive-form",
+  "description": "Demo App for Astro Reactive Form",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -14,7 +15,6 @@
     "astro": "^1.4.2",
     "astro-reactive-form": "^0.1.1"
   },
-  "description": "``` npm create astro@latest -- --template minimal ```",
   "main": "index.js",
   "repository": {
     "type": "git",

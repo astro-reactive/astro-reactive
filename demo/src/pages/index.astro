@@ -1,45 +1,47 @@
 ---
-import { FormGroup, Submit } from 'astro-reactive-form/core';
-import Form from 'astro-reactive-form';
+import { FormGroup, Submit } from "astro-reactive-form/core";
+import Form from "astro-reactive-form";
 
 const form = new FormGroup([
-	{
-		name: 'username',
-		label: 'Username',
-	},
-	{
-		name: 'password',
-		label: 'Password',
-		type: 'password',
-	},
+  {
+    name: "username",
+    label: "Username",
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+  },
 ]);
 
-form.name = 'Simple Form';
+form.name = "Simple Form";
 
 form.controls.push({
-	type: 'checkbox',
-	name: 'is-awesome',
-	label: 'is Awesome?',
+  type: "checkbox",
+  name: "is-awesome",
+  label: "is Awesome?",
+  labelPosition: "right",
+  value: "checked",
 });
 
 form.controls.push({
-	type: 'submit',
-	name: 'submit',
-	value: 'Submit',
-	callBack: () => console.log('hey'),
+  type: "submit",
+  name: "submit",
+  value: "Submit",
+  callBack: () => console.log("hey"),
 } as Submit);
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro Reactive Form</h1>
-		<Form formGroups={[form]} />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro Reactive Form</h1>
+    <Form formGroups={[form]} />
+  </body>
 </html>

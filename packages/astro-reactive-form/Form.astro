@@ -9,6 +9,8 @@ export interface Props {
 const { formGroups } = Astro.props;
 ---
 
-<form>
-	{formGroups.map((group) => <FieldSet group={group} />)}
-</form>
+{
+		<form>
+			{formGroups?.map((group) => <FieldSet group={group} />)}
+		</form>
+}
