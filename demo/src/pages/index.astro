@@ -16,26 +16,22 @@ const form = new FormGroup([
 
 form.name = "Simple Form";
 
+// insert a control
 form.controls.push(
   new FormControl({
     type: "checkbox",
     name: "is-awesome",
     label: "is Awesome?",
     labelPosition: "right",
-    value: "checked",
   })
 );
 
-form.controls.push(
-  new FormControl({
-    type: "button",
-    name: "set-username",
-    value: "set username",
-  })
-);
-
+// get the FormControl object
 const userNameControl = form.get("username");
+
+// set values dynamically
 userNameControl?.setValue("RAMOOOON");
+form.get("is-awesome")?.setValue("checked");
 ---
 
 <html lang="en">

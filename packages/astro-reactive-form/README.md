@@ -19,49 +19,49 @@ npm i astro-reactive-form
 
 ```astro
 ---
-import type { FormControl, FormGroup } from 'astro-reactive-form/core';
-import Form from 'astro-reactive-form';
+import { FormControl, FormGroup } from "astro-reactive-form/core";
+import Form from "astro-reactive-form";
 
-// example of a form control
-const radio: FormControl = {
-  name: 'is-good-looking',
-  type: 'radio',
-  label: 'Is Good Looking?',
-  value: 'checked',
-  labelPosition: 'right',
-};
-
+// create a form group (rendered as <fieldset>)
 const form = new FormGroup([
-  // this is just an array of FormControl
   {
-    name: 'first-name',
-    value: 'Ayo',
-    label: 'First Name',
+    name: "username",
+    label: "Username",
   },
   {
-    name: 'last-name',
-    value: 'Ayco',
-    label: 'Last Name',
+    name: "password",
+    label: "Password",
+    type: "password",
   },
-  {
-    name: 'is-awesome',
-    type: 'checkbox',
-    label: 'Is Awesome?',
-    value: 'checked',
-    labelPosition: 'right',
-  },
-  radio, // the form control we declared earlier
 ]);
----
 
-<Form formGroups={[form]} />
+// set the name (rendered as <legend>)
+form.name = "Simple Form";
+
+// insert a control
+form.controls.push(
+  new FormControl({
+    type: "checkbox",
+    name: "is-awesome",
+    label: "is Awesome?",
+    labelPosition: "right",
+  })
+);
+
+// get a FormControl object
+const userNameControl = form.get("username");
+
+// set values dynamically
+userNameControl?.setValue("RAMOOOON");
+form.get('is-awesome')?.setValue("checked");
+---
 ```
 
 # Screenshots
 
 Result of example above:
 
-![Screen Shot 2022-09-27 at 5 41 46 PM](https://user-images.githubusercontent.com/4262489/192572310-f83af2cc-53b9-4024-9ada-e64b34b66a15.png)
+<img width="535" alt="Screen Shot 2022-10-01 at 7 29 00 PM" src="https://user-images.githubusercontent.com/4262489/193421174-5c604aca-7d16-4cd6-a7b1-f5b8752c838e.png">
 
 Example of multiple form groups:
 
