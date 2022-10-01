@@ -1,48 +1,19 @@
 import { expect } from 'chai';
 import { getComponentOutput } from 'astro-component-tester';
 
-describe('Form.astro test', async () => {
+describe('Form.astro test', () => {
 	let component;
 
-	describe('Input: formGroup is empty', () => {
-		it('Should handle empty formGroup prop', async () => {
-			// arrange
-			const expectedResult = `<form></form>`;
-			const props = { formGroup: undefined };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-
-		it('Should handle empty controls', async () => {
-			// arrange
-			const expectedResult = `<form></form>`;
-			const props = { formGroup: { controls: [] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
+	beforeEach(() => {
+		component = undefined;
 	});
 
-	describe('Label tests', () => {
-		it('Should display text input with value and label positioned to the left', async () => {
+	describe('INPUT: formGroups', () => {
+		it('Should handle undefined formGroups prop', async () => {
 			// arrange
-			const name = 'fake-control';
-			const value = 'fake-value';
-			const label = 'fake-label';
-			const labelPosition = 'left';
-			const fakeControl = { name, value, label, labelPosition };
-			const expectedResult = `<form><div><labelfor="${name}">${label}</label><inputname="${name}"id="${name}"value="${value}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
+			const expectedResult = '<form></form>'
+			const props = { formGroups: undefined };
+			component = await getComponentOutput('./Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -50,16 +21,12 @@ describe('Form.astro test', async () => {
 			// assert
 			expect(actualResult).to.contain(expectedResult);
 		});
-		it('Should display text input with value and label positioned to the right', async () => {
+
+		it('Should handle empty formGroups prop', async () => {
 			// arrange
-			const name = 'fake-control';
-			const value = 'fake-value';
-			const label = 'fake-label';
-			const labelPosition = 'right';
-			const fakeControl = { name, value, label, labelPosition };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"value="${value}"><labelfor="${name}">${label}</label></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
+			const expectedResult = '<form></form>'
+			const props = { formGroups: [] };
+			component = await getComponentOutput('./Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -67,156 +34,28 @@ describe('Form.astro test', async () => {
 			// assert
 			expect(actualResult).to.contain(expectedResult);
 		});
-	});
 
-	describe('Text Control tests', () => {
-		it('Should display text input by default', async () => {
+		it('Should render a fieldset for each form group', async () => {
 			// arrange
-			const name = 'fake-control';
-			const fakeControl = { name };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
+			const expectedCount = 3;
+			const element = /<fieldset>/g;
+			const fakeFormGroup = {
+				controls: [{
+					type: 'checkbox',
+					name: 'fake-checkbox',
+					label: 'FAKE CHECKBOX'
+				}]
+			}
+			const props = { formGroups: Array(expectedCount).fill(fakeFormGroup) };
+			component = await getComponentOutput('./Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
+			const matches = actualResult.match(element) || [];
 
 			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display text input with value', async () => {
-			// arrange
-			const name = 'fake-control';
-			const value = 'fake-value';
-			const fakeControl = { name, value };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"value="${value}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display text input with value and label', async () => {
-			// arrange
-			const name = 'fake-control';
-			const value = 'fake-value';
-			const label = 'fake-label';
-			const fakeControl = { name, value, label };
-			const expectedResult = `<form><div><labelfor="${name}">${label}</label><inputname="${name}"id="${name}"value="${value}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-	});
-
-	describe('Checkbox Control tests', () => {
-		it('Should display a checkbox', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'checkbox';
-			const fakeControl = { name, type };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"type="${type}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display a checkbox with value checked', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'checkbox';
-			const value = 'checked';
-			const fakeControl = { name, type, value };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"type="${type}"value="${value}"checked="true"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display a checkbox with value checked and label', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'checkbox';
-			const value = 'checked';
-			const label = 'fake-label';
-			const fakeControl = { name, type, value, label };
-			const expectedResult = `<form><div><labelfor="fake-control">fake-label</label><inputname="${name}"id="${name}"type="${type}"value="${value}"checked="true"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-	});
-
-	describe('Radio button tests', () => {
-		it('Should display a radio button', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'radio';
-			const fakeControl = { name, type };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"type="${type}"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display a radio button with value checked', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'radio';
-			const value = 'checked';
-			const fakeControl = { name, type, value };
-			const expectedResult = `<form><div><inputname="${name}"id="${name}"type="${type}"value="${value}"checked="true"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
-		it('Should display a radio button with value checked and label', async () => {
-			// arrange
-			const name = 'fake-control';
-			const type = 'radio';
-			const value = 'checked';
-			const label = 'fake-label';
-			const fakeControl = { name, type, value, label };
-			const expectedResult = `<form><div><labelfor="fake-control">fake-label</label><inputname="${name}"id="${name}"type="${type}"value="${value}"checked="true"></div></form>`;
-			const props = { formGroup: { controls: [fakeControl] } };
-			component = await getComponentOutput('./src/Form.astro', props);
-
-			// act
-			const actualResult = cleanString(component.html);
-
-			// assert
-			expect(actualResult).to.contain(expectedResult);
-		});
+			expect(matches.length).to.equal(expectedCount);
+		})
 	});
 });
 
