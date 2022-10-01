@@ -26,7 +26,7 @@ type FormControlType =
 	| 'week';
 
 export class FormControl {
-	name: string;
+	name: string = '';
 	type?: FormControlType = 'text';
 	value?: string | number | null | string[];
 	label?: string;
@@ -37,17 +37,17 @@ export class FormControl {
  * TODO: Create classes for each control type
  */
 
-export class Checkbox extends FormControl {
+export interface Checkbox extends FormControl {
 	type: 'checkbox';
 	checked: boolean;
 }
 
-export class Radio extends FormControl {
+export interface Radio extends FormControl {
 	type: 'checkbox';
 	checked: boolean;
 }
 
-export class Submit extends FormControl {
+export interface Submit extends FormControl {
 	type: 'submit';
 	callBack: () => void;
 }
