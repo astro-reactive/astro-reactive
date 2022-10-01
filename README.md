@@ -12,7 +12,7 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 
 | Packages | Version | Docs |
 | --- | --- | --- |
-| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
+| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form#readme) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
 | astro-reactive-validator | 🛠 in-progress | 🛠 in-progress |
 | astro-reactive-datagrid | 🛠 in-progress | 🛠 in-progress |
 
