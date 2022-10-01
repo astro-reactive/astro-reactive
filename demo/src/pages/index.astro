@@ -1,0 +1,36 @@
+---
+import Form, { FormGroup } from '../../../';
+const form = new FormGroup([
+	{
+		name: 'username',
+		label: 'Username',
+	},
+	{
+		name: 'password',
+		label: 'Password',
+		type: 'password',
+	},
+]);
+
+form.name = 'Simple Form';
+
+form.controls.push({
+	type: 'checkbox',
+	name: 'is-awesome',
+	label: 'is Awesome?',
+});
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro Reactive Form</h1>
+		<Form formGroups={[form]} />
+	</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "@example/minimal",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^1.4.2"
+  },
+  "description": "``` npm create astro@latest -- --template minimal ```",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoayco/astro-reactive-form.git"
+  },
+  "author": "Ayo Ayco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayoayco/astro-reactive-form/issues"
+  },
+  "homepage": "https://github.com/ayoayco/astro-reactive-form#readme"
+}
