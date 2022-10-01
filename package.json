@@ -14,7 +14,11 @@
     "url": "https://ayco.io"
   },
   "scripts": {
-    "demo": "npm run dev -w demo"
+    "demo": "npm run dev -w demo",
+    "bump-package-patch": "npm version patch -w",
+    "bump-package-minor": "npm version minor -w",
+    "bump-package-major": "npm version major -w",
+    "publish-package": "npm publish --public -w"
   },
   "license": "ISC",
   "workspaces": [
