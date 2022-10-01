@@ -1,5 +1,5 @@
 ---
-import { FormControl } from './core/form-control';
+import { FormControl } from '../core/form-control';
 
 export interface Props {
 	control: FormControl;
@@ -10,9 +10,9 @@ const { control } = Astro.props;
 
 <div>
 	{
-		control.label && (!control.labelPosition || control.labelPosition === 'left') ? (
+		control.label && (!control.labelPosition || control.labelPosition === 'left') && (
 			<label for={control.name}>{control.label}</label>
-		) : null
+		)
 	}
 
 	<input

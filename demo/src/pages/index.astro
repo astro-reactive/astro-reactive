@@ -1,5 +1,7 @@
 ---
-import Form, { FormGroup } from '../../../';
+import { FormGroup, Submit } from 'astro-reactive-form/core';
+import Form from 'astro-reactive-form';
+
 const form = new FormGroup([
 	{
 		name: 'username',
@@ -19,6 +21,13 @@ form.controls.push({
 	name: 'is-awesome',
 	label: 'is Awesome?',
 });
+
+form.controls.push({
+	type: 'submit',
+	name: 'submit',
+	value: 'Submit',
+	callBack: () => console.log('hey'),
+} as Submit);
 ---
 
 <html lang="en">

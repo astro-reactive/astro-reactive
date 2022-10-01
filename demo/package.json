@@ -11,11 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.4.2"
+    "astro": "^1.4.2",
+    "astro-reactive-form": "^0.1.1"
   },
   "description": "``` npm create astro@latest -- --template minimal ```",
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayoayco/astro-reactive-form.git"

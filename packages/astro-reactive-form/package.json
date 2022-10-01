@@ -1,0 +1,58 @@
+{
+  "name": "astro-reactive-form",
+  "description": "The Reactive Form component for Astro 🔥",
+  "version": "0.1.1",
+  "repository": "https://github.com/ayoayco/astro-reactive-form",
+  "homepage": "https://ayco.io/showcase/astro-reactive-form",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./core": "./core/index.ts"
+  },
+  "author": {
+    "name": "Ayo Ayco",
+    "email": "ramon.aycojr@gmail.com",
+    "url": "https://ayco.io"
+  },
+  "files": [
+    "core/",
+    "components/",
+    "Form.astro",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component",
+    "css",
+    "ui"
+  ],
+  "scripts": {
+    "test": "mocha --parallel --timeout 15000",
+    "test:watch": "mocha --watch --parallel --timeout 15000",
+    "format": "prettier -w .",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint --fix . --ext .ts,.js"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/eslint": "^8.4.6",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.18",
+    "@types/prettier": "^2.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "astro": "^1.0.0",
+    "astro-component-tester": "^0.6.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.4",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {
+    "astro": "^1.0.0"
+  },
+  "license": "ISC"
+}

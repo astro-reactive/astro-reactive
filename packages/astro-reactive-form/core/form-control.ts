@@ -1,3 +1,7 @@
+/**
+ * FormControlType - determines the type of form control
+ * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
+ */
 type FormControlType =
 	| 'text'
 	| 'checkbox'
@@ -41,4 +45,9 @@ export class Checkbox extends FormControl {
 export class Radio extends FormControl {
 	type: 'checkbox';
 	checked: boolean;
+}
+
+export class Submit extends FormControl {
+	type: 'submit';
+	callBack: () => void;
 }
