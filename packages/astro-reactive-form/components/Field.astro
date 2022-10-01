@@ -10,7 +10,7 @@ const { control } = Astro.props;
 
 <div>
 	{
-		control.label && (!control.labelPosition || control.labelPosition === 'left') && (
+		control.label && control.labelPosition === 'left' && (
 			<label for={control.name}>{control.label}</label>
 		)
 	}
@@ -24,8 +24,8 @@ const { control } = Astro.props;
 	/>
 
 	{
-		control.label && control.labelPosition === 'right' ? (
+		control.label && control.labelPosition === 'right' && (
 			<label for={control.name}>{control.label}</label>
-		) : null
+		) 
 	}
 </div>
