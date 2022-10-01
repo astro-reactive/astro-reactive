@@ -27,7 +27,8 @@
     "test:watch": "mocha --watch --parallel --timeout 15000",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint --fix . --ext .ts,.js"
+    "lint:fix": "eslint --fix . --ext .ts,.js",
+    "demo": "npm run dev -w demo"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
