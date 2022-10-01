@@ -1,6 +1,6 @@
 export class FormControl {
 	name: string;
-	type?: 'text' | 'checkbox' | 'radio' = 'text'; // add more
+	type?: 'text' | 'checkbox' | 'radio' | 'password' = 'text'; // add more
 	value?: string | number | null | string[];
 	label?: string;
 	labelPosition?: 'right' | 'left' = 'left';
