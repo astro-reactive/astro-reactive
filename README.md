@@ -1,4 +1,5 @@
-<img width="889" alt="Screen Shot 2022-10-01 at 4 19 36 PM" src="https://user-images.githubusercontent.com/4262489/193413897-69c671f1-6871-498d-afa8-50b98d113d88.png">
+![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419373-25c78b2c-23a0-4eb9-b46e-c01df73826d4.png)
+
 
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
