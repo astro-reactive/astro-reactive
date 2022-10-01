@@ -4,14 +4,14 @@
   "version": "0.0.0",
   "repository": "https://github.com/ayoayco/astro-reactive-form",
   "homepage": "https://ayco.io/showcase/astro-reactive-form",
-  "type": "module",
-  "exports": {
-    ".": "./index.ts"
-  },
   "author": {
     "name": "Ayo Ayco",
     "email": "ramon.aycojr@gmail.com",
     "url": "https://ayco.io"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
   },
   "scripts": {
     "demo": "npm run dev -w demo",

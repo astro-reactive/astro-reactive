@@ -3,6 +3,11 @@
   "description": "Demo App for Astro Reactive Form",
   "type": "module",
   "version": "0.0.1",
+  "author": {
+    "name": "Ayo Ayco",
+    "email": "ramon.aycojr@gmail.com",
+    "url": "https://ayco.io"
+  },
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -20,7 +25,6 @@
     "type": "git",
     "url": "git+https://github.com/ayoayco/astro-reactive-form.git"
   },
-  "author": "Ayo Ayco",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-form/issues"
