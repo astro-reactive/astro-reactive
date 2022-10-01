@@ -70,6 +70,10 @@ Example of multiple form groups:
 
 Currently this only supports very basic form creation, but the goal of the project is ambitious:
 
+1. Validator library for common validation scenarios
+   1. Client-side validation
+   1. Server-side validation
+   1. validation hooks - onFocus, onBlur, onSubmit
 1. Themes - unstyled, light mode, dark mode, compact, large
 1. FormGroup class
    1. `get(controlName: string)` - returns the FormControl with matching name
@@ -80,7 +84,6 @@ Currently this only supports very basic form creation, but the goal of the proje
    1. `statusChanges` - observable that emits the control status when it changes
    1. `valueChanges` - observable that emits the control value when it changes
    1. `value` - property that reflects the control value
-1. Validator library for common validation scenarios
 
 ... and so much more
 
