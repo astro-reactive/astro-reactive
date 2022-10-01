@@ -19,8 +19,10 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 To run the project's demo app locally:
 1. Clone/Fork the project 
 1. Install deps: `npm i`
-1. Run the demo app: `npm run demo`
+1. Run the demo app: `npm run dev`
 1. Open on browser: `http://localhost:3000`
+
+To play around the library using the demo app, the sourc code is in the `demo` directory.
 
 *[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
 

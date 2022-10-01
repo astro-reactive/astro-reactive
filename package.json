@@ -14,11 +14,11 @@
     ".": "./index.ts"
   },
   "scripts": {
-    "demo": "npm run dev -w demo",
-    "bump-package-patch": "npm version patch -w",
-    "bump-package-minor": "npm version minor -w",
-    "bump-package-major": "npm version major -w",
-    "publish-package": "npm publish --public -w"
+    "dev": "npm run dev -w demo",
+    "bump-patch": "npm version patch -w",
+    "bump-minor": "npm version minor -w",
+    "bump-major": "npm version major -w",
+    "publish": "npm publish --public -w"
   },
   "license": "ISC",
   "workspaces": [
