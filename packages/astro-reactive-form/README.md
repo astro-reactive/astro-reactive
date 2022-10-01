@@ -55,6 +55,10 @@ const userNameControl = form.get("username");
 userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
+
+<!-- the formGroups attribute takes an array of FormGroup-->
+<Form formGroups={[form]} />
+
 ```
 
 # Screenshots
