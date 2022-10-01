@@ -1,5 +1,5 @@
 ---
-import { FormGroup, Submit } from "astro-reactive-form/core";
+import { FormControl, FormGroup } from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
 
 const form = new FormGroup([
@@ -16,20 +16,26 @@ const form = new FormGroup([
 
 form.name = "Simple Form";
 
-form.controls.push({
-  type: "checkbox",
-  name: "is-awesome",
-  label: "is Awesome?",
-  labelPosition: "right",
-  value: "checked",
-});
+form.controls.push(
+  new FormControl({
+    type: "checkbox",
+    name: "is-awesome",
+    label: "is Awesome?",
+    labelPosition: "right",
+    value: "checked",
+  })
+);
 
-form.controls.push({
-  type: "submit",
-  name: "submit",
-  value: "Submit",
-  callBack: () => console.log("hey"),
-} as Submit);
+form.controls.push(
+  new FormControl({
+    type: "button",
+    name: "set-username",
+    value: "set username",
+  })
+);
+
+const userNameControl = form.get("username");
+userNameControl?.setValue("RAMOOOON");
 ---
 
 <html lang="en">

@@ -1,14 +1,15 @@
-import { FormControl } from './form-control';
+import { FormControl, IFormControl } from './form-control';
 
 export class FormGroup {
 	controls: FormControl[];
 	name?: string;
 
-	constructor(controls: FormControl[], name?: string) {
-		this.name = name || null;
-		this.controls = controls.map((control) => ({
-			...control,
-			labelPosition: control.labelPosition || 'left',
-		}));
+	constructor(controls: IFormControl[], name: string = '') {
+		this.name = name;
+		this.controls = controls.map((control) => new FormControl(control));
+	}
+
+	get(name: string): FormControl | undefined {
+		return this.controls.find(control => control.name === name);
 	}
 }
