@@ -81,14 +81,13 @@ Currently this only supports very basic form creation, but the goal of the proje
    1. validation hooks - onFocus, onBlur, onSubmit
 1. Themes - unstyled, light mode, dark mode, compact, large
 1. FormGroup class
-   1. `get(controlName: string)` - returns the FormControl with matching name
    1. `statusChanges` - observable that emits the form status when it changes
    1. `valueChanges` - observable that emits the values of all controls when they change
 1. FormControl class
-   1. `setValue(value)` - set the value of the control programmatically
    1. `statusChanges` - observable that emits the control status when it changes
    1. `valueChanges` - observable that emits the control value when it changes
    1. `value` - property that reflects the control value
+1. Documentation website
 
 ... and so much more
 
