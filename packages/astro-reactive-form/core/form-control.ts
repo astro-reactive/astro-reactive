@@ -25,7 +25,7 @@ type FormControlType =
 	| 'url'
 	| 'week';
 
-export interface IFormControl {
+export interface FormControlBase {
 	name: string;
 	type?: FormControlType;
 	value?: string | number | string[];
@@ -41,7 +41,7 @@ export class FormControl {
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
 
-	constructor(config: IFormControl | Checkbox | Radio | Submit | Button) {
+	constructor(config: FormControlBase | Checkbox | Radio | Submit | Button) {
 		const { name, type, value, label, labelPosition } = config;
 		this._name = name;
 		this._type = type || 'text';
@@ -80,22 +80,22 @@ export class FormControl {
  * TODO: Create classes for each control type
  */
 
-export interface Checkbox extends IFormControl {
+export interface Checkbox extends FormControlBase {
 	type: 'checkbox';
 	checked: boolean;
 }
 
-export interface Radio extends IFormControl {
-	type: 'checkbox';
+export interface Radio extends FormControlBase {
+	type: 'radio';
 	checked: boolean;
 }
 
-export interface Submit extends IFormControl {
+export interface Submit extends FormControlBase {
 	type: 'submit';
 	callBack: () => void;
 }
 
-export interface Button extends IFormControl {
+export interface Button extends FormControlBase {
 	type: 'button';
 	callBack: () => void;
 }

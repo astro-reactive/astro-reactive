@@ -1,10 +1,10 @@
-import { FormControl, IFormControl } from './form-control';
+import { FormControl, FormControlBase } from './form-control';
 
 export class FormGroup {
 	controls: FormControl[];
 	name?: string;
 
-	constructor(controls: IFormControl[], name: string = '') {
+	constructor(controls: FormControlBase[], name: string = '') {
 		this.name = name;
 		this.controls = controls.map((control) => new FormControl(control));
 	}
