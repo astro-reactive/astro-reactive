@@ -16,6 +16,18 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 | astro-reactive-validator | 🛠 in-progress | 🛠 in-progress |
 | astro-reactive-datagrid | 🛠 in-progress | 🛠 in-progress |
 
+# HACKTOBERFEST 2022
+
+Any contribution is welcome. See our [contributing guide](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md), and feel free to look around to find something that interests you. :)
+
+Maybe add some themes to our form component? Or maybe an improvement the README?
+
+The issues page contains some ideas, but they should not limit your contribution.
+
+If you don't find anything there, I'm happy to help you get your contribution in.
+
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for your own idea, [email me (ramon.aycojr+hack@gmail.com)](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+
 # Running the demo app
 To run the project's demo app locally:
 1. Clone/Fork the project 

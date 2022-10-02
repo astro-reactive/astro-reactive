@@ -6,7 +6,19 @@ We are trying to build a new library of components and utilities for building re
 
 There's a lot of opportunity to contribute. A good start will be to understand what Astro is, and how to set up a basic Astro project. For this, the [Astro website](https://astro.build) and [documentation](https://docs.astro.build/en/getting-started/) are good places to start.
 
-## The Astro Reactive Library
+# Contributing
+
+Any contribution is welcome. Feel free to look around to find something that interests you. :)
+
+Maybe add some themes to our form component? Or maybe just improve the README?
+
+The issues page contains some ideas, but they should not limit your contribution.
+
+If you don't find anything there, I'm happy to help you get your contribution in.
+
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for your own idea, [email me (ramon.aycojr+hack@gmail.com)](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+
+# The Astro Reactive Library
 
 This project aims to be a library that developers will use to create reactive UIs with Astro.
 
@@ -19,7 +31,7 @@ Packages:
     - allows developers to programatically build a Form for Astro
 3. [astro-reactive-validator](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-validator) - found in the directory `packages/astro-reactive-validator`
 
-## Running locally
+# Running locally
 
 We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
 
@@ -53,7 +65,7 @@ npm run dev
 https://localhost:3000
 ```
 
-## Hacking with the packages
+# Hacking with the packages
 
 As mentioned above, this project involves packages that are intened to be used in Astro applications. The demo app is our way to test and play with the packages.
 
