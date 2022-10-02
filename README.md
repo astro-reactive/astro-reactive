@@ -22,7 +22,7 @@ Build blazing-fast user interfaces with native [Astro](https://astro.build) comp
 
 Any contribution is welcome. See our [contributing guide](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md), and feel free to look around to find something that interests you. :)
 
-Maybe add some themes to our form component? Or maybe an improvement the README?
+Maybe add some themes to our form component? Or maybe an improvement for the README?
 
 The issues page contains some ideas, but they should not limit your contribution.
 
