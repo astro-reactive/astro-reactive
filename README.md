@@ -30,14 +30,39 @@ If you don't find anything there, I'm happy to help you get your contribution in
 
 You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for your own idea, [email me](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
 
-# Running the demo app
-To run the project's demo app locally:
-1. Clone/Fork the project 
-1. Install deps: `npm i`
-1. Run the demo app: `npm run dev`
-1. Open on browser: `http://localhost:3000`
+# Running locally
 
-To play around the library using the demo app, the sourc code is in the `demo` directory.
+We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
+
+1. Fork the project then clone to your computer
+
+```
+git clone git@github.com:<your-user-name>/astro-reactive-library.git
+```
+
+2. Go into the project directory
+
+```
+cd astro-reactive-library
+```
+
+3. Install the node dependencies
+
+```
+npm i
+```
+
+4. Run the demo application
+
+```
+npm run dev
+```
+
+5. Open the demo application on you browser. Browse to the address:
+
+```
+https://localhost:3000
+```
 
 *[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
 
