@@ -68,4 +68,5 @@ https://localhost:3000
 
 # Contributors
 1. [Ayo Ayco](https://ayco.io)
-1. *[Add your name here!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
+2. [Jaspreet Singh Saini](https://jaspreetdesigns.netlify.app/)
+3. *[Add your name here!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
