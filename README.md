@@ -70,7 +70,3 @@ https://localhost:3000
 <a href="https://github.com/ayoayco/astro-reactive-library/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />
 </a>
-
-1. [Ayo Ayco](https://ayco.io)
-2. [Jaspreet Singh Saini](https://jaspreetdesigns.netlify.app/)
-3. *[Add your name here!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
