@@ -39,4 +39,6 @@ To play around the library using the demo app, the sourc code is in the `demo` d
 
 *[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
 
-Created by [Ayo Ayco](https://ayco.io)
+# Contributors
+1. [Ayo Ayco](https://ayco.io)
+1. *[Add your name here!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
