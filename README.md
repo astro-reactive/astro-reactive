@@ -8,8 +8,6 @@
 # Components and utilities for building reactive user interfaces 🔥
 Build blazing-fast user interfaces with native [Astro](https://astro.build) components and architecture.
 
-*[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
-
 | Packages | Version | Docs |
 | --- | --- | --- |
 | [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form#readme) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
@@ -70,3 +68,5 @@ https://localhost:3000
 <a href="https://github.com/ayoayco/astro-reactive-library/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />
 </a>
+
+👉 *[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
