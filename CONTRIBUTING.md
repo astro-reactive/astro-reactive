@@ -1,6 +1,7 @@
-# Thanks for checking out Astro Reactive Library! 🚀
+![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419437-6e437743-47bf-482b-8f7e-de3c7f5285f8.png)
 
-Hi, explorer! Welcome to a new adventure.
+# Hi, explorer! 🚀
+Thanks for checking out the Astro Reactive Library! Welcome to a new adventure.
 
 We are trying to build a new library of components and utilities for building reactive user interfaces with [Astro](https://astro.build).
 
@@ -71,3 +72,6 @@ As mentioned above, this project involves packages that are intened to be used i
 
 If you plan to add features or fix bugs that are found in the packages, such as `astro-reactive-form`, you can find the source code for this inside the `packages` directory.
 
+Thank you again for your interest in contributing!
+
+Please [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) if anything is unclear. :)
