@@ -6,13 +6,14 @@
 [![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
 
 # Components and utilities for building reactive user interfaces 🔥
+
 Build blazing-fast user interfaces with native [Astro](https://astro.build) components and architecture.
 
-| Packages | Version | Docs |
-| --- | --- | --- |
-| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form#readme) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress |
-| astro-reactive-validator | 🛠 in-progress | 🛠 in-progress |
-| astro-reactive-datagrid | 🛠 in-progress | 🛠 in-progress |
+| Packages                                                                                                               | Version                                                                                                       | Docs          | Description                                                   |
+| ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------- |
+| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form#readme) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 in-progress | generate a dynamic form which can be modified programatically |
+| astro-reactive-validator                                                                                               | 🛠 in-progress                                                                                                 | 🛠 in-progress | set of utilities for validating inputs                        |
+| astro-reactive-datagrid                                                                                                | 🛠 in-progress                                                                                                 | 🛠 in-progress | generate a dynamic datagrid or table of values                |
 
 # HACKTOBERFEST 2022
 
@@ -62,11 +63,12 @@ npm run dev
 https://localhost:3000
 ```
 
-*[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)*
+_[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)_
 
 # Contributors
+
 <a href="https://github.com/ayoayco/astro-reactive-library/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />
 </a>
 
-👉 *[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)*
+👉 _[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)_
