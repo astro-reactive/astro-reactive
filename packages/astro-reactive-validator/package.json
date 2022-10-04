@@ -8,7 +8,6 @@
     "url": "https://ayco.io"
   },
   "main": "index.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
@@ -23,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "dependencies": {
+    "astro": "^1.4.4"
+  }
 }
