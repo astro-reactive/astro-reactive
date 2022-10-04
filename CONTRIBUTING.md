@@ -66,6 +66,16 @@ npm run dev
 https://localhost:3000
 ```
 
+# Running package tests
+
+Please run the tests before creating a PR to make sure nothing is broken.
+
+Since we only have one package for now, this is the command to run:
+
+```
+npm run test -w astro-reactive-form
+```
+
 # Hacking with the packages
 
 As mentioned above, this project involves packages that are intened to be used in Astro applications. The demo app is our way to test and play with the packages.
