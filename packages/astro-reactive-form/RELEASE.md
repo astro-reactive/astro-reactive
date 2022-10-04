@@ -1,3 +1,6 @@
+## v0.2.4
+- update package README
+
 ## v0.2.2
 - initial light and dark mode scaffold
 - update package README
