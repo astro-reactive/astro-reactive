@@ -49,13 +49,19 @@ npm i
 4. Run the demo application
 
 ```
-npm run dev
+npm start
 ```
 
 5. Open the demo application on you browser. Browse to the address:
 
 ```
 https://localhost:3000
+```
+
+6. To run the tests:
+
+```
+npm test
 ```
 
 _[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)_

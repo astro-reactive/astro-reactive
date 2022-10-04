@@ -57,7 +57,7 @@ npm i
 4. Run the demo application
 
 ```
-npm run dev
+npm start
 ```
 
 5. Open the demo application on you browser. Browse to the address:
@@ -69,11 +69,8 @@ https://localhost:3000
 # Running package tests
 
 Please run the tests before creating a PR to make sure nothing is broken.
-
-Since we only have one package for now, this is the command to run:
-
 ```
-npm run test -w astro-reactive-form
+npm test
 ```
 
 # Hacking with the packages

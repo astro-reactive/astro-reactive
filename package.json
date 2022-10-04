@@ -14,6 +14,8 @@
     ".": "./index.ts"
   },
   "scripts": {
+    "start": "npm run dev -w demo",
+    "test": "npm run test --workspaces --if-present",
     "dev": "npm run dev -w demo",
     "bump-patch": "npm version patch -w",
     "bump-minor": "npm version minor -w",

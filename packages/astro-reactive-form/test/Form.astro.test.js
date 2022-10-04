@@ -11,28 +11,32 @@ describe('Form.astro test', () => {
 	describe('INPUT: formGroups', () => {
 		it('Should handle undefined formGroups prop', async () => {
 			// arrange
-			const expectedResult = '<form></form>'
+			const expectedCount = 0;
+			const element = /<fieldset>/g;
 			const props = { formGroups: undefined };
 			component = await getComponentOutput('./Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
+			const matches = actualResult.match(element) || [];
 
 			// assert
-			expect(actualResult).to.contain(expectedResult);
+			expect(matches.length).to.equal(expectedCount);
 		});
 
 		it('Should handle empty formGroups prop', async () => {
 			// arrange
-			const expectedResult = '<form></form>'
+			const expectedCount = 0;
+			const element = /<fieldset>/g;
 			const props = { formGroups: [] };
 			component = await getComponentOutput('./Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
+			const matches = actualResult.match(element) || [];
 
 			// assert
-			expect(actualResult).to.contain(expectedResult);
+			expect(matches.length).to.equal(expectedCount);
 		});
 
 		it('Should render a fieldset for each form group', async () => {

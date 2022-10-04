@@ -3,4 +3,4 @@
 To start the app:
 
 1. `npm i`
-1. `npm run dev`
+1. `npm start`
