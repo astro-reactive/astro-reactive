@@ -8,9 +8,26 @@ export interface Props {
 
 const { formGroups } = Astro.props;
 ---
+<form class="light">
+	{formGroups?.map((group) => <FieldSet group={group} />)}
+</form>
 
-{
-		<form>
-			{formGroups?.map((group) => <FieldSet group={group} />)}
-		</form>
-}
+<style>
+	.light {
+		/**
+		* run dev server with: "npm run dev",
+		* then open browser to "localhost:3000"
+		* add a class="light" to the <form> element above to test changes
+		* INSERT STYLES FOR LIGHT MODE BELOW: */
+	}
+
+	.dark {
+		/**
+		* run dev server with: "npm run dev",
+		* then open browser to "localhost:3000"
+		* add a class="dark" to the <form> element above to test changes
+		* INSERT STYLES FOR DARK MODE BELOW: */
+		background-color: #333;
+		color: white;
+	}
+</style>
