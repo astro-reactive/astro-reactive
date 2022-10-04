@@ -1,7 +1,7 @@
 {
   "name": "astro-reactive-form",
   "description": "The Reactive Form component for Astro 🔥",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
   "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
   "author": {
@@ -35,7 +35,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.3",
     "@types/eslint": "^8.4.6",
-    "@types/mocha": "^9.1.1",
+    "@types/mocha": "^10.0.0",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
