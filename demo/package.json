@@ -1,6 +1,6 @@
 {
-  "name": "demo-astro-reactive-form",
-  "description": "Demo App for Astro Reactive Form",
+  "name": "demo-astro-reactive-library",
+  "description": "Demo App for Astro Reactive Library",
   "type": "module",
   "version": "0.0.1",
   "author": {

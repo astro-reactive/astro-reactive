@@ -1,9 +1,9 @@
 {
-  "name": "astro-reactive-form-workspace",
-  "description": "Astro Reactive Form Workspace",
+  "name": "astro-reactive-library",
+  "description": "Astro components for building reactive user interfaces 🚀",
   "version": "0.0.0",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
-  "homepage": "https://ayco.io/showcase/astro-reactive-form",
+  "homepage": "https://ayco.io/showcase/astro-reactive-library",
   "author": {
     "name": "Ayo Ayco",
     "email": "ramon.aycojr@gmail.com",
