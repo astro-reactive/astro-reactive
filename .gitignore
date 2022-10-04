@@ -10,3 +10,5 @@ pnpm-debug.log*
 *~
 *swp
 *swo
+
+demo/dist
