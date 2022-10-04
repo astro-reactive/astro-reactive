@@ -29,6 +29,6 @@
     "packages/astro-reactive-validator"
   ],
   "dependencies": {
-    "astro": "^1.4.2"
+    "astro": "^1.4.4"
   }
 }
