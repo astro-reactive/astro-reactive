@@ -3,7 +3,7 @@
   "description": "Astro components for building reactive user interfaces 🚀",
   "version": "0.0.0",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
-  "homepage": "https://ayco.io/showcase/astro-reactive-library",
+  "homepage": "https://ayco.io/showcase/astro-reactive-library#readme",
   "author": {
     "name": "Ayo Ayco",
     "email": "ramon.aycojr@gmail.com",
@@ -16,6 +16,7 @@
   "scripts": {
     "start": "npm run dev -w demo",
     "test": "npm run test --workspaces --if-present",
+    "test:watch": "npm run test:watch --workspaces --if-present",
     "dev": "npm run dev -w demo",
     "bump": "npm version patch -w",
     "bump-minor": "npm version minor -w",

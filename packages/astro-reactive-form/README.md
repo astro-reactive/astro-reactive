@@ -7,7 +7,9 @@
 
 # Astro Reactive Form 🔥
 
-Generate a dynamic form which can be modified programatically. The Reactive Form component for [Astro](https://astro.build) 🔥
+Generate a dynamic form based on your data, and modify programatically.
+
+The Reactive Form component for [Astro](https://astro.build) 🔥
 
 _[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-library/issues)_
 
@@ -26,7 +28,7 @@ Use in an Astro page:
 import { FormControl, FormGroup } from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
 
-// create a form group (rendered as <fieldset>)
+// create a form group
 const form = new FormGroup([
   {
     name: "username",
@@ -39,10 +41,10 @@ const form = new FormGroup([
   },
 ]);
 
-// set the name (rendered as <legend>)
+// set the name optionally
 form.name = "Simple Form";
 
-// insert a control
+// you can insert a control at any point
 form.controls.push(
   new FormControl({
     type: "checkbox",
@@ -52,10 +54,10 @@ form.controls.push(
   })
 );
 
-// get a FormControl object
+// you can get a FormControl object
 const userNameControl = form.get("username");
 
-// set values dynamically
+// you can set values dynamically
 userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
