@@ -1,9 +1,4 @@
-![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419437-6e437743-47bf-482b-8f7e-de3c7f5285f8.png)
-
-[![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
+![library-cover](https://user-images.githubusercontent.com/4262489/193811991-dc6ed9d7-0960-42f3-8b72-108620c6ab25.png)
 
 # Components and utilities for building reactive user interfaces 🔥
 
