@@ -11,5 +11,5 @@ Describe the changes you made preferrably broken down into a list in the followi
 -->
 
 Tasks:
-- [ ] I have ran the tests to make sure nothing is broken
+- [ ] I have ran the tests to make sure nothing is broken (see CONTRIBUTING.md)
 - [ ] I have mentioned the issue this PR is addressing
