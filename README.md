@@ -7,7 +7,7 @@
 
 # Components and utilities for building reactive user interfaces 🔥
 
-Let your data build blazing-fast user interfaces with native [Astro](https://astro.build) components and architecture.
+Let your data build your UI. Blazing-fast, reactive user interfaces with native [Astro](https://astro.build) components and architecture.
 
 | Packages                                                                                                               | Version                                                                                                       | Docs          | Description                                                   |
 | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------------------------------------------------------- |
