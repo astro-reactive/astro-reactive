@@ -3,7 +3,6 @@
 [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![npm](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
 
 # Astro Reactive Form 🔥
 

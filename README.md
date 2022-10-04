@@ -1,6 +1,7 @@
 ![library-cover](https://user-images.githubusercontent.com/4262489/193811991-dc6ed9d7-0960-42f3-8b72-108620c6ab25.png)
 
 [![Build and Test](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml)
+[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
 
 # Components and utilities for building reactive user interfaces 🔥
 
