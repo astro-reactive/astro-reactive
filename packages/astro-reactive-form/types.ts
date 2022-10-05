@@ -31,6 +31,7 @@ export interface FormControlBase {
 	value?: string | number | string[];
 	label?: string;
 	labelPosition?: 'right' | 'left';
+	placeholder? : string
 }
 
 export interface Checkbox extends FormControlBase {
