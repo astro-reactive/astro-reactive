@@ -1,7 +1,7 @@
 import type { FormControlType, Button, Checkbox, FormControlBase, Radio, Submit } from "../types";
 
 export class FormControl {
-	private _name : string= '';
+	private _name: string = '';
 	private _type?: FormControlType | undefined = 'text';
 	private _value?: string | number | null | string[];
 	private _label?: string;
