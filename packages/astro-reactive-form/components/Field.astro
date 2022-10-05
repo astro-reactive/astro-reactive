@@ -6,7 +6,6 @@ export interface Props {
 }
 
 const { control } = Astro.props;
-
 ---
 
 <div>
@@ -22,6 +21,7 @@ const { control } = Astro.props;
 		type={control.type}
 		value={control.value}
 		checked={control.value === 'checked'}
+		placeholder={control.placeholder}
 		data-label={control.label}
 		data-label-position={control.labelPosition}
 	/>
@@ -29,7 +29,6 @@ const { control } = Astro.props;
 	{
 		control.label && control.labelPosition === 'right' && (
 			<label for={control.name}>{control.label}</label>
-		) 
+		)
 	}
 </div>
-
