@@ -6,6 +6,8 @@ export class FormControl {
 	private _value?: string | number | null | string[];
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
+	private _isValid: boolean = true;
+	private _isPristine: boolean = true;
 
 	constructor(config: FormControlBase | Checkbox | Radio | Submit | Button) {
 		const { name, type, value, label, labelPosition } = config;
@@ -36,8 +38,19 @@ export class FormControl {
 		return this._labelPosition;
 	}
 
+	get isPristine () {
+		return this._isPristine;
+	}
+
+	get isValid () {
+		return this._isValid;
+	}
+
 	setValue(value: string) {
 		this._value = value;
 	}
 
+	setIsPristine(value: boolean){
+		this._isPristine = value
+	}
 }
