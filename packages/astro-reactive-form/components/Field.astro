@@ -22,8 +22,8 @@ const { control } = Astro.props;
 		type={control.type}
 		value={control.value}
 		checked={control.value === 'checked'}
-		data-is-pristine={String(control.isPristine)}
-		data-is-valid={String(control.isValid)}
+		data-label={control.label}
+		data-label-position={control.labelPosition}
 	/>
 
 	{
@@ -33,23 +33,3 @@ const { control } = Astro.props;
 	}
 </div>
 
-<script>
-import { FormGroup } from "../core";
-
-let formGroups;
-const inputFields = document.querySelectorAll("input");
-
-inputFields.forEach(field => {
-	formGroups = new FormGroup([
-		{
-			name : field.name, 
-			value : field.value,
-		}
-	])
-	console.log(formGroups)
-	field.addEventListener("input", () => {
-		field.dataset.isPristine = "false"		
-})
-})
-
-</script>

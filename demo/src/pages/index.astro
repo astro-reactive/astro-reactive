@@ -26,12 +26,20 @@ form.controls.push(
   })
 );
 
+form.controls.push(
+  new FormControl({
+    type: "submit",
+    name: "submit",
+  })
+);
+
 // get the FormControl object
 const userNameControl = form.get("username");
 
 // set values dynamically
 userNameControl?.setValue("RAMOOOON");
 form.get("is-awesome")?.setValue("checked");
+
 ---
 
 <html lang="en">
@@ -47,3 +55,15 @@ form.get("is-awesome")?.setValue("checked");
     <Form formGroups={[form]} />
   </body>
 </html>
+
+<script>
+import { getFormGroup } from "astro-reactive-form/core";
+
+const form = document.querySelector("form") as HTMLFormElement;
+const simpleForm = getFormGroup("Simple Form")
+
+form.addEventListener("submit", ()=>{
+  alert(`Hi, My name is ${simpleForm.get("username")?.value}. This Library is ${simpleForm.get("is-awesome")?.value === "checked" ? "awesome" : "not awesome"}`)
+})
+
+</script>
