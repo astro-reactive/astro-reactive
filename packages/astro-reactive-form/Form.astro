@@ -1,15 +1,25 @@
 ---
 import type { FormGroup } from './core';
 import FieldSet from './components/FieldSet.astro';
-
+import Themes from 'astro-themes';
 export interface Props {
 	formGroups: FormGroup[];
 }
 
 const { formGroups } = Astro.props;
 ---
+
+<html>
+	<head>
+		<Themes defaultTheme= "dark" />
+	</head>
+</html>
+
 <form class="light">
-	{formGroups?.map((group) => <FieldSet group={group} />)}
+	{formGroups?.map((group) => <FieldSet group={group} />)}<br>
+	<button onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))">
+		Light</button>
+	<button>Dark</button>
 </form>
 
 <style>

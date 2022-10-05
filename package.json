@@ -30,6 +30,10 @@
     "packages/astro-reactive-validator"
   ],
   "dependencies": {
-    "astro": "^1.4.4"
+    "astro": "^1.4.4",
+    "astro-reactive-form": "file:packages/astro-reactive-form"
+  },
+  "devDependencies": {
+    "astro-themes": "^0.2.3"
   }
 }
