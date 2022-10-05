@@ -34,11 +34,6 @@ export interface FormControlBase {
 	placeholder? : string
 }
 
-export interface Text extends FormControlBase {
-	type: 'text';
-	checked: boolean;
-}
-
 export interface Checkbox extends FormControlBase {
 	type: 'checkbox';
 	checked: boolean;
