@@ -1,12 +1,13 @@
 ---
-import type { FormGroup } from './core';
+import type { FormControl, FormGroup } from './core';
 import FieldSet from './components/FieldSet.astro';
 
 export interface Props {
+	submitControl?: FormControl;
 	formGroups: FormGroup[];
 }
 
-const { formGroups } = Astro.props;
+const { submitControl, formGroups } = Astro.props;
 ---
 <form class="light">
 	{formGroups?.map((group) => <FieldSet group={group} />)}
