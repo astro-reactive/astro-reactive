@@ -16,6 +16,9 @@
   "scripts": {
     "start": "npm run dev -w demo",
     "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "dev": "npm run dev -w demo",
     "bump": "npm version patch -w",
@@ -28,8 +31,5 @@
     "demo",
     "packages/astro-reactive-form",
     "packages/astro-reactive-validator"
-  ],
-  "dependencies": {
-    "astro": "^1.4.4"
-  }
+  ]
 }
