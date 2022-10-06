@@ -1,8 +1,15 @@
-import type { FormControlType, Button, Checkbox, FormControlBase, Radio, Submit } from "../types";
+import type {
+	FormControlType,
+	Button,
+	Checkbox,
+	FormControlBase,
+	Radio,
+	Submit,
+} from './form-control-types';
 
 export class FormControl {
-	private _name: string = '';
-	private _type?: FormControlType | undefined = 'text';
+	private _name = '';
+	private _type: FormControlType = 'text';
 	private _value?: string | number | null | string[];
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
@@ -17,7 +24,7 @@ export class FormControl {
 		this._value = value || null;
 		this._label = label || '';
 		this._labelPosition = labelPosition || 'left';
-		this._placeholder = placeholder || ""
+		this._placeholder = placeholder || '';
 	}
 
 	get name() {
@@ -44,11 +51,11 @@ export class FormControl {
 		return this._placeholder;
 	}
 
-	get isPristine () {
+	get isPristine() {
 		return this._isPristine;
 	}
 
-	get isValid () {
+	get isValid() {
 		return this._isValid;
 	}
 
@@ -56,7 +63,7 @@ export class FormControl {
 		this._value = value;
 	}
 
-	setIsPristine(value: boolean){
-		this._isPristine = value
+	setIsPristine(value: boolean) {
+		this._isPristine = value;
 	}
 }

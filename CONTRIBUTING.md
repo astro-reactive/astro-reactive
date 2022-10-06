@@ -66,11 +66,22 @@ npm start
 https://localhost:3000
 ```
 
-# Running package tests
+# Running the linter and tests
 
-Please run the tests before creating a PR to make sure nothing is broken.
+Please run the linter and tests before creating a PR to avoid delays in PR reviews. Fix all linting errors or failing tests whey you run the following commands.
+
+```
+npm run lint
+```
+
 ```
 npm test
+```
+
+✨ _HINT: Some linting errors could automatically fixed with a command_
+
+```
+npm run lint:fix
 ```
 
 # Hacking with the packages

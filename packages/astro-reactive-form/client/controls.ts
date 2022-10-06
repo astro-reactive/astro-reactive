@@ -1,5 +1,5 @@
 import { FormControl, FormGroup } from "../core";
-import type { FormControlType } from "../types";
+import type { FormControlType } from '../core/form-control-types';
 
 export const getFormGroup = (formName: string) => {
   const fieldSetEl = document.getElementById(formName) as HTMLFieldSetElement || null;
@@ -9,7 +9,7 @@ export const getFormGroup = (formName: string) => {
 	}
   
   const formGroup = new FormGroup([], formName);
-	
+
   fieldSetEl.querySelectorAll("input").forEach(field => {
 		const formControl = getFormControl(field.name);
 		if(!formControl) return;
