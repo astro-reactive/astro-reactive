@@ -1,5 +1,6 @@
 ---
 import type { FormControl, FormGroup } from './core';
+import Field from './components/Field.astro';
 import FieldSet from './components/FieldSet.astro';
 
 export interface Props {
@@ -11,6 +12,7 @@ const { submitControl, formGroups } = Astro.props;
 ---
 <form class="light">
 	{formGroups?.map((group) => <FieldSet group={group} />)}
+	{submitControl && (<Field control={submitControl} />)}
 </form>
 
 <style>
