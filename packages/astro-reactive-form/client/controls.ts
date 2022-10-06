@@ -41,7 +41,16 @@ const getFormControl = (name: string) => {
 			value = formControl.value === 'checked' ? '' : 'checked';
 		}
 		formControl.setValue(value);
-		formControl.setIsPristine(false);
+		formControl.isPristine = false;
 	});
-	return formControl;
+
+	const controlProxy = new Proxy(formControl, {
+		set() {
+			//prevent any setter to be able to work in client;
+			console.error('Setting this property manually is prohibited!');
+			return true;
+		},
+	});
+
+	return controlProxy;
 };
