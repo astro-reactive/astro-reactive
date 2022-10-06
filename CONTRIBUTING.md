@@ -81,14 +81,6 @@ If you plan to add features or fix bugs that are found in the packages, such as 
 
 Thank you again for your interest in contributing!
 
-Please [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) if anything is unclear. :)
-
-# Keep up to date
-  
-💬 Check our [Discussion](https://github.com/ayoayco/astro-reactive-library/discussions) board for announcements or post messages yourself.
-
-# Serious Business 
-
-Please be aware of the rules.
-
-🏘️ See our community's [Code of Conduct](https://github.com/ayoayco/astro-reactive-library/blob/main/CODE_OF_CONDUCT.md)
+🛠️ Create a new issue for bugs found or improvement ideas
+💬 Check announcements or post messages and questions in our discussion board
+🏘️ Read our community guidelines
