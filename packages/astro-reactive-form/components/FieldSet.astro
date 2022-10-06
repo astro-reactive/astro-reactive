@@ -9,7 +9,7 @@ export interface Props {
 const { group } = Astro.props;
 ---
 
-<fieldset>
+<fieldset id={group.name} name={group.name}>
 	{group.name && <legend>{group.name}</legend>}
 	{group?.controls?.map((control) => <Field control={control} />)}
 </fieldset>
