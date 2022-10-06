@@ -8,8 +8,8 @@ export class FormGroup {
 	constructor(controls: FormControlBase[], name = '') {
 		this.name = name;
 		this.controls = controls
-			.filter(control => control.type !== 'submit')
-			.map(control => new FormControl(control));
+			.filter((control) => control.type !== 'submit')
+			.map((control) => new FormControl(control));
 	}
 
 	get(name: string): FormControl | undefined {
