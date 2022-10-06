@@ -3,19 +3,28 @@ import type { FormControlType } from "../types";
 
 export const getFormGroup = (formName: string) => {
   const fieldSetEl = document.getElementById(formName) as HTMLFieldSetElement || null;
-	if(fieldSetEl === null) throw Error(`Fieldset with name: ${name} doesn't exist!`);
+	if(fieldSetEl === null) {
+		console.error(`Formgroup with name: '${formName}' doesn't exist!`);
+		return undefined;
+	}
   
   const formGroup = new FormGroup([], formName);
-  fieldSetEl.querySelectorAll("input").forEach(field => [
-    formGroup.controls.push(getFormControl(field.name))
-  ]);
+	
+  fieldSetEl.querySelectorAll("input").forEach(field => {
+		const formControl = getFormControl(field.name);
+		if(!formControl) return;
+		formGroup.controls.push(formControl)
+	});
 
   return formGroup;
 }
 
 const getFormControl = (name : string) => {
 	const inputEl = document.getElementById(name) as HTMLInputElement | null;
-	if(inputEl === null) throw Error(`Input with name: ${name} doesn't exist!`);
+	if(inputEl === null){
+		console.error(`Input with name: ${name} doesn't exist!`);
+		return undefined
+	} 
 
 	const formControl = new FormControl(
 		{

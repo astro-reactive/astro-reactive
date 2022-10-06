@@ -27,6 +27,7 @@ form.controls.push(
   })
 );
 
+//insert submit button
 form.controls.push(
   new FormControl({
     type: "submit",
@@ -63,8 +64,10 @@ import { getFormGroup } from "astro-reactive-form/client";
 const form = document.querySelector("form") as HTMLFormElement;
 const simpleForm = getFormGroup("Simple Form")
 
-form.addEventListener("submit", ()=>{
-  alert(`Hi, My name is ${simpleForm.get("username")?.value}. This Library is ${simpleForm.get("is-awesome")?.value === "checked" ? "awesome" : "not awesome"}`)
+form.addEventListener("submit", () => {
+  const username = simpleForm?.get("username")?.value;
+  const isAwesome = simpleForm?.get("is-awesome")?.value;
+  alert(`Hi, My username is ${username}. This Library is ${isAwesome === "checked" ? "awesome" : "not awesome"}`)
 })
 
 </script>
