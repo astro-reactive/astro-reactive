@@ -1,4 +1,4 @@
-import { FormControl, FormGroup } from ".";
+import { FormControl, FormGroup } from "../core";
 import type { FormControlType } from "../types";
 
 export const getFormGroup = (formName: string) => {

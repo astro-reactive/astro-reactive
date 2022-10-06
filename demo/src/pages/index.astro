@@ -58,7 +58,7 @@ form.get("is-awesome")?.setValue("checked");
 </html>
 
 <script>
-import { getFormGroup } from "astro-reactive-form/core";
+import { getFormGroup } from "astro-reactive-form/client";
 
 const form = document.querySelector("form") as HTMLFormElement;
 const simpleForm = getFormGroup("Simple Form")
