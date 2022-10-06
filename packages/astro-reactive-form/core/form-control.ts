@@ -9,7 +9,7 @@ import type {
 
 export class FormControl {
 	private _name = '';
-	private _type?: FormControlType | undefined = 'text';
+	private _type: FormControlType = 'text';
 	private _value?: string | number | null | string[];
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
