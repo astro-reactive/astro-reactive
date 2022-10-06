@@ -66,4 +66,8 @@ export class FormControl {
 	setValue(value: string) {
 		this._value = value;
 	}
+
+	setIsPristine(value: boolean) {
+		this._isPristine = value;
+	}
 }
