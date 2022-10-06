@@ -46,10 +46,10 @@ export interface Radio extends FormControlBase {
 
 export interface Submit extends FormControlBase {
 	type: 'submit';
-	callBack: () => void;
+	callBack?: () => void;
 }
 
 export interface Button extends FormControlBase {
 	type: 'button';
-	callBack: () => void;
+	callBack?: () => void;
 }

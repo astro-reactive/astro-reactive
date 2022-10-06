@@ -6,7 +6,7 @@ const form = new FormGroup([
   {
     name: "username",
     label: "Username",
-    placeholder: "astroIscool"
+    placeholder: "astroIscool",
   },
   {
     name: "password",
@@ -24,14 +24,6 @@ form.controls.push(
     name: "is-awesome",
     label: "is Awesome?",
     labelPosition: "right",
-  })
-);
-
-//insert submit button
-form.controls.push(
-  new FormControl({
-    type: "submit",
-    name: "submit",
   })
 );
 
@@ -54,7 +46,13 @@ form.get("is-awesome")?.setValue("checked");
   </head>
   <body>
     <h1>Astro Reactive Form</h1>
-    <Form formGroups={[form]} />
+    <Form
+      submitControl={{
+        type: "submit",
+        name: "what",
+      }}
+      formGroups={[form]}
+    />
   </body>
 </html>
 
