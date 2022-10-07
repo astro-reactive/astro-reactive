@@ -55,6 +55,10 @@ export class FormControl {
 		return this._isPristine;
 	}
 
+	set isPristine(value: boolean) {
+		this._isPristine = value;
+	}
+
 	get isValid() {
 		return this._isValid;
 	}
