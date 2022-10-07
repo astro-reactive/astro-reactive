@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import { describe, beforeEach, it } from 'mocha';
 import { getComponentOutput } from 'astro-component-tester';
 
 describe('Form.astro test', () => {
@@ -44,12 +45,14 @@ describe('Form.astro test', () => {
 			const expectedCount = 3;
 			const element = /<fieldset>/g;
 			const fakeFormGroup = {
-				controls: [{
-					type: 'checkbox',
-					name: 'fake-checkbox',
-					label: 'FAKE CHECKBOX'
-				}]
-			}
+				controls: [
+					{
+						type: 'checkbox',
+						name: 'fake-checkbox',
+						label: 'FAKE CHECKBOX',
+					},
+				],
+			};
 			const props = { formGroups: Array(expectedCount).fill(fakeFormGroup) };
 			component = await getComponentOutput('./Form.astro', props);
 
@@ -59,7 +62,7 @@ describe('Form.astro test', () => {
 
 			// assert
 			expect(matches.length).to.equal(expectedCount);
-		})
+		});
 	});
 });
 
