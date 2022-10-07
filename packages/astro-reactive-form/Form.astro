@@ -6,12 +6,15 @@ import FieldSet from './components/FieldSet.astro';
 export interface Props {
 	submitControl?: Submit;
 	formGroups: FormGroup[];
+	theme?: "light" | "dark";
 }
 
-const { submitControl, formGroups } = Astro.props;
+const { submitControl, formGroups, theme } = Astro.props;
+
+const formTheme = theme ?? "light";
 ---
 
-<form class="light">
+<form class={formTheme}>
 	{formGroups?.map((group) => <FieldSet group={group} />)}
 	{submitControl && <Field control={new FormControl(submitControl)} />}
 </form>
