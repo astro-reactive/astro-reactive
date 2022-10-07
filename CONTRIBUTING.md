@@ -60,10 +60,20 @@ npm i
 npm start
 ```
 
-5. Open the demo application on you browser. Browse to the address:
+5. Open the demo application on you browser. Browse to the address
 
 ```
 https://localhost:3000
+```
+
+
+# The Documentation website
+
+
+Want to update the documentation? We also maintain the documentation website in this repository. The source for this is found in the `docs` directory. You can also start the dev server for the docs website with the following command:
+
+```
+npm run docs
 ```
 
 # Running the linter and tests
