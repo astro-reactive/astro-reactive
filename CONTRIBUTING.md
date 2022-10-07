@@ -98,4 +98,4 @@ Thank you again for your interest in contributing!
 
 💬 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
 
-🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for bugs found or improvement ideas
+🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for bugs found or improvement ideas
