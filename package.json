@@ -30,6 +30,7 @@
   "workspaces": [
     "demo",
     "packages/astro-reactive-form",
-    "packages/astro-reactive-validator"
+    "packages/astro-reactive-validator",
+    "docs"
   ]
 }
