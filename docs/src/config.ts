@@ -1,6 +1,6 @@
 export const SITE = {
-	title: 'Documentation',
-	description: 'Your website description.',
+	title: 'Astro Reactive Library Docs',
+	description: 'Documentation for the Astro Reactive Library',
 	defaultLanguage: 'en_US',
 };
 
