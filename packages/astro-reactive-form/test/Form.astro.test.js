@@ -63,6 +63,30 @@ describe('Form.astro test', () => {
 			// assert
 			expect(matches.length).to.equal(expectedCount);
 		});
+
+		it('Should not render a fieldset for a single form group', async () => {
+			// arrange
+			const expectedCount = 0;
+			const element = /<fieldset>/g;
+			const fakeFormGroup = {
+				controls: [
+					{
+						type: 'checkbox',
+						name: 'fake-checkbox',
+						label: 'FAKE CHECKBOX',
+					},
+				],
+			};
+			const props = { formGroups: fakeFormGroup };
+			component = await getComponentOutput('./Form.astro', props);
+
+			// act
+			const actualResult = cleanString(component.html);
+			const matches = actualResult.match(element) || [];
+
+			// assert
+			expect(matches.length).to.equal(expectedCount);
+		});
 	});
 });
 
