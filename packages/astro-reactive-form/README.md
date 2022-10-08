@@ -62,8 +62,11 @@ userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
 
-<!-- the formGroups attribute can take a single FormGroup
-or an array of FormGroup for multiple fieldsets-->
+<!-- 
+  the `formGroups` attribute can take a single FormGroup
+  or an array of FormGroup for multiple fieldsets;
+  we do a single for now in this example
+-->
 <Form
   formGroups={form}
   submitControl={{
