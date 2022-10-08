@@ -1,3 +1,6 @@
+## v0.2.6
+- support single FormGroup as input to the Form component
+
 ## v0.2.4 to v0.2.5
 - update package README
 - update dependencies
