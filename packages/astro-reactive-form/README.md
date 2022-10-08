@@ -62,16 +62,21 @@ userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
 
-<!-- the formGroups attribute takes an array of FormGroup-->
-<Form formGroups={[form]} />
-
+<!-- the formGroups attribute can take a single FormGroup
+or an array of FormGroup for multiple fieldsets-->
+<Form
+  formGroups={form}
+  submitControl={{
+    type: "submit",
+    name: "submit",
+  }}
+/>
 ```
 
 # Screenshots
-
 Result of example above:
 
-<img width="535" alt="Screen Shot 2022-10-01 at 7 29 00 PM" src="https://user-images.githubusercontent.com/4262489/193421174-5c604aca-7d16-4cd6-a7b1-f5b8752c838e.png">
+![Screen Shot 2022-10-08 at 10 38 04 PM](https://user-images.githubusercontent.com/4262489/194726969-bdddefdf-d582-4201-a40e-3798383f03a0.png)
 
 Example of multiple form groups:
 
@@ -92,7 +97,6 @@ Currently this only supports very basic form creation, but the goal of the proje
 1. FormControl class
    1. `statusChanges` - observable that emits the control status when it changes
    1. `valueChanges` - observable that emits the control value when it changes
-   1. `value` - property that reflects the control value
 1. Documentation website
 
 ... and so much more
