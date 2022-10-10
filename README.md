@@ -16,6 +16,8 @@ Let your data build your UI. Blazing-fast, reactive user interfaces with native 
 # HACKTOBERFEST 2022
 
 [Hacktoberfest](https://hacktoberfest.com) has begun! 🚀
+![image](https://user-images.githubusercontent.com/72185497/194802308-9e900ca0-5219-4d64-9c73-3685dfa80f10.png)
+
 
 Any contribution is welcome. See our [contributing guide](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md), and feel free to look around to find something that interests you. :)
 
