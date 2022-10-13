@@ -1,4 +1,6 @@
-![package-form-cover](https://user-images.githubusercontent.com/4262489/193812095-1cffa287-e2ac-4671-b604-1e2ff2e6f19e.png)
+<p text-align="center">
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/chore-update-project-logo/.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
+<p>
 
 [![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![license](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
