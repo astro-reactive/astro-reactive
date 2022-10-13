@@ -1,19 +1,12 @@
-<p text-align="center">
-  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/chore-update-project-logo/.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
-<p>
+<p align="center">
+  <img src="./.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Form</strong> Generate a dynamic form based on your data, and modify programatically.
+</p>
 
 [![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![license](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![downloads](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 [![dependencies](https://img.shields.io/librariesio/release/npm/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-
-# Astro Reactive Form 🔥
-
-Generate a dynamic form based on your data, and modify programatically.
-
-The Reactive Form component for [Astro](https://astro.build) 🔥
-
-_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-library/issues)_
 
 ## Installation
 In your Astro project:

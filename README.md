@@ -1,13 +1,16 @@
-<p text-align="center">
-  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/chore-update-project-logo/.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
+<p align="center">
+  <img src="./.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
+  Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
+  <br />
+  <br />
+  <a href="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml">
+    <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
+  </a>
+  <a href="https://github.com/ayoayco/astro-reactive-library">
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
+  </a>
+  <br />
 <p>
-
-[![Build and Test](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
-
-# Components and utilities for building reactive user interfaces 🔥
-
-Let your data build your UI. Blazing-fast, reactive user interfaces with native [Astro](https://astro.build) components and architecture.
 
 | Packages | Version | Docs | Description |
 | --- | --- | --- | --- |
