@@ -17,7 +17,7 @@ The [issues page](https://github.com/ayoayco/astro-reactive-library/issues) cont
 
 If you don't find anything there, I'm happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ramon.aycojr+hack@gmail.com)](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
 
 # The Astro Reactive Library
 
