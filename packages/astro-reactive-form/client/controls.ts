@@ -1,10 +1,9 @@
 import { FormControl, FormGroup } from '../core';
-import type { FormControlType } from '../core/form-control-types';
+import type { ControlType } from '../core/form-control-types';
 
 export const getFormGroup = (formName: string) => {
 	const fieldSetEl = (document.getElementById(formName) as HTMLFieldSetElement) || null;
 	if (fieldSetEl === null) {
-		console.error(`Formgroup with name: '${formName}' doesn't exist!`);
 		return undefined;
 	}
 
@@ -22,14 +21,13 @@ export const getFormGroup = (formName: string) => {
 const getFormControl = (name: string) => {
 	const inputEl = document.getElementById(name) as HTMLInputElement | null;
 	if (inputEl === null) {
-		console.error(`Input with name: ${name} doesn't exist!`);
 		return undefined;
 	}
 
 	const formControl = new FormControl({
 		name: inputEl.name,
 		value: inputEl.value,
-		type: inputEl.type as FormControlType,
+		type: inputEl.type as ControlType,
 		label: inputEl.dataset.label as string,
 		labelPosition: inputEl.dataset.labelPosition as 'right' | 'left',
 	});
@@ -46,8 +44,6 @@ const getFormControl = (name: string) => {
 
 	const controlProxy = new Proxy(formControl, {
 		set() {
-			//prevent any setter to be able to work in client;
-			console.error('Setting this property manually is prohibited!');
 			return true;
 		},
 	});

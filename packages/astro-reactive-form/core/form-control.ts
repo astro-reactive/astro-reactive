@@ -1,15 +1,8 @@
-import type {
-	FormControlType,
-	Button,
-	Checkbox,
-	FormControlBase,
-	Radio,
-	Submit,
-} from './form-control-types';
+import type { ControlConfig, ControlType } from './form-control-types';
 
 export class FormControl {
 	private _name = '';
-	private _type: FormControlType = 'text';
+	private _type: ControlType = 'text';
 	private _value?: string | number | null | string[];
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
@@ -17,7 +10,7 @@ export class FormControl {
 	private _isPristine = true;
 	private _placeholder?;
 
-	constructor(config: FormControlBase | Checkbox | Radio | Submit | Button) {
+	constructor(config: ControlConfig) {
 		const { name, type, value, label, labelPosition, placeholder } = config;
 		this._name = name;
 		this._type = type || 'text';

@@ -1,5 +1,9 @@
 ---
-import { FormControl, FormGroup } from "astro-reactive-form/core";
+import {
+  ControlConfig,
+  FormControl,
+  FormGroup,
+} from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
 
 const form = new FormGroup([
@@ -17,15 +21,15 @@ const form = new FormGroup([
 
 form.name = "Simple Form";
 
+const config: ControlConfig = {
+  type: "checkbox",
+  name: "is-awesome",
+  label: "is Awesome?",
+  labelPosition: "right",
+};
+
 // insert a control
-form.controls.push(
-  new FormControl({
-    type: "checkbox",
-    name: "is-awesome",
-    label: "is Awesome?",
-    labelPosition: "right",
-  })
-);
+form.controls.push(new FormControl(config));
 
 // get the FormControl object
 const userNameControl = form.get("username");
