@@ -1,15 +1,17 @@
 <p align="center">
-  <img src="./.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Library</strong>
+  <br />
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
-</p>
-
-<p align="center">
+  <br />
+  <br />
   <a href="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml">
     <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
   <a href="https://github.com/ayoayco/astro-reactive-library">
     <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
   </a>
+  <br />
 <p>
 
 | Packages | Version | Docs | Description |

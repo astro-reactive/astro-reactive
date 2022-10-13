@@ -1,6 +1,9 @@
 <p align="center">
-  <img src="./.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
-  <strong>Astro Reactive Form</strong> Generate a dynamic form based on your data, and modify programatically.
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Form</strong>
+  <br />
+  Generate a dynamic form based on your data, and modify programatically.
+  <br />
 </p>
 
 [![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
@@ -9,7 +12,7 @@
 [![dependencies](https://img.shields.io/librariesio/release/npm/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 
 ## Installation
-In your Astro project:
+In your [Astro](https://astro.build) project:
 
 ```
 npm i astro-reactive-form
