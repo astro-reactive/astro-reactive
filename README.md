@@ -1,8 +1,8 @@
 <p align="center">
   <img src="./.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
-  <br />
-  <br />
+</p>
+<p align="center">
   <a href="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml">
     <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
