@@ -1,3 +1,6 @@
+## v0.2.7
+- updated project logo
+
 ## v0.2.6
 - support single `FormGroup` as input to the `Form` component
 - implement `Form` component input prop `theme`
