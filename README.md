@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./.github/assets/logo/astro-reactive-library-logo.svg" alt="Astro Reactive Library Logo">
+  <img src="./.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
 </p>
 
