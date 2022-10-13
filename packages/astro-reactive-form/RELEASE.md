@@ -1,3 +1,6 @@
+# v0.3.0
+- new control configuration type `ControlConfig`
+
 ## v0.2.7
 - updated project logo
 
