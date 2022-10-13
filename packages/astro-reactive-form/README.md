@@ -4,12 +4,14 @@
   <br />
   Generate a dynamic form based on your data, and modify programatically.
   <br />
+  <br />
+  <img src="https://img.shields.io/npm/v/astro-reactive-form" />
+  <img src="https://img.shields.io/npm/l/astro-reactive-form" />
+  <img src="https://img.shields.io/npm/dt/astro-reactive-form" />
+  <img src="https://img.shields.io/librariesio/release/npm/astro-reactive-form" />
+  <br />
+  <br />
 </p>
-
-[![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![license](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![downloads](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![dependencies](https://img.shields.io/librariesio/release/npm/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
 
 ## Installation
 In your [Astro](https://astro.build) project:
