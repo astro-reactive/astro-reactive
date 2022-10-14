@@ -3,11 +3,7 @@
   "description": "Demo App for Astro Reactive Library",
   "type": "module",
   "version": "0.0.1",
-  "author": {
-    "name": "Ayo Ayco",
-    "email": "ayo@ayco.io",
-    "url": "https://ayco.io"
-  },
+  "author": "Ayo Ayco <ayo@ayco.io> (https://ayco.io)",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -30,5 +26,6 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "devDependencies": {}
 }

@@ -14,14 +14,14 @@
     ".": "./index.ts"
   },
   "scripts": {
-    "start": "npm run dev -w demo",
+    "start": "npm run dev -w apps/demo",
+    "dev": "npm run dev -w apps/demo",
+    "docs": "npm run dev -w apps/docs",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
-    "dev": "npm run dev -w demo",
-    "docs": "npm run dev -w docs",
     "bump:patch": "npm version patch -w",
     "bump:minor": "npm version minor -w",
     "bump:major": "npm version major -w",
@@ -29,10 +29,10 @@
   },
   "license": "ISC",
   "workspaces": [
-    "demo",
     "packages/astro-reactive-form",
     "packages/astro-reactive-validator",
-    "docs",
-    "packages/validator"
+    "packages/validator",
+    "apps/demo",
+    "apps/docs"
   ]
 }

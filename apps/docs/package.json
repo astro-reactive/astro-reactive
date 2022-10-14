@@ -36,5 +36,6 @@
   "bugs": {
     "url": "https://github.com/Rishav-12/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/Rishav-12/astro-reactive-library#readme"
+  "homepage": "https://github.com/Rishav-12/astro-reactive-library#readme",
+  "devDependencies": {}
 }
