@@ -6,6 +6,23 @@ export interface Props {
 }
 
 const { control } = Astro.props;
+
+const { validators = [] } = control;
+
+const validatorAttirbutes: Record<string, string> = validators?.reduce(
+	(prev, validator) => {
+		const split: string[] = validator.split(':');
+		const label: string = `data-label-${split[0]}`;
+		const value: string = split.length > 1 ? split[1] ?? 'invalid' : 'true';
+
+		return {
+			...prev,
+			[label]: value,
+		};
+	},
+
+	{}
+);
 ---
 
 <div>
@@ -24,6 +41,7 @@ const { control } = Astro.props;
 		placeholder={control.placeholder}
 		data-label={control.label}
 		data-label-position={control.labelPosition}
+		{...validatorAttirbutes}
 	/>
 
 	{

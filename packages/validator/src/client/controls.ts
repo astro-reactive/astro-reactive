@@ -1,5 +1,5 @@
-import { FormControl, FormGroup } from '../core';
-import type { ControlType } from '../core/form-control-types';
+import { FormControl, FormGroup } from '../../../form/core';
+import type { ControlType } from '../../../form/core/form-control-types';
 
 export const getFormGroup = (formName: string) => {
 	const fieldSetEl = (document.getElementById(formName) as HTMLFieldSetElement) || null;

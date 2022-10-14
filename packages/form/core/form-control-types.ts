@@ -34,6 +34,7 @@ export interface ControlBase {
 	label?: string;
 	labelPosition?: 'right' | 'left';
 	placeholder?: string;
+	validators?: string[]; // TODO: implement validator type
 }
 
 export interface Checkbox extends ControlBase {

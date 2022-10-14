@@ -14,7 +14,7 @@
     ".": "./index.ts"
   },
   "files": [
-    "Validator.astro",
+    "src/",
     "index.ts"
   ],
   "keywords": [

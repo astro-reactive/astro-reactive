@@ -1,4 +1,4 @@
 {
   "extends": "astro/tsconfigs/strictest",
-  "exclude": ["index.ts"]
+  "include": ["index.ts", "src/"]
 }

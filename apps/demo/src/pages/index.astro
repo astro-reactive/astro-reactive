@@ -5,18 +5,20 @@ import {
   FormGroup,
 } from "@astro-reactive/form/core";
 import Form from "@astro-reactive/form";
-import Validator from "@astro-reactive/validator";
+import Validator, { Validators } from "@astro-reactive/validator";
 
 const form = new FormGroup([
   {
     name: "username",
     label: "Username",
     placeholder: "astroIscool",
+    validators: [Validators.required()],
   },
   {
     name: "password",
     label: "Password",
     type: "password",
+    validators: [Validators.required(), Validators.minLength(8)],
   },
 ]);
 
@@ -50,29 +52,7 @@ form.get("is-awesome")?.setValue("checked");
   </head>
   <body>
     <h1>Astro Reactive Form</h1>
-    <Form
-      submitControl={{
-        type: "submit",
-        name: "what",
-      }}
-      formGroups={form}
-    />
-    <script>
-      import { getFormGroup } from "@astro-reactive/form/client";
-
-      const form = document.querySelector("form") as HTMLFormElement;
-      const simpleForm = getFormGroup("Simple Form");
-
-      form.addEventListener("submit", () => {
-        const username = simpleForm?.get("username")?.value;
-        const isAwesome = simpleForm?.get("is-awesome")?.value;
-        alert(
-          `Hi, My username is ${username}. This Library is ${
-            isAwesome === "checked" ? "awesome" : "not awesome"
-          }`
-        );
-      });
-    </script>
-    <Validator />
+    <Form formGroups={form} />
+    <Validator hook="onControlBlur" />
   </body>
 </html>

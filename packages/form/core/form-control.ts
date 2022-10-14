@@ -8,16 +8,18 @@ export class FormControl {
 	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;
 	private _isPristine = true;
-	private _placeholder?;
+	private _placeholder?: string;
+	private _validators?: string[];
 
 	constructor(config: ControlConfig) {
-		const { name, type, value, label, labelPosition, placeholder } = config;
+		const { name, type, value, label, labelPosition, placeholder, validators } = config;
 		this._name = name;
-		this._type = type || 'text';
-		this._value = value || null;
-		this._label = label || '';
-		this._labelPosition = labelPosition || 'left';
-		this._placeholder = placeholder || '';
+		this._type = type ?? 'text';
+		this._value = value ?? null;
+		this._label = label ?? '';
+		this._labelPosition = labelPosition ?? 'left';
+		this._placeholder = placeholder ?? '';
+		this._validators = validators ?? [];
 	}
 
 	get name() {
@@ -56,8 +58,13 @@ export class FormControl {
 		return this._isValid;
 	}
 
+	get validators() {
+		return this._validators;
+	}
+
 	setValue(value: string) {
 		this._value = value;
+		this._isPristine = false;
 	}
 
 	setIsPristine(value: boolean) {

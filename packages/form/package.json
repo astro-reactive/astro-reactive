@@ -12,8 +12,7 @@
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./core": "./core/index.ts",
-    "./client": "./client/index.ts"
+    "./core": "./core/index.ts"
   },
   "files": [
     "core/",

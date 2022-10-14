@@ -1,11 +1,11 @@
-import type { ControlBase } from './form-control-types';
+import type { ControlConfig } from './form-control-types';
 import { FormControl } from './form-control';
 
 export class FormGroup {
 	controls: FormControl[];
 	name?: string;
 
-	constructor(controls: ControlBase[], name = '') {
+	constructor(controls: ControlConfig[], name = '') {
 		this.name = name;
 		this.controls = controls
 			.filter((control) => control.type !== 'submit')
