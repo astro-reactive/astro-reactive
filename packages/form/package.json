@@ -1,5 +1,5 @@
 {
-  "name": "astro-reactive-form",
+  "name": "@astro-reactive/form",
   "description": "The Reactive Form component for Astro 🔥",
   "version": "0.3.0",
   "repository": "https://github.com/ayoayco/astro-reactive-library",

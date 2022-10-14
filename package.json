@@ -29,8 +29,7 @@
   },
   "license": "ISC",
   "workspaces": [
-    "packages/astro-reactive-form",
-    "packages/astro-reactive-validator",
+    "packages/form",
     "packages/validator",
     "apps/demo",
     "apps/docs"
