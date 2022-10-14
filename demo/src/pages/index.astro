@@ -5,6 +5,7 @@ import {
   FormGroup,
 } from "astro-reactive-form/core";
 import Form from "astro-reactive-form";
+import Validator from "@astro-reactive/validator";
 
 const form = new FormGroup([
   {
@@ -72,5 +73,6 @@ form.get("is-awesome")?.setValue("checked");
         );
       });
     </script>
+    <Validator />
   </body>
 </html>

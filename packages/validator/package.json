@@ -1,0 +1,57 @@
+{
+  "name": "@astro-reactive/validator",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "keywords": [
+    "astro-component"
+  ],
+  "scripts": {
+    "test": "mocha --parallel --timeout 15000",
+    "format": "prettier -w .",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/eslint": "^8.4.6",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.18",
+    "@types/prettier": "^2.7.0",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "astro": "^1.0.0",
+    "astro-component-tester": "^0.6.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.4",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {
+    "astro": "^1.0.0"
+  },
+  "description": "This is [an unofficial template](#how-is-this-different-from-the-official-component-template) meant to ease the development of components for [Astro](https://astro.build/) that are intended for distribution. It does so by providing you with:",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
+  },
+  "author": "Ayo Ayco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayoayco/astro-reactive-library/issues"
+  },
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+}

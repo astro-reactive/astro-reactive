@@ -32,6 +32,7 @@
     "demo",
     "packages/astro-reactive-form",
     "packages/astro-reactive-validator",
-    "docs"
+    "docs",
+    "packages/validator"
   ]
 }
