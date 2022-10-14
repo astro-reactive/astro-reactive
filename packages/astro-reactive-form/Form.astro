@@ -12,9 +12,10 @@ export interface Props {
 const { submitControl, formGroups: form, theme } = Astro.props;
 
 const formTheme = theme ?? 'light';
+const formName = !Array.isArray(form) ? form?.name : null;
 ---
 
-<form class={formTheme}>
+<form id={formName} class={formTheme}>
 	{
 		Array.isArray(form)
 			? form?.map((group) => <FieldSet group={group} />)
