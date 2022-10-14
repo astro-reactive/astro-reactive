@@ -1,12 +1,20 @@
 {
   "name": "@astro-reactive/validator",
+  "description": "Form validation library for Astro 🔥",
   "version": "0.0.1",
+  "repository": "https://github.com/ayoayco/astro-reactive-library",
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "author": {
+    "name": "Ayo Ayco",
+    "email": "ayo@ayco.io",
+    "url": "https://ayco.io"
+  },
   "type": "module",
   "exports": {
     ".": "./index.ts"
   },
   "files": [
-    "src",
+    "Validator.astro",
     "index.ts"
   ],
   "keywords": [
@@ -20,7 +28,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.3",
     "@types/eslint": "^8.4.6",
-    "@types/mocha": "^9.1.1",
+    "@types/mocha": "^10.0.0",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
@@ -39,19 +47,12 @@
   "peerDependencies": {
     "astro": "^1.0.0"
   },
-  "description": "This is [an unofficial template](#how-is-this-different-from-the-official-component-template) meant to ease the development of components for [Astro](https://astro.build/) that are intended for distribution. It does so by providing you with:",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
-  },
-  "author": "Ayo Ayco",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
-  },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  }
 }
