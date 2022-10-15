@@ -13,7 +13,7 @@ export interface Props {
 const { submitControl, formGroups: form, theme, showValidationHints = false } = Astro.props;
 
 const formTheme = theme ?? 'light';
-const formName = Array.isArray(form) ? null : form.name;
+const formName = Array.isArray(form) ? null : form?.name || null;
 ---
 
 <form class={formTheme} name={formName} id={formName}>
