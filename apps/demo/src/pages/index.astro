@@ -5,7 +5,7 @@ import {
   FormGroup,
 } from "@astro-reactive/form/core";
 import Form from "@astro-reactive/form";
-import Validator, { Validators } from "@astro-reactive/validator";
+import { Validators } from "@astro-reactive/validator";
 
 const form = new FormGroup([
   {
@@ -53,6 +53,5 @@ form.get("is-awesome")?.setValue("checked");
   <body>
     <h1>Astro Reactive Form</h1>
     <Form showValidationHints={true} formGroups={form} />
-    <Validator hook={"onControlBlur"} displayErrorMessages={true} />
   </body>
 </html>
