@@ -17,7 +17,7 @@
 In your [Astro](https://astro.build) project:
 
 ```
-npm i @astro-reactive/validator astro-reactive-form
+npm i @astro-reactive/validator @astro-reactive/form
 ```
 
 ## Usage
@@ -25,8 +25,8 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "astro-reactive-form/core";
-import Form from "astro-reactive-form";
+import { FormControl, FormGroup } from "@astro-reactive/form/core";
+import Form from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 
 const form = new FormGroup([

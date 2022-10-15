@@ -6,10 +6,10 @@ layout: ../../layouts/MainLayout.astro
 
 ![package-form-cover](https://user-images.githubusercontent.com/4262489/193812095-1cffa287-e2ac-4671-b604-1e2ff2e6f19e.png)
 
-[![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![license](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![downloads](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![dependencies](https://img.shields.io/librariesio/release/npm/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
+[![version](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form)
+[![license](https://img.shields.io/npm/l/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form)
+[![downloads](https://img.shields.io/npm/dt/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form)
+[![dependencies](https://img.shields.io/librariesio/release/npm/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form)
 
 # Astro Reactive Form 🔥
 
@@ -23,7 +23,7 @@ _[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-libr
 In your Astro project:
 
 ```
-npm i astro-reactive-form
+npm i @astro-reactive/form
 ```
 
 ## Usage
@@ -31,8 +31,8 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "astro-reactive-form/core";
-import Form from "astro-reactive-form";
+import { FormControl, FormGroup } from "@astro-reactive/form/core";
+import Form from "@astro-reactive/form";
 
 // create a form group
 const form = new FormGroup([

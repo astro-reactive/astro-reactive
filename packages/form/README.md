@@ -5,10 +5,10 @@
   Generate a dynamic form based on your data, and modify programatically.
   <br />
   <br />
-  <img src="https://img.shields.io/npm/v/astro-reactive-form" />
-  <img src="https://img.shields.io/npm/l/astro-reactive-form" />
-  <img src="https://img.shields.io/npm/dt/astro-reactive-form" />
-  <img src="https://img.shields.io/librariesio/release/npm/astro-reactive-form" />
+  <img src="https://img.shields.io/npm/v/@astro-reactive/form" />
+  <img src="https://img.shields.io/npm/l/@astro-reactive/form" />
+  <img src="https://img.shields.io/npm/dt/@astro-reactive/form" />
+  <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/form" />
   <br />
   <br />
 </p>
@@ -17,7 +17,7 @@
 In your [Astro](https://astro.build) project:
 
 ```
-npm i astro-reactive-form
+npm i @astro-reactive/form
 ```
 
 ## Usage
@@ -25,8 +25,8 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "astro-reactive-form/core";
-import Form from "astro-reactive-form";
+import { FormControl, FormGroup } from "@astro-reactive/form/core";
+import Form from "@astro-reactive/form";
 
 // create a form group
 const form = new FormGroup([
