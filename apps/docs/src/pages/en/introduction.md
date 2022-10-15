@@ -16,7 +16,7 @@ Let your data build your UI. Blazing-fast, reactive user interfaces with native 
 | Packages | Version | Docs | Description |
 | --- | --- | --- | --- |
 | [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | 🛠 | generate a dynamic form which can be modified programatically |
-| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set of utilities for validating inputs |
+| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set up validators for your form easily |
 | astro-reactive-datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
 
 # Running locally

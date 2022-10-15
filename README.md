@@ -17,9 +17,9 @@
 
 | Packages | Version | Docs | Description |
 | --- | --- | --- | --- |
-| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/RELEASE.md) | 🛠 | generate a dynamic form which can be modified programatically |
-| @astro-reactive/validator | ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set up validators for your form easily  |
-| @astro-reactive/datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
+| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | 🛠 | generate a dynamic form which can be modified programatically |
+| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set up validators for your form easily |
+| astro-reactive-datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
 
 # HACKTOBERFEST 2022
 

@@ -87,7 +87,7 @@ Example of multiple form groups:
 
 # Validation
 
-We have released a [package for validation](https://www.npmjs.com/package/@astro-reactive/validator).
+See our [package for setting up validators](https://www.npmjs.com/package/@astro-reactive/validator).
 
 # Future Plans
 
