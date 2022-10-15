@@ -11,8 +11,12 @@ const form = new FormGroup([
   {
     name: "username",
     label: "Username",
-    placeholder: "",
     validators: [Validators.required],
+  },
+  {
+    name: "email",
+    label: "Email",
+    validators: [Validators.email, Validators.required],
   },
   {
     name: "password",

@@ -44,7 +44,7 @@ export class Validators {
 		return label;
 	}
 
-	static pattern(pattern: string | RegExp): string {
-		return `validator-pattern:${pattern}`;
-	}
+	// static pattern(pattern: string | RegExp): string {
+	// 	return `validator-pattern:${pattern}`;
+	// }
 }
