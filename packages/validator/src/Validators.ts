@@ -1,10 +1,19 @@
+// improvement: implement min&max inclusive/exclusive
 export class Validators {
-	static min(min: number): string {
-		return `validator-min:${min}`;
+	static min(min?: number): string {
+		const label = 'validator-min';
+		if (min !== undefined) {
+			return `${label}:${min}`;
+		}
+		return label;
 	}
 
-	static max(max: number): string {
-		return `validator-max:${max}`;
+	static max(max?: number): string {
+		const label = 'validator-max';
+		if (max !== undefined) {
+			return `${label}:${max}`;
+		}
+		return label;
 	}
 
 	static get required(): string {

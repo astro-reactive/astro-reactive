@@ -28,7 +28,7 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 );
 ---
 
-<div class="field">
+<div class="field" data-validator-hints={showValidationHints.toString()}>
 	{
 		control.label && control.labelPosition === 'left' && (
 			<label for={control.name}>
@@ -61,10 +61,8 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 </div>
 
 <style>
-	/**
-		TODO: this should depend on showValidationHints
-	*/
-	[data-validator-haserrors='true'] {
+	[data-validator-hints='true'][data-validator-haserrors='true'],
+	[data-validator-hints='true'] [data-validator-haserrors='true'] {
 		color: red;
 		border-color: red;
 	}
