@@ -10,13 +10,13 @@ const { control, showValidationHints } = Astro.props;
 
 const { validators = [] } = control;
 
-const isRequired = showValidationHints && validators.includes('data-label-validator-required');
+const isRequired = showValidationHints && validators.includes('validator-required');
 
 const validatorAttirbutes: Record<string, string> = validators?.reduce(
 	(prev, validator) => {
 		const split: string[] = validator.split(':');
-		const label: string = `data-label-${split[0]}`;
-		const value: string = split.length > 1 ? split[1] ?? 'invalid' : 'true';
+		const label: string = `data-${split[0]}` || 'invalid';
+		const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
 
 		return {
 			...prev,
@@ -64,7 +64,7 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 	/**
 		TODO: this should depend on showValidationHints
 	*/
-	[data-label-haserrors='true'] {
+	[data-validator-haserrors='true'] {
 		color: red;
 		border-color: red;
 	}

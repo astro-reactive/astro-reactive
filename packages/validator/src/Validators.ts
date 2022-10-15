@@ -19,12 +19,17 @@ export class Validators {
 		return `validator-email`;
 	}
 
-	static minLength(minLength: number): string {
-		return `validator-minlength:${minLength}`;
+	static minLength(minLength?: number): string {
+		const label = 'validator-minlength';
+		if (minLength) {
+			return `${label}:${minLength}`;
+		}
+		return label;
 	}
 
 	static maxLength(maxLength: number): string {
-		return `validator-maxlength:${maxLength}`;
+		const label = 'validator-maxlength';
+		return `${label}:${maxLength}`;
 	}
 
 	static pattern(pattern: string | RegExp): string {
