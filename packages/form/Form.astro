@@ -1,0 +1,52 @@
+---
+import { Submit, FormGroup, FormControl } from './core';
+import Field from './components/Field.astro';
+import FieldSet from './components/FieldSet.astro';
+
+export interface Props {
+	formGroups: FormGroup | FormGroup[];
+	submitControl?: Submit;
+	theme?: 'light' | 'dark';
+	showValidationHints?: boolean;
+}
+
+const { submitControl, formGroups: form, theme, showValidationHints = false } = Astro.props;
+
+const formTheme = theme ?? 'light';
+const formName = Array.isArray(form) ? null : form?.name || null;
+---
+
+<form class={formTheme} name={formName} id={formName}>
+	{
+		Array.isArray(form)
+			? form?.map((group) => <FieldSet showValidationHints={showValidationHints} group={group} />)
+			: form?.controls.map((control) => (
+					<Field showValidationHints={showValidationHints} control={control} />
+			  ))
+	}
+	{
+		submitControl && (
+			<Field showValidationHints={showValidationHints} control={new FormControl(submitControl)} />
+		)
+	}
+</form>
+
+<style>
+	.light {
+		/**
+		* run dev server with: "npm start",
+		* then open browser to "localhost:3000"
+		* add a class="light" to the <form> element above to test changes
+		* INSERT STYLES FOR LIGHT MODE BELOW: */
+	}
+
+	.dark {
+		/**
+		* run dev server with: "npm start",
+		* then open browser to "localhost:3000"
+		* add a class="dark" to the <form> element above to test changes
+		* INSERT STYLES FOR DARK MODE BELOW: */
+		background-color: #333;
+		color: white;
+	}
+</style>

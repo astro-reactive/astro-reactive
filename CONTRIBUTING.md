@@ -28,7 +28,7 @@ Currently, it is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using
 Packages:
 1. [demo](https://github.com/ayoayco/astro-reactive-library/tree/main/demo#readme) - found in the directory `demo`
     - the demo Astro app that we use to test and demonstrate the library features
-2. [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-form#readme) - found in the directory `packages/astro-reactive-form`
+2. [form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/form#readme) - found in the directory `packages/form`
     - allows developers to programatically build a Form for Astro
 3. [astro-reactive-validator](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-validator) - found in the directory `packages/astro-reactive-validator`
 
@@ -98,7 +98,7 @@ npm run lint:fix
 
 As mentioned above, this project involves packages that are intened to be used in Astro applications. The demo app is our way to test and play with the packages.
 
-If you plan to add features or fix bugs that are found in the packages, such as `astro-reactive-form`, you can find the source code for this inside the `packages` directory.
+If you plan to add features or fix bugs that are found in the packages, such as `@astro-reactive/form`, you can find the source code for this inside the `packages` directory.
 
 Thank you again for your interest in contributing!
 

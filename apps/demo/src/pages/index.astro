@@ -1,0 +1,60 @@
+---
+import Form, {
+  ControlConfig,
+  FormGroup,
+  FormControl,
+} from "@astro-reactive/form";
+import { Validators } from "@astro-reactive/validator";
+
+const form = new FormGroup([
+  {
+    name: "username",
+    label: "Username",
+    validators: [Validators.required],
+  },
+  {
+    name: "email",
+    label: "Email",
+    validators: [Validators.email, Validators.required],
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+    validators: [Validators.required, Validators.minLength(8)],
+  },
+]);
+
+form.name = "Simple Form";
+
+const config: ControlConfig = {
+  type: "checkbox",
+  name: "is-awesome",
+  label: "is Awesome?",
+  labelPosition: "right",
+};
+
+// insert a control
+form.controls.push(new FormControl(config));
+
+// get the FormControl object
+const userNameControl = form.get("username");
+
+// set values dynamically
+userNameControl?.setValue("RAMOOOON");
+form.get("is-awesome")?.setValue("checked");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro Reactive Form</h1>
+    <Form showValidationHints={true} formGroups={form} />
+  </body>
+</html>
