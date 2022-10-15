@@ -30,15 +30,18 @@ export class Validators {
 
 	static minLength(minLength?: number): string {
 		const label = 'validator-minlength';
-		if (minLength) {
+		if (minLength !== undefined) {
 			return `${label}:${minLength}`;
 		}
 		return label;
 	}
 
-	static maxLength(maxLength: number): string {
+	static maxLength(maxLength?: number): string {
 		const label = 'validator-maxlength';
-		return `${label}:${maxLength}`;
+		if (maxLength !== undefined) {
+			return `${label}:${maxLength}`;
+		}
+		return label;
 	}
 
 	static pattern(pattern: string | RegExp): string {

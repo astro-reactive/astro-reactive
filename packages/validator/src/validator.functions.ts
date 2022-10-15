@@ -1,4 +1,4 @@
-import type { ValidationError } from './validator.types';
+import type { ValidationResult } from './validator.types';
 import { Validators } from './validators';
 
 export function validate(event: FocusEvent) {
@@ -10,9 +10,9 @@ export function validate(event: FocusEvent) {
 	);
 	const value = element.value;
 
-	const validityArray: any[] = validatorAttirbutes
+	const validityArray: ValidationResult[] = validatorAttirbutes
 		.map((validator) => validator.replace('data-', ''))
-		.map((validator) => {
+		.map((validator): ValidationResult => {
 			// insert logic for each validator
 			// TODO: implement a map of functions,validator
 
@@ -34,9 +34,18 @@ export function validate(event: FocusEvent) {
 				return validateRequiredChecked(value);
 			}
 
+			if (validator === Validators.email) {
+				return validateEmail(value);
+			}
+
 			if (validator === Validators.minLength()) {
 				const limit = parseInt(element.getAttribute('data-validator-minlength') || '0', 10);
 				return validateMinLength(value, limit);
+			}
+
+			if (validator === Validators.maxLength()) {
+				const limit = parseInt(element.getAttribute('data-validator-maxlength') || '0', 10);
+				return validateMaxLength(value, limit);
 			}
 
 			return true;
@@ -57,19 +66,8 @@ export function clearErrors(event: Event) {
 	element.parentElement?.setAttribute('data-validator-haserrors', 'false');
 	element.setAttribute('data-validator-haserrors', 'false');
 }
-function validateMinLength(value: string, limit: number): true | ValidationError {
-	const isValid = value.length >= limit;
 
-	if (!isValid) {
-		return {
-			error: 'minLength',
-			limit: limit,
-		};
-	}
-	return true;
-}
-
-function validateMin(value: string, limit: number): true | ValidationError {
+function validateMin(value: string, limit: number): ValidationResult {
 	const isValid = parseInt(value, 10) >= limit;
 
 	if (!isValid) {
@@ -81,7 +79,7 @@ function validateMin(value: string, limit: number): true | ValidationError {
 	return true;
 }
 
-function validateMax(value: string, limit: number): true | ValidationError {
+function validateMax(value: string, limit: number): ValidationResult {
 	const isValid = parseInt(value, 10) <= limit;
 
 	if (!isValid) {
@@ -93,7 +91,7 @@ function validateMax(value: string, limit: number): true | ValidationError {
 	return true;
 }
 
-function validateRequired(value: string): true | ValidationError {
+function validateRequired(value: string): ValidationResult {
 	const isValid = !!value;
 	if (!isValid) {
 		return {
@@ -103,11 +101,51 @@ function validateRequired(value: string): true | ValidationError {
 	return true;
 }
 
-function validateRequiredChecked(value: string): true | ValidationError {
+function validateRequiredChecked(value: string): ValidationResult {
 	const isValid = value === 'checked';
 	if (!isValid) {
 		return {
 			error: 'requiredChecked',
+		};
+	}
+	return true;
+}
+
+// TODO: review regexp vulnerability
+function validateEmail(value: string): ValidationResult {
+	const isValid = String(value)
+		.toLowerCase()
+		.match(
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		);
+
+	if (!isValid) {
+		return {
+			error: 'email',
+		};
+	}
+	return true;
+}
+
+function validateMinLength(value: string, limit: number): ValidationResult {
+	const isValid = value.length >= limit;
+
+	if (!isValid) {
+		return {
+			error: 'minLength',
+			limit: limit,
+		};
+	}
+	return true;
+}
+
+function validateMaxLength(value: string, limit: number): ValidationResult {
+	const isValid = value.length <= limit;
+
+	if (!isValid) {
+		return {
+			error: 'minLength',
+			limit: limit,
 		};
 	}
 	return true;
