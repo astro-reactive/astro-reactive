@@ -25,8 +25,7 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "@astro-reactive/form/core";
-import Form from "@astro-reactive/form";
+import Form, { FormControl, FormGroup } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 
 const form = new FormGroup([
