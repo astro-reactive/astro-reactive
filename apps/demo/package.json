@@ -13,9 +13,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.4.4",
     "@astro-reactive/form": "file:packages/form",
-    "@astro-reactive/validator": "file:packages/validator"
+    "@astro-reactive/validator": "file:packages/validator",
+    "astro": "^1.5.0"
   },
   "main": "index.js",
   "repository": {
@@ -26,6 +26,5 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
 }

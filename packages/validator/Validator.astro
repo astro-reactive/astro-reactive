@@ -1,5 +1,5 @@
 ---
-import type { HookType } from './validator.types';
+import type { HookType } from './core';
 
 export interface Props {
 	hook?: HookType;
@@ -24,7 +24,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	// TODO: handle hooks / when to attach event listeners
 	// const form = document.querySelector('form');
 
-	import { clearErrors, validate } from './validator.functions';
+	import { clearErrors, validate } from './core';
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
 	const inputs = [...document.querySelectorAll('form input')] as HTMLInputElement[];

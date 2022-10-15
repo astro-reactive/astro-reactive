@@ -1,3 +1,3 @@
-export * from './src';
-import Validator from './src/Validator.astro';
+import Validator from './Validator.astro';
 export default Validator;
+export * from './core';

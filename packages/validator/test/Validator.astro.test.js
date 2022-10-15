@@ -11,7 +11,7 @@ describe('Example Tests', () => {
 
 	describe('Component test', async () => {
 		it('example component should not be empty', async () => {
-			component = await getComponentOutput('./src/Validator.astro');
+			component = await getComponentOutput('./Validator.astro');
 			expect(component.html).not.to.equal('\n');
 		});
 	});
