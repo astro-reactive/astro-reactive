@@ -1,7 +1,10 @@
-# v0.4.1
+## v0.4.4
+- `validators` property in ControlConfig to set validators for a control
+
+## v0.4.1
 - set `showValidationHints` to true to show validation hints
 
-# v0.3.0
+## v0.3.0
 - new control configuration type `ControlConfig`
 
 ## v0.2.7
