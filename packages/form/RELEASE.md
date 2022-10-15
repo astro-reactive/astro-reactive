@@ -1,3 +1,6 @@
+# v0.4.1
+- set `showValidationHints` to true to show validation hints
+
 # v0.3.0
 - new control configuration type `ControlConfig`
 

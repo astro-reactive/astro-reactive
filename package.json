@@ -25,7 +25,7 @@
     "bump:patch": "npm version patch -w",
     "bump:minor": "npm version minor -w",
     "bump:major": "npm version major -w",
-    "publish": "npm publish --public -w"
+    "publish": "npm publish --access public -w"
   },
   "license": "ISC",
   "workspaces": [

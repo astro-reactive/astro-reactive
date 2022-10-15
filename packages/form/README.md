@@ -85,14 +85,14 @@ Example of multiple form groups:
 
 ![Screen Shot 2022-09-27 at 10 44 03 PM](https://user-images.githubusercontent.com/4262489/192631524-3139ac60-8d84-4c12-9231-fe2d49962756.png)
 
+# Validation
+
+We have released a [package for validation](https://www.npmjs.com/package/@astro-reactive/validator).
+
 # Future Plans
 
 Currently this only supports very basic form creation, but the goal of the project is ambitious:
 
-1. Validator library for common validation scenarios
-   1. Client-side validation
-   1. Server-side validation
-   1. validation hooks - onFocus, onBlur, onSubmit
 1. Themes - unstyled, light mode, dark mode, compact, large
 1. FormGroup class
    1. `statusChanges` - observable that emits the form status when it changes

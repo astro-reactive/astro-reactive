@@ -18,7 +18,7 @@
 | Packages | Version | Docs | Description |
 | --- | --- | --- | --- |
 | [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/astro-reactive-form/README.md) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/astro-reactive-form/RELEASE.md) | 🛠 | generate a dynamic form which can be modified programatically |
-| astro-reactive-validator | 🛠 | 🛠 | set of utilities for validating inputs |
+| astro-reactive-validator | ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set up validators for your form easily  |
 | astro-reactive-datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
 
 # HACKTOBERFEST 2022
