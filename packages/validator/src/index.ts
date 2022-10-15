@@ -1,2 +1,2 @@
 export * from './Validator.astro';
-export * from './Validators';
+export * from './validators';

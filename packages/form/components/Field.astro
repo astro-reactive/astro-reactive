@@ -3,11 +3,14 @@ import type { FormControl } from '../core/form-control';
 
 export interface Props {
 	control: FormControl;
+	showValidationHints: boolean;
 }
 
-const { control } = Astro.props;
+const { control, showValidationHints } = Astro.props;
 
 const { validators = [] } = control;
+
+const isRequired = showValidationHints && validators.includes('data-label-validator-required');
 
 const validatorAttirbutes: Record<string, string> = validators?.reduce(
 	(prev, validator) => {
@@ -25,10 +28,13 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 );
 ---
 
-<div>
+<div class="field">
 	{
 		control.label && control.labelPosition === 'left' && (
-			<label for={control.name}>{control.label}</label>
+			<label for={control.name}>
+				{isRequired && <span>*</span>}
+				{control.label}
+			</label>
 		)
 	}
 
@@ -46,7 +52,20 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 
 	{
 		control.label && control.labelPosition === 'right' && (
-			<label for={control.name}>{control.label}</label>
+			<label for={control.name}>
+				{isRequired && <span>*</span>}
+				{control.label}
+			</label>
 		)
 	}
 </div>
+
+<style>
+	/**
+		TODO: this should depend on showValidationHints
+	*/
+	[data-label-haserrors='true'] {
+		color: red;
+		border-color: red;
+	}
+</style>

@@ -7,9 +7,10 @@ export interface Props {
 	formGroups: FormGroup | FormGroup[];
 	submitControl?: Submit;
 	theme?: 'light' | 'dark';
+	showValidationHints?: boolean;
 }
 
-const { submitControl, formGroups: form, theme } = Astro.props;
+const { submitControl, formGroups: form, theme, showValidationHints = false } = Astro.props;
 
 const formTheme = theme ?? 'light';
 const formName = Array.isArray(form) ? null : form.name;
@@ -18,10 +19,16 @@ const formName = Array.isArray(form) ? null : form.name;
 <form class={formTheme} name={formName} id={formName}>
 	{
 		Array.isArray(form)
-			? form?.map((group) => <FieldSet group={group} />)
-			: form?.controls.map((control) => <Field control={control} />)
+			? form?.map((group) => <FieldSet showValidationHints={showValidationHints} group={group} />)
+			: form?.controls.map((control) => (
+					<Field showValidationHints={showValidationHints} control={control} />
+			  ))
 	}
-	{submitControl && <Field control={new FormControl(submitControl)} />}
+	{
+		submitControl && (
+			<Field showValidationHints={showValidationHints} control={new FormControl(submitControl)} />
+		)
+	}
 </form>
 
 <style>

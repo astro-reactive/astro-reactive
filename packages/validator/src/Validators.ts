@@ -7,24 +7,24 @@ export class Validators {
 		return `validator-max:${max}`;
 	}
 
-	static required(): string {
+	static get required(): string {
 		return `validator-required`;
 	}
 
-	static requiredChecked(): string {
+	static get requiredChecked(): string {
 		return `validator-required:checked`;
 	}
 
-	static email(): string {
+	static get email(): string {
 		return `validator-email`;
 	}
 
 	static minLength(minLength: number): string {
-		return `validator-minLength:${minLength}`;
+		return `validator-minlength:${minLength}`;
 	}
 
 	static maxLength(maxLength: number): string {
-		return `validator-maxLength:${maxLength}`;
+		return `validator-maxlength:${maxLength}`;
 	}
 
 	static pattern(pattern: string | RegExp): string {

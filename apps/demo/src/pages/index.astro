@@ -12,13 +12,13 @@ const form = new FormGroup([
     name: "username",
     label: "Username",
     placeholder: "astroIscool",
-    validators: [Validators.required()],
+    validators: [Validators.required],
   },
   {
     name: "password",
     label: "Password",
     type: "password",
-    validators: [Validators.required(), Validators.minLength(8)],
+    validators: [Validators.required, Validators.minLength(8)],
   },
 ]);
 
@@ -52,7 +52,7 @@ form.get("is-awesome")?.setValue("checked");
   </head>
   <body>
     <h1>Astro Reactive Form</h1>
-    <Form formGroups={form} />
-    <Validator hook="onControlBlur" />
+    <Form showValidationHints={true} formGroups={form} />
+    <Validator hook={"onControlBlur"} displayErrorMessages={true} />
   </body>
 </html>
