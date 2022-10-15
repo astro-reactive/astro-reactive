@@ -1,72 +1,92 @@
-# Astro Component Template 🧑‍🚀
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Validator</strong>
+  <br />
+  Set up validators for your forms easily.
+  <br />
+  <br />
+  <img src="https://img.shields.io/npm/v/@astro-reactive/validator" />
+  <img src="https://img.shields.io/npm/l/@astro-reactive/validator" />
+  <img src="https://img.shields.io/npm/dt/@astro-reactive/validator" />
+  <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/validator" />
+  <br />
+  <br />
+</p>
 
-This is [an unofficial template](#how-is-this-different-from-the-official-component-template) meant to ease the development of components for [Astro](https://astro.build/) that are intended for distribution. It does so by providing you with:
+## Installation
+In your [Astro](https://astro.build) project:
 
-- A clear default directory structure
-- Proper TypeScript settings for working with Astro
-- Default settings for ESLint, Prettier and EditorConfig inspired by the formatting used in the Astro project itself (also, [the config files are typed 👀](https://princesseuh.netlify.app/article/youshouldtypeyourconfigfiles/))
-- Ready-to-use testing tools powered by the libraries also used by the Astro project (Mocha and Chai), also contains [astro-component-tester](https://github.com/Princesseuh/astro-component-tester) to help you test the output of your component(s)
-- Preconfigured VS Code workspace settings file with settings meant to make development cozy and nice
-
-Hopefully, all of this together will provide you with a fun and comfortable development environnement for working on your Astro component! 🚀 Also, never forget that this is only a template to get you started, if you don't agree with any of the choices made, feel free to change it to fit your project better!
-
-**⚠️ Don't forget:** You should edit `package.json` with the info relevant to your project, such as a proper `name`, a license, a link to the repository for the npm website and other settings. You should also adjust the Astro `peerDependency` to the lowest version of Astro you support.
-
-## Folder Structure
-
-```plaintext
-├── .vscode/                    # VS Code settings folder
-│   ├── settings.json           # Workspace settings
-│   └── extensions.json         # Recommended extensions to install
-├── src/                        # Your component source code
-│   ├── Component.astro         # Example component file
-│   └── main.ts                 # Example source code file
-├── test/                       # Your component tests
-│   └── example.test.js         # Example tests
-└── index.ts                    # Should contain all the exports your component provide to users
+```
+npm i @astro-reactive/validator
 ```
 
-ESLint, Prettier and EditorConfig settings are respectively located in the following files: `.eslintrc.js`, `.prettierrc.js` and `.editorconfig` at the root of this template project.
+## Usage
+Use in an Astro page:
 
-## Commands
+```astro
+---
+import { FormControl, FormGroup } from "@astro-reactive/validator/core";
+import Form from "@astro-reactive/validator";
+import { Validators } from "@astro-reactive/validator";
 
-The following npm scripts are provided to lint and format your project:
+const form = new FormGroup([
+  {
+    name: "username",
+    label: "Username",
+    validators: [Validators.required],
+  },
+  {
+    name: "email",
+    label: "Email",
+    validators: [Validators.email, Validators.required],
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+    validators: [Validators.required, Validators.minLength(8)],
+  },
+]);
 
-| Command          | Action                                                        |
-| :--------------- | :------------------------------------------------------------ |
-| `npm run test`   | Run tests using Mocha                                         |
-| `npm run format` | Format your project using Prettier, this edits files in-place |
-| `npm run lint`   | Lint your project using ESLint                                |
+// set the name optionally
+form.name = "Simple Form";
 
-In VS Code, you can access those commands in the Explorer in the `NPM Scripts` section.
+// you can insert a control at any point
+form.controls.push(
+  new FormControl({
+    type: "checkbox",
+    name: "is-awesome",
+    label: "is Awesome?",
+    labelPosition: "right",
+  })
+);
 
-## Frequently asked questions
+// you can get a FormControl object
+const userNameControl = form.get("username");
 
-### How is this different from [the official component template](https://github.com/withastro/astro/tree/main/examples/component)?
+// you can set values dynamically
+userNameControl?.setValue("RAMOOOON");
+form.get('is-awesome')?.setValue("checked");
+---
 
-At the end of the day, they both have the same goal: Giving you a template to start from to build a component for Astro. However, they have slightly different philosophies.
-
-Notably, the official template uses a mono-repo structure, whereas this template uses a normal, straightforward repo. Additionally, this template is a bit more opinionated than the official one, giving you preconfigured support for ESLint, Prettier, VS Code and EditorConfig, as well as testing support.
-
-It's up to you to choose which one you prefer, they're both good options!
-
-### How do I try my component in development?
-
-> `npm` is used here for brevity, the same concept applies to other package managers!
-
-This template is a normal npm package, which mean that you can install it as a local folder or using [npm link](https://docs.npmjs.com/cli/v8/commands/npm-link).
-
-For example, with the following folder structure:
-
-```plaintext
-├── component/   # Your component using this template
-└── project/     # A standard Astro project
+<!-- 
+  the `formGroups` attribute can take a single FormGroup
+  or an array of FormGroup for multiple fieldsets;
+  we do a single for now in this example
+-->
+<Form showValidationHints={true} formGroups={form} />
 ```
 
-You can go into `project` and type the following command: `npm link ../component`. Changes to your component will be automatically reflected in your Astro project!
+# Screenshots
+Result of example above:
 
-### Which package manager should I use?
+![Screen Shot 2022-10-15 at 1 31 11 PM](https://user-images.githubusercontent.com/4262489/195984173-c19e8cf0-bc55-41d5-8267-e3de44c6bf64.png)
 
-The one you prefer! This template makes no assumption.
-
-The only package-manager-related thing in this repo is that the prettier plugin has the proper configuration needed to work with pnpm (but it works with the other too, pnpm just needs [additional settings](https://github.com/withastro/prettier-plugin-astro#pnpm-support)).
+# Validators available
+1. `Validators.min(limit)` - checks if number value is greater than or equal to limit
+1. `Validators.max(limit)` - checks if number value is less than or equal to limit
+1. `Validators.required` - checks if value is empty
+1. `Validators.requiredChecked` - checks if value is "checked"
+1. `Validators.email` - checks if value is a valid email
+1. `Validators.minLength(limit)` - checks if value length is greater than or equal to limit
+1. `Validators.maxLength(limit)` - checks if value length is less than or equal to limit
