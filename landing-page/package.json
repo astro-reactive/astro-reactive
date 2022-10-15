@@ -1,0 +1,29 @@
+{
+  "name": "astro-landing-page",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write .",
+    "clean": "rimraf dist node_modules"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^2.0.2",
+    "@types/micromodal": "^0.3.3",
+    "astro": "^1.4.7",
+    "astro-eleventy-img": "^0.5.0",
+    "astro-icon": "^0.7.3",
+    "prettier": "2.7.1",
+    "prettier-plugin-astro": "^0.5.5",
+    "rimraf": "^3.0.2",
+    "tailwindcss-fluid-type": "^1.3.3"
+  },
+  "dependencies": {
+    "micromodal": "^0.4.10",
+    "tailwindcss": "^3.1.8"
+  }
+}

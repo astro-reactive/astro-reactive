@@ -1,0 +1,131 @@
+---
+import { Icon } from "astro-icon";
+import ThemeSwitcher from "~/components/theme-switcher.astro";
+
+const socials = [
+  {
+    name: "GitHub",
+    url: "#",
+    icon: "fa-brands:github-alt",
+  },
+  {
+    name: "Discord",
+    url: "#",
+    icon: "fa-brands:discord",
+  },
+  {
+    name: "Twitter",
+    url: "#",
+    icon: "fa-brands:twitter",
+  },
+];
+---
+
+<header
+  id="page-header"
+  class="absolute bottom-0 z-10 flex items-center justify-between w-full px-8 py-4 text-white border-b border-transparent"
+>
+  <a class="flex items-center gap-3 hover:!text-default" href="#">
+    <h1 class="sr-only">Astro</h1>
+    <Icon name="logomark" class="h-10" />
+    <Icon name="wordmark" class="hidden h-4 sm:block" />
+  </a>
+  <div>
+    <div class="flex items-center gap-6">
+      <ul class="flex gap-4">
+        {
+          socials.map((social) => (
+            <li class="list-none">
+              <a
+                class="flex items-center justify-center w-12 h-12 p-3 border-2 border-current rounded-full"
+                href={social.url}
+              >
+                <Icon name={social.icon} class="h-full" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <button
+        id="open-nav-button"
+        type="button"
+        class="btn sm:hidden"
+        aria-label="Navigation"
+      >
+        <Icon pack="mdi" name="menu" class="h-8" />
+      </button>
+      <ThemeSwitcher />
+    </div>
+    <div id="menu-modal" class="hidden modal" aria-hidden="true">
+      <div class="fixed inset-0 px-8 py-4 bg-default text-default">
+        <div class="space-y-4" role="dialog" aria-modal="true">
+          <header class="text-right">
+            <button
+              id="close-nav-button"
+              type="button"
+              class="btn"
+              aria-label="Close navigation"
+            >
+              <Icon pack="mdi" name="close" class="h-8" />
+            </button>
+          </header>
+          <div class="flex justify-center">
+            <Icon name="logomark" class="h-16" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  import MicroModal from "micromodal";
+
+  const menuModalId = "menu-modal";
+
+  const header: HTMLElement = document.querySelector("#page-header");
+  const page = document.documentElement;
+  const menu = document.querySelector(`#${menuModalId} ul`);
+  const openNavButton = document.querySelector("#open-nav-button");
+  const closeNavButton = document.querySelector("#close-nav-button");
+
+  const openMenu = () => {
+    MicroModal.show(menuModalId, { disableScroll: true });
+  };
+
+  const closeMenu = () => {
+    MicroModal.close(menuModalId);
+  };
+
+  openNavButton.addEventListener("click", openMenu);
+  closeNavButton.addEventListener("click", closeMenu);
+
+  document.addEventListener("scroll", () => {
+    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+    header.classList.toggle("fixed-header", d < 0);
+  });
+
+  menu.addEventListener("click", (event) => {
+    if ((event.target as HTMLElement).tagName === "A") {
+      closeMenu();
+    }
+  });
+</script>
+
+<noscript>
+  <style>
+    #open-nav-button {
+      display: none;
+    }
+  </style>
+</noscript>
+
+<style>
+  .fixed-header {
+    @apply fixed top-0 bottom-auto;
+    @apply text-default bg-default border-default;
+  }
+  .modal.is-open {
+    @apply block;
+  }
+</style>
