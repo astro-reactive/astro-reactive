@@ -17,7 +17,7 @@ The [issues page](https://github.com/ayoayco/astro-reactive-library/issues) cont
 
 If you don't find anything there, I'm happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for your own idea, [email me (ramon.aycojr+hack@gmail.com)](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
 
 # The Astro Reactive Library
 
@@ -60,17 +60,38 @@ npm i
 npm start
 ```
 
-5. Open the demo application on you browser. Browse to the address:
+5. Open the demo application on you browser. Browse to the address
 
 ```
 https://localhost:3000
 ```
 
-# Running package tests
 
-Please run the tests before creating a PR to make sure nothing is broken.
+# The Documentation website
+
+
+Want to update the documentation? We also maintain the documentation website in this repository. The source for this is found in the `docs` directory. You can also start the dev server for the docs website with the following command:
+
+```
+npm run docs
+```
+
+# Running the linter and tests
+
+Please run the linter and tests before creating a PR to avoid delays in PR reviews. Fix all linting errors or failing tests whey you run the following commands.
+
+```
+npm run lint
+```
+
 ```
 npm test
+```
+
+✨ _HINT: Some linting errors could automatically fixed with a command_
+
+```
+npm run lint:fix
 ```
 
 # Hacking with the packages
@@ -81,4 +102,10 @@ If you plan to add features or fix bugs that are found in the packages, such as 
 
 Thank you again for your interest in contributing!
 
-Please [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) if anything is unclear. :)
+# Next Actions
+
+🏘️ Read our [community guidelines](https://github.com/ayoayco/astro-reactive-library/blob/main/CODE_OF_CONDUCT.md)
+
+💬 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
+
+🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for bugs found or improvement ideas

@@ -1,22 +1,24 @@
 {
   "name": "astro-reactive-form",
   "description": "The Reactive Form component for Astro 🔥",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
   "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
   "author": {
     "name": "Ayo Ayco",
-    "email": "ramon.aycojr@gmail.com",
+    "email": "ayo@ayco.io",
     "url": "https://ayco.io"
   },
   "type": "module",
   "exports": {
     ".": "./index.ts",
-    "./core": "./core/index.ts"
+    "./core": "./core/index.ts",
+    "./client": "./client/index.ts"
   },
   "files": [
     "core/",
     "components/",
+    "client/",
     "Form.astro",
     "index.ts"
   ],
@@ -30,7 +32,8 @@
     "test:watch": "mocha --watch --parallel --timeout 15000",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
-    "lint:fix": "eslint --fix . --ext .ts,.js"
+    "lint:fix": "eslint --fix . --ext .ts,.js",
+    "build": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",

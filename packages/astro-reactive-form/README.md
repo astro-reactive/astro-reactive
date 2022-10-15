@@ -1,20 +1,20 @@
-![package-form-cover](https://user-images.githubusercontent.com/4262489/193812095-1cffa287-e2ac-4671-b604-1e2ff2e6f19e.png)
-
-[![version](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![license](https://img.shields.io/npm/l/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![downloads](https://img.shields.io/npm/dt/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-[![dependencies](https://img.shields.io/librariesio/release/npm/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form)
-
-# Astro Reactive Form 🔥
-
-Generate a dynamic form based on your data, and modify programatically.
-
-The Reactive Form component for [Astro](https://astro.build) 🔥
-
-_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-library/issues)_
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Form</strong>
+  <br />
+  Generate a dynamic form based on your data, and modify programatically.
+  <br />
+  <br />
+  <img src="https://img.shields.io/npm/v/astro-reactive-form" />
+  <img src="https://img.shields.io/npm/l/astro-reactive-form" />
+  <img src="https://img.shields.io/npm/dt/astro-reactive-form" />
+  <img src="https://img.shields.io/librariesio/release/npm/astro-reactive-form" />
+  <br />
+  <br />
+</p>
 
 ## Installation
-In your Astro project:
+In your [Astro](https://astro.build) project:
 
 ```
 npm i astro-reactive-form
@@ -62,16 +62,24 @@ userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
 
-<!-- the formGroups attribute takes an array of FormGroup-->
-<Form formGroups={[form]} />
-
+<!-- 
+  the `formGroups` attribute can take a single FormGroup
+  or an array of FormGroup for multiple fieldsets;
+  we do a single for now in this example
+-->
+<Form
+  formGroups={form}
+  submitControl={{
+    type: "submit",
+    name: "submit",
+  }}
+/>
 ```
 
 # Screenshots
-
 Result of example above:
 
-<img width="535" alt="Screen Shot 2022-10-01 at 7 29 00 PM" src="https://user-images.githubusercontent.com/4262489/193421174-5c604aca-7d16-4cd6-a7b1-f5b8752c838e.png">
+![Screen Shot 2022-10-08 at 10 38 04 PM](https://user-images.githubusercontent.com/4262489/194726969-bdddefdf-d582-4201-a40e-3798383f03a0.png)
 
 Example of multiple form groups:
 
@@ -92,7 +100,6 @@ Currently this only supports very basic form creation, but the goal of the proje
 1. FormControl class
    1. `statusChanges` - observable that emits the control status when it changes
    1. `valueChanges` - observable that emits the control value when it changes
-   1. `value` - property that reflects the control value
 1. Documentation website
 
 ... and so much more

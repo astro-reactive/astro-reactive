@@ -1,8 +1,8 @@
 /**
- * FormControlType - determines the type of form control
+ * ControlType - determines the type of form control
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
  */
-export type FormControlType =
+export type ControlType =
 	| 'text'
 	| 'checkbox'
 	| 'radio'
@@ -25,32 +25,33 @@ export type FormControlType =
 	| 'url'
 	| 'week';
 
-export interface FormControlBase {
+export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
+
+export interface ControlBase {
 	name: string;
-	type?: FormControlType;
+	type?: ControlType;
 	value?: string | number | string[];
 	label?: string;
 	labelPosition?: 'right' | 'left';
-	placeholder? : string
+	placeholder?: string;
 }
 
-export interface Checkbox extends FormControlBase {
+export interface Checkbox extends ControlBase {
 	type: 'checkbox';
 	checked: boolean;
 }
 
-export interface Radio extends FormControlBase {
+export interface Radio extends ControlBase {
 	type: 'radio';
 	checked: boolean;
 }
 
-export interface Submit extends FormControlBase {
+export interface Submit extends ControlBase {
 	type: 'submit';
-	callBack: () => void;
+	callBack?: () => void;
 }
 
-export interface Button extends FormControlBase {
+export interface Button extends ControlBase {
 	type: 'button';
-	callBack: () => void;
+	callBack?: () => void;
 }
-	

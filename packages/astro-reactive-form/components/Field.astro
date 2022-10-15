@@ -22,11 +22,13 @@ const { control } = Astro.props;
 		value={control.value}
 		checked={control.value === 'checked'}
 		placeholder={control.placeholder}
+		data-label={control.label}
+		data-label-position={control.labelPosition}
 	/>
 
 	{
 		control.label && control.labelPosition === 'right' && (
 			<label for={control.name}>{control.label}</label>
-		) 
+		)
 	}
 </div>

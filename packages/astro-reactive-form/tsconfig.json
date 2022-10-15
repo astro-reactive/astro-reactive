@@ -1,3 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strictest"
+  "extends": "astro/tsconfigs/strictest",
+  "exclude": ["./index.ts"]
 }

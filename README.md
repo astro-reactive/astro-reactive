@@ -1,15 +1,23 @@
-![library-cover](https://user-images.githubusercontent.com/4262489/193811991-dc6ed9d7-0960-42f3-8b72-108620c6ab25.png)
-
-[![Build and Test](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main)](https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml)
-[![github](https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library)](https://github.com/ayoayco/astro-reactive-library)
-
-# Components and utilities for building reactive user interfaces 🔥
-
-Let your data build your UI. Blazing-fast, reactive user interfaces with native [Astro](https://astro.build) components and architecture.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <strong>Astro Reactive Library</strong>
+  <br />
+  Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
+  <br />
+  <br />
+  <a href="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml">
+    <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
+  </a>
+  <a href="https://github.com/ayoayco/astro-reactive-library">
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
+  </a>
+  <br />
+  <br />
+<p>
 
 | Packages | Version | Docs | Description |
 | --- | --- | --- | --- |
-| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/astro-reactive-form/README.md) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://www.npmjs.com/package/astro-reactive-form) | 🛠 | generate a dynamic form which can be modified programatically |
+| [astro-reactive-form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/astro-reactive-form/README.md) | [![npm](https://img.shields.io/npm/v/astro-reactive-form)](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/astro-reactive-form/RELEASE.md) | 🛠 | generate a dynamic form which can be modified programatically |
 | astro-reactive-validator | 🛠 | 🛠 | set of utilities for validating inputs |
 | astro-reactive-datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
 
@@ -25,7 +33,7 @@ The [issues page](https://github.com/ayoayco/astro-reactive-library/issues) cont
 
 If you don't find anything there, I'm happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new) for your own idea, [email me](mailto:ramon.aycojr+hack@gmail.com) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
 
 # Running locally
 

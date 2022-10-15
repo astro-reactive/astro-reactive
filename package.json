@@ -6,7 +6,7 @@
   "homepage": "https://ayco.io/showcase/astro-reactive-library#readme",
   "author": {
     "name": "Ayo Ayco",
-    "email": "ramon.aycojr@gmail.com",
+    "email": "ayo@ayco.io",
     "url": "https://ayco.io"
   },
   "type": "module",
@@ -16,20 +16,22 @@
   "scripts": {
     "start": "npm run dev -w demo",
     "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "dev": "npm run dev -w demo",
-    "bump": "npm version patch -w",
-    "bump-minor": "npm version minor -w",
-    "bump-major": "npm version major -w",
+    "docs": "npm run dev -w docs",
+    "bump:patch": "npm version patch -w",
+    "bump:minor": "npm version minor -w",
+    "bump:major": "npm version major -w",
     "publish": "npm publish --public -w"
   },
   "license": "ISC",
   "workspaces": [
     "demo",
     "packages/astro-reactive-form",
-    "packages/astro-reactive-validator"
-  ],
-  "dependencies": {
-    "astro": "^1.4.4"
-  }
+    "packages/astro-reactive-validator",
+    "docs"
+  ]
 }
