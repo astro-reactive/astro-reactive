@@ -13,11 +13,11 @@ layout: ../../layouts/MainLayout.astro
 
 Let your data build your UI. Blazing-fast, reactive user interfaces with native [Astro](https://astro.build) components and architecture.
 
-| Packages | Version | Docs | Description |
-| --- | --- | --- | --- |
-| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | 🛠 | generate a dynamic form which can be modified programatically |
-| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| ![npm](https://img.shields.io/npm/v/@astro-reactive/validator) | 🛠 | set up validators for your form easily |
-| astro-reactive-datagrid | 🛠 | 🛠 | generate a dynamic datagrid or table of values |
+| Packages | Version | Description |
+| --- | --- | --- |
+| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | generate a dynamic form which can be modified programatically |
+| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
+| astro-reactive-datagrid | 🛠 | generate a dynamic datagrid or table of values |
 
 # Running locally
 
