@@ -25,5 +25,17 @@
   "dependencies": {
     "micromodal": "^0.4.10",
     "tailwindcss": "^3.1.8"
-  }
+  },
+  "description": "[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
+  },
+  "author": "Ayo Ayco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayoayco/astro-reactive-library/issues"
+  },
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
 }

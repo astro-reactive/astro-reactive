@@ -25,8 +25,7 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "@astro-reactive/form/core";
-import Form from "@astro-reactive/form";
+import Form, { FormControl, FormGroup } from "@astro-reactive/form";
 
 // create a form group
 const form = new FormGroup([
@@ -105,3 +104,6 @@ Currently this only supports very basic form creation, but the goal of the proje
 ... and so much more
 
 _All contributions are welcome. Let's make the fastest web form component powered by Astro_
+
+# Older Versions
+Older versions can be found [here](https://www.npmjs.com/package/astro-reactive-form).

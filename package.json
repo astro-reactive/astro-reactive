@@ -17,6 +17,7 @@
     "start": "npm run dev -w apps/demo",
     "dev": "npm run dev -w apps/demo",
     "docs": "npm run dev -w apps/docs",
+    "landing-page": "npm run dev -w apps/landing-page",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",
@@ -32,6 +33,7 @@
     "packages/form",
     "packages/validator",
     "apps/demo",
-    "apps/docs"
+    "apps/docs",
+    "apps/landing-page"
   ]
 }
