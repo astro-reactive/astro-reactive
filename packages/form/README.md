@@ -81,7 +81,6 @@ form.get('is-awesome')?.setValue("checked");
   or an array of FormGroup for multiple fieldset blocks;
   we are using a single FormGroup for now in this example.
 -->
-<
 ```
 
 # Screenshots
