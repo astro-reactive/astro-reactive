@@ -2,13 +2,21 @@
   <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   <strong>Astro Reactive Form</strong>
   <br />
-  Generate a dynamic form based on your data, and modify programatically.
+  Generate a dynamic form based on your data, and modify programmatically.
   <br />
   <br />
-  <img src="https://img.shields.io/npm/v/@astro-reactive/form" />
-  <img src="https://img.shields.io/npm/l/@astro-reactive/form" />
-  <img src="https://img.shields.io/npm/dt/@astro-reactive/form" />
-  <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/form" />
+  <a href="https://www.npmjs.com/package/@astro-reactive/form">
+    <img src="https://img.shields.io/npm/v/@astro-reactive/form" alt="Package information: NPM version" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/form">
+    <img src="https://img.shields.io/npm/l/@astro-reactive/form" alt="Package information: NPM license" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/form">
+    <img src="https://img.shields.io/npm/dt/@astro-reactive/form" alt="Package information: NPM downloads" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/form">
+    <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/form" alt="Package information: NPM dependencies status" />
+  </a>
   <br />
   <br />
 </p>
@@ -61,11 +69,6 @@ userNameControl?.setValue("RAMOOOON");
 form.get('is-awesome')?.setValue("checked");
 ---
 
-<!-- 
-  the `formGroups` attribute can take a single FormGroup
-  or an array of FormGroup for multiple fieldsets;
-  we do a single for now in this example
--->
 <Form
   formGroups={form}
   submitControl={{
@@ -73,6 +76,12 @@ form.get('is-awesome')?.setValue("checked");
     name: "submit",
   }}
 />
+<!-- 
+  The `formGroups` attribute can take a single FormGroup
+  or an array of FormGroup for multiple fieldset blocks;
+  we are using a single FormGroup for now in this example.
+-->
+<
 ```
 
 # Screenshots
@@ -86,24 +95,11 @@ Example of multiple form groups:
 
 # Validation
 
-See our [package for setting up validators](https://www.npmjs.com/package/@astro-reactive/validator).
+This Form component is designed to work with [Astro Reactive Validator](https://www.npmjs.com/package/@astro-reactive/validator), our package for setting up validators easily.
 
-# Future Plans
+# We are opensource!
 
-Currently this only supports very basic form creation, but the goal of the project is ambitious:
 
-1. Themes - unstyled, light mode, dark mode, compact, large
-1. FormGroup class
-   1. `statusChanges` - observable that emits the form status when it changes
-   1. `valueChanges` - observable that emits the values of all controls when they change
-1. FormControl class
-   1. `statusChanges` - observable that emits the control status when it changes
-   1. `valueChanges` - observable that emits the control value when it changes
-1. Documentation website
+👉 _All [contributions](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md) are welcome. Let's make the fastest web forms powered by Astro._
 
-... and so much more
-
-_All contributions are welcome. Let's make the fastest web form component powered by Astro_
-
-# Older Versions
-Older versions can be found [here](https://www.npmjs.com/package/astro-reactive-form).
+👉 _This package is under rigorous development. See the [change log](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/RELEASE.md)._

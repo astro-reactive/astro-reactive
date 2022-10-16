@@ -17,9 +17,9 @@
 
 | Packages | Version | Description |
 | --- | --- | --- |
-| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | generate a dynamic form which can be modified programatically |
+| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | generate a dynamic form which can be modified programmatically |
 | [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
-| astro-reactive-datagrid | 🛠 | generate a dynamic datagrid or table of values |
+| @astro-reactive/data-grid | 🛠 | generate a dynamic data grid of values |
 
 # HACKTOBERFEST 2022
 
@@ -75,9 +75,21 @@ https://localhost:3000
 npm test
 ```
 
-_[Please report issues and suggestions](https://github.com/ayoayco/astro-reactive-library/issues)_
+## Other apps
+
+We also maintain the docs website and the project landing page in this repository. Run the following to start the dev servers:
+
+```
+npm run docs
+```
+
+```
+npm run landing-page
+```
 
 # Contributors
+
+This project is only possible because of the support and contribution of our community ❤️
 
 <a href="https://github.com/ayoayco/astro-reactive-library/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />

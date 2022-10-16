@@ -5,10 +5,18 @@
   Set up validators for your forms easily.
   <br />
   <br />
-  <img src="https://img.shields.io/npm/v/@astro-reactive/validator" />
-  <img src="https://img.shields.io/npm/l/@astro-reactive/validator" />
-  <img src="https://img.shields.io/npm/dt/@astro-reactive/validator" />
-  <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/validator" />
+  <a href="https://www.npmjs.com/package/@astro-reactive/validator">
+    <img src="https://img.shields.io/npm/v/@astro-reactive/validator" alt="Package information: NPM version" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/validator">
+    <img src="https://img.shields.io/npm/l/@astro-reactive/validator" alt="Package information: NPM license" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/validator">
+    <img src="https://img.shields.io/npm/dt/@astro-reactive/validator" alt="Package information: NPM downloads" />
+  </a>
+  <a href="https://www.npmjs.com/package/@astro-reactive/validator">
+    <img src="https://img.shields.io/librariesio/release/npm/@astro-reactive/validator" alt="Package information: NPM dependencies status" />
+  </a>
   <br />
   <br />
 </p>
@@ -47,9 +55,6 @@ const form = new FormGroup([
   },
 ]);
 
-// set the name optionally
-form.name = "Simple Form";
-
 // you can insert a control at any point
 form.controls.push(
   new FormControl({
@@ -60,20 +65,19 @@ form.controls.push(
   })
 );
 
-// you can get a FormControl object
-const userNameControl = form.get("username");
-
-// you can set values dynamically
-userNameControl?.setValue("RAMOOOON");
-form.get('is-awesome')?.setValue("checked");
 ---
 
-<!-- 
-  the `formGroups` attribute can take a single FormGroup
-  or an array of FormGroup for multiple fieldsets;
-  we do a single for now in this example
--->
 <Form showValidationHints={true} formGroups={form} />
+<!-- 
+  The `showValidationHints` attribute tells the Form component
+  that you want to render validation hints. So far, these are:
+    1. asterisks on required controls' labels
+    2. controls with errors will become color red
+
+  This property is optional and set to false by default,
+  which keeps the Form component unstyled,
+  and gives you have the freedom to style it yourself.
+-->
 ```
 
 # Screenshots
@@ -88,3 +92,13 @@ form.get('is-awesome')?.setValue("checked");
 1. `Validators.email` - checks if value is a valid email
 1. `Validators.minLength(limit)` - checks if value length is greater than or equal to limit
 1. `Validators.maxLength(limit)` - checks if value length is less than or equal to limit
+
+# Form component
+
+This validation library is designed to work with [Astro Reactive Form](https://www.npmjs.com/package/@astro-reactive/form), our package for generating dynamic forms.
+
+# We are opensource!
+
+👉 _All [contributions](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md) are welcome. Let's make the validation library for Astro._
+
+👉 _This package is under rigorous development. See the [change log](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/RELEASE.md)_.
