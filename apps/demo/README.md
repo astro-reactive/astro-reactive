@@ -1,6 +1,7 @@
-# Demo App for Astro Reactive Form 🔥
+![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419437-6e437743-47bf-482b-8f7e-de3c7f5285f8.png)
 
-To start the app:
+# Demo App for Astro Reactive Library
 
-1. `npm i`
-1. `npm start`
+Start the dev server by running: `npm start`
+
+👉 _[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)_

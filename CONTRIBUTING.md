@@ -26,11 +26,16 @@ This project aims to be a library that developers will use to create reactive UI
 Currently, it is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces), which are node projects that share a singular root package. It is good to understand the basics of this, but basically, the project will have multiple packages (under the `packages` directory) that share a common root package information.
 
 Packages:
-1. [demo](https://github.com/ayoayco/astro-reactive-library/tree/main/demo#readme) - found in the directory `demo`
-    - the demo Astro app that we use to test and demonstrate the library features
-2. [form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/form#readme) - found in the directory `packages/form`
-    - allows developers to programatically build a Form for Astro
-3. [astro-reactive-validator](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/astro-reactive-validator) - found in the directory `packages/astro-reactive-validator`
+1. [demo](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/demo) in the directory `apps/demo`
+    - Astro web application that we use to test and demonstrate the library components
+1. [form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/form) in the directory `packages/form`
+    - component that allows developers to programmatically build a form
+1. [validator](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/validator) in the directory `packages/astro-reactive-validator`
+    - component that allows developers to set up validators for their forms easily
+1. [docs](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/docs) - in the directory `apps/docs` 
+    - Astro website for the library's extensive documentation
+1. [landing-page](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/landing-page) - in the directory `apps/landing-page`
+    - Astro website for the library's introductory landing page
 
 # Running locally
 
@@ -67,13 +72,19 @@ https://localhost:3000
 ```
 
 
-# The Documentation website
+# Applications
 
 
-Want to update the documentation? We also maintain the documentation website in this repository. The source for this is found in the `docs` directory. You can also start the dev server for the docs website with the following command:
+We also maintain the documentation website and the project landing page in this repository. The source for these applications is found in the `apps` directory.
+
+You can start the dev server for the docs and landing-page websites with the following commands:
 
 ```
 npm run docs
+```
+
+```
+npm run landing-page
 ```
 
 # Running the linter and tests
@@ -88,7 +99,7 @@ npm run lint
 npm test
 ```
 
-✨ _HINT: Some linting errors could automatically fixed with a command_
+✨ _HINT: Some linting errors could be automatically fixed with a command_
 
 ```
 npm run lint:fix
@@ -96,7 +107,7 @@ npm run lint:fix
 
 # Hacking with the packages
 
-As mentioned above, this project involves packages that are intened to be used in Astro applications. The demo app is our way to test and play with the packages.
+As mentioned above, this project involves packages that are intended to be used in Astro applications. The demo app is our way to test and play with the packages.
 
 If you plan to add features or fix bugs that are found in the packages, such as `@astro-reactive/form`, you can find the source code for this inside the `packages` directory.
 
