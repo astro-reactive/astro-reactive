@@ -1,3 +1,6 @@
+## v0.4.5
+- update project documentations
+
 ## v0.4.4
 - `validators` property in ControlConfig to set validators for a control
 
