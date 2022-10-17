@@ -52,6 +52,6 @@ export const SIDEBAR: Sidebar = {
       { text: "Page 2", link: "en/page-2" },
       { text: "Page 3", link: "en/page-3" },
     ],
-    "API Docs": [{ text: "Page 4", link: "en/page-4" }],
+    "API Docs": [{ text: "Form", link: "en/form" }],
   },
 };
