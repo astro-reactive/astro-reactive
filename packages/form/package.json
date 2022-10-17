@@ -3,7 +3,7 @@
   "description": "The Reactive Form component for Astro 🔥",
   "version": "0.4.5",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "homepage": "https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md",
   "author": {
     "name": "Ayo Ayco",
     "email": "ayo@ayco.io",
