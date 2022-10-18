@@ -4,9 +4,10 @@ import type { FormControl } from '../core/form-control';
 export interface Props {
 	control: FormControl;
 	showValidationHints: boolean;
+	showOnlyLabel?: boolean;
 }
 
-const { control, showValidationHints } = Astro.props;
+const { control, showValidationHints, showOnlyLabel = false } = Astro.props;
 
 const { validators = [] } = control;
 
@@ -31,28 +32,32 @@ const validatorAttirbutes: Record<string, string> = validators?.reduce(
 <div class="field" data-validator-hints={showValidationHints.toString()}>
 	{
 		control.label && control.labelPosition === 'left' && (
-			<label for={control.name}>
+			<label for={control?.id ?? control.name}>
 				{isRequired && <span>*</span>}
 				{control.label}
 			</label>
 		)
 	}
 
-	<input
-		name={control.name}
-		id={control.name}
-		type={control.type}
-		value={control.value}
-		checked={control.value === 'checked'}
-		placeholder={control.placeholder}
-		data-label={control.label}
-		data-label-position={control.labelPosition}
-		{...validatorAttirbutes}
-	/>
+	{
+		!showOnlyLabel && (
+			<input
+				name={control.name}
+				id={control?.id ?? control.name}
+				type={control.type}
+				value={control.value?.toString()} 
+				checked={control.value === 'checked'}
+				placeholder={control.placeholder}
+				data-label={control.label}
+				data-label-position={control.labelPosition}
+				{...validatorAttirbutes}
+			/>
+		)
+	}
 
 	{
 		control.label && control.labelPosition === 'right' && (
-			<label for={control.name}>
+			<label for={control?.id ?? control.name}>
 				{isRequired && <span>*</span>}
 				{control.label}
 			</label>

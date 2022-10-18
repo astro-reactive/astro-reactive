@@ -29,6 +29,7 @@ export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
 
 export interface ControlBase {
 	name: string;
+	id?: string;
 	type?: ControlType;
 	value?: string | number | string[];
 	label?: string;
@@ -42,9 +43,15 @@ export interface Checkbox extends ControlBase {
 	checked: boolean;
 }
 
-export interface Radio extends ControlBase {
+export interface Radio extends Omit<ControlBase, 'value'> {
 	type: 'radio';
-	checked: boolean;
+	value: string[] | RadioOption[];
+}
+
+export interface RadioOption extends Omit<ControlBase, 'name'> {
+	label: string;
+	value: string;
+	checked?: boolean;
 }
 
 export interface Submit extends ControlBase {

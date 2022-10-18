@@ -1,5 +1,5 @@
 ---
-import { Submit, FormGroup, FormControl } from './core';
+import { Submit, FormGroup, FormControl, Radio, RadioOption } from './core';
 import Field from './components/Field.astro';
 import FieldSet from './components/FieldSet.astro';
 
@@ -21,8 +21,37 @@ const formName = Array.isArray(form) ? null : form?.name || null;
 		Array.isArray(form)
 			? form?.map((group) => <FieldSet showValidationHints={showValidationHints} group={group} />)
 			: form?.controls.map((control) => (
+				control.type === "radio" ? 
+				(
+					[
+						(<Field showValidationHints={showValidationHints} control={control} showOnlyLabel={true} />),
+						...(control as Radio)?.value?.map((v: string | RadioOption) => (
+							<Field
+								showValidationHints={showValidationHints} 
+								control={
+									(typeof v === "string") ?
+										new FormControl({
+											name: control.name,
+											type: "radio",
+											id: control.name + v,
+											label: v,
+											value: v
+										}) : 
+										new FormControl({
+											name: control.name,
+											type: "radio",
+											id: control.name + v.label,
+											...(v as RadioOption)
+										})
+								}
+							/>
+						))
+					]
+			  	) :
+				(
 					<Field showValidationHints={showValidationHints} control={control} />
-			  ))
+			 	)
+			))
 	}
 	{
 		submitControl && (
