@@ -2,6 +2,7 @@
 import { generateImage } from "astro-eleventy-img";
 import { Icon } from "astro-icon";
 import Starfield from "~/components/starfield.astro";
+import Copynpm from "~/components/copynpm.astro";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -21,18 +22,28 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 <section class="relative h-full bg-black">
   <Starfield />
   <div class="relative grid h-full sm:grid-cols-2 place-items-center">
-    <h2
-      class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto sm:justify-self-end"
-    >
-      <Icon name="logomark" class="h-24 text-white md:h-32" />
-      <div
-        class="font-extrabold tracking-tighter text-center text-8xl gradient-text"
+    <div class="flex flex-col">
+      <h2
+        class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto sm:justify-self-end"
       >
-        Build fast
-        <br /> websites,
-        <br /> faster.
+        <div
+          class="font-extrabold tracking-tighter text-center text-8xl gradient-text"
+        >
+          Build fast
+          <br /> websites,
+          <br /> faster.
+        </div>
+      </h2>
+      <div class="flex space-x-2 mt-8 justify-center">
+        <button
+          class="flex space-x-2 items-center bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-colors"
+        >
+          <span>Get Started</span>
+          <Icon name="mdi:arrow-right" width="20px" height="20px" />
+        </button>
+        <Copynpm />
       </div>
-    </h2>
+    </div>
     <picture
       class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start"
     >
