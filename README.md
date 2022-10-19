@@ -20,6 +20,7 @@
 | [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | generate a dynamic form which can be modified programmatically |
 | [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
 | @astro-reactive/data-grid | 🛠 | generate a dynamic data grid of values |
+| @astro-reactive/charts | 🛠 | create data visualization that responds to events |
 
 # HACKTOBERFEST 2022
 
@@ -29,7 +30,7 @@ Any contribution is welcome. See our [contributing guide](https://github.com/ayo
 
 Maybe add some themes to our form component? Or maybe an improvement for the README?
 
-The [issues page](https://github.com/ayoayco/astro-reactive-library/issues) contains some ideas, but they should not limit your contribution.
+The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
 
 If you don't find anything there, I'm happy to help you get your contribution in.
 
