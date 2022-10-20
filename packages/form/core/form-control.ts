@@ -1,9 +1,10 @@
-import type { ControlConfig, ControlType } from './form-control-types';
+import type { ControlConfig, ControlType, RadioOption } from './form-control-types';
 
 export class FormControl {
 	private _name = '';
+	private _id = '';
 	private _type: ControlType = 'text';
-	private _value?: string | number | null | string[];
+	private _value?: string | number | null | string[] | RadioOption[];
 	private _label?: string;
 	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;
@@ -12,8 +13,9 @@ export class FormControl {
 	private _validators?: string[];
 
 	constructor(config: ControlConfig) {
-		const { name, type, value, label, labelPosition, placeholder, validators } = config;
+		const { name, id, type, value, label, labelPosition, placeholder, validators } = config;
 		this._name = name;
+		this._id = id ?? name;
 		this._type = type ?? 'text';
 		this._value = value ?? null;
 		this._label = label ?? '';
@@ -24,6 +26,10 @@ export class FormControl {
 
 	get name() {
 		return this._name;
+	}
+
+	get id() {
+		return this._id;
 	}
 
 	get type() {

@@ -23,6 +23,21 @@ const form = new FormGroup([
     type: "password",
     validators: [Validators.required, Validators.minLength(8)],
   },
+  {
+    name: "rating",
+    label: "Rating",
+    type: "radio",
+    value: ["1", "2", "3", "4", "5"]
+  },
+  {
+    name: "agreement",
+    label: "Agreement",
+    type: "radio",
+    value: [
+      { label: "Agree", value: "yes" },
+      { label: "Disagree", value: "no", labelPosition: "right" }
+    ]
+  }
 ]);
 
 form.name = "Simple Form";
