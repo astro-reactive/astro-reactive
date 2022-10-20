@@ -4,6 +4,7 @@ import Form, {
   FormGroup,
   FormControl,
 } from "@astro-reactive/form";
+import { Validators } from "@astro-reactive/validator";
 
 const baseForm = new FormGroup([
   {
@@ -69,8 +70,27 @@ const toppingsForm = new FormGroup([
   },
 ]);
 
+const infoForm = new FormGroup([
+  {
+    name: "name",
+    label: "Name",
+    validators: [Validators.required],
+  },
+  {
+    name: "address",
+    label: "Delivery Address",
+    validators: [Validators.required],
+  },
+  {
+    name: "contact",
+    label: "Contact Number",
+    validators: [Validators.required],
+  },
+]);
+
 baseForm.name = "Base"
 toppingsForm.name = "Toppings";
+infoForm.name = "Customer Info";
 
 // const config: ControlConfig = {
 //   type: "checkbox",
@@ -95,6 +115,6 @@ toppingsForm.name = "Toppings";
   </head>
   <body>
     <h1>Pizza Form Demo</h1>
-    <Form showValidationHints={true} formGroups={[baseForm, toppingsForm]} />
+    <Form showValidationHints={true} formGroups={[baseForm, toppingsForm, infoForm]} />
   </body>
 </html>
