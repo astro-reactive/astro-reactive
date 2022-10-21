@@ -13,7 +13,7 @@ Any contribution is welcome. Feel free to look around to find something that int
 
 Maybe add some themes to our form component? Or maybe just improve the README?
 
-The [issues page](https://github.com/ayoayco/astro-reactive-library/issues) contains some ideas, but they should not limit your contribution.
+The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
 
 If you don't find anything there, I'm happy to help you get your contribution in.
 

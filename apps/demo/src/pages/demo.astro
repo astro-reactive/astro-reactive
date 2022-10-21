@@ -1,0 +1,100 @@
+---
+import Form, {
+  ControlConfig,
+  FormGroup,
+  FormControl,
+} from "@astro-reactive/form";
+
+const baseForm = new FormGroup([
+  {
+    name: "crust",
+    label: "Crust",
+    type: "radio",
+    value: [{ label: "Garlic", value: "garlic" },]
+  },
+  {
+    name: "size",
+    label: "Size",
+    type: "radio",
+    value: ["Small", "Medium", "Large"]
+  },
+  {
+    name: "sauce",
+    label: "Sauce",
+    type: "radio",
+    value: ["Tomato", "Barbeque"]
+  }
+]);
+
+const toppingsForm = new FormGroup([
+  {
+    name: "mushrooms",
+    label: "Mushrooms",
+    type: "checkbox"
+  },
+  {
+    name: "extraCheese",
+    label: "Extra Cheese",
+    type: "checkbox"
+  },
+  {
+    name: "onions",
+    label: "Onions",
+    type: "checkbox"
+  },
+  {
+    name: "peppers",
+    label: "Peppers",
+    type: "checkbox"
+  },
+  {
+    name: "pepperoni",
+    label: "Pepperoni",
+    type: "checkbox"
+  },
+  {
+    name: "sausage",
+    label: "Sausage",
+    type: "checkbox"
+  },
+  {
+    name: "chicken",
+    label: "Chicken",
+    type: "checkbox"
+  },
+  {
+    name: "pineapple",
+    label: "Pineapple",
+    type: "checkbox"
+  },
+]);
+
+baseForm.name = "Base"
+toppingsForm.name = "Toppings";
+
+// const config: ControlConfig = {
+//   type: "checkbox",
+//   name: "is-awesome",
+//   label: "is Awesome?",
+//   labelPosition: "right",
+// };
+
+// insert a control
+// form.controls.push(new FormControl(config));
+
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Pizza Form Demo</h1>
+    <Form showValidationHints={true} formGroups={[baseForm, toppingsForm]} />
+  </body>
+</html>
