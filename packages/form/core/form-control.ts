@@ -1,4 +1,4 @@
-import type { ControlConfig, ControlType, RadioOption } from './form-control-types';
+import type { ControlConfig, ControlType, RadioOption } from 'common/types';
 
 export class FormControl {
 	private _name = '';

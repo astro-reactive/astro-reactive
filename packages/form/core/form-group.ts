@@ -1,4 +1,4 @@
-import type { ControlConfig } from './form-control-types';
+import type { ControlConfig } from 'common/types';
 import { FormControl } from './form-control';
 
 export class FormGroup {

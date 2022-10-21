@@ -1,5 +1,5 @@
 /**
- * ControlType - determines the type of form control
+ * `ControlType` determines the type of form control
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
  */
 export type ControlType =
