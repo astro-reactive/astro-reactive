@@ -1,7 +1,8 @@
 ---
-import { Submit, FormGroup, FormControl, Radio, RadioOption } from './core';
-import Field from './components/Field.astro';
+import type { Submit, Radio, RadioOption } from 'common/types';
+import { FormGroup, FormControl } from './core';
 import FieldSet from './components/FieldSet.astro';
+import Field from './components/Field.astro';
 
 export interface Props {
 	formGroups: FormGroup | FormGroup[];
