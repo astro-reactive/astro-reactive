@@ -16,6 +16,7 @@
   "scripts": {
     "start": "npm run dev -w apps/demo",
     "dev": "npm run dev -w apps/demo",
+    "demo": "npm run dev -w apps/demo",
     "docs": "npm run dev -w apps/docs",
     "landing-page": "npm run dev -w apps/landing-page",
     "test": "npm run test --workspaces --if-present",

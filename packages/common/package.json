@@ -4,9 +4,6 @@
   "description": "Common code for Astro Reactive Packages",
   "main": "index.js",
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
