@@ -2,18 +2,20 @@
 import { Icon } from "astro-icon";
 ---
 
-<button class="copy-btn flex items-center">
+<button
+  class="copy-btn flex items-center w-4/5 mt-3 justify-center astro-md:w-1/2 astro-lg:w-[28%] astro-lg:mt-0 astro-lg:ml-3"
+>
   <span>npm install @astro-reactive/form @astro-reactive/validator</span>
   <Icon name="mdi:content-copy" width="40px" height="40px" />
 </button>
 
 <style>
   .copy-btn {
-    max-width: 50%;
+    /* max-width: 50%; */
     background-color: #2f2f2f;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 6px 16px;
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
