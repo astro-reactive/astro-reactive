@@ -36,11 +36,11 @@ const validatorAttributes: Record<string, string> = validators?.reduce(
 	class="field"
 	data-validator-hints={showValidationHints?.toString()}
 	data-validator-haserrors={hasErrors ? hasErrors?.toString() : null}
+	data-required={isRequired.toString()}
 >
 	{
 		control.label && control.labelPosition === 'left' && (
 			<label for={control?.id ?? control.name}>
-				{isRequired && <span>*</span>}
 				{control.label}
 			</label>
 		)
@@ -94,5 +94,9 @@ const validatorAttributes: Record<string, string> = validators?.reduce(
 	.has-errors {
 		color: red;
 		border-color: red;
+	}
+
+	div[data-required='true'] + label::before {
+		content: "*";
 	}
 </style>
