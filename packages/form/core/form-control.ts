@@ -1,4 +1,4 @@
-import type { ControlConfig, ControlType, RadioOption } from 'common/types';
+import type { ControlConfig, ControlType, RadioOption, ValidationError } from 'common/types';
 
 export class FormControl {
 	private _name = '';
@@ -11,9 +11,15 @@ export class FormControl {
 	private _isPristine = true;
 	private _placeholder?: string;
 	private _validators?: string[];
+	private _errors: ValidationError[] = [];
 
-	constructor(config: ControlConfig) {
-		const { name, id, type, value, label, labelPosition, placeholder, validators } = config;
+	private validate: (value: string, validators: string[]) => ValidationError[] = (
+		value: string,
+		validators: string[]
+	) => [];
+
+	constructor(private config: ControlConfig) {
+		const { name, id, type, value, label, labelPosition, placeholder, validators = [] } = config;
 		this._name = name;
 		this._id = id ?? name;
 		this._type = type ?? 'text';
@@ -21,7 +27,20 @@ export class FormControl {
 		this._label = label ?? '';
 		this._labelPosition = labelPosition ?? 'left';
 		this._placeholder = placeholder ?? '';
-		this._validators = validators ?? [];
+		this._validators = validators;
+
+		// dynamic import of the validator package
+		// if user did not install the validator, then errors should be empty
+		import('@astro-reactive/validator').then((validator) => {
+			if (validator) {
+				this.validate = validator.validate;
+
+				const valueStr: string = this._value?.toString() || '';
+				this._errors = this.validate(valueStr, validators);
+			} else {
+				this._errors = [];
+			}
+		});
 	}
 
 	get name() {
@@ -56,10 +75,6 @@ export class FormControl {
 		return this._isPristine;
 	}
 
-	set isPristine(value: boolean) {
-		this._isPristine = value;
-	}
-
 	get isValid() {
 		return this._isValid;
 	}
@@ -68,12 +83,21 @@ export class FormControl {
 		return this._validators;
 	}
 
+	get errors() {
+		return this._errors;
+	}
+
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
+		this._errors = this.validate(this._value, this.config.validators || []);
 	}
 
-	setIsPristine(value: boolean) {
-		this._isPristine = value;
+	clearErrors() {
+		this._errors = [];
+	}
+
+	setError(error: ValidationError) {
+		this._errors = [...(this._errors || []), error];
 	}
 }
