@@ -72,6 +72,33 @@ describe('Field.astro test', () => {
 		expect(actualResult).to.contain(expectedLabel);
 		expect(actualResult).to.contain('*');
 	});
+
+	it('Should server-render validation error attributes', async () => {
+		// arrange
+		const expectedClass = 'has-errors';
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'username',
+				labelPosition: 'left',
+				validators: ['validator-required'],
+				errors: [
+					{
+						error: 'required',
+					},
+				],
+				value: '',
+			},
+			showValidationHints: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/Field.astro', props);
+		const actualResult = cleanString(component.html);
+
+		// assert
+		expect(actualResult).to.contain(expectedClass);
+	});
 });
 
 function cleanString(str) {

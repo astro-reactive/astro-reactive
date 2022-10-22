@@ -11,6 +11,12 @@
   <a href="https://github.com/ayoayco/astro-reactive-library">
     <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
   </a>
+  <a href="https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git">
+  <img
+    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
+    alt="Contribute with Gitpod"
+  />
+</a>
   <br />
   <br />
 <p>
@@ -64,7 +70,7 @@ npm i
 npm start
 ```
 
-5. Open the demo application on you browser. Browse to the address:
+5. Open the demo application on your browser. Browse to the address:
 
 ```
 https://localhost:3000
