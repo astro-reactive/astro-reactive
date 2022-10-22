@@ -1,0 +1,20 @@
+---
+import Field from '../Field.astro';
+import { FormControl } from '../../core';
+
+export interface Props {
+    control?: FormControl
+    controlName?: string
+    showValidationHints?: boolean 
+}
+
+const { control, controlName, showValidationHints = false } = Astro.props;
+
+const controlText: FormControl = new FormControl({
+    ...control?.copy(),
+    type: control?.type ?? "text",
+    name: controlName ?? control?.name ?? "",
+})
+---
+
+<Field showValidationHints={showValidationHints} control={controlText}/>

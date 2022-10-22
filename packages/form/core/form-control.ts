@@ -68,6 +68,19 @@ export class FormControl {
 		return this._validators;
 	}
 
+	copy() {
+		return {
+			name: this._name,
+			id: this._id,
+			type: this._type,
+			value: this._value,
+			label: this._label,
+			labelPosition: this._labelPosition,
+			placeholder: this._placeholder,
+			validators: this._validators,
+		};
+	}
+
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;

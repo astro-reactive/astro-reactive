@@ -9,6 +9,7 @@ export interface Props {
 	submitControl?: Submit;
 	theme?: 'light' | 'dark';
 	showValidationHints?: boolean;
+	children?: any;
 }
 
 const { submitControl, formGroups: form, theme, showValidationHints = false } = Astro.props;
@@ -56,6 +57,9 @@ const formName = Array.isArray(form) ? null : form?.name || null;
 					)
 			  )
 	}
+	
+	<slot />
+
 	{
 		submitControl && (
 			<Field showValidationHints={showValidationHints} control={new FormControl(submitControl)} />

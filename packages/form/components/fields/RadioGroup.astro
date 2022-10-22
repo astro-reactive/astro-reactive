@@ -1,0 +1,71 @@
+---
+import type { Radio, RadioOption } from 'common/types';
+import Field from '../Field.astro';
+import { FormControl } from '../../core';
+
+export interface Props {
+    control?: FormControl
+    controlName?: string
+    showValidationHints?: boolean 
+}
+
+const { control, controlName, showValidationHints = false } = Astro.props;
+
+const controlRadioGroup: Radio = new FormControl({
+    ...control?.copy(),
+    type: "radio",
+    name: controlName ?? control?.name ?? "",
+})
+
+const { validators = [] } = controlRadioGroup;
+
+const isRequired = showValidationHints && validators.includes('validator-required');
+
+const radioOptionControls: RadioOption[] = controlRadioGroup?.value?.map(
+    (option: string | RadioOption) => {
+        if (typeof option === 'string') {
+            return new FormControl({
+                name: controlRadioGroup.name,
+                type: 'radio',
+                id: controlRadioGroup.name + option,
+                label: option,
+                value: option,
+                validators: validators,
+            });
+        }
+        return new FormControl({
+            name: controlRadioGroup.name,
+            type: 'radio',
+            id: controlRadioGroup.name + option.label,
+            validators: validators,
+            ...(option as RadioOption),
+        });
+});
+---
+<div class="field" data-validator-hints={showValidationHints.toString()}>
+	{
+		controlRadioGroup.label && (
+			<label for={controlRadioGroup?.id ?? controlRadioGroup.name}>
+				{isRequired && <span>*</span>}
+				{controlRadioGroup.label}
+			</label>
+		)
+	}
+
+	{
+		radioOptionControls?.map((optionControl: FormControl) => (
+            <Field
+                showValidationHints={showValidationHints}
+                control={optionControl}
+            />
+        ))
+	}
+</div>
+
+<style>
+	[data-validator-hints='true'][data-validator-haserrors='true'],
+	[data-validator-hints='true'] [data-validator-haserrors='true'] {
+		color: red;
+		border-color: red;
+	}
+</style>

@@ -1,0 +1,70 @@
+---
+import Form, {
+  ControlConfig,
+  FormControl,
+  TextField,
+  RadioGroup,
+  Checkbox,
+  Submit
+} from "@astro-reactive/form";
+import { Validators } from "@astro-reactive/validator";
+
+// Individual form control
+const usernameControl = new FormControl({
+    name: "username",
+    label: "Username",
+    validators: [Validators.required],
+})
+
+const emailControl = new FormControl({
+    name: "email",
+    label: "Email",
+    validators: [Validators.email, Validators.required],
+});
+
+const passwordControl = new FormControl({
+    name: "password",
+    label: "Password",
+    type: "password",
+    validators: [Validators.required, Validators.minLength(8)],
+});
+
+const radioControl = new FormControl({
+    name: "agreement",
+    label: "Agreement",
+    type: "radio",
+    value: [
+      { label: "Agree", value: "yes" },
+      { label: "Disagree", value: "no", labelPosition: "right" }
+    ]
+})
+
+const checkBoxConfig: ControlConfig = {
+  type: "checkbox",
+  name: "is-awesome",
+  label: "is Awesome?",
+  labelPosition: "right",
+};
+const checkBoxControl = new FormControl(checkBoxConfig)
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro Reactive Form: Slot & Control Components</h1>
+    <Form>
+      <TextField control={usernameControl} />
+      <TextField control={emailControl} />
+      <TextField control={passwordControl} showValidationHints={true} />
+      <RadioGroup control={radioControl} />
+      <Checkbox control={checkBoxControl} />
+      <Submit />
+    </Form>
+  </body>
+</html>
