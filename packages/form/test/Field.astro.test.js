@@ -75,7 +75,6 @@ describe('Field.astro test', () => {
 
 	it('Should server-render validation error attributes', async () => {
 		// arrange
-		// TODO: mock validator
 		const expectedClass = 'has-errors';
 		const props = {
 			control: {
