@@ -37,5 +37,8 @@
     "apps/docs",
     "apps/landing-page",
     "packages/common"
-  ]
+  ],
+  "dependencies": {
+    "prettier-plugin-astro": "^0.6.0"
+  }
 }
