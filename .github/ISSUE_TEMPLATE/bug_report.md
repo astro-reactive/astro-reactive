@@ -1,11 +1,15 @@
 ---
 name: "Bug Report"
 about: "Report an issue to help the project improve."
-title: "[Bug] "
+title: "bug(scope): description "
 labels: "Type: Bug"
-assignees: ayoayco
 ---
+<!--
+☝️ "scope" in the title could be one of our apps or packages:
+- form, validator, demo, landing-page, docs...
+ -->
 
+<!-- Fill up as much information as you can to help us investigate 🙏  -->
 ## **Bug Report**
 
 ### **Describe the bug**
@@ -45,7 +49,7 @@ assignees: ayoayco
 
 - ***
 
-### **Media prove**
+### **Media proof**
 
 <!-- If applicable, add screenshots or videos to help explain your problem. -->
 
@@ -68,3 +72,5 @@ and remove all the bulleted list elements that are not relevant for this issue. 
 <!-- Add any other context or additional information about the problem here.-->
 
 -
+
+<!-- THANK YOU FOR THE CONTRIBUTION! 🚀 -->

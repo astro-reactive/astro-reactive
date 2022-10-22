@@ -1,11 +1,15 @@
 ---
 name: "Feature Request"
-about: "Suggest an idea or possible new feature for this project."
-title: ""
+about: "Suggest an idea or new feature for this project."
+title: "feat(scope): description "
 labels: "Type: Feature"
-assignees: ayoayco
 ---
+<!--
+☝️ "scope" in the title could be one of our apps or packages:
+- form, validator, demo, landing-page, docs...
+ -->
 
+<!-- Fill up as much information as you can to help us understand the request 🙏  -->
 ## **Feature Request**
 
 ## **Is your feature request related to a problem? Please describe.**
@@ -31,3 +35,5 @@ assignees: ayoayco
 <!-- Add any other context or additional information about the problem here.-->
 
 -
+
+<!-- THANK YOU FOR THE CONTRIBUTION! 🚀 -->
