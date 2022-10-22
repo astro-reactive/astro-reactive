@@ -11,11 +11,11 @@ export interface Props {
 
 const { control, controlName, showValidationHints = false } = Astro.props;
 
-let controlPassword: FormControl = new FormControl({
+let controlCheckbox: FormControl = new FormControl({
     ...control?.copy(),
     type: "checkbox",
     name: controlName ?? control?.name ?? "",
 })
 ---
 
-<Field showValidationHints={showValidationHints} control={controlPassword}/>
+<Field showValidationHints={showValidationHints} control={controlCheckbox}/>
