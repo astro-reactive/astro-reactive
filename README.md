@@ -64,7 +64,7 @@ npm i
 npm start
 ```
 
-5. Open the demo application on you browser. Browse to the address:
+5. Open the demo application on your browser. Browse to the address:
 
 ```
 https://localhost:3000
