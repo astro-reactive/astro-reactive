@@ -1,15 +1,15 @@
----
-title: "type(scope): description"
----
+## type(scope): description
 <!--
 ☝️ Put your PR title up here!
+
+"scope" could be one of our apps or packages:
+- form, validator, demo, landing-page, docs...
 
 ✨ Example PR titles:
     - feat(form): implement new FormControl isValid state
     - fix(validator): correct the variable name typo causing errors
-    - refactor(types): improve TypeScript types
     - style(landing-page): update the logo in the landing page app
-    - docs(project): update content project CONTRIBUTING.md
+    - docs: update content project CONTRIBUTING.md
 -->
 
 Fixes # <!-- 👈🏻 Put the issue number here! -->
