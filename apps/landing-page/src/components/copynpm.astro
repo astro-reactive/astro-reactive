@@ -4,8 +4,9 @@ import { Icon } from "astro-icon";
 
 <button
   class="copy-btn flex items-center w-4/5 mt-3 justify-center astro-md:w-1/2 astro-lg:w-[28%] astro-lg:mt-0 astro-lg:ml-3"
+  id="copy-command-button"
 >
-  <span>npm install @astro-reactive/form @astro-reactive/validator</span>
+  <span id="command">npm install @astro-reactive/form @astro-reactive/validator</span>
   <Icon name="mdi:content-copy" width="40px" height="40px" />
 </button>
 
@@ -32,3 +33,12 @@ import { Icon } from "astro-icon";
     background-color: #3f3f3f;
   }
 </style>
+
+<script>
+    const copyCommandButton = document.getElementById("copy-command-button");
+    const commandText = document.getElementById('command').innerText;
+    
+    copyCommandButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(commandText);
+    });
+</script>
