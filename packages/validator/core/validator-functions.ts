@@ -1,28 +1,27 @@
-import type { ValidationResult } from './validator.types';
-import { Validators } from './validators';
+import type { ValidationError } from 'common/types';
+import { Validators } from './validator-names';
 
-export function validate(event: FocusEvent) {
-	// NOTE: event target attribute names are converted to lowercase
-	const element = event.target as HTMLInputElement;
-	const attributeNames = element?.getAttributeNames() || [];
-	const validatorAttirbutes = attributeNames.filter((attribute) =>
-		attribute.includes('data-validator-')
-	);
-	const value = element.value;
-
-	const validityArray: ValidationResult[] = validatorAttirbutes
+/**
+ * given the value and validators, `validate()` returns an array of errors
+ * @param value - value to be validated
+ * @param validators - names of validation logic to be applied
+ * @returns errors - array of errors `ValidationError`
+ */
+export function validate(value: string, validators: string[]): ValidationError[] {
+	return validators
 		.map((validator) => validator.replace('data-', ''))
-		.map((validator): ValidationResult => {
-			// insert logic for each validator
-			// TODO: implement a map of functions,validator
+		.map((attribute): ValidationError | null => {
+			// TODO: implement dynamic import of function depending on validators
+			const split = attribute.split(':');
+			const validator = split[0];
+			const limitStr = split[1];
+			const limit = parseInt(limitStr || '0', 10);
 
 			if (validator === Validators.min()) {
-				const limit = parseInt(element.getAttribute('data-validator-min') || '0', 10);
 				return validateMin(value, limit);
 			}
 
 			if (validator === Validators.max()) {
-				const limit = parseInt(element.getAttribute('data-validator-min') || '0', 10);
 				return validateMax(value, limit);
 			}
 
@@ -39,26 +38,16 @@ export function validate(event: FocusEvent) {
 			}
 
 			if (validator === Validators.minLength()) {
-				const limit = parseInt(element.getAttribute('data-validator-minlength') || '0', 10);
 				return validateMinLength(value, limit);
 			}
 
 			if (validator === Validators.maxLength()) {
-				const limit = parseInt(element.getAttribute('data-validator-maxlength') || '0', 10);
 				return validateMaxLength(value, limit);
 			}
 
-			return true;
-		});
-
-	const errors = validityArray.filter((result) => result !== true);
-
-	// set element hasErrors
-	if (errors.length) {
-		element.parentElement?.setAttribute('data-validator-haserrors', 'true');
-		element.setAttribute('data-validator-haserrors', 'true');
-		// TODO: display error messages
-	}
+			return null;
+		})
+		.filter((result) => result !== null) as ValidationError[];
 }
 
 export function clearErrors(event: Event) {
@@ -67,52 +56,62 @@ export function clearErrors(event: Event) {
 	element.setAttribute('data-validator-haserrors', 'false');
 }
 
-function validateMin(value: string, limit: number): ValidationResult {
+function validateMin(value: string, limit: number): ValidationError | null {
 	const isValid = parseInt(value, 10) >= limit;
 
 	if (!isValid) {
 		return {
+			value,
 			error: 'min',
 			limit: limit,
 		};
 	}
-	return true;
+
+	return null;
 }
 
-function validateMax(value: string, limit: number): ValidationResult {
+function validateMax(value: string, limit: number): ValidationError | null {
 	const isValid = parseInt(value, 10) <= limit;
 
 	if (!isValid) {
 		return {
+			value,
 			error: 'max',
 			limit: limit,
 		};
 	}
-	return true;
+
+	return null;
 }
 
-function validateRequired(value: string): ValidationResult {
+function validateRequired(value: string): ValidationError | null {
 	const isValid = !!value;
+
 	if (!isValid) {
 		return {
+			value,
 			error: 'required',
 		};
 	}
-	return true;
+
+	return null;
 }
 
-function validateRequiredChecked(value: string): ValidationResult {
+function validateRequiredChecked(value: string): ValidationError | null {
 	const isValid = value === 'checked';
+
 	if (!isValid) {
 		return {
+			value,
 			error: 'requiredChecked',
 		};
 	}
-	return true;
+
+	return null;
 }
 
 // TODO: review regexp vulnerability
-function validateEmail(value: string): ValidationResult {
+function validateEmail(value: string): ValidationError | null {
 	const isValid = String(value)
 		.toLowerCase()
 		.match(
@@ -121,32 +120,38 @@ function validateEmail(value: string): ValidationResult {
 
 	if (!isValid) {
 		return {
+			value,
 			error: 'email',
 		};
 	}
-	return true;
+
+	return null;
 }
 
-function validateMinLength(value: string, limit: number): ValidationResult {
+function validateMinLength(value: string, limit: number): ValidationError | null {
 	const isValid = value.length >= limit;
 
 	if (!isValid) {
 		return {
+			value,
 			error: 'minLength',
 			limit: limit,
 		};
 	}
-	return true;
+
+	return null;
 }
 
-function validateMaxLength(value: string, limit: number): ValidationResult {
+function validateMaxLength(value: string, limit: number): ValidationError | null {
 	const isValid = value.length <= limit;
 
 	if (!isValid) {
 		return {
+			value,
 			error: 'minLength',
 			limit: limit,
 		};
 	}
-	return true;
+
+	return null;
 }

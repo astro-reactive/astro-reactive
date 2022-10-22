@@ -30,7 +30,7 @@
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
-    "build": "tsc --noEmit"
+    "build": "astro check && tsc --noEmit"
   },
   "devDependencies": {
     "@types/chai": "^4.3.3",
@@ -43,19 +43,17 @@
     "astro": "^1.5.0",
     "astro-component-tester": "^0.6.0",
     "chai": "^4.3.6",
+    "common": "file:packages/common",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "mocha": "^10.0.0",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.5.4",
+    "prettier-plugin-astro": "^0.6.0",
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
     "astro": "^1.5.0"
-  },
-  "dependencies": {
-    "common": "file:packages/common"
   },
   "license": "MIT"
 }

@@ -1,5 +1,5 @@
 ---
-import type { HookType } from './core';
+import type { HookType } from 'common/types';
 
 export interface Props {
 	hook?: HookType;
@@ -28,8 +28,34 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
 	const inputs = [...document.querySelectorAll('form input')] as HTMLInputElement[];
+
 	inputs?.forEach((input) => {
-		input.addEventListener('blur', validate);
+		input.addEventListener('blur', (e: Event) => {
+			// NOTE: event target attribute names are converted to lowercase
+			const element = e.target as HTMLInputElement;
+			const attributeNames = element?.getAttributeNames() || [];
+			const validators = attributeNames
+				.filter((attribute) => attribute.includes('data-validator-'))
+				.map((attribute) => {
+					const limit = element.getAttribute(attribute);
+					return `${attribute}:${limit}`;
+				});
+			const value = element.value;
+			const errors = validate(value, validators);
+
+			// set element hasErrors
+			if (errors.length) {
+				element.parentElement?.setAttribute('data-validator-haserrors', 'true');
+				element.setAttribute('data-validator-haserrors', 'true');
+				element.classList.add('has-errors');
+				// TODO: display error messages
+			} else {
+				element.parentElement?.removeAttribute('data-validator-haserrors');
+				element.removeAttribute('data-validator-haserrors');
+				element.classList.remove('has-errors');
+			}
+		});
+
 		input.addEventListener('input', clearErrors);
 	});
 </script>
