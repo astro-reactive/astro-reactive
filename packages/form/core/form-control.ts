@@ -1,4 +1,15 @@
-import type { ControlConfig, ControlType, RadioOption, ValidationError } from 'common/types';
+import type {
+	Button,
+	Checkbox,
+	ControlBase,
+	ControlType,
+	Radio,
+	RadioOption,
+	Submit,
+	ValidationError,
+} from 'common/types';
+
+export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
 
 export class FormControl {
 	private _name = '';
@@ -16,7 +27,11 @@ export class FormControl {
 	private validate: (value: string, validators: string[]) => ValidationError[] = (
 		value: string,
 		validators: string[]
-	) => [];
+	) => {
+		value;
+		validators;
+		return [];
+	};
 
 	constructor(private config: ControlConfig) {
 		const { name, id, type, value, label, labelPosition, placeholder, validators = [] } = config;
