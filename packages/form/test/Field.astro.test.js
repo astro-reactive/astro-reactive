@@ -75,13 +75,19 @@ describe('Field.astro test', () => {
 
 	it('Should server-render validation error attributes', async () => {
 		// arrange
-		const expectedAttribute = 'data-validator-haserrors';
+		// TODO: mock validator
+		const expectedClass = 'has-errors';
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
 				name: 'username',
 				labelPosition: 'left',
 				validators: ['validator-required'],
+				errors: [
+					{
+						error: 'required',
+					},
+				],
 				value: '',
 			},
 			showValidationHints: true,
@@ -92,7 +98,7 @@ describe('Field.astro test', () => {
 		const actualResult = cleanString(component.html);
 
 		// assert
-		expect(actualResult).to.contain(expectedAttribute);
+		expect(actualResult).to.contain(expectedClass);
 	});
 });
 
