@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { describe, beforeEach, it } from 'mocha';
 import { getComponentOutput } from 'astro-component-tester';
+import { cleanString } from './utils/index.js';
 
 describe('Form.astro test', () => {
 	let component;
@@ -15,7 +16,7 @@ describe('Form.astro test', () => {
 			const expectedCount = 0;
 			const element = /<fieldset>/g;
 			const props = { formGroups: undefined };
-			component = await getComponentOutput('./Form.astro', props);
+			component = await getComponentOutput('./components/Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -30,7 +31,7 @@ describe('Form.astro test', () => {
 			const expectedCount = 0;
 			const element = /<fieldset>/g;
 			const props = { formGroups: [] };
-			component = await getComponentOutput('./Form.astro', props);
+			component = await getComponentOutput('./components/Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -54,7 +55,7 @@ describe('Form.astro test', () => {
 				],
 			};
 			const props = { formGroups: Array(expectedCount).fill(fakeFormGroup) };
-			component = await getComponentOutput('./Form.astro', props);
+			component = await getComponentOutput('./components/Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -78,7 +79,7 @@ describe('Form.astro test', () => {
 				],
 			};
 			const props = { formGroups: fakeFormGroup };
-			component = await getComponentOutput('./Form.astro', props);
+			component = await getComponentOutput('./components/Form.astro', props);
 
 			// act
 			const actualResult = cleanString(component.html);
@@ -89,7 +90,3 @@ describe('Form.astro test', () => {
 		});
 	});
 });
-
-function cleanString(str) {
-	return str.replace(/\s/g, '');
-}

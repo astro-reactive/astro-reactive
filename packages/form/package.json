@@ -16,7 +16,6 @@
   "files": [
     "core/",
     "components/",
-    "Form.astro",
     "index.ts"
   ],
   "keywords": [
