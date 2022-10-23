@@ -1,8 +1,8 @@
 ---
 import type { Submit } from 'common/types';
-import { FormGroup, FormControl } from './core';
-import FieldSet from './components/FieldSet.astro';
-import Field from './components/Field.astro';
+import { FormGroup, FormControl } from '../core';
+import FieldSet from './FieldSet.astro';
+import Field from './Field.astro';
 
 export interface Props {
 	formGroups: FormGroup | FormGroup[];
@@ -11,10 +11,10 @@ export interface Props {
 	showValidationHints?: boolean;
 }
 
-const { submitControl, formGroups: form, theme, showValidationHints = false } = Astro.props;
+const { submitControl, formGroups = [], theme, showValidationHints = false } = Astro.props;
 
 const formTheme = theme ?? 'light';
-const formName = Array.isArray(form) ? null : form?.name || null;
+const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 ---
 
 <form
@@ -24,9 +24,11 @@ const formName = Array.isArray(form) ? null : form?.name || null;
 	data-validator-hints={showValidationHints.toString()}
 >
 	{
-		Array.isArray(form)
-			? form?.map((group) => <FieldSet showValidationHints={showValidationHints} group={group} />)
-			: form?.controls.map((control) => (
+		Array.isArray(formGroups)
+			? formGroups?.map((group) => (
+					<FieldSet showValidationHints={showValidationHints} group={group} />
+			  ))
+			: formGroups?.controls.map((control) => (
 					<Field showValidationHints={showValidationHints} control={control} />
 			  ))
 	}

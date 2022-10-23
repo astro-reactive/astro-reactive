@@ -52,7 +52,6 @@ export class FormControl {
 		this._validators = validators;
 
 		// dynamic import of the validator package
-		// if user did not install the validator, then errors should be empty
 		import('@astro-reactive/validator').then((validator) => {
 			if (validator) {
 				this.validate = validator.validate;
@@ -60,6 +59,7 @@ export class FormControl {
 				const valueStr: string = this._value?.toString() || '';
 				this._errors = this.validate(valueStr, validators);
 			} else {
+				// if user did not install the validator, then errors should be empty
 				this._errors = [];
 			}
 		});
