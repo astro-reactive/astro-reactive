@@ -1,3 +1,8 @@
+## v0.5.0
+- server-rendered validation errors (when control was set with invalid value)
+- radio control accepts array of value or RadioOption
+- added tests for form components
+
 ## v0.4.5
 - update project documentations
 
