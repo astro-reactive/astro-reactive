@@ -1,5 +1,5 @@
 ---
-import type { Submit, Radio, RadioOption } from 'common/types';
+import type { Submit } from 'common/types';
 import { FormGroup, FormControl } from './core';
 import FieldSet from './components/FieldSet.astro';
 import Field from './components/Field.astro';
@@ -17,44 +17,18 @@ const formTheme = theme ?? 'light';
 const formName = Array.isArray(form) ? null : form?.name || null;
 ---
 
-<form class={formTheme} name={formName} id={formName}>
+<form
+	class={formTheme}
+	name={formName}
+	id={formName}
+	data-validator-hints={showValidationHints.toString()}
+>
 	{
 		Array.isArray(form)
 			? form?.map((group) => <FieldSet showValidationHints={showValidationHints} group={group} />)
-			: form?.controls.map((control) =>
-					control.type === 'radio' ? (
-						[
-							<Field
-								showValidationHints={showValidationHints}
-								control={control}
-								showOnlyLabel={true}
-							/>,
-							...(control as Radio)?.value?.map((v: string | RadioOption) => (
-								<Field
-									showValidationHints={showValidationHints}
-									control={
-										typeof v === 'string'
-											? new FormControl({
-													name: control.name,
-													type: 'radio',
-													id: control.name + v,
-													label: v,
-													value: v,
-											  })
-											: new FormControl({
-													name: control.name,
-													type: 'radio',
-													id: control.name + v.label,
-													...(v as RadioOption),
-											  })
-									}
-								/>
-							)),
-						]
-					) : (
-						<Field showValidationHints={showValidationHints} control={control} />
-					)
-			  )
+			: form?.controls.map((control) => (
+					<Field showValidationHints={showValidationHints} control={control} />
+			  ))
 	}
 	{
 		submitControl && (
@@ -65,20 +39,18 @@ const formName = Array.isArray(form) ? null : form?.name || null;
 
 <style>
 	.light {
-		/**
-		* run dev server with: "npm start",
-		* then open browser to "localhost:3000"
-		* add a class="light" to the <form> element above to test changes
-		* INSERT STYLES FOR LIGHT MODE BELOW: */
+		color-scheme: light;
 	}
 
 	.dark {
-		/**
-		* run dev server with: "npm start",
-		* then open browser to "localhost:3000"
-		* add a class="dark" to the <form> element above to test changes
-		* INSERT STYLES FOR DARK MODE BELOW: */
-		background-color: #333;
-		color: white;
+		color-scheme: dark;
+	}
+</style>
+
+<style is:global>
+	[data-validator-hints='true'][data-validator-haserrors='true'],
+	[data-validator-hints='true'] [data-validator-haserrors='true'] {
+		color: red;
+		border-color: red;
 	}
 </style>

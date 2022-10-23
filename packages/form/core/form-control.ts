@@ -13,15 +13,14 @@ export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
 
 export class FormControl {
 	private _name = '';
-	private _id = '';
 	private _type: ControlType = 'text';
 	private _value?: string | number | null | string[] | RadioOption[];
-	private _label?: string;
+	private _label = '';
 	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;
 	private _isPristine = true;
-	private _placeholder?: string;
-	private _validators?: string[];
+	private _placeholder: string | null = null;
+	private _validators: string[] = [];
 	private _errors: ValidationError[] = [];
 
 	private validate: (value: string, validators: string[]) => ValidationError[] = (
@@ -34,14 +33,22 @@ export class FormControl {
 	};
 
 	constructor(private config: ControlConfig) {
-		const { name, id, type, value, label, labelPosition, placeholder, validators = [] } = config;
+		const {
+			name,
+			type = 'text',
+			value = null,
+			label = '',
+			labelPosition = 'left',
+			placeholder = null,
+			validators = [],
+		} = config;
+
 		this._name = name;
-		this._id = id ?? name;
-		this._type = type ?? 'text';
-		this._value = value ?? null;
-		this._label = label ?? '';
-		this._labelPosition = labelPosition ?? 'left';
-		this._placeholder = placeholder ?? '';
+		this._type = type;
+		this._value = value;
+		this._label = label;
+		this._labelPosition = labelPosition;
+		this._placeholder = placeholder;
 		this._validators = validators;
 
 		// dynamic import of the validator package
@@ -60,10 +67,6 @@ export class FormControl {
 
 	get name() {
 		return this._name;
-	}
-
-	get id() {
-		return this._id;
 	}
 
 	get type() {

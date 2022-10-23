@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { describe, beforeEach, it } from 'mocha';
 import { getComponentOutput } from 'astro-component-tester';
+import { cleanString } from './utils/index.js';
 
 describe('Form.astro test', () => {
 	let component;
@@ -89,7 +90,3 @@ describe('Form.astro test', () => {
 		});
 	});
 });
-
-function cleanString(str) {
-	return str.replace(/\s/g, '');
-}
