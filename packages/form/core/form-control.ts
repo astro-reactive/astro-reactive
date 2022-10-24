@@ -22,6 +22,7 @@ export class FormControl {
 	private _placeholder: string | null = null;
 	private _validators: string[] = [];
 	private _errors: ValidationError[] = [];
+	private _options: string[] | RadioOption[] = [];
 
 	private validate: (value: string, validators: string[]) => ValidationError[] = (
 		value: string,
@@ -41,6 +42,7 @@ export class FormControl {
 			labelPosition = 'left',
 			placeholder = null,
 			validators = [],
+			options = [],
 		} = config;
 
 		this._name = name;
@@ -50,6 +52,7 @@ export class FormControl {
 		this._labelPosition = labelPosition;
 		this._placeholder = placeholder;
 		this._validators = validators;
+		this._options = options;
 
 		// TODO: implement independence
 		// form should try to import validator,
@@ -105,6 +108,10 @@ export class FormControl {
 
 	get errors() {
 		return this._errors;
+	}
+
+	get options() {
+		return this._options;
 	}
 
 	setValue(value: string) {
