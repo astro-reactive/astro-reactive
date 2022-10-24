@@ -27,13 +27,14 @@ const form = new FormGroup([
     name: "rating",
     label: "Rating",
     type: "radio",
-    value: ["1", "2", "3", "4", "5"],
+    value: "5",
+    options: ["1", "2", "3", "4", "5"],
   },
   {
     name: "agreement",
     label: "Agreement",
     type: "radio",
-    value: [
+    options: [
       { label: "Agree", value: "yes", checked: true },
       { label: "Disagree", value: "no" },
     ],
