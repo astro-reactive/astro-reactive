@@ -42,6 +42,7 @@ export class FormControl {
 			labelPosition = 'left',
 			placeholder = null,
 			validators = [],
+			options = [],
 		} = config;
 
 		this._name = name;
@@ -51,10 +52,7 @@ export class FormControl {
 		this._labelPosition = labelPosition;
 		this._placeholder = placeholder;
 		this._validators = validators;
-
-		if (type === 'radio') {
-			this._options = config?.options ?? [];
-		}
+		this._options = options;
 
 		// TODO: implement independence
 		// form should try to import validator,
