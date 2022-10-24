@@ -51,9 +51,10 @@ describe('Field.astro test', () => {
 		expect(actualResult).to.not.contain('input');
 	});
 
-	it('Should render required fields with asterisk in label when showValidationHints is true', async () => {
+	it('Should render required fields with data required attribute when showValidationHints is true', async () => {
 		// arrange
 		const expectedLabel = 'TestLabel';
+		const expectedAttribute = 'data-validator-required="true"';
 		const props = {
 			control: {
 				label: expectedLabel,
@@ -70,7 +71,7 @@ describe('Field.astro test', () => {
 
 		// assert
 		expect(actualResult).to.contain(expectedLabel);
-		expect(actualResult).to.contain('*');
+		expect(actualResult).to.contain(expectedAttribute);
 	});
 
 	it('Should server-render validation error attributes', async () => {
