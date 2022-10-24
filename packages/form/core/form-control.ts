@@ -51,7 +51,9 @@ export class FormControl {
 		this._placeholder = placeholder;
 		this._validators = validators;
 
-		// TODO: implement independence, form should not import validator
+		// TODO: implement independence
+		// form should try to import validator,
+		// but handle error when it's not installed
 		import('@astro-reactive/validator').then((validator) => {
 			if (validator) {
 				this.validate = validator.validate;

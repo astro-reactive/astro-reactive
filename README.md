@@ -24,12 +24,12 @@
 
 | Packages | Version | Description |
 | --- | --- | --- |
-| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
-| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
-| @astro-reactive/themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
-| @astro-reactive/data-grid | 🛠 | a dynamic data grid of values |
-| @astro-reactive/charts    | 🛠 | data visualization that emits and responds to events |
-| @astro-reactive/maps      | 🛠 | geographic data visualization that emits and responds to events |
+| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
+| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
+| themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
+| data-grid | 🛠 | a dynamic data grid of values |
+| charts    | 🛠 | data visualization that emits and responds to events |
+| maps      | 🛠 | geographic data visualization that emits and responds to events |
 
 # HACKTOBERFEST 2022
 
