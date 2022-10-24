@@ -25,7 +25,7 @@
 | Packages | Version | Description |
 | --- | --- | --- |
 | [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
+| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | validators for editable fields |
 | data-grid | 🛠 | a dynamic data grid of values |
 | themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
 | viz    | 🛠 | data visualization that emits and responds to events |
