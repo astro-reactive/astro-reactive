@@ -34,8 +34,8 @@ const form = new FormGroup([
     label: "Agreement",
     type: "radio",
     value: [
-      { label: "Agree", value: "yes" },
-      { label: "Disagree", value: "no", labelPosition: "right" },
+      { label: "Agree", value: "yes", checked: true },
+      { label: "Disagree", value: "no" },
     ],
   },
 ]);
@@ -61,9 +61,12 @@ form.get("is-awesome")?.setValue("checked");
 
 // setting an invalid value will cause errors as server-rendered
 form.get("email")?.setValue("invalid-email");
+
+// switch between light and dark mode
+const theme = "dark";
 ---
 
-<html lang="en">
+<html lang="en" class={theme}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -71,8 +74,15 @@ form.get("email")?.setValue("invalid-email");
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class={theme}>
+    <nav>Examples: <a href="/pizza-delivery">Pizza Delivery</a></nav>
     <h1>Astro Reactive Form</h1>
-    <Form showValidationHints={true} formGroups={form} />
+    <Form showValidationHints={true} formGroups={form} theme={theme} />
+    <style>
+      html.dark,
+      body.dark {
+        color-scheme: dark;
+      }
+    </style>
   </body>
 </html>

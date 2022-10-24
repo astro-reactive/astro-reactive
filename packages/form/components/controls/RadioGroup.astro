@@ -1,0 +1,31 @@
+---
+/**
+ * RADIO GROUP COMPONENT
+ */
+import type { Radio } from 'common/types';
+
+export interface Props {
+	control: Radio;
+}
+
+const { control } = Astro.props;
+
+const options = control.value.map((option) => {
+	if (typeof option === 'string') {
+		return {
+			label: option,
+			value: option,
+		};
+	}
+	return option;
+});
+---
+
+{
+	options.map((option) => (
+		<div class="radio-option">
+			<input type="radio" name={control.name} value={option.value} checked={option.checked} />{' '}
+			{option.label}
+		</div>
+	))
+}
