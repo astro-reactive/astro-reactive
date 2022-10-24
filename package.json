@@ -24,9 +24,9 @@
     "lint:fix": "npm run lint:fix --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
-    "patch": "npm version patch -w",
-    "minor": "npm version minor -w",
-    "major": "npm version major -w",
+    "patch": "npm version patch -w && npm outdated",
+    "minor": "npm version minor -w && npm outdated",
+    "major": "npm version major -w && npm outdated",
     "publish": "npm publish --access public -w"
   },
   "license": "ISC",
