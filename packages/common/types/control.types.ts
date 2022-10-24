@@ -34,6 +34,7 @@ export interface ControlBase {
   labelPosition?: "right" | "left";
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
+  options?: string[] | RadioOption[]; // prevent build failed
 }
 
 export interface Checkbox extends ControlBase {
