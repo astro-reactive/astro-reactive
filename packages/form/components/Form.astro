@@ -1,0 +1,58 @@
+---
+import type { Submit } from 'common/types';
+import { FormGroup, FormControl } from '../core';
+import FieldSet from './FieldSet.astro';
+import Field from './Field.astro';
+
+export interface Props {
+	formGroups: FormGroup | FormGroup[];
+	submitControl?: Submit;
+	theme?: 'light' | 'dark';
+	showValidationHints?: boolean;
+}
+
+const { submitControl, formGroups = [], theme, showValidationHints = false } = Astro.props;
+
+const formTheme = theme ?? 'light';
+const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
+---
+
+<form
+	class={formTheme}
+	name={formName}
+	id={formName}
+	data-validator-hints={showValidationHints.toString()}
+>
+	{
+		Array.isArray(formGroups)
+			? formGroups?.map((group) => (
+					<FieldSet showValidationHints={showValidationHints} group={group} />
+			  ))
+			: formGroups?.controls.map((control) => (
+					<Field showValidationHints={showValidationHints} control={control} />
+			  ))
+	}
+	{
+		submitControl && (
+			<Field showValidationHints={showValidationHints} control={new FormControl(submitControl)} />
+		)
+	}
+</form>
+
+<style>
+	.light {
+		color-scheme: light;
+	}
+
+	.dark {
+		color-scheme: dark;
+	}
+</style>
+
+<style is:global>
+	[data-validator-hints='true'][data-validator-haserrors='true'],
+	[data-validator-hints='true'] [data-validator-haserrors='true'] {
+		color: red;
+		border-color: red;
+	}
+</style>

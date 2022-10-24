@@ -46,7 +46,7 @@ export interface Radio extends Omit<ControlBase, "value"> {
   value: string[] | RadioOption[];
 }
 
-export interface RadioOption extends Omit<ControlBase, "name"> {
+export interface RadioOption {
   label: string;
   value: string;
   checked?: boolean;

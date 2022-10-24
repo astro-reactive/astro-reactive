@@ -1,102 +1,34 @@
 ---
+/**
+ * DEFAULT CONTROL COMPONENT
+ */
+import type { Radio } from 'common/types';
 import type { FormControl } from '../core/form-control';
+import Input from './controls/Input.astro';
+import RadioGroup from './controls/RadioGroup.astro';
+import Errors from './Errors.astro';
+import Label from './Label.astro';
 
 export interface Props {
 	control: FormControl;
 	showValidationHints: boolean;
-	showErrors?: boolean;
-	showOnlyLabel?: boolean;
+	showErrors?: boolean; // feature flag for showing validation errors
 }
 
-const { control, showValidationHints, showErrors = false, showOnlyLabel = false } = Astro.props;
+const { control, showValidationHints, showErrors = false } = Astro.props;
 
-const { validators = [] } = control;
-
-const isRequired: boolean = showValidationHints && validators.includes('validator-required');
-
-const hasErrors: boolean = showValidationHints && !!control.errors?.length;
-
-const validatorAttributes: Record<string, string> = validators?.reduce(
-	(prev, validator) => {
-		const split: string[] = validator.split(':');
-		const label: string = `data-${split[0]}` || 'invalid';
-		const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
-
-		return {
-			...prev,
-			[label]: value,
-		};
-	},
-
-	{}
-);
+const hasErrors: boolean | null = !!control.errors?.length;
 ---
 
-<div
-	class="field"
-	data-validator-hints={showValidationHints?.toString()}
-	data-validator-haserrors={hasErrors ? hasErrors?.toString() : null}
-	data-validator-required={isRequired.toString()}
->
-	{
-		control.label && control.labelPosition === 'left' && (
-			<label for={control?.id ?? control.name}>
-				{control.label}
-			</label>
-		)
-	}
-
-	{
-		!showOnlyLabel && (
-			<input
-				name={control.name}
-				id={control?.id ?? control.name}
-				type={control.type}
-				value={control.value?.toString()}
-				checked={control.value === 'checked'}
-				placeholder={control.placeholder}
-				data-label={control.label}
-				data-label-position={control.labelPosition}
-				data-validator-haserrors={hasErrors ? hasErrors?.toString() : null}
-				class:list={[{ 'has-errors': hasErrors }]}
-				{...validatorAttributes}
-			/>
-		)
-	}
-
-	{
-		showErrors &&
-			hasErrors &&
-			control.errors.map((error) => (
-				<li>
-					{error.error} {error.limit}
-				</li>
-			))
-	}
-
-	{
-		control.label && control.labelPosition === 'right' && (
-			<label for={control?.id ?? control.name}>
-				{isRequired && <span>*</span>}
-				{control.label}
-			</label>
-		)
-	}
+<div class="field" data-validator-haserrors={hasErrors ? hasErrors.toString() : null}>
+	<Label control={control} showValidationHints={showValidationHints}>
+		{
+			control.type === 'radio' ? (
+				<RadioGroup control={control as Radio} />
+			) : (
+				<Input control={control} />
+			)
+		}
+		{showErrors && <Errors errors={control.errors} />}
+	</Label>
 </div>
-
-<style>
-	/**
-		TODO: remove usage of data-validator-haserrors,
-			class has-errors is sufficient
-	*/
-	[data-validator-hints='true'][data-validator-haserrors='true'],
-	[data-validator-hints='true'] [data-validator-haserrors='true'],
-	.has-errors {
-		color: red;
-		border-color: red;
-	}
-
-	div[data-validator-required='true'] + label::before {
-		content: "*";
-	}
-</style>
