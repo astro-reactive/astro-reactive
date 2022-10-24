@@ -26,10 +26,9 @@
 | --- | --- | --- |
 | [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
 | [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
-| themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
 | data-grid | 🛠 | a dynamic data grid of values |
-| charts    | 🛠 | data visualization that emits and responds to events |
-| maps      | 🛠 | geographic data visualization that emits and responds to events |
+| themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
+| viz    | 🛠 | data visualization that emits and responds to events |
 
 # HACKTOBERFEST 2022
 
