@@ -10,7 +10,7 @@ export interface Props {
 
 const { control } = Astro.props;
 
-const options = control.value.map((option) => {
+const options = control.options.map((option) => {
 	if (typeof option === 'string') {
 		return {
 			label: option,
@@ -24,7 +24,7 @@ const options = control.value.map((option) => {
 {
 	options.map((option) => (
 		<div class="radio-option">
-			<input type="radio" name={control.name} value={option.value} checked={option.checked} />{' '}
+			<input type="radio" name={control.name} value={option.value} checked={option.value === control.value} />{' '}
 			{option.label}
 		</div>
 	))

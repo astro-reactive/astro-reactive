@@ -34,6 +34,7 @@ export interface ControlBase {
   labelPosition?: "right" | "left";
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
+  options?: string[] | RadioOption[]; // prevent build failed
 }
 
 export interface Checkbox extends ControlBase {
@@ -43,13 +44,13 @@ export interface Checkbox extends ControlBase {
 
 export interface Radio extends Omit<ControlBase, "value"> {
   type: "radio";
-  value: string[] | RadioOption[];
+  value?: string;
+  options: string[] | RadioOption[];
 }
 
 export interface RadioOption {
   label: string;
   value: string;
-  checked?: boolean;
 }
 
 export interface Submit extends ControlBase {

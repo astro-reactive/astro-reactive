@@ -9,6 +9,7 @@ describe('RadioGroup.astro test', () => {
 	beforeEach(() => {
 		component = undefined;
 	});
+
 	it('Should render all radio options', async () => {
 		// arrange
 		const expectedOptions = 3;
@@ -18,7 +19,7 @@ describe('RadioGroup.astro test', () => {
 				label: 'FAKE LABEL',
 				name: 'FAKE NAME',
 				type: 'radio',
-				value: ['one', 'two', 'three'],
+				options: ['one', 'two', 'three'],
 			},
 			showValidationHints: true,
 		};
@@ -30,5 +31,60 @@ describe('RadioGroup.astro test', () => {
 
 		// assert
 		expect(matches.length).to.equal(expectedOptions);
+	});
+
+	it('Should render a checked radio option from string[] correctly', async () => {
+		const expectedResult = '<inputtype="radio"name="FAKENAME"value="two"checked="true">';
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'FAKE NAME',
+				type: 'radio',
+				value: 'two',
+				options: ['one', 'two', 'three'],
+			},
+			showValidationHints: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
+		const actualResult = cleanString(component.html);
+
+		// assert
+		expect(actualResult).to.contain(expectedResult);
+	});
+
+	it('Should render a checked radio option from RadioOption[] correctly', async () => {
+		const expectedResult = '<inputtype="radio"name="FAKENAME"value="three"checked="true">';
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'FAKE NAME',
+				type: 'radio',
+				value: 'three',
+				options: [
+					{
+						value: 'one',
+						label: '1',
+					},
+					{
+						value: 'two',
+						label: '2',
+					},
+					{
+						value: 'three',
+						label: '3',
+					},
+				],
+			},
+			showValidationHints: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
+		const actualResult = cleanString(component.html);
+
+		// assert
+		expect(actualResult).to.contain(expectedResult);
 	});
 });
