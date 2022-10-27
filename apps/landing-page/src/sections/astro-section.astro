@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<section class="h-screen flex flex-col px-10 astro">
+  <div class="flex">
+    <div class="flex-1">
+      <h1 class="text-6xl font-extrabold gradient-text">
+        Native Astro Components
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi facere,
+        culpa corporis aspernatur obcaecati autem fugiat excepturi, possimus
+        mollitia est veritatis eaque officiis quia porro nesciunt esse unde
+        consequuntur in nobis at earum dolore quod magni ipsam. Quo
+        necessitatibus modi sequi quas perspiciatis laborum enim
+      </p>
+    </div>
+    <div class="flex-1 items-center justify-center md:flex hidden">
+      <h1 class="sr-only">Astro</h1>
+      <Icon name="logomark" class="astro-logo" />
+      <Icon name="wordmark" class="h-10" />
+    </div>
+  </div>
+  <div
+    class="benefits flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 my-10"
+  >
+    <img src="https://via.placeholder.com/200" alt="benefit 1" />
+    <img src="https://via.placeholder.com/200" alt="benefit 2" />
+    <img src="https://via.placeholder.com/200" alt="benefit 3" />
+    <img src="https://via.placeholder.com/200" alt="benefit 4" />
+  </div>
+</section>
+
+<style>
+  .astro {
+    padding-top: 7rem;
+  }
+
+  .astro-logo {
+    width: 10rem;
+    height: 10rem;
+  }
+</style>
