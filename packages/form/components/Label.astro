@@ -14,23 +14,26 @@ const { validators = [] } = control;
 const isRequired: boolean = showValidationHints && validators.includes('validator-required');
 ---
 
-	{
-		control.label && control.labelPosition === 'left' && (
-			<label for={control.name}>
-				{isRequired && <span>*</span>}
-				{control.label}
-			</label>
-		)
+{
+	control.label && control.labelPosition === 'left' && (
+		<label for={control.name} data-validation-required={isRequired ? "true" : null}>
+			{control.label}
+		</label>
+	)
+}
+
+<slot />
+
+{
+	control.label && control.labelPosition === 'right' && (
+		<label for={control.name} data-validation-required={isRequired ? "true" : null}>
+			{control.label}
+		</label>
+	)
+}
+
+<style>
+	label[data-validation-required="true"]::before {
+		content: "*";
 	}
-
-	<slot />
-
-	{
-		control.label && control.labelPosition === 'right' && (
-			<label for={control.name}>
-				{isRequired && <span>*</span>}
-				{control.label}
-			</label>
-		)
-	}
-
+</style>
