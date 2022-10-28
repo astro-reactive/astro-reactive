@@ -2,7 +2,7 @@
 /**
  * RADIO GROUP COMPONENT
  */
-import type { Radio } from 'common/types';
+import type { Radio } from '@astro-reactive/common';
 
 export interface Props {
 	control: Radio;
@@ -24,7 +24,12 @@ const options = control.options.map((option) => {
 {
 	options.map((option) => (
 		<div class="radio-option">
-			<input type="radio" name={control.name} value={option.value} checked={option.value === control.value} />{' '}
+			<input
+				type="radio"
+				name={control.name}
+				value={option.value}
+				checked={option.value === control.value}
+			/>{' '}
 			{option.label}
 		</div>
 	))

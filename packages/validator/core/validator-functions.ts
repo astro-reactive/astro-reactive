@@ -1,4 +1,4 @@
-import type { ValidationError } from 'common/types';
+import type { ValidationError } from '@astro-reactive/common';
 import { Validators } from './validator-names';
 
 /**

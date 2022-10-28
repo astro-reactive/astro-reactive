@@ -52,6 +52,9 @@
   "peerDependencies": {
     "astro": "^1.5.0"
   },
+  "dependencies": {
+    "@astro-reactive/common": "^0.0.1"
+  },
   "main": "index.js",
   "directories": {
     "test": "test"
