@@ -10,7 +10,7 @@
     <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
   <a href="https://github.com/ayoayco/astro-reactive-library">
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library?logo=github" />
   </a>
   <a href="https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git">
   <img
