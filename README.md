@@ -18,7 +18,7 @@
     alt="Contribute with Gitpod"
   />
 </a>
-<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro,src%2Fcomponents%2FTour.astro">
+<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
   <img
     src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
     alt="Play around in Stackblitz"
