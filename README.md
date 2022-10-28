@@ -23,7 +23,7 @@
   <br />
 <p>
 
-| Packages | Release notes | Description |
+| Package | Release notes | Description |
 | --- | --- | --- |
 | [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
 | [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
