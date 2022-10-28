@@ -90,7 +90,6 @@ describe('Dropdown.astro test', () => {
 		const actualResult = cleanString(component.html);
 		const matches = actualResult.match(element) || [];
 
-		console.log(actualResult);
 		// assert
 		expect(matches.length).to.equal(expectedOptions);
 		expect(actualResult).to.contain(expectedResult);
