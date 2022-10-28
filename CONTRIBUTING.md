@@ -124,3 +124,18 @@ Thank you again for your interest in contributing!
 💬 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
 
 🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for bugs found or improvement ideas
+
+## Play around examples:
+
+  <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
+    <img
+      src=" https://img.shields.io/badge/Play%20with-StackBlitz-2596be?logo=stackblitz"
+      alt="Play around in StackBlitz"
+    />
+  </a>
+  <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
+    <img
+      src="https://img.shields.io/badge/Play%20with-CodeSandbox-040404?logo=codesandbox"
+      alt="CodeSandbox"
+    />
+  </a>
