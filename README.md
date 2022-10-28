@@ -18,19 +18,16 @@
     alt="Contribute with Gitpod"
   />
 </a>
-
-  <br />
-  <br />
-<p>
-
-<span>
-  <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro,src%2Fcomponents%2FTour.astro">
+<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro,src%2Fcomponents%2FTour.astro">
   <img
     src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
     alt="Play around in Stackblitz"
   />
-</span>
-  
+</a>
+  <br />
+  <br />
+<p>
+
 | Packages                                                                                              | Version                                    | Description                                              |
 | ----------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------- |
 | [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           |  [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)      | a dynamic form which can be modified programmatically    |
