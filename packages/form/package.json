@@ -57,6 +57,6 @@
   "license": "MIT",
   "dependencies": {
     "@astro-reactive/validator": "^0.1.0",
-    "@astro-reactive/common": "^0.0.2"
+    "@astro-reactive/common": "^0.0.3"
   }
 }
