@@ -17,7 +17,10 @@
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
   />
+
+  [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro,src%2Fcomponents%2FTour.astro)
 </a>
+
   <br />
   <br />
 <p>
