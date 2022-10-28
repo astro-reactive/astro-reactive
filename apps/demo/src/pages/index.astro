@@ -39,6 +39,13 @@ const form = new FormGroup([
       { label: "Disagree", value: "no" },
     ],
   },
+  {
+    name: "size",
+    label: "Size",
+    type: "dropdown",
+    options: ["S", "M", "L", "XL", "XXL"],
+    placeholder: "-- Please choose an option --",
+  },
 ]);
 
 form.name = "Simple Form";

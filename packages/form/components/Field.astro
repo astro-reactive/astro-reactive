@@ -2,8 +2,9 @@
 /**
  * DEFAULT CONTROL COMPONENT
  */
-import type { Radio } from '@astro-reactive/common';
+import type { Radio, Dropdown } from '@astro-reactive/common';
 import type { FormControl } from '../core/form-control';
+import DropdownControl from './controls/Dropdown.astro';
 import Input from './controls/Input.astro';
 import RadioGroup from './controls/RadioGroup.astro';
 import Errors from './Errors.astro';
@@ -25,6 +26,9 @@ const hasErrors: boolean | null = !!control.errors?.length;
 		{
 			control.type === 'radio' ? (
 				<RadioGroup control={control as Radio} />
+			) :
+			control.type === 'dropdown' ? (
+				<DropdownControl control={control as Dropdown} />
 			) : (
 				<Input control={control} />
 			)
