@@ -1,7 +1,9 @@
 ---
 import Header from "~/components/header.astro";
+import Icon from "astro-icon";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
+import AstroSection from "~/sections/astro-section.astro";
 
 const { site } = Astro;
 const image = new URL("social.jpg", site);
@@ -76,8 +78,6 @@ const description =
   >
     <Header />
     <Splash />
-    <div class="h-screen">
-      <h1>This section is added just to test the sticky header :)</h1>
-    </div>
+    <AstroSection />
   </body>
 </html>
