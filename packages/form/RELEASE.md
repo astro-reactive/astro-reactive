@@ -1,4 +1,7 @@
 ### v0.5.1
+- use @astro-reactive/common
+
+### v0.5.1
 - fix for dynamic import of validator causing errors (breaks independence)
 
 ## v0.5.0

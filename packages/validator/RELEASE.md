@@ -1,3 +1,6 @@
+### v0.1.1
+- use @astro-reactive/common
+
 ## v0.1.0
 - support server-rendered validation for forms
 
