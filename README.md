@@ -18,10 +18,16 @@
     alt="Contribute with Gitpod"
   />
 </a>
-<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro,src%2Fcomponents%2FTour.astro">
+<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
   <img
     src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
     alt="Play around in Stackblitz"
+  />
+</a>
+ <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
+  <img
+    src="https://img.shields.io/badge/Codesandbox-040404?style=flat-square&logo=appveyor=codesandbox&logoColor=DBDBDB"
+    alt="CodeSandbox"
   />
 </a>
   <br />
