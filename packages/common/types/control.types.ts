@@ -2,7 +2,7 @@
  * `ControlType` determines the type of form control
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
  */
-export type ControlType =
+export type InputType =
   | "text"
   | "checkbox"
   | "radio"
@@ -23,8 +23,9 @@ export type ControlType =
   | "tel"
   | "time"
   | "url"
-  | "week"
-  | "dropdown";
+  | "week";
+
+export type ControlType = InputType | "dropdown";
 
 export interface ControlBase {
   name: string;

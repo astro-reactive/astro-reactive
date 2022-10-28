@@ -2,6 +2,7 @@
 /**
  * DEFAULT INPUT COMPONENT
  */
+import type { InputType } from 'common/types';
 import type { FormControl } from '../../core/form-control';
 
 export interface Props {
@@ -29,7 +30,7 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 <input
 	name={control.name}
 	id={control.name}
-	type={control.type}
+	type={control.type as InputType}
 	value={control.value?.toString()}
 	checked={control.value === 'checked'}
 	placeholder={control.placeholder}

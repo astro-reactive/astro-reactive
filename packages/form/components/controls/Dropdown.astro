@@ -2,7 +2,7 @@
 /**
  * DROPDOWN COMPONENT
  */
- import type { Dropdown } from 'common/types';
+import type { Dropdown, DropdownOption } from 'common/types';
 
 export interface Props {
 	control: Dropdown;
@@ -10,7 +10,7 @@ export interface Props {
 
 const { control } = Astro.props;
 
-const options = control.options.map((option) => {
+const options = control.options.map((option: string | DropdownOption) => {
 	if (typeof option === 'string') {
 		return {
 			label: option,
@@ -30,7 +30,7 @@ const options = control.options.map((option) => {
 	)
 }
 {	
-	options.map((option) => (
+	options.map((option: DropdownOption) => (
         <option
 			value={option.value} 
 			selected={option.value === control.value}
