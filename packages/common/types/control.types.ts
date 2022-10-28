@@ -23,7 +23,8 @@ export type ControlType =
   | "tel"
   | "time"
   | "url"
-  | "week";
+  | "week"
+  | "dropdown";
 
 export interface ControlBase {
   name: string;
@@ -51,6 +52,17 @@ export interface Radio extends Omit<ControlBase, "value"> {
 export interface RadioOption {
   label: string;
   value: string;
+}
+
+export interface Dropdown extends Omit<ControlBase, "value"> {
+  type: "dropdown";
+  value: string[] | DropdownOption[];
+}
+
+export interface DropdownOption {
+  label: string;
+  value: string;
+  checked?: boolean;
 }
 
 export interface Submit extends ControlBase {
