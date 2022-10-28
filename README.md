@@ -111,13 +111,13 @@ This project is only possible because of the support and contribution of our com
 
   <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
     <img
-      src=" https://img.shields.io/badge/Play%20with-StackBlitz-2596be?logo=stackblitz"
-      alt="Play around in StackBlitz"
+      src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
+      alt="Play around in Stackblitz"
     />
   </a>
   <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
     <img
-      src="https://img.shields.io/badge/Play%20with-CodeSandbox-040404?logo=codesandbox"
+      src="https://img.shields.io/badge/Open%20in-CodeSandbox-040404?logo=codesandbox"
       alt="CodeSandbox"
     />
   </a>
