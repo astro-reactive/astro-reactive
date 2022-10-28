@@ -1,3 +1,6 @@
+## 0.0.3
+- update package exports and files
+
 ## 0.0.2
 - expose types on top-level index
 

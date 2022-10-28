@@ -1,9 +1,16 @@
 {
   "name": "@astro-reactive/common",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.js",
   "devDependencies": {},
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "types/",
+    "index.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
