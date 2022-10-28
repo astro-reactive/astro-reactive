@@ -1,5 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <br />
   <strong>Astro Reactive Library</strong>
   <br />
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
@@ -11,16 +12,23 @@
   <a href="https://github.com/ayoayco/astro-reactive-library">
     <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
   </a>
+  <a href="https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git">
+  <img
+    src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
+    alt="Contribute with Gitpod"
+  />
+</a>
   <br />
   <br />
 <p>
 
 | Packages | Version | Description |
 | --- | --- | --- |
-| [@astro-reactive/form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | generate a dynamic form which can be modified programmatically |
-| [@astro-reactive/validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | set up validators for your form easily |
-| @astro-reactive/data-grid | 🛠 | generate a dynamic data grid of values |
-| @astro-reactive/charts | 🛠 | create data visualization that responds to events |
+| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
+| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | validators for editable fields |
+| data-grid | 🛠 | a dynamic data grid of values |
+| themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
+| viz    | 🛠 | data visualization that emits and responds to events |
 
 # HACKTOBERFEST 2022
 
@@ -64,7 +72,7 @@ npm i
 npm start
 ```
 
-5. Open the demo application on you browser. Browse to the address:
+5. Open the demo application on your browser. Browse to the address:
 
 ```
 https://localhost:3000

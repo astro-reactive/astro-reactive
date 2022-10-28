@@ -37,7 +37,11 @@ Packages:
 1. [landing-page](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/landing-page) - in the directory `apps/landing-page`
     - Astro website for the library's introductory landing page
 
-# Running locally
+   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git)
+
+
+
+# Running locally 
 
 We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
 

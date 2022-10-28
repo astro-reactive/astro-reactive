@@ -27,17 +27,18 @@ const form = new FormGroup([
     name: "rating",
     label: "Rating",
     type: "radio",
-    value: ["1", "2", "3", "4", "5"]
+    value: "5",
+    options: ["1", "2", "3", "4", "5"],
   },
   {
     name: "agreement",
     label: "Agreement",
     type: "radio",
-    value: [
-      { label: "Agree", value: "yes" },
-      { label: "Disagree", value: "no", labelPosition: "right" }
-    ]
-  }
+    options: [
+      { label: "Agree", value: "yes", checked: true },
+      { label: "Disagree", value: "no" },
+    ],
+  },
 ]);
 
 form.name = "Simple Form";
@@ -58,9 +59,15 @@ const userNameControl = form.get("username");
 // set values dynamically
 userNameControl?.setValue("RAMOOOON");
 form.get("is-awesome")?.setValue("checked");
+
+// setting an invalid value will cause errors as server-rendered
+form.get("email")?.setValue("invalid-email");
+
+// switch between light and dark mode
+const theme = "dark";
 ---
 
-<html lang="en">
+<html lang="en" class={theme}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -68,8 +75,15 @@ form.get("is-awesome")?.setValue("checked");
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
+  <body class={theme}>
+    <nav>Examples: <a href="/pizza-delivery">Pizza Delivery</a></nav>
     <h1>Astro Reactive Form</h1>
-    <Form showValidationHints={true} formGroups={form} />
+    <Form showValidationHints={true} formGroups={form} theme={theme} />
+    <style>
+      html.dark,
+      body.dark {
+        color-scheme: dark;
+      }
+    </style>
   </body>
 </html>

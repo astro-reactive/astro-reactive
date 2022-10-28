@@ -1,0 +1,17 @@
+---
+import type { ValidationError } from 'common/types';
+
+export interface Props {
+	errors: ValidationError[];
+}
+
+const { errors = [] } = Astro.props;
+---
+
+{
+	errors.map((error) => (
+		<li>
+			{error.error} {error.limit}
+		</li>
+	))
+}

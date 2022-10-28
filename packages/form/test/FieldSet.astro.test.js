@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { beforeEach, describe, it } from 'mocha';
 import { getComponentOutput } from 'astro-component-tester';
+import { cleanString } from './utils/index.js';
 
 describe('FieldSet.astro test', () => {
 	let component;
@@ -36,7 +37,3 @@ describe('FieldSet.astro test', () => {
 		expect(actualResult).to.contain(`<legend>${expectedName}</legend>`);
 	});
 });
-
-function cleanString(str) {
-	return str.replace(/\s/g, '');
-}

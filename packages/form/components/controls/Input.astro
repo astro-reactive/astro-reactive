@@ -1,0 +1,40 @@
+---
+/**
+ * DEFAULT INPUT COMPONENT
+ */
+import type { FormControl } from '../../core/form-control';
+
+export interface Props {
+	control: FormControl;
+}
+
+const { control } = Astro.props;
+
+const { validators = [] } = control;
+
+const hasErrors: boolean = !!control.errors?.length;
+
+const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+	const split: string[] = validator.split(':');
+	const label: string = `data-${split[0]}` || 'invalid';
+	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+
+	return {
+		...prev,
+		[label]: value,
+	};
+}, {});
+---
+
+<input
+	name={control.name}
+	id={control.name}
+	type={control.type}
+	value={control.value?.toString()}
+	checked={control.value === 'checked'}
+	placeholder={control.placeholder}
+	data-label={control.label}
+	data-label-position={control.labelPosition}
+	data-validator-haserrors={hasErrors.toString()}
+	{...validatorAttributes}
+/>

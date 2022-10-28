@@ -1,0 +1,36 @@
+---
+import type { FormControl } from '../core';
+
+export interface Props {
+	control: FormControl;
+	showValidationHints: boolean;
+	showErrors?: boolean; // feature flag for showing validation errors
+}
+
+const { control, showValidationHints } = Astro.props;
+
+const { validators = [] } = control;
+
+const isRequired: boolean = showValidationHints && validators.includes('validator-required');
+---
+
+	{
+		control.label && control.labelPosition === 'left' && (
+			<label for={control.name}>
+				{isRequired && <span>*</span>}
+				{control.label}
+			</label>
+		)
+	}
+
+	<slot />
+
+	{
+		control.label && control.labelPosition === 'right' && (
+			<label for={control.name}>
+				{isRequired && <span>*</span>}
+				{control.label}
+			</label>
+		)
+	}
+

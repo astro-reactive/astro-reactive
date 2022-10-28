@@ -1,5 +1,6 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <br />
   <strong>Astro Reactive Form</strong>
   <br />
   Generate a dynamic form based on your data, and modify programmatically.

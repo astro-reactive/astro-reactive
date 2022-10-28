@@ -16,6 +16,7 @@
   "scripts": {
     "start": "npm run dev -w apps/demo",
     "dev": "npm run dev -w apps/demo",
+    "demo": "npm run dev -w apps/demo",
     "docs": "npm run dev -w apps/docs",
     "landing-page": "npm run dev -w apps/landing-page",
     "test": "npm run test --workspaces --if-present",
@@ -23,9 +24,9 @@
     "lint:fix": "npm run lint:fix --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
-    "patch": "npm version patch -w",
-    "minor": "npm version minor -w",
-    "major": "npm version major -w",
+    "patch": "npm outdated && npm version patch -w",
+    "minor": "npm outdated && npm version minor -w",
+    "major": "npm outdated && npm version major -w",
     "publish": "npm publish --access public -w"
   },
   "license": "ISC",
@@ -34,6 +35,10 @@
     "packages/validator",
     "apps/demo",
     "apps/docs",
-    "apps/landing-page"
-  ]
+    "apps/landing-page",
+    "packages/common"
+  ],
+  "dependencies": {
+    "prettier-plugin-astro": "^0.6.0"
+  }
 }
