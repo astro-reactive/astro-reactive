@@ -2,7 +2,7 @@
 /**
  * DROPDOWN COMPONENT
  */
-import type { Dropdown, DropdownOption } from '@astro-reactive/common';
+import type { Dropdown, ControlOption } from '@astro-reactive/common';
 
 export interface Props {
 	control: Dropdown;
@@ -10,7 +10,7 @@ export interface Props {
 
 const { control } = Astro.props;
 
-const options = control.options.map((option: string | DropdownOption) => {
+const options = control.options.map((option: string | ControlOption) => {
 	if (typeof option === 'string') {
 		return {
 			label: option,
@@ -30,7 +30,7 @@ const options = control.options.map((option: string | DropdownOption) => {
 	)
 }
 {	
-	options.map((option: DropdownOption) => (
+	options.map((option: ControlOption) => (
         <option
 			value={option.value} 
 			selected={option.value === control.value}

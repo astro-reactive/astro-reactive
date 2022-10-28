@@ -54,7 +54,7 @@ describe('RadioGroup.astro test', () => {
 		expect(actualResult).to.contain(expectedResult);
 	});
 
-	it('Should render a checked radio option from RadioOption[] correctly', async () => {
+	it('Should render a checked radio option from ControlOption[] correctly', async () => {
 		const expectedResult = '<inputtype="radio"name="FAKENAME"value="three"checked="true">';
 		const props = {
 			control: {

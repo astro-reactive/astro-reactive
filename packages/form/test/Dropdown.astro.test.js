@@ -33,7 +33,7 @@ describe('Dropdown.astro test', () => {
 		expect(matches.length).to.equal(expectedOptions);
 	});
 
-	it('Should render all dropdown DropdownOption[] options', async () => {
+	it('Should render all dropdown ControlOption[] options', async () => {
 		// arrange
 		const expectedOptions = 3;
 		const element = /<option/g;
@@ -116,7 +116,7 @@ describe('Dropdown.astro test', () => {
 		expect(actualResult).to.contain(expectedResult);
 	});
 
-	it('Should select a selected dropdown option from DropdownOption[] correctly', async () => {
+	it('Should select a selected dropdown option from ControlOption[] correctly', async () => {
 		const expectedResult = '<optionvalue="three"selected="true">';
 		const props = {
 			control: {
