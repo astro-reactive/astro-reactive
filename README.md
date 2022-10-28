@@ -17,30 +17,30 @@
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
   />
-</a>
-<a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
-  <img
-    src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
-    alt="Play around in Stackblitz"
-  />
-</a>
- <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
-  <img
-    src="https://img.shields.io/badge/Codesandbox-040404?style=flat-square&logo=appveyor=codesandbox&logoColor=DBDBDB"
-    alt="CodeSandbox"
-  />
-</a>
+  </a>
+  <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
+    <img
+      src=" https://img.shields.io/badge/Play%20with-StackBlitz-2596be?logo=stackblitz"
+      alt="Play around in StackBlitz"
+    />
+  </a>
+  <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
+    <img
+      src="https://img.shields.io/badge/Play%20with-CodeSandbox-040404?logo=codesandbox"
+      alt="CodeSandbox"
+    />
+  </a>
   <br />
   <br />
 <p>
 
-| Packages                                                                                              | Version                                    | Description                                              |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------- |
-| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           |  [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)      | a dynamic form which can be modified programmatically    |
+| Packages                                                                                              | Version                                                                                           | Description                                              |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
 | [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
-| data-grid                                                                                             | 🛠                                          | a dynamic data grid of values                            |
-| themes                                                                                                | 🛠                                          | easy-to-use, accessible, consistent cross-browser styles |
-| viz                                                                                                   | 🛠                                          | data visualization that emits and responds to events     |
+| data-grid                                                                                             | 🛠                                                                                                 | a dynamic data grid of values                            |
+| themes                                                                                                | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                   | 🛠                                                                                                 | data visualization that emits and responds to events     |
 
 # HACKTOBERFEST 2022
 
