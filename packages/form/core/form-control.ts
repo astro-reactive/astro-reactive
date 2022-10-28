@@ -7,7 +7,7 @@ import type {
 	RadioOption,
 	Submit,
 	ValidationError,
-} from 'common/types';
+} from '@astro-reactive/common';
 
 export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
 
