@@ -1,16 +1,16 @@
 ---
 /**
- * RADIO GROUP COMPONENT
+ * DROPDOWN COMPONENT
  */
- import type { Radio } from 'common/types';
+ import type { Dropdown } from 'common/types';
 
 export interface Props {
-	control: Radio;
+	control: Dropdown;
 }
 
 const { control } = Astro.props;
 
-const options = control.value.map((option) => {
+const options = control.options.map((option) => {
 	if (typeof option === 'string') {
 		return {
 			label: option,
@@ -21,17 +21,20 @@ const options = control.value.map((option) => {
 });
 ---
 
-<select>
+<select name={control.name} id={control.name}>
 {
 	control?.placeholder && (
-		<option value="" disabled>
+		<option value="" disabled selected={!control?.value}>
 			{control.placeholder}
         </option>
 	)
 }
 {	
 	options.map((option) => (
-        <option value={option.value} selected={option.checked}>
+        <option
+			value={option.value} 
+			selected={option.value === control.value}
+		>
 			{option.label}
         </option>
 	))

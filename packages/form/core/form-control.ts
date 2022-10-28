@@ -5,16 +5,18 @@ import type {
 	ControlType,
 	Radio,
 	RadioOption,
+	Dropdown,
+	DropdownOption,
 	Submit,
 	ValidationError,
 } from '@astro-reactive/common';
 
-export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
+export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown;
 
 export class FormControl {
 	private _name = '';
 	private _type: ControlType = 'text';
-	private _value?: string | number | null | string[] | RadioOption[];
+	private _value?: string | number | null | string[] | RadioOption[] | DropdownOption[];
 	private _label = '';
 	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;

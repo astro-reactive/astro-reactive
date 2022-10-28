@@ -56,13 +56,13 @@ export interface RadioOption {
 
 export interface Dropdown extends Omit<ControlBase, "value"> {
   type: "dropdown";
-  value: string[] | DropdownOption[];
+  value?: string;
+  options: string[] | DropdownOption[];
 }
 
 export interface DropdownOption {
   label: string;
   value: string;
-  checked?: boolean;
 }
 
 export interface Submit extends ControlBase {
