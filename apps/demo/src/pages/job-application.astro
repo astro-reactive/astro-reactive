@@ -1,0 +1,141 @@
+---
+import Form, {
+  ControlConfig,
+  FormControl,
+  FormGroup,
+} from "@astro-reactive/form";
+import { Validators } from "@astro-reactive/validator";
+
+const infoForm = new FormGroup([
+  {
+    name: "firstName",
+    label: "First Name",
+    placeholder: "ex. John",
+    validators: [Validators.required],
+  },
+  {
+    name: "lastName",
+    label: "Last Name",
+    placeholder: "ex. Doe",
+    validators: [Validators.required],
+  },
+  {
+    name: "email",
+    label: "Email",
+    placeholder: "ex. john.doe@email.com",
+    validators: [Validators.email, Validators.required],
+  },
+  {
+    name: "whyHire",
+    label: "Why should we hire you?",
+  },
+  {
+    name: "country",
+    label: "Country of Residence",
+    type: "dropdown",
+    options: ["U.S.A", "Canada", "Mexico", "Cuba", "Guatamala", "Greenland", "Haiti"],
+    placeholder: "Choose Your Country",
+  },
+  {
+    name: "eligible",
+    label: "Are you eligible to work?",
+    type: "radio",
+    options: [
+      { label: "Yes", value: "yes"},
+      { label: "No", value: "no" },
+    ],
+  },
+]);
+
+const skillsForm = new FormGroup([
+{
+    name: "js",
+    label: "Javascript",
+    type: "checkbox",
+  },
+  {
+    name: "java",
+    label: "Java",
+    type: "checkbox",
+  },
+  {
+    name: "astro",
+    label: "Astro",
+    type: "checkbox",
+  },
+  {
+    name: "cpp",
+    label: "C/C++",
+    type: "checkbox",
+  },
+  {
+    name: "sql",
+    label: "SQL",
+    type: "checkbox",
+  },
+  {
+    name: "devops",
+    label: "DevOps",
+    type: "checkbox",
+  },
+]);
+
+const resume: ControlConfig = {
+  name: "resume",
+  label: "Upload Resume",
+  type: "file",
+};
+
+const submit: ControlConfig = {
+  name: "submit",
+  type: "submit",
+};
+
+  
+infoForm.name = "Application Form";
+skillsForm.name = "Skills"
+
+skillsForm.controls.push(new FormControl(resume));
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-sky-300 fixed w-full z-10 top-0 shadow text-xl pl-3">Examples: <a href="/">Home</a> | <a href="/pizza-delivery">Pizza Delivery</a></nav>
+
+    <!-- Title -->
+    <div class="items-center mt-10">
+        <h1 class="items-center text-center font-sans font-bold break-normal text-gray-700 px-2 text-xl mt-12 lg:mt-0 md:text-5xl">Programmer Job Application</h1>
+    </div>
+    
+    <!--Container-->
+    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-10 mt-4">
+        
+        <!-- Section -->
+        <section class="w-full">
+
+            <!-- Horizontal Rule -->
+            <hr class="bg-gray-300 w-full">
+
+            <!-- Header -->
+            <h2 id='section1' class="font-sans font-bold break-normal text-gray-700 px-2 pb-4 text-xl">Enter your information</h2>
+
+            <!-- Form -->
+            <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-slate-200">
+                <Form showValidationHints={true} formGroups={[infoForm, skillsForm]} submitControl={submit}></Form>
+            </div>
+
+        </section>
+
+      </div>
+  </body>
+</html>
