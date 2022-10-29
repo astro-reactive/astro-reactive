@@ -1,10 +1,12 @@
 ---
+import Nav from "../components/Nav.astro";
 import Form, {
   ControlConfig,
   FormControl,
   FormGroup,
 } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
+import type { Submit } from "@astro-reactive/common";
 
 const infoForm = new FormGroup([
   {
@@ -33,7 +35,15 @@ const infoForm = new FormGroup([
     name: "country",
     label: "Country of Residence",
     type: "dropdown",
-    options: ["U.S.A", "Canada", "Mexico", "Cuba", "Guatamala", "Greenland", "Haiti"],
+    options: [
+      "U.S.A",
+      "Canada",
+      "Mexico",
+      "Cuba",
+      "Guatamala",
+      "Greenland",
+      "Haiti",
+    ],
     placeholder: "Choose Your Country",
   },
   {
@@ -41,14 +51,14 @@ const infoForm = new FormGroup([
     label: "Are you eligible to work?",
     type: "radio",
     options: [
-      { label: "Yes", value: "yes"},
+      { label: "Yes", value: "yes" },
       { label: "No", value: "no" },
     ],
   },
 ]);
 
 const skillsForm = new FormGroup([
-{
+  {
     name: "js",
     label: "Javascript",
     type: "checkbox",
@@ -86,17 +96,15 @@ const resume: ControlConfig = {
   type: "file",
 };
 
-const submit: ControlConfig = {
+const submit: Submit = {
   name: "submit",
   type: "submit",
 };
 
-  
 infoForm.name = "Application Form";
-skillsForm.name = "Skills"
+skillsForm.name = "Skills";
 
 skillsForm.controls.push(new FormControl(resume));
-
 ---
 
 <html lang="en">
@@ -108,34 +116,44 @@ skillsForm.controls.push(new FormControl(resume));
     <title>Astro</title>
   </head>
   <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-
-    <!-- Navbar -->
-    <nav class="bg-sky-300 fixed w-full z-10 top-0 shadow text-xl pl-3">Examples: <a href="/">Home</a> | <a href="/pizza-delivery">Pizza Delivery</a></nav>
-
+    <Nav />
     <!-- Title -->
     <div class="items-center mt-10">
-        <h1 class="items-center text-center font-sans font-bold break-normal text-gray-700 px-2 text-xl mt-12 lg:mt-0 md:text-5xl">Programmer Job Application</h1>
+      <h1
+        class="items-center text-center font-sans font-bold break-normal text-gray-700 px-2 text-xl mt-12 lg:mt-0 md:text-5xl"
+      >
+        Programmer Job Application
+      </h1>
     </div>
-    
+
     <!--Container-->
-    <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-10 mt-4">
-        
-        <!-- Section -->
-        <section class="w-full">
+    <div
+      class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-10 mt-4"
+    >
+      <!-- Section -->
+      <section class="w-full">
+        <!-- Horizontal Rule -->
+        <hr class="bg-gray-300 w-full" />
 
-            <!-- Horizontal Rule -->
-            <hr class="bg-gray-300 w-full">
+        <!-- Header -->
+        <h2
+          id="section1"
+          class="font-sans font-bold break-normal text-gray-700 px-2 pb-4 text-xl"
+        >
+          Enter your information
+        </h2>
 
-            <!-- Header -->
-            <h2 id='section1' class="font-sans font-bold break-normal text-gray-700 px-2 pb-4 text-xl">Enter your information</h2>
-
-            <!-- Form -->
-            <div class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-slate-200">
-                <Form showValidationHints={true} formGroups={[infoForm, skillsForm]} submitControl={submit}></Form>
-            </div>
-
-        </section>
-
-      </div>
+        <!-- Form -->
+        <div
+          class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-slate-200"
+        >
+          <Form
+            showValidationHints={true}
+            formGroups={[infoForm, skillsForm]}
+            submitControl={submit}
+          />
+        </div>
+      </section>
+    </div>
   </body>
 </html>
