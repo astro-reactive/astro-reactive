@@ -2,10 +2,10 @@
 /**
  * TEXT AREA COMPONENT
  */
-import type { TextArea } from '@astro-reactive/common';
+import type { FormControl } from '../../core/form-control';
 
 export interface Props {
-	control: TextArea;
+	control: FormControl;
 }
 
 const { control } = Astro.props;
@@ -30,7 +30,6 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
     name={control.name}
     id={control.name}
     placeholder={control?.placeholder}
-    value={control?.value}
     rows={control?.rows ?? 3}
     cols={control?.cols ?? 21}
     data-label={control?.label}
