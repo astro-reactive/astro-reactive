@@ -31,20 +31,6 @@
 | themes                                                                                                | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
 | viz                                                                                                   | 🛠                                                                                                 | data visualization that emits and responds to events     |
 
-# HACKTOBERFEST 2022
-
-[Hacktoberfest](https://hacktoberfest.com) has begun! 🚀
-
-Any contribution is welcome. See our [contributing guide](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md), and feel free to look around to find something that interests you. :)
-
-Maybe add some themes to our form component? Or maybe an improvement for the README?
-
-The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
-
-If you don't find anything there, I'm happy to help you get your contribution in.
-
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
-
 # Running locally
 
 We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
