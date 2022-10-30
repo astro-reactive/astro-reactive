@@ -79,4 +79,27 @@ describe('Field.astro test', () => {
 		// assert
 		expect(actualResult).to.contain(expectedResult);
 	});
+
+	it('Should render field with readOnly attribute when readOnly is true', async () => {
+		// arrange
+		const expectedLabel = 'TestLabel';
+		const expectedAttribute = 'readonly';
+		const props = {
+			control: {
+				label: expectedLabel,
+				name: 'username',
+				labelPosition: 'left',
+				validators: ['validator-required'],
+			},
+			readOnly: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/Field.astro', props);
+		const actualResult = cleanString(component.html);
+
+		// assert
+		expect(actualResult).to.contain(expectedLabel);
+		expect(actualResult).to.contain(expectedAttribute);
+	});
 });

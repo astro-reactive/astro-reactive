@@ -9,9 +9,10 @@ export interface Props {
 	submitControl?: Submit;
 	theme?: 'light' | 'dark';
 	showValidationHints?: boolean;
+	readOnly?: boolean;
 }
 
-const { submitControl, formGroups = [], theme, showValidationHints = false } = Astro.props;
+const { submitControl, formGroups = [], theme, showValidationHints = false, readOnly = false } = Astro.props;
 
 const formTheme = theme ?? 'light';
 const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
@@ -26,10 +27,10 @@ const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 	{
 		Array.isArray(formGroups)
 			? formGroups?.map((group) => (
-					<FieldSet showValidationHints={showValidationHints} group={group} />
+					<FieldSet showValidationHints={showValidationHints} group={group} readOnly={readOnly}/>
 			  ))
 			: formGroups?.controls.map((control) => (
-					<Field showValidationHints={showValidationHints} control={control} />
+					<Field showValidationHints={showValidationHints} control={control} readOnly={readOnly}/>
 			  ))
 	}
 	{
