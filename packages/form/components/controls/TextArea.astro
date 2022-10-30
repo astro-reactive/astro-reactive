@@ -9,6 +9,21 @@ export interface Props {
 }
 
 const { control } = Astro.props;
+
+const { validators = [] } = control;
+
+const hasErrors: boolean = !!control.errors?.length;
+
+const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+	const split: string[] = validator.split(':');
+	const label: string = `data-${split[0]}` || 'invalid';
+	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+
+	return {
+		...prev,
+		[label]: value,
+	};
+}, {});
 ---
 
 <textarea
@@ -20,6 +35,8 @@ const { control } = Astro.props;
     cols={control?.cols ?? 21}
     data-label={control?.label}
     data-label-position={control?.labelPosition}
+	data-validator-haserrors={hasErrors.toString()}
+	{...validatorAttributes}
 >
 { control.value }
 </textarea>
