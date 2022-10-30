@@ -1,0 +1,25 @@
+---
+/**
+ * TEXT AREA COMPONENT
+ */
+import type { TextArea } from '@astro-reactive/common';
+
+export interface Props {
+	control: TextArea;
+}
+
+const { control } = Astro.props;
+---
+
+<textarea
+    name={control.name}
+    id={control.name}
+    placeholder={control?.placeholder}
+    value={control?.value}
+    rows={control?.rows ?? 3}
+    cols={control?.cols ?? 21}
+    data-label={control?.label}
+    data-label-position={control?.labelPosition}
+>
+{ control.value }
+</textarea>

@@ -25,7 +25,7 @@ export type InputType =
   | "url"
   | "week";
 
-export type ControlType = InputType | "dropdown";
+export type ControlType = InputType | "dropdown" | "textarea";
 
 export interface ControlBase {
   name: string;
@@ -37,6 +37,8 @@ export interface ControlBase {
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
   options?: string[] | ControlOption[];
+  rows?: number;
+  cols?: number;
 }
 
 export interface Checkbox extends ControlBase {
@@ -54,6 +56,13 @@ export interface Dropdown extends Omit<ControlBase, "value"> {
   type: "dropdown";
   value?: string;
   options: string[] | ControlOption[];
+}
+
+export interface TextArea extends ControlBase {
+  type: "textarea";
+  value?: string;
+  rows?: number;
+  cols?: number;
 }
 
 export interface ControlOption {
