@@ -120,6 +120,12 @@ export class FormControl {
 		this._errors = this.validate(this._value, this.config.validators || []);
 	}
 
+	setValidators(validators: string[]) {
+		this._validators = validators;
+		const valueStr: string = this._value?.toString() || '';
+		this._errors = this.validate(valueStr, this._validators || []);
+	}
+
 	clearErrors() {
 		this._errors = [];
 	}
