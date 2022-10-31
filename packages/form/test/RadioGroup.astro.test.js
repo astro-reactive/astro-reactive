@@ -87,4 +87,52 @@ describe('RadioGroup.astro test', () => {
 		// assert
 		expect(actualResult).to.contain(expectedResult);
 	});
+
+	it('Should render readonly attribute if the prop readOnly is passed as true', async () => {
+		// arrange
+		const expectedOptions = 3;
+		const element = /readonly/g;
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'FAKE NAME',
+				type: 'radio',
+				options: ['one', 'two', 'three'],
+			},
+			showValidationHints: true,
+			readOnly: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
+		const actualResult = cleanString(component.html);
+		const matches = actualResult.match(element) || [];
+
+		// assert
+		expect(matches.length).to.equal(expectedOptions);
+	});
+
+	it('Should render disabled attribute if the prop readOnly is passed as true', async () => {
+		// arrange
+		const expectedOptions = 3;
+		const element = /disabled/g;
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'FAKE NAME',
+				type: 'radio',
+				options: ['one', 'two', 'three'],
+			},
+			showValidationHints: true,
+			readOnly: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
+		const actualResult = cleanString(component.html);
+		const matches = actualResult.match(element) || [];
+
+		// assert
+		expect(matches.length).to.equal(expectedOptions);
+	});
 });

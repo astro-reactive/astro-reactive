@@ -7,9 +7,10 @@ import type { FormControl } from '../../core/form-control';
 
 export interface Props {
 	control: FormControl;
+  readOnly?: boolean;
 }
 
-const { control } = Astro.props;
+const { control, readOnly } = Astro.props;
 
 const { validators = [] } = control;
 
@@ -37,5 +38,7 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 	data-label={control.label}
 	data-label-position={control.labelPosition}
 	data-validator-haserrors={hasErrors.toString()}
+	readonly={readOnly || null}
+  disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}
 />

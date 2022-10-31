@@ -149,4 +149,27 @@ describe('Dropdown.astro test', () => {
 		// assert
 		expect(actualResult).to.contain(expectedResult);
 	});
+
+	it('Should render disabled attribute if the prop readOnly is passed as true', async () => {
+		// arrange
+		const expectedOptions = 1;
+		const element = /disabled/g;
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'FAKE NAME',
+				type: 'dropdown',
+				options: ['one', 'two', 'three'],
+			},
+			readOnly: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/controls/Dropdown.astro', props);
+		const actualResult = cleanString(component.html);
+		const matches = actualResult.match(element) || [];
+
+		// assert
+		expect(matches.length).to.equal(expectedOptions);
+	});
 });
