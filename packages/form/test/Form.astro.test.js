@@ -88,5 +88,28 @@ describe('Form.astro test', () => {
 			// assert
 			expect(matches.length).to.equal(expectedCount);
 		});
+		it('Should render readOnly fields if the flag is passed as true', async () => {
+			// arrange
+			const expectedCount = 3;
+			const element = /readonly/g;
+			const fakeFormGroup = {
+				controls: [
+					{
+						type: 'text',
+						name: 'fake-checkbox',
+						label: 'FAKE CHECKBOX',
+					},
+				],
+			};
+			const props = { formGroups: Array(expectedCount).fill(fakeFormGroup), readOnly: true };
+			component = await getComponentOutput('./components/Form.astro', props);
+
+			// act
+			const actualResult = cleanString(component.html);
+			const matches = actualResult.match(element) || [];
+
+			// assert
+			expect(matches.length).to.equal(expectedCount);
+		});
 	});
 });
