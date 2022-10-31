@@ -2,9 +2,10 @@
 /**
  * DEFAULT CONTROL COMPONENT
  */
-import type { Radio, Dropdown } from '@astro-reactive/common';
+import type { Radio, Dropdown, TextArea } from '@astro-reactive/common';
 import type { FormControl } from '../core/form-control';
 import DropdownControl from './controls/Dropdown.astro';
+import TextAreaControl from './controls/TextArea.astro';
 import Input from './controls/Input.astro';
 import RadioGroup from './controls/RadioGroup.astro';
 import Errors from './Errors.astro';
@@ -30,6 +31,9 @@ const hasErrors: boolean | null = !!control.errors?.length;
 			) :
 			control.type === 'dropdown' ? (
 				<DropdownControl control={control as Dropdown} readOnly={readOnly} />
+			) :
+			control.type === 'textarea' ? (
+				<TextAreaControl control={control as TextArea} readOnly={readOnly} />
 			) : (
 				<Input control={control} readOnly={readOnly} />
 			)

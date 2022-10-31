@@ -1,16 +1,17 @@
 import type {
 	Button,
 	Checkbox,
-	ControlBase,
 	ControlType,
+	TextInput,
 	Radio,
 	Dropdown,
 	ControlOption,
 	Submit,
 	ValidationError,
+	TextArea,
 } from '@astro-reactive/common';
 
-export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown;
+export type ControlConfig = TextInput | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
 export class FormControl {
 	private _name = '';
@@ -24,6 +25,8 @@ export class FormControl {
 	private _validators: string[] = [];
 	private _errors: ValidationError[] = [];
 	private _options: string[] | ControlOption[] = [];
+	private _rows: number | null = null;
+	private _cols: number | null = null;
 
 	private validate: (value: string, validators: string[]) => ValidationError[] = (
 		value: string,
@@ -54,6 +57,12 @@ export class FormControl {
 		this._placeholder = placeholder;
 		this._validators = validators;
 		this._options = options;
+
+		if (config.type === 'textarea') {
+			const { rows = null, cols = null } = config;
+			this._rows = rows;
+			this._cols = cols;
+		}
 
 		// TODO: implement independence
 		// form should try to import validator,
@@ -113,6 +122,14 @@ export class FormControl {
 
 	get options() {
 		return this._options;
+	}
+
+	get rows() {
+		return this._rows;
+	}
+
+	get cols() {
+		return this._cols;
 	}
 
 	setValue(value: string) {
