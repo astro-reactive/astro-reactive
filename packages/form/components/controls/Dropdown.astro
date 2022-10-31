@@ -22,7 +22,11 @@ const options = control.options.map((option: string | ControlOption) => {
 });
 ---
 
-<select name={control.name} id={control.name} readonly={readOnly}>
+<select
+	name={control.name}
+	id={control.name}
+	disabled={readOnly || null}
+>
 {
 	control?.placeholder && (
 		<option value="" disabled selected={!control?.value}>

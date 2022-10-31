@@ -150,10 +150,10 @@ describe('Dropdown.astro test', () => {
 		expect(actualResult).to.contain(expectedResult);
 	});
 
-	it('Should render readonly flag', async () => {
+	it('Should render disabled attribute if the prop readOnly is passed as true', async () => {
 		// arrange
 		const expectedOptions = 1;
-		const element = /readonly/g;
+		const element = /disabled/g;
 		const props = {
 			control: {
 				label: 'FAKE LABEL',

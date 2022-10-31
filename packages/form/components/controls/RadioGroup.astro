@@ -30,7 +30,8 @@ const options = control.options.map((option: string | ControlOption) => {
 				name={control.name}
 				value={option.value}
 				checked={option.value === control.value}
-				readonly={readOnly}
+				readonly={readOnly || null}
+				disabled={readOnly || null}
 			/>{' '}
 			{option.label}
 		</div>
