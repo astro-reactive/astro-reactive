@@ -2,17 +2,15 @@
 /**
  * TEXT AREA COMPONENT
  */
-import type { FormControl } from '../../core/form-control';
+import type { TextArea } from '@astro-reactive/common';
 
 export interface Props {
-	control: FormControl;
+	control: TextArea;
 }
 
 const { control } = Astro.props;
 
 const { validators = [] } = control;
-
-const hasErrors: boolean = !!control.errors?.length;
 
 const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
 	const split: string[] = validator.split(':');
@@ -34,7 +32,6 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
     cols={control?.cols ?? 21}
     data-label={control?.label}
     data-label-position={control?.labelPosition}
-    data-validator-haserrors={hasErrors.toString()}
     {...validatorAttributes}
 >
 { control.value }
