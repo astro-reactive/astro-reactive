@@ -1,4 +1,5 @@
 ---
+import Nav from "../components/Nav.astro";
 import Form, {
   ControlConfig,
   FormGroup,
@@ -34,10 +35,18 @@ const form = new FormGroup([
     name: "agreement",
     label: "Agreement",
     type: "radio",
+    value: "yes",
     options: [
-      { label: "Agree", value: "yes", checked: true },
+      { label: "Agree", value: "yes" },
       { label: "Disagree", value: "no" },
     ],
+  },
+  {
+    name: "size",
+    label: "Size",
+    type: "dropdown",
+    options: ["S", "M", "L", "XL", "XXL"],
+    placeholder: "-- Please choose an option --",
   },
 ]);
 
@@ -76,7 +85,7 @@ const theme = "dark";
     <title>Astro</title>
   </head>
   <body class={theme}>
-    <nav>Examples: <a href="/pizza-delivery">Pizza Delivery</a></nav>
+    <Nav />
     <h1>Astro Reactive Form</h1>
     <Form showValidationHints={true} formGroups={form} theme={theme} />
     <style>

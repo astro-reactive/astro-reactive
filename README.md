@@ -10,39 +10,26 @@
     <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
   <a href="https://github.com/ayoayco/astro-reactive-library">
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library" />
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library?logo=github" />
   </a>
   <a href="https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git">
   <img
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
   />
-</a>
+  </a>
+
   <br />
   <br />
 <p>
 
-| Packages | Version | Description |
+| Package | Release notes | Description |
 | --- | --- | --- |
-| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://www.npmjs.com/package/@astro-reactive/form) | a dynamic form which can be modified programmatically |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md)| [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://www.npmjs.com/package/@astro-reactive/validator) | validators for editable fields |
-| data-grid | 🛠 | a dynamic data grid of values |
-| themes    | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
-| viz    | 🛠 | data visualization that emits and responds to events |
-
-# HACKTOBERFEST 2022
-
-[Hacktoberfest](https://hacktoberfest.com) has begun! 🚀
-
-Any contribution is welcome. See our [contributing guide](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md), and feel free to look around to find something that interests you. :)
-
-Maybe add some themes to our form component? Or maybe an improvement for the README?
-
-The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
-
-If you don't find anything there, I'm happy to help you get your contribution in.
-
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
+| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
+| data-grid                                                                                             | 🛠                                                                                                 | a dynamic data grid of values                            |
+| themes                                                                                                | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                   | 🛠                                                                                                 | data visualization that emits and responds to events     |
 
 # Running locally
 
@@ -105,3 +92,18 @@ This project is only possible because of the support and contribution of our com
 </a>
 
 👉 _[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)_
+
+## Play around examples:
+
+  <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
+    <img
+      src="https://developer.stackblitz.com/img/open_in_stackblitz_small.svg"
+      alt="Play around in Stackblitz"
+    />
+  </a>
+  <a href="https://codesandbox.io/s/astro-reactive-library-u72dgj?file=/src/pages/index.astro">
+    <img
+      src="https://img.shields.io/badge/Open%20in-CodeSandbox-040404?logo=codesandbox"
+      alt="CodeSandbox"
+    />
+  </a>

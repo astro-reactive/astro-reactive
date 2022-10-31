@@ -1,0 +1,42 @@
+---
+/**
+ * DROPDOWN COMPONENT
+ */
+import type { Dropdown, ControlOption } from '@astro-reactive/common';
+
+export interface Props {
+	control: Dropdown;
+}
+
+const { control } = Astro.props;
+
+const options = control.options.map((option: string | ControlOption) => {
+	if (typeof option === 'string') {
+		return {
+			label: option,
+			value: option,
+		};
+	}
+	return option;
+});
+---
+
+<select name={control.name} id={control.name}>
+{
+	control?.placeholder && (
+		<option value="" disabled selected={!control?.value}>
+			{control.placeholder}
+        </option>
+	)
+}
+{	
+	options.map((option: ControlOption) => (
+        <option
+			value={option.value} 
+			selected={option.value === control.value}
+		>
+			{option.label}
+        </option>
+	))
+}
+</select>

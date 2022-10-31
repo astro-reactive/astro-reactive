@@ -1,5 +1,5 @@
 {
-  "name": "docs-astro-reactive-library",
+  "name": "@astro-reactive/docs",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -13,18 +13,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.4.4",
-    "preact": "^10.7.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "@astrojs/react": "^1.1.4",
-    "@astrojs/preact": "^1.1.1",
     "@algolia/client-search": "^4.13.1",
+    "@astrojs/preact": "^1.1.1",
+    "@astrojs/react": "^1.1.4",
     "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
-    "@types/react": "^17.0.45",
     "@types/node": "^18.0.0",
-    "@types/react-dom": "^18.0.0"
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.0",
+    "astro": "^1.4.4",
+    "preact": "^10.7.3",
+    "prettier-plugin-astro": "^0.7.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "description": "```bash npm create astro@latest -- --template docs ```",
   "main": "index.js",
@@ -37,6 +38,5 @@
   "bugs": {
     "url": "https://github.com/Rishav-12/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/Rishav-12/astro-reactive-library#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/Rishav-12/astro-reactive-library#readme"
 }
