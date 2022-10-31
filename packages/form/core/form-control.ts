@@ -118,7 +118,13 @@ export class FormControl {
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
-		this._errors = this.validate(this._value, this.config.validators || []);
+		this._errors = this.validate(value, this.config.validators || []);
+	}
+
+	setValidators(validators: string[]) {
+		this._validators = validators;
+		const valueStr: string = this._value?.toString() || '';
+		this._errors = this.validate(valueStr, this._validators || []);
 	}
 
 	clearErrors() {

@@ -88,6 +88,7 @@ const infoForm = new FormGroup([
 baseForm.name = "Base";
 toppingsForm.name = "Toppings";
 infoForm.name = "Customer Info";
+infoForm.get("contact")?.setValidators([Validators.minLength(9)]);
 ---
 
 <html lang="en">
