@@ -6,9 +6,10 @@ import type { TextArea } from '@astro-reactive/common';
 
 export interface Props {
 	control: TextArea;
+	readOnly?: boolean;
 }
 
-const { control } = Astro.props;
+const { control, readOnly = false } = Astro.props;
 
 const { validators = [] } = control;
 
@@ -32,6 +33,7 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
     cols={control?.cols ?? 21}
     data-label={control?.label}
     data-label-position={control?.labelPosition}
+	readonly={readOnly || null}
     {...validatorAttributes}
 >
 { control.value }

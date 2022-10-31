@@ -33,7 +33,7 @@ const hasErrors: boolean | null = !!control.errors?.length;
 				<DropdownControl control={control as Dropdown} readOnly={readOnly} />
 			) :
 			control.type === 'textarea' ? (
-				<TextAreaControl control={control as TextArea} />
+				<TextAreaControl control={control as TextArea} readOnly={readOnly} />
 			) : (
 				<Input control={control} readOnly={readOnly} />
 			)
