@@ -26,15 +26,15 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 ---
 
 <textarea
-    name={control.name}
-    id={control.name}
-    placeholder={control?.placeholder}
-    rows={control?.rows ?? 3}
-    cols={control?.cols ?? 21}
-    data-label={control?.label}
-    data-label-position={control?.labelPosition}
+	name={control.name}
+	id={control.name}
+	placeholder={control?.placeholder}
+	rows={control?.rows ?? 3}
+	cols={control?.cols ?? 21}
+	data-label={control?.label}
+	data-label-position={control?.labelPosition}
 	readonly={readOnly || null}
-    {...validatorAttributes}
+	{...validatorAttributes}
 >
 { control.value }
 </textarea>
