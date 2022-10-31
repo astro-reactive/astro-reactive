@@ -6,7 +6,7 @@ import type { Radio, ControlOption } from '@astro-reactive/common';
 
 export interface Props {
 	control: Radio;
-	readOnly?: Boolean;
+	readOnly?: boolean;
 }
 
 const { control, readOnly = false } = Astro.props;
@@ -30,7 +30,7 @@ const options = control.options.map((option: string | ControlOption) => {
 				name={control.name}
 				value={option.value}
 				checked={option.value === control.value}
-				disabled={readOnly}
+				readonly={readOnly}
 			/>{' '}
 			{option.label}
 		</div>

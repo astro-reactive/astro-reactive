@@ -6,9 +6,10 @@ import type { Dropdown, ControlOption } from '@astro-reactive/common';
 
 export interface Props {
 	control: Dropdown;
+  readOnly?: boolean;
 }
 
-const { control } = Astro.props;
+const { control, readOnly } = Astro.props;
 
 const options = control.options.map((option: string | ControlOption) => {
 	if (typeof option === 'string') {
@@ -21,7 +22,7 @@ const options = control.options.map((option: string | ControlOption) => {
 });
 ---
 
-<select name={control.name} id={control.name}>
+<select name={control.name} id={control.name} readonly={readOnly}>
 {
 	control?.placeholder && (
 		<option value="" disabled selected={!control?.value}>

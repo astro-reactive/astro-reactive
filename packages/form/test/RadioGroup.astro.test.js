@@ -91,7 +91,7 @@ describe('RadioGroup.astro test', () => {
 	it('Should render readOnly fields if the flag is passed as true', async () => {
 		// arrange
 		const expectedOptions = 3;
-		const element = /disabled/g;
+		const element = /readonly/g;
 		const props = {
 			control: {
 				label: 'FAKE LABEL',

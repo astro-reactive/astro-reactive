@@ -39,6 +39,5 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 	data-label-position={control.labelPosition}
 	data-validator-haserrors={hasErrors.toString()}
 	readonly={readOnly}
-  disabled={readOnly && control.type === 'checkbox'}
 	{...validatorAttributes}
 />

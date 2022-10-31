@@ -29,7 +29,7 @@ const hasErrors: boolean | null = !!control.errors?.length;
 				<RadioGroup control={control as Radio} readOnly={readOnly}  />
 			) :
 			control.type === 'dropdown' ? (
-				<DropdownControl control={control as Dropdown} />
+				<DropdownControl control={control as Dropdown}, readOnly={readOnly} />
 			) : (
 				<Input control={control} readOnly={readOnly} />
 			)
