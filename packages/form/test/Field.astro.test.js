@@ -17,7 +17,6 @@ describe('Field.astro test', () => {
 			control: {
 				label: expectedLabel,
 				name: 'username',
-				labelPosition: 'left',
 			},
 			showValidationHints: false,
 		};
@@ -38,7 +37,6 @@ describe('Field.astro test', () => {
 			control: {
 				label: expectedLabel,
 				name: 'username',
-				labelPosition: 'left',
 				validators: ['validator-required'],
 			},
 			showValidationHints: true,
@@ -60,7 +58,6 @@ describe('Field.astro test', () => {
 			control: {
 				label: 'FAKE LABEL',
 				name: 'username',
-				labelPosition: 'left',
 				validators: ['validator-required'],
 				errors: [
 					{
@@ -88,7 +85,6 @@ describe('Field.astro test', () => {
 			control: {
 				label: expectedLabel,
 				name: 'username',
-				labelPosition: 'left',
 				validators: ['validator-required'],
 			},
 			readOnly: true,

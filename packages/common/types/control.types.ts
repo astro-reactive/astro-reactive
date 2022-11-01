@@ -33,7 +33,6 @@ export interface ControlBase {
   type?: ControlType;
   value?: string | number | string[];
   label?: string;
-  labelPosition?: "right" | "left";
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
   options?: string[] | ControlOption[];
