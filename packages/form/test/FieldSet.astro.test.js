@@ -10,7 +10,6 @@ describe('FieldSet.astro test', () => {
 		name: 'test',
 		label: 'Test',
 		type: 'text',
-		labelPosition: 'left',
 	};
 
 	beforeEach(() => {

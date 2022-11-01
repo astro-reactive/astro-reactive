@@ -15,7 +15,7 @@ const isRequired: boolean = showValidationHints && validators.includes('validato
 ---
 
 {
-	control.label && control.labelPosition === 'left' && (
+	control.label && control.type !== "checkbox" && (
 		<label for={control.name} data-validation-required={isRequired ? "true" : null}>
 			{control.label}
 		</label>
@@ -25,7 +25,7 @@ const isRequired: boolean = showValidationHints && validators.includes('validato
 <slot />
 
 {
-	control.label && control.labelPosition === 'right' && (
+	control.label && control.type === "checkbox" && (
 		<label for={control.name} data-validation-required={isRequired ? "true" : null}>
 			{control.label}
 		</label>

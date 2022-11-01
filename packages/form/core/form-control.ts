@@ -18,7 +18,6 @@ export class FormControl {
 	private _type: ControlType = 'text';
 	private _value?: string | number | null | string[] | ControlOption[];
 	private _label = '';
-	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;
 	private _isPristine = true;
 	private _placeholder: string | null = null;
@@ -43,7 +42,6 @@ export class FormControl {
 			type = 'text',
 			value = null,
 			label = '',
-			labelPosition = 'left',
 			placeholder = null,
 			validators = [],
 			options = [],
@@ -53,7 +51,6 @@ export class FormControl {
 		this._type = type;
 		this._value = value;
 		this._label = label;
-		this._labelPosition = labelPosition;
 		this._placeholder = placeholder;
 		this._validators = validators;
 		this._options = options;
@@ -94,10 +91,6 @@ export class FormControl {
 
 	get label() {
 		return this._label;
-	}
-
-	get labelPosition() {
-		return this._labelPosition;
 	}
 
 	get placeholder() {
