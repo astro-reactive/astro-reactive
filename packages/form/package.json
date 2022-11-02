@@ -1,7 +1,7 @@
 {
   "name": "@astro-reactive/form",
   "description": "The Reactive Form component for Astro 🔥",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "repository": "https://github.com/ayoayco/astro-reactive-library",
   "homepage": "https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md",
   "author": {
@@ -56,7 +56,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@astro-reactive/common": "^0.0.3",
-    "@astro-reactive/validator": "^0.1.0"
+    "@astro-reactive/common": "^0.1.0",
+    "@astro-reactive/validator": "^0.2.1"
   }
 }
