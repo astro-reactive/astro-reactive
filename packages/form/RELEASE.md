@@ -1,3 +1,10 @@
+## v0.6.0
+- deprecate `labelPosition` prop
+- implement TextArea control
+- add method `setValidators` to FormControl
+- implement `readOnly` flag
+- implement Dropdown control
+
 ### v0.5.1 - v0.5.2
 - use @astro-reactive/common
 
