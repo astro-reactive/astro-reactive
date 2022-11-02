@@ -1,3 +1,6 @@
+## v0.2.0
+- deprecate `labelPosition` prop
+
 ### v0.1.1
 - use @astro-reactive/common
 
