@@ -1,3 +1,7 @@
+## 0.0.4
+- deprecate `labelPosition` prop
+- TextArea and Dropdown types
+
 ## 0.0.3
 - update package exports and files
 
