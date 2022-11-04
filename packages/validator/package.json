@@ -22,7 +22,7 @@
     "astro-component"
   ],
   "scripts": {
-    "test": "mocha --parallel --timeout 15000",
+    "test": "ts-mocha -n loader=ts-node/esm -p ./tsconfig.json --parallel --timeout 15000 test/**/*.test.{ts,js}",
     "test:watch": "mocha --watch --parallel --timeout 15000",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
@@ -47,7 +47,8 @@
     "mocha": "^10.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.6.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "ts-mocha": "^10.0.0"
   },
   "peerDependencies": {
     "astro": "^1.5.0"

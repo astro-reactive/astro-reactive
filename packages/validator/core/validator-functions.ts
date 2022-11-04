@@ -84,7 +84,7 @@ function validateMax(value: string, limit: number): ValidationError | null {
 	return null;
 }
 
-function validateRequired(value: string): ValidationError | null {
+export function validateRequired(value: string): ValidationError | null {
 	const isValid = !!value;
 
 	if (!isValid) {
