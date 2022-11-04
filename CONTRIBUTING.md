@@ -119,6 +119,8 @@ Thank you again for your interest in contributing!
 
 # Next Actions
 
+✍️ Read on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/); you'll see this used around issues, PRs, and commit messages
+
 🏘️ Read our [community guidelines](https://github.com/ayoayco/astro-reactive-library/blob/main/CODE_OF_CONDUCT.md)
 
 💬 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
