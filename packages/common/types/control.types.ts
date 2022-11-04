@@ -2,7 +2,7 @@
  * `ControlType` determines the type of form control
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
  */
-export type ControlType =
+export type InputType =
   | "text"
   | "checkbox"
   | "radio"
@@ -25,16 +25,21 @@ export type ControlType =
   | "url"
   | "week";
 
+export type ControlType = InputType | "dropdown" | "textarea";
+
 export interface ControlBase {
   name: string;
   id?: string;
   type?: ControlType;
   value?: string | number | string[];
   label?: string;
-  labelPosition?: "right" | "left";
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
-  options?: string[] | RadioOption[]; // prevent build failed
+  options?: string[] | ControlOption[];
+}
+
+export interface TextInput extends ControlBase {
+  type: Exclude<InputType, "checkbox" | "radio" | "submit" | "button">;
 }
 
 export interface Checkbox extends ControlBase {
@@ -45,10 +50,23 @@ export interface Checkbox extends ControlBase {
 export interface Radio extends Omit<ControlBase, "value"> {
   type: "radio";
   value?: string;
-  options: string[] | RadioOption[];
+  options: string[] | ControlOption[];
 }
 
-export interface RadioOption {
+export interface Dropdown extends Omit<ControlBase, "value"> {
+  type: "dropdown";
+  value?: string;
+  options: string[] | ControlOption[];
+}
+
+export interface TextArea extends ControlBase {
+  type: "textarea";
+  value?: string;
+  rows?: number;
+  cols?: number;
+}
+
+export interface ControlOption {
   label: string;
   value: string;
 }

@@ -1,5 +1,5 @@
 {
-  "name": "demo-astro-reactive-library",
+  "name": "@astro-reactive/demo",
   "description": "Demo App for Astro Reactive Library",
   "type": "module",
   "version": "0.0.1",

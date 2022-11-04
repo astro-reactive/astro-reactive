@@ -2,8 +2,10 @@
 /**
  * DEFAULT CONTROL COMPONENT
  */
-import type { Radio } from 'common/types';
+import type { Radio, Dropdown, TextArea } from '@astro-reactive/common';
 import type { FormControl } from '../core/form-control';
+import DropdownControl from './controls/Dropdown.astro';
+import TextAreaControl from './controls/TextArea.astro';
 import Input from './controls/Input.astro';
 import RadioGroup from './controls/RadioGroup.astro';
 import Errors from './Errors.astro';
@@ -13,9 +15,10 @@ export interface Props {
 	control: FormControl;
 	showValidationHints: boolean;
 	showErrors?: boolean; // feature flag for showing validation errors
+	readOnly?: boolean;
 }
 
-const { control, showValidationHints, showErrors = false } = Astro.props;
+const { control, showValidationHints, showErrors = false, readOnly = false } = Astro.props;
 
 const hasErrors: boolean | null = !!control.errors?.length;
 ---
@@ -24,9 +27,15 @@ const hasErrors: boolean | null = !!control.errors?.length;
 	<Label control={control} showValidationHints={showValidationHints}>
 		{
 			control.type === 'radio' ? (
-				<RadioGroup control={control as Radio} />
+				<RadioGroup control={control as Radio} readOnly={readOnly}  />
+			) :
+			control.type === 'dropdown' ? (
+				<DropdownControl control={control as Dropdown} readOnly={readOnly} />
+			) :
+			control.type === 'textarea' ? (
+				<TextAreaControl control={control as TextArea} readOnly={readOnly} />
 			) : (
-				<Input control={control} />
+				<Input control={control} readOnly={readOnly} />
 			)
 		}
 		{showErrors && <Errors errors={control.errors} />}

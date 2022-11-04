@@ -1,28 +1,31 @@
 import type {
 	Button,
 	Checkbox,
-	ControlBase,
 	ControlType,
+	TextInput,
 	Radio,
-	RadioOption,
+	Dropdown,
+	ControlOption,
 	Submit,
 	ValidationError,
-} from 'common/types';
+	TextArea,
+} from '@astro-reactive/common';
 
-export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button;
+export type ControlConfig = TextInput | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
 export class FormControl {
 	private _name = '';
 	private _type: ControlType = 'text';
-	private _value?: string | number | null | string[] | RadioOption[];
+	private _value?: string | number | null | string[] | ControlOption[];
 	private _label = '';
-	private _labelPosition?: 'right' | 'left' = 'left';
 	private _isValid = true;
 	private _isPristine = true;
 	private _placeholder: string | null = null;
 	private _validators: string[] = [];
 	private _errors: ValidationError[] = [];
-	private _options: string[] | RadioOption[] = [];
+	private _options: string[] | ControlOption[] = [];
+	private _rows: number | null = null;
+	private _cols: number | null = null;
 
 	private validate: (value: string, validators: string[]) => ValidationError[] = (
 		value: string,
@@ -39,7 +42,6 @@ export class FormControl {
 			type = 'text',
 			value = null,
 			label = '',
-			labelPosition = 'left',
 			placeholder = null,
 			validators = [],
 			options = [],
@@ -49,10 +51,15 @@ export class FormControl {
 		this._type = type;
 		this._value = value;
 		this._label = label;
-		this._labelPosition = labelPosition;
 		this._placeholder = placeholder;
 		this._validators = validators;
 		this._options = options;
+
+		if (config.type === 'textarea') {
+			const { rows = null, cols = null } = config;
+			this._rows = rows;
+			this._cols = cols;
+		}
 
 		// TODO: implement independence
 		// form should try to import validator,
@@ -86,10 +93,6 @@ export class FormControl {
 		return this._label;
 	}
 
-	get labelPosition() {
-		return this._labelPosition;
-	}
-
 	get placeholder() {
 		return this._placeholder;
 	}
@@ -114,10 +117,24 @@ export class FormControl {
 		return this._options;
 	}
 
+	get rows() {
+		return this._rows;
+	}
+
+	get cols() {
+		return this._cols;
+	}
+
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
-		this._errors = this.validate(this._value, this.config.validators || []);
+		this._errors = this.validate(value, this.config.validators || []);
+	}
+
+	setValidators(validators: string[]) {
+		this._validators = validators;
+		const valueStr: string = this._value?.toString() || '';
+		this._errors = this.validate(valueStr, this._validators || []);
 	}
 
 	clearErrors() {

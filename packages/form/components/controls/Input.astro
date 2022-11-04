@@ -2,13 +2,15 @@
 /**
  * DEFAULT INPUT COMPONENT
  */
+import type { InputType } from '@astro-reactive/common';
 import type { FormControl } from '../../core/form-control';
 
 export interface Props {
 	control: FormControl;
+  readOnly?: boolean;
 }
 
-const { control } = Astro.props;
+const { control, readOnly } = Astro.props;
 
 const { validators = [] } = control;
 
@@ -29,12 +31,13 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 <input
 	name={control.name}
 	id={control.name}
-	type={control.type}
+	type={control.type as InputType}
 	value={control.value?.toString()}
 	checked={control.value === 'checked'}
 	placeholder={control.placeholder}
 	data-label={control.label}
-	data-label-position={control.labelPosition}
 	data-validator-haserrors={hasErrors.toString()}
+	readonly={readOnly || null}
+  disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}
 />

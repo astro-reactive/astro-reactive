@@ -58,7 +58,6 @@ form.controls.push(
     type: "checkbox",
     name: "is-awesome",
     label: "is Awesome?",
-    labelPosition: "right",
   })
 );
 

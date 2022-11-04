@@ -1,5 +1,5 @@
 ---
-import type { Submit } from 'common/types';
+import type { Submit } from '@astro-reactive/common';
 import { FormGroup, FormControl } from '../core';
 import FieldSet from './FieldSet.astro';
 import Field from './Field.astro';
@@ -9,9 +9,10 @@ export interface Props {
 	submitControl?: Submit;
 	theme?: 'light' | 'dark';
 	showValidationHints?: boolean;
+	readOnly?: boolean;
 }
 
-const { submitControl, formGroups = [], theme, showValidationHints = false } = Astro.props;
+const { submitControl, formGroups = [], theme, showValidationHints = false, readOnly = false } = Astro.props;
 
 const formTheme = theme ?? 'light';
 const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
@@ -26,10 +27,10 @@ const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 	{
 		Array.isArray(formGroups)
 			? formGroups?.map((group) => (
-					<FieldSet showValidationHints={showValidationHints} group={group} />
+					<FieldSet showValidationHints={showValidationHints} group={group} readOnly={readOnly}/>
 			  ))
 			: formGroups?.controls.map((control) => (
-					<Field showValidationHints={showValidationHints} control={control} />
+					<Field showValidationHints={showValidationHints} control={control} readOnly={readOnly}/>
 			  ))
 	}
 	{
@@ -56,3 +57,4 @@ const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 		border-color: red;
 	}
 </style>
+ 

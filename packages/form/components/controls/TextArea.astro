@@ -1,0 +1,39 @@
+---
+/**
+ * TEXT AREA COMPONENT
+ */
+import type { TextArea } from '@astro-reactive/common';
+
+export interface Props {
+	control: TextArea;
+	readOnly?: boolean;
+}
+
+const { control, readOnly = false } = Astro.props;
+
+const { validators = [] } = control;
+
+const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+	const split: string[] = validator.split(':');
+	const label: string = `data-${split[0]}` || 'invalid';
+	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+
+	return {
+		...prev,
+		[label]: value,
+	};
+}, {});
+---
+
+<textarea
+	name={control.name}
+	id={control.name}
+	placeholder={control?.placeholder}
+	rows={control?.rows ?? 3}
+	cols={control?.cols ?? 21}
+	data-label={control?.label}
+	readonly={readOnly || null}
+	{...validatorAttributes}
+>
+{ control.value }
+</textarea>

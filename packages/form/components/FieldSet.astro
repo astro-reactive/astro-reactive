@@ -5,16 +5,17 @@ import Field from './Field.astro';
 export interface Props {
 	group: FormGroup;
 	showValidationHints: boolean;
+	readOnly?: boolean;
 }
 
-const { group, showValidationHints } = Astro.props;
+const { group, showValidationHints, readOnly = false } = Astro.props;
 ---
 
 <fieldset id={group.name} name={group.name}>
 	{group.name && <legend>{group.name}</legend>}
 	{
 		group?.controls?.map((control) => (
-			<Field showValidationHints={showValidationHints} control={control} />
+			<Field showValidationHints={showValidationHints} control={control} readOnly={readOnly} />
 		))
 	}
 </fieldset>

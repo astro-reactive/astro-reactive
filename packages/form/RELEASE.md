@@ -1,3 +1,16 @@
+### v0.6.1
+- fix wrong dependency version
+
+## v0.6.0
+- deprecate `labelPosition` prop
+- implement TextArea control
+- add method `setValidators` to FormControl
+- implement `readOnly` flag
+- implement Dropdown control
+
+### v0.5.1 - v0.5.2
+- use @astro-reactive/common
+
 ### v0.5.1
 - fix for dynamic import of validator causing errors (breaks independence)
 

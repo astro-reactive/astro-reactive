@@ -1,4 +1,5 @@
 ---
+import Nav from "../components/Nav.astro";
 import Form, { FormGroup } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 
@@ -87,6 +88,7 @@ const infoForm = new FormGroup([
 baseForm.name = "Base";
 toppingsForm.name = "Toppings";
 infoForm.name = "Customer Info";
+infoForm.get("contact")?.setValidators([Validators.minLength(9)]);
 ---
 
 <html lang="en">
@@ -98,7 +100,7 @@ infoForm.name = "Customer Info";
     <title>Astro</title>
   </head>
   <body>
-    <nav><a href="/">Home</a></nav>
+    <Nav />
     <h1>Pizza Form Demo</h1>
     <Form
       showValidationHints={true}

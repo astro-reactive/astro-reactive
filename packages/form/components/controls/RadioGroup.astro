@@ -2,15 +2,16 @@
 /**
  * RADIO GROUP COMPONENT
  */
-import type { Radio } from 'common/types';
+import type { Radio, ControlOption } from '@astro-reactive/common';
 
 export interface Props {
 	control: Radio;
+	readOnly?: boolean;
 }
 
-const { control } = Astro.props;
+const { control, readOnly = false } = Astro.props;
 
-const options = control.options.map((option) => {
+const options = control.options.map((option: string | ControlOption) => {
 	if (typeof option === 'string') {
 		return {
 			label: option,
@@ -22,9 +23,16 @@ const options = control.options.map((option) => {
 ---
 
 {
-	options.map((option) => (
+	options.map((option: ControlOption) => (
 		<div class="radio-option">
-			<input type="radio" name={control.name} value={option.value} checked={option.value === control.value} />{' '}
+			<input
+				type="radio"
+				name={control.name}
+				value={option.value}
+				checked={option.value === control.value}
+				readonly={readOnly || null}
+				disabled={readOnly || null}
+			/>{' '}
 			{option.label}
 		</div>
 	))
