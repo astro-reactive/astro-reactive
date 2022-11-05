@@ -2,16 +2,16 @@ import type {
 	Button,
 	Checkbox,
 	ControlType,
-	TextInput,
 	Radio,
 	Dropdown,
 	ControlOption,
 	Submit,
 	ValidationError,
 	TextArea,
+	ControlBase,
 } from '@astro-reactive/common';
 
-export type ControlConfig = TextInput | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
+export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
 export class FormControl {
 	private _name = '';
@@ -44,7 +44,6 @@ export class FormControl {
 			label = '',
 			placeholder = null,
 			validators = [],
-			options = [],
 		} = config;
 
 		this._name = name;
@@ -53,10 +52,14 @@ export class FormControl {
 		this._label = label;
 		this._placeholder = placeholder;
 		this._validators = validators;
-		this._options = options;
+
+		if (type === 'radio' || type === 'dropdown') {
+			const { options = [] } = config as Radio | Dropdown;
+			this._options = options;
+		}
 
 		if (config.type === 'textarea') {
-			const { rows = null, cols = null } = config;
+			const { rows = null, cols = null } = config as TextArea;
 			this._rows = rows;
 			this._cols = cols;
 		}
