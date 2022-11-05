@@ -1,3 +1,6 @@
+### v0.6.3
+- make `Checkbox.checked` optional
+
 ### v0.6.2
 - fix broken `ControlConfig`
 
