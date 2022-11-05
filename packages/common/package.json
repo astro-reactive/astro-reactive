@@ -1,6 +1,6 @@
 {
   "name": "@astro-reactive/common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.js",
   "devDependencies": {},

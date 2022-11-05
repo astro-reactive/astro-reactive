@@ -1,3 +1,6 @@
+### v0.2.2
+- fix broken `ControlConfig`
+
 ### v0.2.1
 - fix wrong dependency version
 ## v0.2.0

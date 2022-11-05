@@ -1,3 +1,6 @@
+### v0.1.1
+- fix broken `ControlConfig`
+
 ## 0.1.0
 - deprecate `labelPosition` prop
 - TextArea and Dropdown types
