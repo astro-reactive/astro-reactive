@@ -39,7 +39,7 @@ export interface ControlBase {
 
 export interface Checkbox extends ControlBase {
   type: "checkbox";
-  checked: boolean;
+  checked?: boolean;
 }
 
 export interface Radio extends Omit<ControlBase, "value"> {
