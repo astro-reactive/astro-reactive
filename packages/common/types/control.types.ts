@@ -35,11 +35,6 @@ export interface ControlBase {
   label?: string;
   placeholder?: string;
   validators?: string[]; // TODO: implement validator type
-  options?: string[] | ControlOption[];
-}
-
-export interface TextInput extends ControlBase {
-  type: Exclude<InputType, "checkbox" | "radio" | "submit" | "button">;
 }
 
 export interface Checkbox extends ControlBase {
