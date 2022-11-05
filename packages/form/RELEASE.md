@@ -1,4 +1,4 @@
-### v0.6.1
+### v0.6.2
 - fix broken `ControlConfig`
 
 ### v0.6.1
