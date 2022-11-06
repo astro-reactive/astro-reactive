@@ -25,11 +25,11 @@
 
 | Package | Release notes | Description |
 | --- | --- | --- |
-| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
-| data-grid                                                                                             | 🛠                                                                                                 | a dynamic data grid of values                            |
-| themes                                                                                                | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
-| viz                                                                                                   | 🛠                                                                                                 | data visualization that emits and responds to events     |
+| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md) | a dynamic form which can be modified programmatically |
+| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields |
+| data-grid | 🛠 | a dynamic data grid of values |
+| themes | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
+| viz | 🛠 | data visualization that emits and responds to events |
 
 # Running locally
 

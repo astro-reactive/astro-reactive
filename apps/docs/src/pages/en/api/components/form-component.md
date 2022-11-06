@@ -1,23 +1,24 @@
 ---
 title: Form
+package: "@astro-reactive/form"
 description: The Reactive Form component for Astro
 layout: ../../../../layouts/MainLayout.astro
 ---
 
-`Form` component renders a form on an Astro page depending on the data that you provide.
+Renders a form element and control components on an Astro page depending on the data that you provide
 
 ## Inputs
 
-The following are the input properties a `Form` component can take.
+The following are input properties a `Form` component can take.
 
-| Property | Type |
-|---|---|
-| [formGroups](#formgroups) |  `FormGroup \| FormGroup[]` |
-| [showValidationHints](#showvalidationhints) |  `boolean` |
+| Property | Type | |
+|---|---|---|
+| [formGroups](#formgroups) |  `FormGroup \| FormGroup[]` | required |
+| [showValidationHints](#showvalidationhints) |  `boolean` | optional |
 
 ### `formGroups`
 
-Determines how the form element and various control components (e.g., `Input`, `TextArea`, `Select`) are rendered.
+Determines how the form element and various control components (e.g., `Input`, `TextArea`, `Select`) are rendered
 
 #### Type: `FormGroup | FormGroup[]`
 
@@ -49,6 +50,8 @@ const form = new FormGroup([
 <Form formGroups={form} />
 ```
 
-given a `formGroups` input that can take a single `FormGroup` or an array `FormGroup[]`
-
 ### `showValidationHints`
+
+When used with our `validator` package, the `Form` component is able to render validation hints when `showValidationHints` is set to true:
+1. asterisks on required controls' labels
+2. controls with validation errors are colored red

@@ -55,7 +55,7 @@ export const SIDEBAR: Sidebar = {
     // ],
 
     // TODO: create overview
-    // Introduction: [{ text: "Overview", link: "en/introduction" }],
+    Introduction: [{ text: "Overview", link: "en/introduction" }],
 
     "API Docs": [{ text: "Form", link: "en/api/components/form-component" }],
   },
