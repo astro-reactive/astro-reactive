@@ -47,11 +47,23 @@ export type Sidebar = Record<
 >;
 export const SIDEBAR: Sidebar = {
   en: {
-    Tutorial: [
-      { text: "Getting Started", link: "en/getting-started" },
-      { text: "Page 2", link: "en/page-2" },
-      { text: "Page 3", link: "en/page-3" },
+    // TODO: create tutorial
+    // Tutorial: [
+    //   { text: "Getting Started", link: "en/getting-started" },
+    //   { text: "Page 2", link: "en/page-2" },
+    //   { text: "Page 3", link: "en/page-3" },
+    // ],
+
+    // TODO: create overview
+    Introduction: [
+      { text: "Overview", link: "en/introduction" },
+      // { text: "Philosophy", link: "en/philosophy" },
     ],
-    "API Docs": [{ text: "Form", link: "en/form" }],
+
+    "API Docs": [
+      { text: "Form", link: "en/api/form/form-component" },
+      { text: "FormGroup", link: "en/api/form/form-group" },
+      { text: "FormControl", link: "en/api/form/form-control" },
+    ],
   },
 };

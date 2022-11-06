@@ -1,7 +1,7 @@
 ---
 title: Reactive Form
 description: Lorem ipsum dolor sit amet - 2
-layout: ../../layouts/MainLayout.astro
+layout: ../../../layouts/MainLayout.astro
 ---
 
 ![package-form-cover](https://user-images.githubusercontent.com/4262489/193812095-1cffa287-e2ac-4671-b604-1e2ff2e6f19e.png)
