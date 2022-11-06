@@ -57,7 +57,7 @@ export const SIDEBAR: Sidebar = {
     // TODO: create overview
     Introduction: [
       { text: "Overview", link: "en/introduction" },
-      { text: "Philosophy", link: "en/philosophy" },
+      // { text: "Philosophy", link: "en/philosophy" },
     ],
 
     "API Docs": [

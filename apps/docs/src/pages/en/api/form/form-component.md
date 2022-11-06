@@ -6,25 +6,27 @@ description: The Reactive Form component for Astro
 layout: ../../../../layouts/MainLayout.astro
 ---
 
-The `Form` component renders a form element and various control components (e.g., `Input`, `TextArea`, `Select`) depending on the data that you provide.
+The `Form` component renders a form element and various control components (e.g., `Input`, `TextArea`, `Select`) depending on the data that you provide through its `formGroups` property.
 
-> **❗ Note:** This component is unstyled by itself. The docs will be updated later to show how you can style it yourself or use our theme package.
-
-## Installation
-
-```
-npm i @astro-reactive/form
+```astro
+---
+import Form, { FormGroup } from "@astro-reactive/form";
+const form = new FormGroup(
+  // your controls configuration data
+);
+---
+<Form formGroups={form} />
 ```
 
 ## Usage
 
 Setting up the `Form` component is mainly done by providing it your configuration via the `formGroups` property which takes either a `FormGroup` or an array `FormGroup[]`.
 
-See the documentation for the [FormGroup](/en/api/form/form-group) class.
+*See the documentation for the [FormGroup](/en/api/form/form-group) class.*
 
 ### Setting up a form
 
-Giving the component a `FormGroup` object like in the following example will set up a form with three controls. The resulting form will contain a text field `username`, a textarea `comment`, and a `size` dropdown.
+Giving the component a `FormGroup` object will set up a form. 
 
 ```astro
 ---
@@ -34,6 +36,7 @@ const form = new FormGroup([
   {
     name: "username",
     label: "Username",
+    value: "awesome_dev",
   },
   {
     name: "comment",
@@ -54,9 +57,17 @@ const form = new FormGroup([
 <Form formGroups={form} />
 ```
 
+The `FormGroup` constructor takes an array `ControlConfig[]`.
 
-### Setting up multiple form groups
+*See the `ControlConfig` type in the [FormControl](/en/api/form/form-group) class documentation.*
 
+The example above will result in a form containing three controls: a text field `username`, a textarea `comment`, and a `size` dropdown.
+
+![single-form](https://user-images.githubusercontent.com/4262489/200187918-95052561-e02c-453d-9a9b-940303a80046.png)
+
+### Setting up multiple field sets
+
+To render a form with multiple field sets, give the component an array `FormGroup[]`
 
 ## Properties
 
