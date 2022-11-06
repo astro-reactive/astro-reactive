@@ -134,7 +134,6 @@ This implementation is to distinguish the submit button from other buttons and l
 
 ```astro
 ---
-
 import Form, { FormGroup } from "@astro-reactive/form";
 
 const form = new FormGroup([]);
