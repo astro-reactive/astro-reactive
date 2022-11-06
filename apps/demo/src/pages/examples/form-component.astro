@@ -1,0 +1,25 @@
+---
+import Form, { FormGroup } from "@astro-reactive/form";
+
+const form = new FormGroup([
+  {
+    name: "username",
+    label: "Username",
+  },
+  {
+    name: "comment",
+    label: "Feedback",
+    type: "textarea",
+    value: "Nice!",
+  },
+  {
+    name: "size",
+    label: "Size",
+    type: "dropdown",
+    options: ["S", "M", "L", "XL", "XXL"],
+    placeholder: "-- Please choose an option --",
+  },
+]);
+---
+
+<Form formGroups={form} />
