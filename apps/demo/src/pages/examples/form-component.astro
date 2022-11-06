@@ -1,4 +1,5 @@
 ---
+import type { Submit } from "@astro-reactive/common";
 import Form, { FormGroup } from "@astro-reactive/form";
 
 const simpleForm = new FormGroup([
@@ -21,6 +22,61 @@ const simpleForm = new FormGroup([
     placeholder: "-- Please choose an option --",
   },
 ]);
+
+const nameForm = new FormGroup(
+  [
+    {
+      name: "firstName",
+      label: "First Name",
+      value: "John",
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      value: "Doe",
+    },
+  ],
+  "Name"
+);
+
+const skills = new FormGroup(
+  [
+    {
+      name: "JavaScript",
+      type: "checkbox",
+      label: "JavaScript",
+    },
+    {
+      name: "TypeScript",
+      type: "checkbox",
+      label: "TypeScript",
+    },
+    {
+      name: "React",
+      type: "checkbox",
+      label: "React",
+    },
+    {
+      name: "Vue",
+      type: "checkbox",
+      label: "Vue",
+    },
+  ],
+  "Skills"
+);
+
+/**
+ * comment
+ */
+
+const submitControl: Submit = {
+  name: "submit",
+  type: "submit",
+};
 ---
 
-<Form formGroups={simpleForm} />
+<h2>Simple Form</h2>
+<Form formGroups={simpleForm} submitControl={submitControl} />
+
+<h2>Form with nested form groups</h2>
+<Form formGroups={[nameForm, skills]} />
