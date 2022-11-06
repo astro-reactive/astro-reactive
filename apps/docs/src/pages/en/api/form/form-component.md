@@ -128,7 +128,7 @@ The `FormGroup` constructor optionally takes a name property to set the legend f
 
 ### Setting up the Submit button
 
-The `Form` component takes an optional `submitControl` property. This property is of type `Submit` which is a especial type for the submit button.
+The `Form` component takes an optional `submitControl` property. This property is of type `Submit` which is a special type for the submit button.
 
 This implementation is to distinguish the submit button from other buttons and limit the form to only have one of it.
 
