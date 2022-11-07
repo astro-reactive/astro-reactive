@@ -69,7 +69,7 @@ The example above will result in a form containing three controls: a text field 
 
 The `FormGroup` constructor takes an array `ControlConfig[]`.
 
-> **❗️ Note:** The `ControlConfig` type will be defined in the [FormControl](/en/api/form/form-control) class documentation.
+> **📝 Note:** The `ControlConfig` type will be defined in the [FormControl](/en/api/form/form-control) class documentation.
 
 
 ### Setting up multiple field sets

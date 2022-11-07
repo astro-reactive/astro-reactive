@@ -69,7 +69,7 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
       }
 
       #grid-main {
-        padding: var(--doc-padding) var(--gutter);
+        padding: 0 var(--gutter);
         grid-column: 2;
         display: flex;
         flex-direction: column;
@@ -142,6 +142,13 @@ const githubEditUrl = `${CONFIG.GITHUB_EDIT_URL}/${currentFile}`;
         <LeftSidebar currentPage={currentPage} />
       </aside>
       <div id="grid-main">
+        <div class="warning">
+          <strong>🛠 Under Construction:</strong> This library and the documentation
+          are undergoing rigorous development. Read and join our <a
+            href="https://github.com/ayoayco/astro-reactive-library/discussions"
+            >discussions</a
+          > for questions, suggestions, or feedback.
+        </div>
         <PageContent
           frontmatter={frontmatter}
           headings={headings}
