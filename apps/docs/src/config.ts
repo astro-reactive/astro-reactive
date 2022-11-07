@@ -1,5 +1,5 @@
 export const SITE = {
-  title: "Astro Reactive",
+  title: "Astro Reactive Docs",
   description:
     "Let your data build your UI with native Astro components and architecture.",
   defaultLanguage: "en_US",
@@ -7,12 +7,10 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: "https://github.com/withastro/astro/blob/main/assets/social/banner.jpg?raw=true",
-    alt:
-      "astro logo on a starry expanse of space," +
-      " with a purple saturn-like planet floating in the right foreground",
+    src: "https://github.com/ayoayco/astro-reactive-library/blob/main/.github/assets/astro-reactive-library-cover.png?raw=true",
+    alt: "astro logo and astro reactive library text on a starry expanse of space",
   },
-  twitter: "astrodotbuild",
+  twitter: "astroreactive",
 };
 
 // This is the type of the frontmatter you put in the docs markdown files.
