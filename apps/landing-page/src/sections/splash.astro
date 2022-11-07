@@ -1,7 +1,7 @@
 ---
 import { generateImage } from "astro-eleventy-img";
 import { Icon } from "astro-icon";
-import Starfield from "~/sections/starfield.astro";
+// import Starfield from "~/sections/starfield.astro";
 import Copynpm from "~/components/copynpm.astro";
 
 const widths = [450, 800];
@@ -64,7 +64,6 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
       />
     </picture>
   </div>
-  <Starfield client:load />
 </section>
 
 <noscript>

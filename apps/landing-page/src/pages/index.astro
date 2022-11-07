@@ -3,7 +3,8 @@ import Header from "~/components/header.astro";
 // import Icon from "astro-icon";
 import Splash from "~/sections/splash.astro";
 import "~/styles/index.css";
-import AstroSection from "~/sections/astro-section.astro";
+// import AstroSection from "~/sections/astro-section.astro";
+import Starfield from "~/sections/starfield.astro";
 
 const { site } = Astro;
 const image = new URL("social.jpg", site);
@@ -79,5 +80,7 @@ const description =
     <Header />
     <Splash />
     <!--AstroSection /-->
+
+    <Starfield client:load />
   </body>
 </html>
