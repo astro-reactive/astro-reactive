@@ -1,7 +1,7 @@
 ---
 import { generateImage } from "astro-eleventy-img";
 import { Icon } from "astro-icon";
-// import Starfield from "~/sections/starfield.astro";
+import Starfield from "~/sections/starfield.astro";
 import Copynpm from "~/components/copynpm.astro";
 
 const widths = [450, 800];
@@ -20,6 +20,7 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 ---
 
 <section class="h-screen flex flex-col px-10 astro relative">
+  <Starfield client:load />
   <div
     class="relative flex flex-col-reverse justify-end pt-16 h-full astro-lg:grid-cols-2 place-items-center astro-lg:grid astro-lg:pt-0 astro-img:pt-10"
   >
@@ -65,14 +66,6 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
     </picture>
   </div>
 </section>
-
-<noscript>
-  <style>
-    #splash-bg-fallback {
-      display: block;
-    }
-  </style>
-</noscript>
 
 <style>
   @keyframes float {
