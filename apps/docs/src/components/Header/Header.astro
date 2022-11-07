@@ -1,11 +1,12 @@
 ---
 import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
+import ThemeToggleButton from "./ThemeToggleButton";
 import * as CONFIG from "../../config";
 // import AstroLogo from "./AstroLogo.astro";
 import SkipToContent from "./SkipToContent.astro";
 import SidebarToggle from "./SidebarToggle";
 import LanguageSelect from "./LanguageSelect";
-import Search from "./Search";
+// import Search from "./Search";
 
 type Props = {
   currentPage: string;
@@ -23,7 +24,6 @@ const lang = getLanguageFromURL(currentPage);
     </div>
     <div class="logo flex">
       <a href="/">
-        <!-- <AstroLogo size={200} /> -->
         <h1>{CONFIG.SITE.title ?? "Documentation"}</h1>
       </a>
     </div>
@@ -34,9 +34,11 @@ const lang = getLanguageFromURL(currentPage);
       )
     }
     <!-- TODO: enable search -->
-    <div class="search-item">
+    <!-- <div class="search-item">
       <Search client:idle />
-    </div>
+    </div> -->
+
+    <ThemeToggleButton client:visible />
   </nav>
 </header>
 
@@ -100,7 +102,7 @@ const lang = getLanguageFromURL(currentPage);
     gap: 1em;
     width: 100%;
     max-width: 82em;
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 
   @media (min-width: 50em) {

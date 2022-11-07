@@ -18,7 +18,12 @@ const form = new FormGroup(
 <Form formGroups={form} />
 ```
 
------
+## Installation
+
+```
+npm i @astro-reactive/form
+```
+
 
 ## Usage
 
