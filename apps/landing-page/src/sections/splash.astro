@@ -1,7 +1,7 @@
 ---
 import { generateImage } from "astro-eleventy-img";
 import { Icon } from "astro-icon";
-// import Starfield from "~/components/starfield.astro";
+import Starfield from "~/sections/starfield.astro";
 import Copynpm from "~/components/copynpm.astro";
 
 const widths = [450, 800];
@@ -19,8 +19,8 @@ const webpSrcset = webp.map(({ srcset }) => srcset).join(",");
 const pngSrcset = png.map(({ srcset }) => srcset).join(",");
 ---
 
-<section class="relative h-full bg-black">
-  <!-- <Starfield /> -->
+<section class="h-screen flex flex-col px-10 astro relative">
+  <Starfield />
   <div
     class="relative flex flex-col-reverse justify-end pt-16 h-full astro-lg:grid-cols-2 place-items-center astro-lg:grid astro-lg:pt-0 astro-img:pt-10"
   >
@@ -32,9 +32,9 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
         <div
           class="font-extrabold tracking-tighter text-center text-8xl gradient-text"
         >
-          Build fast
-          <br /> websites,
-          <br /> faster.
+        Build Astro 
+        <br />Applications
+        <br />with Reactive UIs
         </div>
       </h2>
       <div
