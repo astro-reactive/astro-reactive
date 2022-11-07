@@ -40,12 +40,13 @@ const pngSrcset = png.map(({ srcset }) => srcset).join(",");
       <div
         class="mt-8 flex justify-center flex-col items-center astro-lg:flex-row astro-lg:justify-center astro-sm:w-screen"
       >
-        <button
+        <a
+          href="https://docs.astro-reactive.dev"
           class="flex items-center w-4/5 astro-md:w-1/2 justify-center bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded transition-colors astro-lg:w-auto"
         >
           <span>Get Started</span>
           <Icon name="mdi:arrow-right" width="20px" height="20px" />
-        </button>
+        </a>
         <Copynpm />
       </div>
     </div>

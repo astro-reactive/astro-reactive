@@ -10,7 +10,15 @@ Thanks for checking out the Astro Reactive Library! Welcome to a new adventure.
 
 This project aims to be a new library of components and utilities for building reactive user interfaces with [Astro](https://astro.build).
 
-We are working on a fun and easy tutorial so you can learn how to build reactive UIs with Astro from scratch using our packages. For now, see our [API Docs](/en/api) for example usage.
+We will update this documentation site later with a fun and easy tutorial so you can start building reactive UIs with Astro from scratch using our packages.
+
+> **📝 Note:** See our [API Docs](/en/api) for example usage.
+
+## Installation
+
+```
+npm i @astro-reactive/form @astro-reactive/validator
+```
 
 ## Packages
 
