@@ -52,6 +52,7 @@ const description =
     <!-- initialize theme -->
     <script is:inline>
       const themeSaved = localStorage.getItem("theme");
+      const forceTheme = "dark";
 
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
@@ -66,9 +67,10 @@ const description =
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (event) => {
           if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
+            document.documentElement.dataset.theme = forceTheme;
+            //  event.matches
+            //   ? "dark"
+            //   : "light";
           }
         });
     </script>
@@ -76,7 +78,7 @@ const description =
   <body
     class="h-full overflow-x-hidden text-base bg-default text-default selection:bg-secondary selection:text-white"
   >
-    <Splash client:build />
+    <Splash client:load />
     <!--AstroSection /-->
     <Header />
   </body>
