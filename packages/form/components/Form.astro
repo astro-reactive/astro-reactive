@@ -22,7 +22,7 @@ const {
 
 const formTheme = theme ?? 'light';
 const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
-const formId = Array.isArray(formGroups) ? null : formGroups?.id || null;
+const formId = Array.isArray(formGroups) ? uuid() : formGroups?.id || null;
 ---
 
 <form
