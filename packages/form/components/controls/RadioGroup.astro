@@ -27,6 +27,7 @@ const options = control.options.map((option: string | ControlOption) => {
 		<div class="radio-option">
 			<input
 				type="radio"
+				id={control.id}
 				name={control.name}
 				value={option.value}
 				checked={option.value === control.value}

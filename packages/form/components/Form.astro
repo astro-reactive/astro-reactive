@@ -3,6 +3,7 @@ import type { Submit } from '@astro-reactive/common';
 import { FormGroup, FormControl } from '../core';
 import FieldSet from './FieldSet.astro';
 import Field from './Field.astro';
+import ShortUniqueId from 'short-unique-id';
 
 export interface Props {
 	formGroups: FormGroup | FormGroup[];
@@ -20,14 +21,16 @@ const {
 	readOnly = false,
 } = Astro.props;
 
+const uid = new ShortUniqueId({ length: 9 });
 const formTheme = theme ?? 'light';
 const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
+const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 ---
 
 <form
 	class={formTheme}
 	name={formName}
-	id={formName}
+	id={formId}
 	data-validator-hints={showValidationHints.toString()}
 >
 	{
