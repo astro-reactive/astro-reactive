@@ -12,6 +12,40 @@ We will update this documentation with a fun and easy tutorial so you can start 
 
 > **📝 Note:** See our [API Docs](/en/api) for example usage.
 
+## Reactive what?
+
+We are in pursuit of an easy developer experience for implementing reactive UIs in an Astro app. By this we mean components that are able to emit and listen to events, and a huge part of the challenge is "hibernating" the state after server-rendering and "waking" it up on the browser.
+
+This will be released as a core package of the library to support reactivity across our packages, and hopefully as a utility to use for your own components.
+
+As of now this is still a *goal*. In other words, we see this as researching the [hyperdrive](https://starwars.fandom.com/wiki/Hyperdrive/Legends) engine to explore new frontiers with Astro.
+
+And we're having fun.
+
+*👉 [Join us!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md#readme)*
+
+## Project Motivation
+
+When you build a page with Astro right now, you have to keep in mind that everything is built into HTML with very minimal, and even zero, JS.
+
+This is what makes astro great for content-focused web applications.
+
+However we also see that Astro has given us a good baseline framework to potentially build more complex interactions.
+
+The challenge right now is that there is no opinionated way to "resume" what your components did from the server to the browser. So I thought: What if there is a library of components and utilities to help us do this?
+
+In this project, our motivation is to get to this future. This is our *next frontier 🚀*
+
+## Some Tradeoffs
+
+The Astro framework is very clear and focused on what they provide: top-tier performance for content-focused websites. In doing so, it has introduced a new world of architecture to a lot of developers.
+
+Once we take off in pursuit of our project goals, we are aware of some tradeoffs that will be made.
+ 
+As we build, we aim to minimize the performance hit to your applications.
+
+We will also make this clear in our library documentation as we see them.
+
 ## Packages
 
 | Package | Release notes | Description |
