@@ -11,7 +11,7 @@ export interface Props {
 const { group, showValidationHints, readOnly = false } = Astro.props;
 ---
 
-<fieldset id={group.name} name={group.name}>
+<fieldset id={group.id} name={group.name}>
 	{group.name && <legend>{group.name}</legend>}
 	{
 		group?.controls?.map((control) => (
