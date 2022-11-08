@@ -10,10 +10,12 @@ import type {
 	TextArea,
 	ControlBase,
 } from '@astro-reactive/common';
+import ShortUniqueId from 'short-unique-id';
 
 export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
 export class FormControl {
+	private _id = '';
 	private _name = '';
 	private _type: ControlType = 'text';
 	private _value?: string | number | null | string[] | ControlOption[];
@@ -46,6 +48,8 @@ export class FormControl {
 			validators = [],
 		} = config;
 
+		const uid = new ShortUniqueId({ length: 9 });
+		this._id = 'arl-' + uid();
 		this._name = name;
 		this._type = type;
 		this._value = value;
@@ -78,6 +82,10 @@ export class FormControl {
 				this._errors = [];
 			}
 		});
+	}
+
+	get id() {
+		return this._id;
 	}
 
 	get name() {
