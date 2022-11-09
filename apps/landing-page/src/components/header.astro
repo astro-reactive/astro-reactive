@@ -90,15 +90,15 @@ const socials = [
     MicroModal.close(menuModalId);
   };
 
-  openNavButton.addEventListener("click", openMenu);
-  closeNavButton.addEventListener("click", closeMenu);
+  openNavButton?.addEventListener("click", openMenu);
+  closeNavButton?.addEventListener("click", closeMenu);
 
-  document.addEventListener("scroll", () => {
+  document?.addEventListener("scroll", () => {
     const d = page.clientHeight - page.scrollTop - header.offsetHeight;
     header.classList.toggle("fixed-header", d < 0);
   });
 
-  menu.addEventListener("click", (event) => {
+  menu?.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {
       closeMenu();
     }
