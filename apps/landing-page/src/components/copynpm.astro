@@ -40,7 +40,7 @@ import { Icon } from "astro-icon";
   const copyCommandButton = document.getElementById("copy-command-button");
   const commandText = document.getElementById("command").innerText;
 
-  copyCommandButton.addEventListener("click", () => {
+  copyCommandButton?.addEventListener("click", () => {
     navigator.clipboard.writeText(commandText);
   });
 </script>
