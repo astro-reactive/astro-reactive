@@ -64,15 +64,15 @@ const description =
         document.documentElement.dataset.theme = forceTheme; // prefersDark ? "dark" : "light";
       }
 
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
+      // window
+      //   .matchMedia("(prefers-color-scheme: dark)")
+      //   .addEventListener("change", (event) => {
+      //     if (!localStorage.getItem("theme")) {
+      //       document.documentElement.dataset.theme = event.matches
+      //         ? "dark"
+      //         : "light";
+      //     }
+      //   });
     </script>
   </head>
   <body
