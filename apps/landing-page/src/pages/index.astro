@@ -2,8 +2,9 @@
 import "~/styles/index.css";
 import Header from "~/components/header.astro";
 // import Icon from "astro-icon";
-import Splash from "~/sections/splash.astro";
+import Splash from "~/components/splash.astro";
 // import AstroSection from "~/sections/astro-section.astro";
+import Starfield from "~/components/starfield.astro";
 
 const { site } = Astro;
 const image = new URL("social.jpg", site);
@@ -57,20 +58,19 @@ const description =
       if (themeSaved) {
         document.documentElement.dataset.theme = themeSaved;
       } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+        // const prefersDark = window.matchMedia(
+        //   "(prefers-color-scheme: dark)"
+        // ).matches;
+        document.documentElement.dataset.theme = forceTheme; // prefersDark ? "dark" : "light";
       }
 
       window
         .matchMedia("(prefers-color-scheme: dark)")
         .addEventListener("change", (event) => {
           if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = forceTheme;
-            //  event.matches
-            //   ? "dark"
-            //   : "light";
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
           }
         });
     </script>
@@ -78,8 +78,9 @@ const description =
   <body
     class="h-full overflow-x-hidden text-base bg-default text-default selection:bg-secondary selection:text-white"
   >
+    <Starfield />
     <Header />
-    <Splash client:load />
+    <Splash />
     <!--AstroSection /-->
   </body>
 </html>
