@@ -9,7 +9,7 @@ import Starfield from "~/components/starfield.astro";
 const { site } = Astro;
 const image = new URL("social.jpg", site);
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  "Library of components and utilities for building reactive web applications with Astro.";
 ---
 
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
@@ -19,7 +19,7 @@ const description =
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <title>Astro Reactive</title>
+    <title>Astro Reactive | {description}</title>
     <meta name="description" content={description} />
 
     <!-- fonts -->
