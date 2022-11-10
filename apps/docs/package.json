@@ -7,8 +7,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "docs": "astro dev",
-    "check": "astro check && tsc",
-    "build": "astro check && astro build",
+    "check": "astro check && tsc --noEmit && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

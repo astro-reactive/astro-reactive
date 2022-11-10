@@ -22,6 +22,7 @@
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
+    "check": "npm run check --workspaces --if-present",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",

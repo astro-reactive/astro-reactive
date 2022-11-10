@@ -8,14 +8,15 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "check": "astro check && tsc --noEmit && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astro-reactive/form": "file:packages/form",
     "@astro-reactive/validator": "file:packages/validator",
-    "astro": "^1.5.0"
+    "astro": "^1.6.5"
   },
   "main": "index.js",
   "repository": {
