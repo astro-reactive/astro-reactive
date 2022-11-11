@@ -15,6 +15,7 @@
       "cache": false
     },
     "test": {},
-    "check": {}
+    "check": {},
+    "clean": {}
   }
 }

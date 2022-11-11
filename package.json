@@ -23,6 +23,7 @@
     "lint:fix": "turbo run lint:fix",
     "build": "turbo run build",
     "check": "turbo run check",
+    "clean": "turbo clean",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
