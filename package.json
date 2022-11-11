@@ -40,5 +40,8 @@
   ],
   "dependencies": {
     "prettier-plugin-astro": "^0.7.0"
+  },
+  "devDependencies": {
+    "turbo": "^1.6.3"
   }
 }

@@ -11,3 +11,6 @@ pnpm-debug.log*
 *~
 *swp
 *swo
+
+.turbo/
+
