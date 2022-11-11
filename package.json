@@ -14,15 +14,15 @@
     ".": "./index.ts"
   },
   "scripts": {
-    "start": "npm run dev -w apps/demo",
-    "demo": "npm run dev -w apps/demo",
-    "docs": "npm run dev -w apps/docs",
-    "landing-page": "npm run dev -w apps/landing-page",
-    "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
-    "lint:fix": "npm run lint:fix --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "check": "npm run check --workspaces --if-present",
+    "start": "turbo run dev --filter=demo",
+    "demo": "turbo run dev --filter=demo",
+    "docs": "turbo run dev --filter=docs",
+    "landing-page": "turbo run dev --filter=landing-page",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "build": "turbo run build",
+    "check": "turbo run check",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
@@ -33,10 +33,10 @@
   "workspaces": [
     "packages/form",
     "packages/validator",
+    "packages/common",
     "apps/demo",
     "apps/docs",
-    "apps/landing-page",
-    "packages/common"
+    "apps/landing-page"
   ],
   "dependencies": {
     "prettier-plugin-astro": "^0.7.0"

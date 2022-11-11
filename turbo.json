@@ -8,9 +8,13 @@
     "lint": {
       "outputs": []
     },
+    "lint:fix": {
+      "outputs": []
+    },
     "dev": {
       "cache": false
     },
-    "test": {}
+    "test": {},
+    "check": {}
   }
 }

@@ -14,8 +14,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astro-reactive/form": "file:packages/form",
-    "@astro-reactive/validator": "file:packages/validator",
+    "@astro-reactive/form": "*",
+    "@astro-reactive/validator": "*",
+    "@astro-reactive/common": "*",
     "astro": "^1.6.5"
   },
   "main": "index.js",
