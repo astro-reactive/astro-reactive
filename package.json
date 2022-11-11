@@ -43,6 +43,7 @@
     "prettier-plugin-astro": "^0.7.0"
   },
   "devDependencies": {
+    "eslint-config-turbo": "^0.0.4",
     "turbo": "^1.6.3"
   }
 }

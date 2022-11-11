@@ -43,7 +43,6 @@
     "astro": "^1.5.0",
     "astro-component-tester": "^0.6.0",
     "chai": "^4.3.6",
-    "common": "file:packages/common",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -57,8 +56,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@astro-reactive/common": "^0.1.2",
-    "@astro-reactive/validator": "^0.2.3",
+    "@astro-reactive/common": "*",
+    "@astro-reactive/validator": "*",
     "short-unique-id": "^4.4.4"
   }
 }
