@@ -23,7 +23,7 @@
     "lint:fix": "turbo run lint:fix",
     "build": "turbo run build",
     "check": "turbo run check",
-    "clean": "turbo clean",
+    "clean": "turbo clean && rimraf node_modules",
     "test:watch": "npm run test:watch --workspaces --if-present",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
@@ -32,18 +32,15 @@
   },
   "license": "ISC",
   "workspaces": [
-    "packages/form",
-    "packages/validator",
-    "packages/common",
-    "apps/demo",
-    "apps/docs",
-    "apps/landing-page"
+    "packages/*",
+    "apps/*"
   ],
   "dependencies": {
     "prettier-plugin-astro": "^0.7.0"
   },
   "devDependencies": {
     "eslint-config-turbo": "^0.0.4",
+    "rimraf": "^3.0.2",
     "turbo": "^1.6.3"
   }
 }

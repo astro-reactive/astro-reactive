@@ -3,13 +3,15 @@
   "version": "0.1.2",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  },
   "exports": {
     ".": "./index.ts"
   },
   "scripts": {
     "check": "tsc --noEmit",
-    "clean": "rm -rf .turbo dist"
+    "clean": "rimraf node_modules .turbo dist"
   },
   "files": [
     "types/",
