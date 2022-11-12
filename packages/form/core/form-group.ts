@@ -18,4 +18,14 @@ export class FormGroup {
 	get(name: string): FormControl | undefined {
 		return this.controls.find((control) => control.name === name);
 	}
+
+	setValue(values: object) {
+		this.controls.map((control) => {
+			for (const value in values) {
+				if (value == control.name) {
+					control.setValue(values[value]);
+				}
+			}
+		});
+	}
 }
