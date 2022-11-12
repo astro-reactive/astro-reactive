@@ -1,3 +1,3 @@
 export function cleanString(str) {
-	return str.replace(/\s/g, '');
+	return typeof str !== 'string' ? '' : str.replace(/\s/g, '');
 }
