@@ -7,6 +7,7 @@ import Form, {
 } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 import type { Submit } from "@astro-reactive/common";
+import { info } from "astro/dist/core/logger/core";
 
 const infoForm = new FormGroup([
   {
@@ -100,6 +101,16 @@ const submit: Submit = {
   name: "submit",
   type: "submit",
 };
+
+const values = {
+  firstName: "James",
+  lastName: "Bond",
+  email: "james.bond@gmail.com",
+  country: "U.S.A",
+  eligible: "yes"
+}
+
+infoForm.setValue(values);
 
 infoForm.name = "Application Form";
 skillsForm.name = "Skills";
