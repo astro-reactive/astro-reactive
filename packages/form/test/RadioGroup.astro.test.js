@@ -34,7 +34,8 @@ describe('RadioGroup.astro test', () => {
 	});
 
 	it('Should render a checked radio option from string[] correctly', async () => {
-		const expectedResult = '<inputtype="radio"name="FAKENAME"value="two"checked="true">';
+		const expectedResults = ['type="radio"', 'value="two"', 'checked="true"'];
+
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
@@ -49,13 +50,14 @@ describe('RadioGroup.astro test', () => {
 		// act
 		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
 		const actualResult = cleanString(component.html);
+		const resultsMap = expectedResults.map((result) => actualResult.includes(result));
 
 		// assert
-		expect(actualResult).to.contain(expectedResult);
+		expect(resultsMap.every((result) => !!result)).to.equal(true);
 	});
 
 	it('Should render a checked radio option from ControlOption[] correctly', async () => {
-		const expectedResult = '<inputtype="radio"name="FAKENAME"value="three"checked="true">';
+		const expectedResults = ['type="radio"', 'value="three"', 'checked="true"'];
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
@@ -83,9 +85,10 @@ describe('RadioGroup.astro test', () => {
 		// act
 		component = await getComponentOutput('./components/controls/RadioGroup.astro', props);
 		const actualResult = cleanString(component.html);
+		const resultsMap = expectedResults.map((result) => actualResult.includes(result));
 
 		// assert
-		expect(actualResult).to.contain(expectedResult);
+		expect(resultsMap.every((result) => !!result)).to.equal(true);
 	});
 
 	it('Should render readonly attribute if the prop readOnly is passed as true', async () => {
