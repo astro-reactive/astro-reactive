@@ -24,11 +24,11 @@
     "build": "turbo run build",
     "check": "turbo run check",
     "clean": "turbo clean && rimraf node_modules",
-    "test:watch": "npm run test:watch --workspaces --if-present",
+    "test:watch": "turbo run test:watch",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
-    "publish": "npm publish --access public -w"
+    "publish": "turbo run lint build test && npm publish --access public -w"
   },
   "license": "ISC",
   "workspaces": [
