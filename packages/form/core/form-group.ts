@@ -20,12 +20,6 @@ export class FormGroup {
 	}
 
 	setValue(values: object) {
-		this.controls.map((control) => {
-			for (const value in values) {
-				if (value == control.name) {
-					control.setValue(values[value]);
-				}
-			}
-		});
+		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));
 	}
 }
