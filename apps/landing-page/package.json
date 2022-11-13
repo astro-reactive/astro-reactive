@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "clean": "rimraf dist node_modules"
+    "clean": "rimraf dist node_modules dist .turbo"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^2.0.2",
