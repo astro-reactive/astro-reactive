@@ -23,18 +23,18 @@ const options = control.options.map((option: string | ControlOption) => {
 ---
 
 {
-	options.map((option: ControlOption) => (
+	options.map((option: ControlOption, index: number) => (
 		<div class="radio-option">
 			<input
 				type="radio"
-				id={control.id}
+				id={control.id + '-' + index}
 				name={control.name}
 				value={option.value}
 				checked={option.value === control.value}
 				readonly={readOnly || null}
 				disabled={readOnly || null}
-			/>{' '}
-			{option.label}
+			/>
+			<label for={control.id + '-' + index}>{option.label}</label>
 		</div>
 	))
 }
