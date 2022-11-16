@@ -1,6 +1,6 @@
 {
   "name": "@astro-reactive/common",
-  "version": "0.1.2",
+  "version": "0.0.0-experimental-7c2f356",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.js",
   "devDependencies": {
@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }

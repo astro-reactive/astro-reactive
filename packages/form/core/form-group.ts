@@ -18,4 +18,8 @@ export class FormGroup {
 	get(name: string): FormControl | undefined {
 		return this.controls.find((control) => control.name === name);
 	}
+
+	setValue(values: object) {
+		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));
+	}
 }
