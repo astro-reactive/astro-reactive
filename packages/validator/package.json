@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest run --watch",
+    "test:watch": "vitest",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
