@@ -1,4 +1,4 @@
-import type { ValidationError } from '@astro-reactive/common';
+import type { ValidationError, ValidatorRules } from '@astro-reactive/common';
 import { Validators } from './validator-names';
 
 /**
@@ -7,10 +7,19 @@ import { Validators } from './validator-names';
  * @param validators - names of validation logic to be applied
  * @returns errors - array of errors `ValidationError`
  */
-export function validate(value: string, validators: string[]): ValidationError[] {
+export function validate(value: string, validators: ValidatorRules): ValidationError[] {
 	return validators
-		.map((validator) => validator.replace('data-', ''))
-		.map((attribute): ValidationError | null => {
+		.map((validator) => {
+			if (typeof validator === 'string') {
+				return { attribute: validator.replace('data-', ''), category: 'error' };
+			}
+
+			return {
+				attribute: validator.validator.replace('data-', ''),
+				category: validator.category || 'error',
+			};
+		})
+		.map(({ attribute, category }): ValidationError | null => {
 			// TODO: implement dynamic import of function depending on validators
 			const split = attribute.split(':');
 			const validator = split[0];
@@ -18,31 +27,54 @@ export function validate(value: string, validators: string[]): ValidationError[]
 			const limit = parseInt(limitStr || '0', 10);
 
 			if (validator === Validators.min()) {
-				return validateMin(value, limit);
+				const val = validateMin(value, limit);
+				if (val) {
+					val.category = category;
+				}
+				return val;
 			}
 
 			if (validator === Validators.max()) {
-				return validateMax(value, limit);
+				const val = validateMax(value, limit);
+				if (val) {
+					val.category = category;
+				}
+				return val;
 			}
 
 			if (validator === Validators.required) {
-				return validateRequired(value);
+				const val = validateRequired(value);
+				if (val) val.category = category;
+
+				return val;
 			}
 
 			if (validator === Validators.requiredChecked) {
-				return validateRequiredChecked(value);
+				const val = validateRequiredChecked(value);
+				if (val) val.category = category;
+
+				return val;
 			}
 
 			if (validator === Validators.email) {
-				return validateEmail(value);
+				const val = validateEmail(value);
+				if (val) val.category = category;
+
+				return val;
 			}
 
 			if (validator === Validators.minLength()) {
-				return validateMinLength(value, limit);
+				const val = validateMinLength(value, limit);
+				if (val) val.category = category;
+
+				return val;
 			}
 
 			if (validator === Validators.maxLength()) {
-				return validateMaxLength(value, limit);
+				const val = validateMaxLength(value, limit);
+				if (val) val.category = category;
+
+				return val;
 			}
 
 			return null;
