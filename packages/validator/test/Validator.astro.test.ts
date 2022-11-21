@@ -1,5 +1,4 @@
-import { expect } from 'chai';
-import { describe, beforeEach, it } from 'mocha';
+import { describe, beforeEach, it, expect } from 'vitest';
 import { getComponentOutput } from 'astro-component-tester';
 
 describe('Example Tests', () => {

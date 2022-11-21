@@ -22,32 +22,29 @@
     "astro-component"
   ],
   "scripts": {
-    "test": "mocha --parallel --timeout 15000",
-    "test:watch": "mocha --watch --parallel --timeout 15000",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
     "check": "astro check && tsc --noEmit"
   },
   "devDependencies": {
-    "@types/chai": "^4.3.3",
     "@types/eslint": "^8.4.6",
-    "@types/mocha": "^10.0.0",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "astro": "^1.5.0",
     "astro-component-tester": "^0.6.0",
-    "chai": "^4.3.6",
     "common": "file:packages/common",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "mocha": "^10.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "vitest": "^0.25.2"
   },
   "peerDependencies": {
     "astro": "^1.5.0"
