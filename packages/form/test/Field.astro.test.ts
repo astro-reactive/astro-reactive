@@ -1,7 +1,6 @@
-import { expect } from 'chai';
-import { beforeEach, describe, it } from 'mocha';
+import { beforeEach, describe, it, expect } from 'vitest';
 import { getComponentOutput } from 'astro-component-tester';
-import { cleanString } from './utils/index.js';
+import { cleanString } from './utils';
 
 describe('Field.astro test', () => {
 	let component;
