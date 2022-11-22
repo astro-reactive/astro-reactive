@@ -40,7 +40,8 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 					const limit = element.getAttribute(attribute);
 					return `${attribute}:${limit}`;
 				});
-			const value = element.type === 'checkbox' ? element.checked : element.value;
+			const value =
+				element.type === 'checkbox' ? (element.checked ? 'checked' : '') : element.value;
 			const errors = validate(value, validators);
 
 			// set element hasErrors
