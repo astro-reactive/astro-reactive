@@ -18,6 +18,7 @@
       "cache": false
     },
     "test": {
+      "dependsOn": ["^build"],
       "outputs": []
     },
     "check": {},
