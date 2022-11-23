@@ -15,8 +15,8 @@
     "clean": "rimraf node_modules .turbo dist"
   },
   "dependencies": {
-    "@astro-reactive/form": "*",
-    "@astro-reactive/validator": "*",
+    "@astro-reactive/form": "file:packages/form",
+    "@astro-reactive/validator": "file:packages/validator",
     "astro": "^1.6.5"
   },
   "main": "index.js",

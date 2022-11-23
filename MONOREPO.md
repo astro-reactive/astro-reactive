@@ -1,4 +1,4 @@
-# Developing
+# Monorepo Guide
 This project is a monorepo configured with Turborepo + NPM workspace. Here are some common development scripts.
 
 ## Scripts
