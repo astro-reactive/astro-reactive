@@ -28,7 +28,8 @@
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
-    "publish": "turbo run lint build test && npm publish --access public -w"
+    "publish": "turbo run lint build test && npm publish --access public -w",
+    "test-ci": "npm run test --workspaces --if-present"
   },
   "license": "ISC",
   "workspaces": [
