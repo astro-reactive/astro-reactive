@@ -23,7 +23,7 @@
     "lint:fix": "turbo run lint:fix",
     "build": "turbo run build",
     "check": "turbo run check",
-    "clean": "turbo clean && rimraf node_modules",
+    "clean": "turbo clean",
     "test:watch": "turbo run test:watch",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
