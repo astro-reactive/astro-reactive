@@ -10,7 +10,8 @@
     "check": "astro check && tsc --noEmit && astro build",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rimraf node_modules .turbo dist"
   },
   "dependencies": {
     "@algolia/client-search": "^4.13.1",
@@ -31,12 +32,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rishav-12/astro-reactive-library.git"
+    "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rishav-12/astro-reactive-library/issues"
+    "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/Rishav-12/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
 }

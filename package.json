@@ -14,31 +14,34 @@
     ".": "./index.ts"
   },
   "scripts": {
-    "start": "npm run dev -w apps/demo",
-    "demo": "npm run dev -w apps/demo",
-    "docs": "npm run dev -w apps/docs",
-    "landing-page": "npm run dev -w apps/landing-page",
-    "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
-    "lint:fix": "npm run lint:fix --workspaces --if-present",
-    "build": "npm run build --workspaces --if-present",
-    "check": "npm run check --workspaces --if-present",
-    "test:watch": "npm run test:watch --workspaces --if-present",
+    "start": "turbo run dev --filter=demo",
+    "demo": "turbo run dev --filter=demo",
+    "docs": "turbo run dev --filter=docs",
+    "landing-page": "turbo run dev --filter=landing-page",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "build": "turbo run build",
+    "check": "turbo run check",
+    "clean": "turbo clean",
+    "test:watch": "turbo run test:watch",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
-    "publish": "npm publish --access public -w"
+    "publish": "turbo run lint build test && npm publish --access public -w",
+    "test-ci": "npm run test --workspaces --if-present"
   },
   "license": "ISC",
   "workspaces": [
-    "packages/form",
-    "packages/validator",
-    "apps/demo",
-    "apps/docs",
-    "apps/landing-page",
-    "packages/common"
+    "packages/*",
+    "apps/*"
   ],
   "dependencies": {
     "prettier-plugin-astro": "^0.7.0"
+  },
+  "devDependencies": {
+    "eslint-config-turbo": "^0.0.4",
+    "rimraf": "^3.0.2",
+    "turbo": "^1.6.3"
   }
 }

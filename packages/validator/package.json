@@ -27,7 +27,8 @@
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
-    "check": "astro check && tsc --noEmit"
+    "check": "astro check && tsc --noEmit",
+    "clean": "rimraf node_modules .turbo dist"
   },
   "devDependencies": {
     "@types/eslint": "^8.4.6",
@@ -37,12 +38,12 @@
     "@typescript-eslint/parser": "^5.37.0",
     "astro": "^1.5.0",
     "astro-component-tester": "^0.6.0",
-    "common": "file:packages/common",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
+    "rimraf": "^3.0.2",
     "typescript": "^4.8.3",
     "vitest": "^0.25.2"
   },
@@ -50,7 +51,7 @@
     "astro": "^1.5.0"
   },
   "dependencies": {
-    "@astro-reactive/common": "^0.1.2"
+    "@astro-reactive/common": "*"
   },
   "main": "index.js",
   "directories": {
@@ -59,5 +60,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
