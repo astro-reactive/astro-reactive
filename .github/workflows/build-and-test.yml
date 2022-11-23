@@ -28,5 +28,5 @@ jobs:
       - run: npm ci
       - run: npm run clean
       - run: npm run check
-      - run: npm run test-ci
+      - run: npm run test
       - run: npm run lint
