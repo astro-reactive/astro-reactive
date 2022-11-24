@@ -9,6 +9,7 @@ import type {
 	ValidationError,
 	TextArea,
 	ControlBase,
+	ValidatorRules,
 } from '@astro-reactive/common';
 import ShortUniqueId from 'short-unique-id';
 
@@ -23,15 +24,15 @@ export class FormControl {
 	private _isValid = true;
 	private _isPristine = true;
 	private _placeholder: string | null = null;
-	private _validators: string[] = [];
+	private _validators: ValidatorRules = [];
 	private _errors: ValidationError[] = [];
 	private _options: string[] | ControlOption[] = [];
 	private _rows: number | null = null;
 	private _cols: number | null = null;
 
-	private validate: (value: string, validators: string[]) => ValidationError[] = (
+	private validate: (value: string, validators: ValidatorRules) => ValidationError[] = (
 		value: string,
-		validators: string[]
+		validators: ValidatorRules
 	) => {
 		value;
 		validators;

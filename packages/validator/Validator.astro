@@ -24,6 +24,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	// TODO: handle hooks / when to attach event listeners
 	// const form = document.querySelector('form');
 
+	import type { ValidatorRules } from '@astro-reactive/common';
 	import { clearErrors, validate } from './core';
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
@@ -38,10 +39,15 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 				.filter((attribute) => attribute.includes('data-validator-'))
 				.map((attribute) => {
 					const limit = element.getAttribute(attribute);
-					return `${attribute}:${limit}`;
-				});
+					return {
+						validator: `${attribute}:${limit}`,
+						category: element.getAttribute(`${attribute}-category`),
+					};
+				})
+				.filter((val) => val.category !== null); // Filter out validators without a category
+
 			const value = element.value;
-			const errors = validate(value, validators);
+			const errors = validate(value, validators as ValidatorRules);
 
 			// set element hasErrors
 			if (errors.length) {

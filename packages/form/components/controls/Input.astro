@@ -7,7 +7,7 @@ import type { FormControl } from '../../core/form-control';
 
 export interface Props {
 	control: FormControl;
-  readOnly?: boolean;
+	readOnly?: boolean;
 }
 
 const { control, readOnly } = Astro.props;
@@ -16,14 +16,30 @@ const { validators = [] } = control;
 
 const hasErrors: boolean = !!control.errors?.length;
 
-const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+// const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+// 	const split: string[] = validator.split(':');
+// 	const label: string = `data-${split[0]}` || 'invalid';
+// 	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+
+// 	return {
+// 		...prev,
+// 		[label]: value,
+// 	};
+// }, {});
+
+// @ts-ignore
+const validatorAttributes: Record<string, string> = validators.reduce((prev, val) => {
+	const validator = typeof val === 'string' ? val : val.validator;
 	const split: string[] = validator.split(':');
 	const label: string = `data-${split[0]}` || 'invalid';
 	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+	const category = typeof val === 'string' ? 'error' : val.category || 'error';
+	const categoryLabel: string = `data-${split[0]}-category`;
 
 	return {
 		...prev,
 		[label]: value,
+		[categoryLabel]: category,
 	};
 }, {});
 ---
@@ -38,6 +54,6 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 	data-label={control.label}
 	data-validator-haserrors={hasErrors.toString()}
 	readonly={readOnly || null}
-  disabled={(readOnly || null) && control.type === 'checkbox'}
+	disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}
 />

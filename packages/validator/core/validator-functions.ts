@@ -27,54 +27,31 @@ export function validate(value: string, validators: ValidatorRules): ValidationE
 			const limit = parseInt(limitStr || '0', 10);
 
 			if (validator === Validators.min()) {
-				const val = validateMin(value, limit);
-				if (val) {
-					val.category = category;
-				}
-				return val;
+				return validateMin(value, limit, category);
 			}
 
 			if (validator === Validators.max()) {
-				const val = validateMax(value, limit);
-				if (val) {
-					val.category = category;
-				}
-				return val;
+				return validateMax(value, limit, category);
 			}
 
 			if (validator === Validators.required) {
-				const val = validateRequired(value);
-				if (val) val.category = category;
-
-				return val;
+				return validateRequired(value, category);
 			}
 
 			if (validator === Validators.requiredChecked) {
-				const val = validateRequiredChecked(value);
-				if (val) val.category = category;
-
-				return val;
+				return validateRequiredChecked(value, category);
 			}
 
 			if (validator === Validators.email) {
-				const val = validateEmail(value);
-				if (val) val.category = category;
-
-				return val;
+				return validateEmail(value, category);
 			}
 
 			if (validator === Validators.minLength()) {
-				const val = validateMinLength(value, limit);
-				if (val) val.category = category;
-
-				return val;
+				return validateMinLength(value, limit, category);
 			}
 
 			if (validator === Validators.maxLength()) {
-				const val = validateMaxLength(value, limit);
-				if (val) val.category = category;
-
-				return val;
+				return validateMaxLength(value, limit, category);
 			}
 
 			return null;
@@ -88,7 +65,7 @@ export function clearErrors(event: Event) {
 	element.setAttribute('data-validator-haserrors', 'false');
 }
 
-function validateMin(value: string, limit: number): ValidationError | null {
+function validateMin(value: string, limit: number, category: string): ValidationError | null {
 	const isValid = parseInt(value, 10) >= limit;
 
 	if (!isValid) {
@@ -96,13 +73,14 @@ function validateMin(value: string, limit: number): ValidationError | null {
 			value,
 			error: 'min',
 			limit: limit,
+			category,
 		};
 	}
 
 	return null;
 }
 
-function validateMax(value: string, limit: number): ValidationError | null {
+function validateMax(value: string, limit: number, category: string): ValidationError | null {
 	const isValid = parseInt(value, 10) <= limit;
 
 	if (!isValid) {
@@ -110,32 +88,35 @@ function validateMax(value: string, limit: number): ValidationError | null {
 			value,
 			error: 'max',
 			limit: limit,
+			category,
 		};
 	}
 
 	return null;
 }
 
-function validateRequired(value: string): ValidationError | null {
+function validateRequired(value: string, category: string): ValidationError | null {
 	const isValid = !!value;
 
 	if (!isValid) {
 		return {
 			value,
 			error: 'required',
+			category,
 		};
 	}
 
 	return null;
 }
 
-function validateRequiredChecked(value: string): ValidationError | null {
+function validateRequiredChecked(value: string, category: string): ValidationError | null {
 	const isValid = value === 'checked';
 
 	if (!isValid) {
 		return {
 			value,
 			error: 'requiredChecked',
+			category,
 		};
 	}
 
@@ -143,7 +124,7 @@ function validateRequiredChecked(value: string): ValidationError | null {
 }
 
 // TODO: review regexp vulnerability
-function validateEmail(value: string): ValidationError | null {
+function validateEmail(value: string, category: string): ValidationError | null {
 	const isValid = String(value)
 		.toLowerCase()
 		.match(
@@ -154,13 +135,14 @@ function validateEmail(value: string): ValidationError | null {
 		return {
 			value,
 			error: 'email',
+			category,
 		};
 	}
 
 	return null;
 }
 
-function validateMinLength(value: string, limit: number): ValidationError | null {
+function validateMinLength(value: string, limit: number, category: string): ValidationError | null {
 	const isValid = value.length >= limit;
 
 	if (!isValid) {
@@ -168,13 +150,14 @@ function validateMinLength(value: string, limit: number): ValidationError | null
 			value,
 			error: 'minLength',
 			limit: limit,
+			category,
 		};
 	}
 
 	return null;
 }
 
-function validateMaxLength(value: string, limit: number): ValidationError | null {
+function validateMaxLength(value: string, limit: number, category: string): ValidationError | null {
 	const isValid = value.length <= limit;
 
 	if (!isValid) {
@@ -182,6 +165,7 @@ function validateMaxLength(value: string, limit: number): ValidationError | null
 			value,
 			error: 'minLength',
 			limit: limit,
+			category,
 		};
 	}
 

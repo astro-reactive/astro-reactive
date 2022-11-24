@@ -1,3 +1,5 @@
+import { ValidatorRules } from "./validator.types";
+
 /**
  * `ControlType` determines the type of form control
  * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#input_types
@@ -34,7 +36,7 @@ export interface ControlBase {
   value?: string | number | string[];
   label?: string;
   placeholder?: string;
-  validators?: string[]; // TODO: implement validator type
+  validators?: ValidatorRules;
 }
 
 export interface Checkbox extends ControlBase {
