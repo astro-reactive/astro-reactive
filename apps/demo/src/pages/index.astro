@@ -22,8 +22,8 @@ const form = new FormGroup([
     name: "email",
     label: "Email",
     validators: [
-      { validator: Validators.email, category: "warn" },
       { validator: Validators.required },
+      { validator: Validators.email, category: "warn" },
     ],
   },
   {

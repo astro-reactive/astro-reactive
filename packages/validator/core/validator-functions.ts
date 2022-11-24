@@ -60,9 +60,14 @@ export function validate(value: string, validators: ValidatorRules): ValidationE
 }
 
 export function clearErrors(event: Event) {
+	const categories = ['error', 'warn', 'info'];
 	const element = event.target as HTMLInputElement;
-	element.parentElement?.setAttribute('data-validator-haserrors', 'false');
-	element.setAttribute('data-validator-haserrors', 'false');
+	const parent = element.parentElement as HTMLElement;
+
+	categories.forEach((category) => {
+		parent.setAttribute(`data-validator-${category}`, 'false');
+		element.setAttribute(`data-validator-${category}`, 'false');
+	});
 }
 
 function validateMin(value: string, limit: number, category: string): ValidationError | null {
