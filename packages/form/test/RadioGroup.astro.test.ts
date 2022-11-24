@@ -1,7 +1,6 @@
-import { expect } from 'chai';
-import { describe, beforeEach, it } from 'mocha';
+import { describe, beforeEach, it, expect } from 'vitest';
 import { getComponentOutput } from 'astro-component-tester';
-import { cleanString } from './utils/index.js';
+import { cleanString } from './utils';
 
 describe('RadioGroup.astro test', () => {
 	let component;

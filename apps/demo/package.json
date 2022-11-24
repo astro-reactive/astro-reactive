@@ -11,11 +11,12 @@
     "check": "astro check && tsc --noEmit && astro build",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "clean": "rimraf node_modules .turbo dist"
   },
   "dependencies": {
-    "@astro-reactive/form": "file:packages/form",
-    "@astro-reactive/validator": "file:packages/validator",
+    "@astro-reactive/form": "*",
+    "@astro-reactive/validator": "*",
     "astro": "^1.6.5"
   },
   "main": "index.js",
@@ -27,5 +28,8 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
 }
