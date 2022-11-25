@@ -3,7 +3,7 @@
 # Hi, explorer! 🚀
 Thanks for checking out the Astro Reactive Library! Welcome to a new adventure.
 
-We are trying to build a new library of components and utilities for building reactive user interfaces with [Astro](https://astro.build).
+This is a library of components and utilities for building reactive user interfaces with [Astro](https://astro.build)--a modern web framework.
 
 There's a lot of opportunity to contribute. A good start will be to understand what Astro is, and how to set up a basic Astro project. For this, the [Astro website](https://astro.build) and [documentation](https://docs.astro.build/en/getting-started/) are good places to start.
 
@@ -11,19 +11,19 @@ There's a lot of opportunity to contribute. A good start will be to understand w
 
 Any contribution is welcome. Feel free to look around to find something that interests you. :)
 
-Maybe add some themes to our form component? Or maybe just improve the README?
-
 The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
 
-If you don't find anything there, I'm happy to help you get your contribution in.
+If you don't find anything there, we are happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [email me (ayo@ayco.io)](mailto:ayo@ayco.io) or message me on [Twitter (@ayoayco)](https://twitter.com/ayoayco).
+You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [post on our discussions](https://github.com/ayoayco/astro-reactive-library/discussions) or join our [Discord](https://discord.gg/yKyzCjNK).
 
 # The Astro Reactive Library
 
 This project aims to be a library that developers will use to create reactive UIs with Astro.
 
-Currently, it is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces), which are node projects that share a singular root package. It is good to understand the basics of this, but basically, the project will have multiple packages (under the `packages` directory) that share a common root package information.
+The project is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces), which are node projects that share a singular root package. It is good to understand the basics of this, but basically, the project will have multiple packages (under the `packages` directory) that share a common root package information.
+
+We are using [Turborepo](https://turbo.build/repo) as our monorepo build system.
 
 Packages:
 1. [demo](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/demo) in the directory `apps/demo`
@@ -38,8 +38,6 @@ Packages:
     - Astro website for the library's introductory landing page
 
    [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git)
-
-
 
 # Running locally 
 
@@ -123,7 +121,9 @@ Thank you again for your interest in contributing!
 
 🏘️ Read our [community guidelines](https://github.com/ayoayco/astro-reactive-library/blob/main/CODE_OF_CONDUCT.md)
 
-💬 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
+📝 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
+
+💬 Hang-out with the team on our [Discord](https://discord.gg/yKyzCjNK) to share feedback, get support, or just have some laughs over memes 😅
 
 🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for bugs found or improvement ideas
 
