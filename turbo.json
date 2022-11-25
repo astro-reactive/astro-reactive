@@ -18,6 +18,7 @@
       "cache": false
     },
     "test": {
+      "env": ["CI"],
       "outputs": []
     },
     "check": {},
