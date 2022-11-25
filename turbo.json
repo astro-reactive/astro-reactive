@@ -17,7 +17,10 @@
     "dev": {
       "cache": false
     },
-    "test": {},
+    "test": {
+      "env": ["CI"],
+      "outputs": []
+    },
     "check": {},
     "clean": {}
   }
