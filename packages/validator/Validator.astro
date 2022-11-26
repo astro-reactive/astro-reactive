@@ -40,13 +40,14 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 				.map((attribute) => {
 					const limit = element.getAttribute(attribute);
 					return {
-						validator: `${attribute}:${limit}`,
+						validator: `${attribute}:${limit}`;
 						category: element.getAttribute(`${attribute}-category`),
 					};
 				})
 				.filter((val) => val.category !== null); // Filter out validators without a category
 
-			const value = element.value;
+			const value =
+				element.type === 'checkbox' ? (element.checked ? 'checked' : '') : element.value;
 			const errors = validate(value, validators as ValidatorRules);
 
 			// set element hasErrors
