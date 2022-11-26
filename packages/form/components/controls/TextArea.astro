@@ -13,14 +13,19 @@ const { control, readOnly = false } = Astro.props;
 
 const { validators = [] } = control;
 
-const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+// @ts-ignore
+const validatorAttributes: Record<string, string> = validators.reduce((prev, val) => {
+	const validator = typeof val === 'string' ? val : val.validator;
 	const split: string[] = validator.split(':');
 	const label: string = `data-${split[0]}` || 'invalid';
 	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+	const category = typeof val === 'string' ? 'error' : val.category || 'error';
+	const categoryLabel: string = `data-${split[0]}-category`;
 
 	return {
 		...prev,
 		[label]: value,
+		[categoryLabel]: category,
 	};
 }, {});
 ---
@@ -35,5 +40,5 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 	readonly={readOnly || null}
 	{...validatorAttributes}
 >
-{ control.value }
+	{control.value}
 </textarea>

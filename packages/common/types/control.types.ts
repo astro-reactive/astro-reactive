@@ -1,4 +1,4 @@
-import { ValidatorRules } from "./validator.types";
+import type { ValidatorRules } from "./validator.types";
 
 /**
  * `ControlType` determines the type of form control
