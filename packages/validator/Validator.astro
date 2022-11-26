@@ -40,7 +40,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 				.map((attribute) => {
 					const limit = element.getAttribute(attribute);
 					return {
-						validator: `${attribute}:${limit}`;
+						validator: `${attribute}:${limit}`,
 						category: element.getAttribute(`${attribute}-category`),
 					};
 				})
