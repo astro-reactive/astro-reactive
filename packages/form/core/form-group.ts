@@ -6,13 +6,13 @@ export class FormGroup {
 	name?: string;
 	id?: string;
 
-	constructor(controls: ControlConfig[], name = '') {
+	constructor(controls: ControlConfig[], name = '', validateOnLoad = true) {
 		const uid = new ShortUniqueId({ length: 9 });
 		this.name = name;
 		this.id = 'arl-' + uid();
 		this.controls = controls
 			.filter((control) => control.type !== 'submit')
-			.map((control) => new FormControl(control));
+			.map((control) => new FormControl(control, validateOnLoad));
 	}
 
 	get(name: string): FormControl | undefined {
