@@ -20,19 +20,24 @@ export interface Props {
 
 const { control, showValidationHints, showErrors = false, readOnly = false } = Astro.props;
 
-const hasErrors: boolean | null = !!control.errors?.length;
+const hasError: boolean = control.errors?.length ? control.errors[0]?.category === 'error' : false;
+const hasWarn: boolean = control.errors?.length ? control.errors[0]?.category === 'warn' : false;
+const hasInfo: boolean = control.errors?.length ? control.errors[0]?.category === 'info' : false;
 ---
 
-<div class="field" data-validator-haserrors={hasErrors ? hasErrors.toString() : null}>
+<div
+	class="field"
+	data-validator-error={hasError.toString()}
+	data-validator-warn={hasWarn.toString()}
+	data-validator-info={hasInfo.toString()}
+>
 	<Label control={control} showValidationHints={showValidationHints}>
 		{
 			control.type === 'radio' ? (
-				<RadioGroup control={control as Radio} readOnly={readOnly}  />
-			) :
-			control.type === 'dropdown' ? (
+				<RadioGroup control={control as Radio} readOnly={readOnly} />
+			) : control.type === 'dropdown' ? (
 				<DropdownControl control={control as Dropdown} readOnly={readOnly} />
-			) :
-			control.type === 'textarea' ? (
+			) : control.type === 'textarea' ? (
 				<TextAreaControl control={control as TextArea} readOnly={readOnly} />
 			) : (
 				<Input control={control} readOnly={readOnly} />

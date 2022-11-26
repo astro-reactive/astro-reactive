@@ -11,12 +11,18 @@ const { control, showValidationHints } = Astro.props;
 
 const { validators = [] } = control;
 
-const isRequired: boolean = showValidationHints && validators.includes('validator-required');
+const isRequired: boolean =
+	showValidationHints &&
+	validators.some((validator) => {
+		if (typeof validator === 'string' && validator == 'validator-required') return true;
+		if (typeof validator === 'object' && validator.validator == 'validator-required') return true;
+		return false;
+	});
 ---
 
 {
-	control.label && control.type !== "checkbox" && (
-		<label for={control.id} data-validation-required={isRequired ? "true" : null}>
+	control.label && control.type !== 'checkbox' && (
+		<label for={control.id} data-validation-required={isRequired ? 'true' : null}>
 			{control.label}
 		</label>
 	)
@@ -25,15 +31,15 @@ const isRequired: boolean = showValidationHints && validators.includes('validato
 <slot />
 
 {
-	control.label && control.type === "checkbox" && (
-		<label for={control.id} data-validation-required={isRequired ? "true" : null}>
+	control.label && control.type === 'checkbox' && (
+		<label for={control.id} data-validation-required={isRequired ? 'true' : null}>
 			{control.label}
 		</label>
 	)
 }
 
 <style>
-	label[data-validation-required="true"]::before {
-		content: "*";
+	label[data-validation-required='true']::before {
+		content: '*';
 	}
 </style>

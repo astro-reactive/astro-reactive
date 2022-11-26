@@ -11,12 +11,20 @@ const form = new FormGroup([
   {
     name: "username",
     label: "Username",
-    validators: [Validators.required],
+    validators: [
+      {
+        validator: Validators.required,
+        category: "info",
+      },
+    ],
   },
   {
     name: "email",
     label: "Email",
-    validators: [Validators.email, Validators.required],
+    validators: [
+      { validator: Validators.required },
+      { validator: Validators.email, category: "warn" },
+    ],
   },
   {
     name: "password",
@@ -52,7 +60,7 @@ const form = new FormGroup([
     name: "comment",
     label: "Feedback",
     type: "textarea",
-    value: "Nice!"
+    value: "Nice!",
   },
 ]);
 

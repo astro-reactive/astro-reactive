@@ -7,23 +7,30 @@ import type { FormControl } from '../../core/form-control';
 
 export interface Props {
 	control: FormControl;
-  readOnly?: boolean;
+	readOnly?: boolean;
 }
 
 const { control, readOnly } = Astro.props;
 
 const { validators = [] } = control;
 
-const hasErrors: boolean = !!control.errors?.length;
+const hasError: boolean = control.errors?.length ? control.errors[0]?.category === 'error' : false;
+const hasWarn: boolean = control.errors?.length ? control.errors[0]?.category === 'warn' : false;
+const hasInfo: boolean = control.errors?.length ? control.errors[0]?.category === 'info' : false;
 
-const validatorAttributes: Record<string, string> = validators?.reduce((prev, validator) => {
+// @ts-ignore
+const validatorAttributes: Record<string, string> = validators.reduce((prev, val) => {
+	const validator = typeof val === 'string' ? val : val.validator;
 	const split: string[] = validator.split(':');
 	const label: string = `data-${split[0]}` || 'invalid';
 	const value: string | null = split.length > 1 ? split[1] ?? null : 'true';
+	const category = typeof val === 'string' ? 'error' : val.category || 'error';
+	const categoryLabel: string = `data-${split[0]}-category`;
 
 	return {
 		...prev,
 		[label]: value,
+		[categoryLabel]: category,
 	};
 }, {});
 ---
@@ -36,8 +43,10 @@ const validatorAttributes: Record<string, string> = validators?.reduce((prev, va
 	checked={control.value === 'checked'}
 	placeholder={control.placeholder}
 	data-label={control.label}
-	data-validator-haserrors={hasErrors.toString()}
+	data-validator-error={hasError.toString()}
+	data-validator-warn={hasWarn.toString()}
+	data-validator-info={hasInfo.toString()}
 	readonly={readOnly || null}
-  disabled={(readOnly || null) && control.type === 'checkbox'}
+	disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}
 />

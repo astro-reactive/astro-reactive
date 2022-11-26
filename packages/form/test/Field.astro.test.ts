@@ -52,7 +52,7 @@ describe('Field.astro test', () => {
 
 	it('Should server-render validation error attributes', async () => {
 		// arrange
-		const expectedResult = 'data-validator-haserrors="true"';
+		const expectedResult = 'data-validator-error="true"';
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
@@ -61,6 +61,7 @@ describe('Field.astro test', () => {
 				errors: [
 					{
 						error: 'required',
+						category: 'error',
 					},
 				],
 				value: '',

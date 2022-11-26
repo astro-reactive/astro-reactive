@@ -60,9 +60,19 @@ const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 </style>
 
 <style is:global>
-	[data-validator-hints='true'][data-validator-haserrors='true'],
-	[data-validator-hints='true'] [data-validator-haserrors='true'] {
+	[data-validator-hints='true'][data-validator-error='true'],
+	[data-validator-hints='true'] [data-validator-error='true'] {
 		color: red;
 		border-color: red;
+	}
+	[data-validator-hints='true'][data-validator-warn='true'],
+	[data-validator-hints='true'] [data-validator-warn='true'] {
+		color: orange;
+		border-color: orange;
+	}
+	[data-validator-hints='true'][data-validator-info='true'],
+	[data-validator-hints='true'] [data-validator-info='true'] {
+		color: blue;
+		border-color: blue;
 	}
 </style>
