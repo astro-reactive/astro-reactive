@@ -1,12 +1,17 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
 
+export interface FormConfig {
+	name?: string;
+	validateOnLoad?: boolean;
+}
+
 export class FormGroup {
 	controls: FormControl[];
 	name?: string;
 	id?: string;
 
-	constructor(controls: ControlConfig[], name = '', validateOnLoad = true) {
+	constructor(controls: ControlConfig[], { name = '', validateOnLoad = true }: FormConfig) {
 		const uid = new ShortUniqueId({ length: 9 });
 		this.name = name;
 		this.id = 'arl-' + uid();
