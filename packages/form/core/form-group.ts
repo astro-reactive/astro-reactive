@@ -11,8 +11,9 @@ export class FormGroup {
 	name?: string;
 	id?: string;
 
-	constructor(controls: ControlConfig[], { name = '', validateOnLoad = true }: FormConfig) {
+	constructor(controls: ControlConfig[], formConfig: FormConfig = {}) {
 		const uid = new ShortUniqueId({ length: 9 });
+		const { name = '', validateOnLoad = true } = formConfig;
 		this.name = name;
 		this.id = 'arl-' + uid();
 		this.controls = controls
