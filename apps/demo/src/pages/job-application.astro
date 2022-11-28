@@ -1,5 +1,4 @@
 ---
-import Nav from "../components/Nav.astro";
 import Form, {
   ControlConfig,
   FormControl,
@@ -7,6 +6,7 @@ import Form, {
 } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
 import type { Submit } from "@astro-reactive/common";
+import Layout from "../components/Layout.astro";
 
 const infoForm = new FormGroup([
   {
@@ -106,8 +106,8 @@ const values = {
   lastName: "Bond",
   email: "james.bond@gmail.com",
   country: "U.S.A",
-  eligible: "yes"
-}
+  eligible: "yes",
+};
 
 infoForm.setValue(values);
 
@@ -117,50 +117,10 @@ skillsForm.name = "Skills";
 skillsForm.controls.push(new FormControl(resume));
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-    <Nav />
-    <!-- Title -->
-    <div class="items-center mt-10">
-      <h1
-        class="items-center text-center font-sans font-bold break-normal text-gray-700 px-2 text-xl mt-12 lg:mt-0 md:text-5xl"
-      >
-        Programmer Job Application
-      </h1>
-    </div>
-
-    <!--Container-->
-    <div
-      class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-10 mt-4"
-    >
-      <!-- Section -->
-      <section class="w-full">
-        <!-- Header -->
-        <h2
-          id="section1"
-          class="font-sans font-bold break-normal text-gray-700 px-2 pb-4 text-xl"
-        >
-          Enter your information
-        </h2>
-
-        <!-- Form -->
-        <div
-          class="p-8 mt-6 lg:mt-0 leading-normal rounded shadow bg-slate-200"
-        >
-          <Form
-            showValidationHints={true}
-            formGroups={[infoForm, skillsForm]}
-            submitControl={submit}
-          />
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+<Layout title="Programmer Job Application">
+  <Form
+    showValidationHints={true}
+    formGroups={[infoForm, skillsForm]}
+    submitControl={submit}
+  />
+</Layout>
