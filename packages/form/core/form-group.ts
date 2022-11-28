@@ -28,4 +28,8 @@ export class FormGroup {
 	setValue(values: object) {
 		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));
 	}
+
+	setValidateOnLoad(validateOnLoad: boolean) {
+		this.controls.forEach((control) => control.setValidateOnLoad(validateOnLoad));
+	}
 }

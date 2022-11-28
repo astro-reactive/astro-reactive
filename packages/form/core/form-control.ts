@@ -72,19 +72,7 @@ export class FormControl {
 		// TODO: implement independence
 		// form should try to import validator,
 		// but handle error when it's not installed
-		if (validateOnLoad) {
-			import('@astro-reactive/validator').then((validator) => {
-				if (validator) {
-					this.validate = validator.validate;
-
-					const valueStr: string = this._value?.toString() || '';
-					this._errors = this.validate(valueStr, validators);
-				} else {
-					// if user did not install the validator, then errors should be empty
-					this._errors = [];
-				}
-			});
-		}
+		this.setValidateOnLoad(validateOnLoad);
 	}
 
 	get id() {
@@ -149,6 +137,25 @@ export class FormControl {
 		this._validators = validators;
 		const valueStr: string = this._value?.toString() || '';
 		this._errors = this.validate(valueStr, this._validators || []);
+	}
+
+	setValidateOnLoad(validateOnLoad: boolean) {
+		if (validateOnLoad) {
+			import('@astro-reactive/validator').then((validator) => {
+				if (validator) {
+					this.validate = validator.validate;
+
+					const valueStr: string = this._value?.toString() || '';
+					this._errors = this.validate(valueStr, this._validators);
+				} else {
+					// if user did not install the validator, then errors should be empty
+					this._errors = [];
+				}
+			});
+		} else {
+			// don't do validate for server-render error messages, also set errors to empty
+			this._errors = [];
+		}
 	}
 
 	clearErrors() {
