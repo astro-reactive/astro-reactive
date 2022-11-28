@@ -14,9 +14,9 @@ const { control, readOnly } = Astro.props;
 
 const { validators = [] } = control;
 
-const hasError: boolean = control.errors?.length ? control.errors[0]?.category === 'error' : false;
-const hasWarn: boolean = control.errors?.length ? control.errors[0]?.category === 'warn' : false;
-const hasInfo: boolean = control.errors?.length ? control.errors[0]?.category === 'info' : false;
+const hasError: boolean = control.errors?.some((error) => error.category === 'error');
+const hasWarn: boolean = control.errors?.some((error) => error.category === 'warn');
+const hasInfo: boolean = control.errors?.some((error) => error.category === 'info');
 
 // @ts-ignore
 const validatorAttributes: Record<string, string> = validators.reduce((prev, val) => {
@@ -43,9 +43,9 @@ const validatorAttributes: Record<string, string> = validators.reduce((prev, val
 	checked={control.value === 'checked'}
 	placeholder={control.placeholder}
 	data-label={control.label}
-	data-validator-error={hasError.toString()}
-	data-validator-warn={hasWarn.toString()}
-	data-validator-info={hasInfo.toString()}
+	data-validator-error={hasError ? hasError.toString() : null}
+	data-validator-warn={hasWarn ? hasWarn.toString() : null}
+	data-validator-info={hasInfo ? hasInfo.toString() : null}
 	readonly={readOnly || null}
 	disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}
