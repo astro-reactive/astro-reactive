@@ -1,7 +1,7 @@
 ---
-import Nav from "../components/Nav.astro";
 import Form, { FormGroup } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
+import Layout from "../components/Layout.astro";
 
 const baseForm = new FormGroup([
   {
@@ -91,20 +91,9 @@ infoForm.name = "Customer Info";
 infoForm.get("contact")?.setValidators([Validators.minLength(9)]);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Nav />
-    <h1>Pizza Form Demo</h1>
-    <Form
-      showValidationHints={true}
-      formGroups={[baseForm, toppingsForm, infoForm]}
-    />
-  </body>
-</html>
+<Layout title="Pizza Form Demo">
+  <Form
+    showValidationHints={true}
+    formGroups={[baseForm, toppingsForm, infoForm]}
+  />
+</Layout>

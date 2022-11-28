@@ -1,6 +1,7 @@
 ---
 import type { Submit } from "@astro-reactive/common";
 import Form, { FormGroup } from "@astro-reactive/form";
+import Layout from "../../components/Layout.astro";
 
 const simpleForm = new FormGroup([
   {
@@ -75,8 +76,10 @@ const submitControl: Submit = {
 };
 ---
 
-<h2>Simple Form</h2>
-<Form formGroups={simpleForm} submitControl={submitControl} />
+<Layout title="Form API examples">
+  <h2>Simple Form</h2>
+  <Form formGroups={simpleForm} submitControl={submitControl} />
 
-<h2>Form with nested form groups</h2>
-<Form formGroups={[nameForm, skills]} />
+  <h2>Form with nested form groups</h2>
+  <Form formGroups={[nameForm, skills]} />
+</Layout>
