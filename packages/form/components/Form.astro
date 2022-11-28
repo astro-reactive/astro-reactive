@@ -29,8 +29,7 @@ const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 
 // if `validateOnLoad` prop is true, 
-// it should forced all FormControl to 
-// validate on load depend on state of this `validateOnLoad`
+// it should forced all FormControl to validate on load
 if (validateOnLoad) {
 	if (Array.isArray(formGroups)) {
 		formGroups.forEach(group =>
