@@ -39,7 +39,7 @@ export class FormControl {
 		return [];
 	};
 
-	constructor(private config: ControlConfig, validateOnLoad = true) {
+	constructor(private config: ControlConfig, validateOnLoad = false) {
 		const {
 			name,
 			type = 'text',

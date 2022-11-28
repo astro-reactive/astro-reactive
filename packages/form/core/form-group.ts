@@ -13,7 +13,7 @@ export class FormGroup {
 
 	constructor(controls: ControlConfig[], formConfig: FormConfig = {}) {
 		const uid = new ShortUniqueId({ length: 9 });
-		const { name = '', validateOnLoad = true } = formConfig;
+		const { name = '', validateOnLoad = false } = formConfig;
 		this.name = name;
 		this.id = 'arl-' + uid();
 		this.controls = controls
