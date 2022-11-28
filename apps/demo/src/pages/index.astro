@@ -1,11 +1,11 @@
 ---
-import Nav from "../components/Nav.astro";
 import Form, {
   ControlConfig,
   FormGroup,
   FormControl,
 } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
+import Layout from "../components/Layout.astro";
 
 const form = new FormGroup([
   {
@@ -86,26 +86,10 @@ form.get("is-awesome")?.setValue("checked");
 form.get("email")?.setValue("invalid-email");
 
 // switch between light and dark mode
+const title = "Form Demo";
 const theme = "dark";
 ---
 
-<html lang="en" class={theme}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class={theme}>
-    <Nav />
-    <h1>Astro Reactive Form</h1>
-    <Form showValidationHints={true} formGroups={form} theme={theme} />
-    <style>
-      html.dark,
-      body.dark {
-        color-scheme: dark;
-      }
-    </style>
-  </body>
-</html>
+<Layout title={title} theme={theme}>
+  <Form showValidationHints={true} formGroups={form} theme={theme} />
+</Layout>
