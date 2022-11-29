@@ -98,4 +98,31 @@ describe('Field.astro test', () => {
 		expect(actualResult).to.contain(expectedLabel);
 		expect(actualResult).to.contain(expectedAttribute);
 	});
+
+	it('Should render correct validation attribute based on category prop', async () => {
+		// arrange
+		const expected = 'data-validator-warn="true"';
+		const props = {
+			control: {
+				label: 'FAKE LABEL',
+				name: 'username',
+				validators: ['validator-required'],
+				errors: [
+					{
+						error: 'required',
+						category: 'warn',
+					},
+				],
+				value: '',
+			},
+			showValidationHints: true,
+		};
+
+		// act
+		component = await getComponentOutput('./components/Field.astro', props);
+		const actualResult = cleanString(component.html);
+
+		// assert
+		expect(actualResult).to.contain(expected);
+	});
 });
