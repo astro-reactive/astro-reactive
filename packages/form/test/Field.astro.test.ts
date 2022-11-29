@@ -101,7 +101,7 @@ describe('Field.astro test', () => {
 
 	it('Should render correct validation attribute based on category prop', async () => {
 		// arrange
-		const expected = 'data-validator-warn="true"';
+		const categories = ['error', 'warn', 'info'];
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
@@ -110,7 +110,7 @@ describe('Field.astro test', () => {
 				errors: [
 					{
 						error: 'required',
-						category: 'warn',
+						category: 'error',
 					},
 				],
 				value: '',
@@ -119,10 +119,18 @@ describe('Field.astro test', () => {
 		};
 
 		// act
-		component = await getComponentOutput('./components/Field.astro', props);
-		const actualResult = cleanString(component.html);
+		const results = await Promise.all(
+			categories.map(async (category) => {
+				props.control.errors = [{ error: 'required', category }];
+				component = await getComponentOutput('./components/Field.astro', props);
+				const actualResult = cleanString(component.html);
+				return actualResult;
+			})
+		);
 
 		// assert
-		expect(actualResult).to.contain(expected);
+		categories.forEach((category, index) => {
+			expect(results[index]).to.contain(`data-validator-${category}="true"`);
+		});
 	});
 });
