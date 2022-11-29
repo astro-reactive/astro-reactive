@@ -5,7 +5,6 @@ import Form, {
   FormControl,
 } from "@astro-reactive/form";
 import { Validators } from "@astro-reactive/validator";
-import Button from "../components/Button.astro";
 import Layout from "../components/Layout.astro";
 
 const form = new FormGroup([
@@ -93,5 +92,4 @@ const theme = "dark";
 
 <Layout title={title} theme={theme}>
   <Form showValidationHints={true} formGroups={form} theme={theme} />
-  <Button label="Okay" disabled={true} />
 </Layout>
