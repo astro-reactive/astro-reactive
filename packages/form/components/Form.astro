@@ -33,10 +33,14 @@ const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 if (validateOnLoad) {
 	if (Array.isArray(formGroups)) {
 		formGroups.forEach(group =>
-			group.setValidateOnLoad(validateOnLoad)
+			group.controls.forEach(control => 
+				control.setValidateOnLoad(validateOnLoad)
+			)
 		);
 	} else {
-		formGroups.setValidateOnLoad(validateOnLoad)
+		formGroups.controls.forEach(control => 
+			control.setValidateOnLoad(validateOnLoad)
+		)
 	}
 }
 ---
