@@ -1,8 +1,25 @@
 ---
+const links = [
+  { label: "Home", url: "/" },
+  { label: "Pizza Delivery", url: "/pizza-delivery" },
+  { label: "Job Application", url: "/job-application" },
+  { label: "Docs Examples", url: "/examples" },
+  { label: "Experimental", url: "/experimental" },
+];
 ---
 
 <nav>
-  <a href="/">Home</a> | <a href="/pizza-delivery">Pizza Delivery</a> | <a
-    href="/job-application">Job Application</a
-  > | <a href="/examples">Docs Exaples</a>
+  {links.map((link) => <a href={link.url}>{link.label}</a>)}
 </nav>
+
+<style>
+  nav a::after {
+    content: " | ";
+  }
+  nav a {
+    text-decoration: none;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+</style>

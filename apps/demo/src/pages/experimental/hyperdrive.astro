@@ -1,0 +1,17 @@
+---
+import Layout from "../../components/Layout.astro";
+
+const Counter = {
+  count: 0,
+  increment() {
+    this.count++;
+  },
+  decrement() {
+    this.count--;
+  },
+};
+---
+
+<Layout title="Hyperdrive Experiment">
+  {Counter.count}
+</Layout>
