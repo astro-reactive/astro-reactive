@@ -11,10 +11,10 @@ The `Form` component renders a form element and various control components (e.g.
 ```astro
 ---
 import Form, { FormGroup } from "@astro-reactive/form";
-const form = new FormGroup(
-  // your controls configuration data
-);
+const form = new FormGroup();
+// your controls configuration data
 ---
+
 <Form formGroups={form} />
 ```
 
@@ -24,12 +24,11 @@ const form = new FormGroup(
 npm i @astro-reactive/form
 ```
 
-
 ## Usage
 
 Setting up the `Form` component is mainly done by providing it your configuration via the `formGroups` property which takes either a `FormGroup` or an array `FormGroup[]`.
 
-*See the documentation for the [FormGroup](/en/api/form/form-group) class.*
+_See the documentation for the [FormGroup](/en/api/form/form-group) class._
 
 ### Setting up a form
 
@@ -49,7 +48,7 @@ const form = new FormGroup([
     name: "comment",
     label: "Feedback",
     type: "textarea",
-    value: "Nice!"
+    value: "Nice!",
   },
   {
     name: "size",
@@ -60,6 +59,7 @@ const form = new FormGroup([
   },
 ]);
 ---
+
 <Form formGroups={form} />
 ```
 
@@ -70,7 +70,6 @@ The example above will result in a form containing three controls: a text field 
 The `FormGroup` constructor takes an array `ControlConfig[]`.
 
 > **📝 Note:** The `ControlConfig` type will be defined in the [FormControl](/en/api/form/form-control) class documentation.
-
 
 ### Setting up multiple field sets
 
@@ -122,6 +121,7 @@ const skills = new FormGroup(
   "Skills"
 );
 ---
+
 <Form formGroups={[nameForm, skills]} />
 ```
 
@@ -148,45 +148,58 @@ const submitControl: Submit = {
   type: "submit",
 };
 ---
+
 <Form formGroups={form} submitControl={submitControl} />
 ```
 
 This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/ayoayco/astro-reactive-library/discussions).
 
------
+---
 
 ## Properties
 
 The following are input properties a `Form` component can take.
 
-| Property | Type | |
-|---|---|---|
-| [formGroups](#formgroups) |  `FormGroup \| FormGroup[]` | required |
-| [readOnly](#readonly) |  `boolean` | optional |
-| [showValidationHints](#showvalidationhints) |  `boolean` | optional |
-| [submitControl](#submitcontrol) |  `Submit` | optional |
-| [theme](#theme) |  `'light' \| 'dark'` | optional |
+| Property                                    | Type                       |          |
+| ------------------------------------------- | -------------------------- | -------- |
+| [formGroups](#formgroups)                   | `FormGroup \| FormGroup[]` | required |
+| [readOnly](#readonly)                       | `boolean`                  | optional |
+| [showValidationHints](#showvalidationhints) | `boolean`                  | optional |
+| [validateOnLoad](#validateOnLoad)           | `boolean`                  | optional |
+| [submitControl](#submitcontrol)             | `Submit`                   | optional |
+| [theme](#theme)                             | `'light' \| 'dark'`        | optional |
 
 ### `formGroups`
+
 Type: `FormGroup | FormGroup[]`
 
 Determines how the form is are rendered
 
-
 ### `readOnly`
+
 Type: `boolean`
 
 Sets the whole form as read-only.
 
 ### `showValidationHints`
+
 Type: `boolean`
 
 When used with our `validator` package, the `Form` component is able to render validation hints when `showValidationHints` is set to true:
+
 - asterisks on required controls' labels
 - controls with validation errors are colored red
 
+### `validateOnLoad`
+
+Type: `boolean`
+
+When used with our `validator` package, the `Form` component is able to render validation errors on server-side rendering when `validateOnLoad` is set to true otherwise, the validation errors will only be rendered on the client-side.
+
 ### `submitControl`
+
 Type: `Submit`
 
 ### `theme`
+
 Type: `'light' | 'dark'`
