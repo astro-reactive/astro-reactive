@@ -49,7 +49,7 @@ export class FormControl {
 			label = '',
 			placeholder = null,
 			validators = [],
-			triggerValidationOn = '',
+			triggerValidationOn = 'blur',
 		} = config;
 
 		const uid = new ShortUniqueId({ length: 9 });
