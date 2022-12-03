@@ -46,6 +46,7 @@ const validatorAttributes: Record<string, string> = validators.reduce((prev, val
 	data-validator-error={hasError ? hasError.toString() : null}
 	data-validator-warn={hasWarn ? hasWarn.toString() : null}
 	data-validator-info={hasInfo ? hasInfo.toString() : null}
+	data-validation-on={control.triggerValidationOn ? control.triggerValidationOn  : null}
 	readonly={readOnly || null}
 	disabled={(readOnly || null) && control.type === 'checkbox'}
 	{...validatorAttributes}

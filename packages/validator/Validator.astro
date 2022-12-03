@@ -31,37 +31,39 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	const inputs = [...document.querySelectorAll('form input')] as HTMLInputElement[];
 
 	inputs?.forEach((input) => {
-		input.addEventListener('blur', (e: Event) => {
-			// NOTE: event target attribute names are converted to lowercase
-			const element = e.target as HTMLInputElement;
-			const attributeNames = element?.getAttributeNames() || [];
-			const validators = attributeNames
-				.filter((attribute) => attribute.includes('data-validator-'))
-				.map((attribute) => {
-					const limit = element.getAttribute(attribute);
-					return {
-						validator: `${attribute}:${limit}`,
-						category: element.getAttribute(`${attribute}-category`),
-					};
-				})
-				.filter((val) => val.category !== null); // Filter out validators without a category
+		if (input.dataset.validationOn) {
+			input.addEventListener(input.dataset.validationOn, (e: Event) => {
+				// NOTE: event target attribute names are converted to lowercase
+				const element = e.target as HTMLInputElement;
+				const attributeNames = element?.getAttributeNames() || [];
+				const validators = attributeNames
+					.filter((attribute) => attribute.includes('data-validator-'))
+					.map((attribute) => {
+						const limit = element.getAttribute(attribute);
+						return {
+							validator: `${attribute}:${limit}`,
+							category: element.getAttribute(`${attribute}-category`),
+						};
+					})
+					.filter((val) => val.category !== null); // Filter out validators without a category
 
-			const value =
-				element.type === 'checkbox' ? (element.checked ? 'checked' : '') : element.value;
-			const errors = validate(value, validators as ValidatorRules);
+				const value =
+					element.type === 'checkbox' ? (element.checked ? 'checked' : '') : element.value;
+				const errors = validate(value, validators as ValidatorRules);
 
-			// set element hasErrors
-			if (errors.length) {
-				element.parentElement?.setAttribute(`data-validator-${errors[0]?.category}`, 'true');
-				element.setAttribute(`data-validator-${errors[0]?.category}`, 'true');
-				element.classList.add(`has-errors`);
-				// TODO: display error messages
-			} else {
-				element.parentElement?.removeAttribute(`data-validator-${errors[0]?.category}`);
-				element.removeAttribute(`data-validator-${errors[0]?.category}`);
-				element.classList.remove(`has-${errors[0]?.category}`);
-			}
-		});
+				// set element hasErrors
+				if (errors.length) {
+					element.parentElement?.setAttribute(`data-validator-${errors[0]?.category}`, 'true');
+					element.setAttribute(`data-validator-${errors[0]?.category}`, 'true');
+					element.classList.add(`has-errors`);
+					// TODO: display error messages
+				} else {
+					element.parentElement?.removeAttribute(`data-validator-${errors[0]?.category}`);
+					element.removeAttribute(`data-validator-${errors[0]?.category}`);
+					element.classList.remove(`has-${errors[0]?.category}`);
+				}
+			});
+		}
 
 		input.addEventListener('input', clearErrors);
 	});
