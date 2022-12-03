@@ -1,5 +1,7 @@
 export type HookType = "onSubmit" | "onControlBlur" | "all";
 
+export type ValidationHooks = "" | "blur" | "keypress"; // More to be added
+
 export type CategoryType = "error" | "warn" | "info";
 
 export type ValidatorRules =
