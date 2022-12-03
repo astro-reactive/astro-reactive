@@ -28,7 +28,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	import { clearErrors, validate } from './core';
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
-	const inputs = [...document.querySelectorAll('form input')] as HTMLInputElement[];
+	const inputs = [...document.querySelectorAll('*')] as HTMLInputElement[];
 
 	inputs?.forEach((input) => {
 		if (input.dataset.validationOn) {
