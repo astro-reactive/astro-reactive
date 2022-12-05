@@ -62,6 +62,12 @@ const form = new FormGroup([
     type: "textarea",
     value: "Nice!",
   },
+  {
+    name: "terms",
+    label: "Terms and Conditions",
+    type: "checkbox",
+    validators: [Validators.requiredChecked],
+  },
 ]);
 
 form.name = "Simple Form";
