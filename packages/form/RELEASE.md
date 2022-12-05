@@ -1,3 +1,8 @@
+### v0.6.4
+- Form component's new `validateOnLoad` property
+- FormGroup.setValue() method to set values for the whole form
+- fix for Radio Group's inputs not having unique IDs
+
 ### v0.6.3
 - make `Checkbox.checked` optional
 
