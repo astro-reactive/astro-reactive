@@ -1,3 +1,6 @@
+### v0.2.5
+- fix deps
+
 ### v0.2.4
 - Validation categories: Error, Warning, Info
 

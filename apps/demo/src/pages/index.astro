@@ -97,5 +97,10 @@ const theme = "dark";
 ---
 
 <Layout title={title} theme={theme}>
-  <Form showValidationHints={true} formGroups={form} theme={theme} />
+  <Form
+    validateOnLoad={true}
+    showValidationHints={true}
+    formGroups={form}
+    theme={theme}
+  />
 </Layout>
