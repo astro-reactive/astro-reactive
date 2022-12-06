@@ -38,6 +38,7 @@ const validatorAttributes: Record<string, string> = validators.reduce((prev, val
 	cols={control?.cols ?? 21}
 	data-label={control?.label}
 	readonly={readOnly || null}
+	data-validation-on={control.triggerValidationOn ? control.triggerValidationOn : null}
 	{...validatorAttributes}
 >
 	{control.value}

@@ -10,6 +10,7 @@ import type {
 	TextArea,
 	ControlBase,
 	ValidatorRules,
+	ValidationHooks,
 } from '@astro-reactive/common';
 import ShortUniqueId from 'short-unique-id';
 
@@ -25,6 +26,7 @@ export class FormControl {
 	private _isPristine = true;
 	private _placeholder: string | null = null;
 	private _validators: ValidatorRules = [];
+	private _triggerValidationOn: ValidationHooks;
 	private _errors: ValidationError[] = [];
 	private _options: string[] | ControlOption[] = [];
 	private _rows: number | null = null;
@@ -47,6 +49,7 @@ export class FormControl {
 			label = '',
 			placeholder = null,
 			validators = [],
+			triggerValidationOn = 'blur',
 		} = config;
 
 		const uid = new ShortUniqueId({ length: 9 });
@@ -57,6 +60,7 @@ export class FormControl {
 		this._label = label;
 		this._placeholder = placeholder;
 		this._validators = validators;
+		this._triggerValidationOn = triggerValidationOn;
 
 		if (type === 'radio' || type === 'dropdown') {
 			const { options = [] } = config as Radio | Dropdown;
@@ -109,6 +113,10 @@ export class FormControl {
 
 	get validators() {
 		return this._validators;
+	}
+
+	get triggerValidationOn() {
+		return this._triggerValidationOn;
 	}
 
 	get errors() {
