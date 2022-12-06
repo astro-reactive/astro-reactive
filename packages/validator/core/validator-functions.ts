@@ -59,6 +59,10 @@ export function validate(value: string, validators: ValidatorRules): ValidationE
 		.filter((result) => result !== null) as ValidationError[];
 }
 
+/**
+ * Clear all validation errors triggered by `Validator` component
+ * @param event - A DOM event
+ */
 export function clearErrors(event: Event) {
 	const categories = ['error', 'warn', 'info'];
 	const element = event.target as HTMLInputElement;
