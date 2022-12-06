@@ -151,6 +151,10 @@ export class FormControl {
 		this._errors = this.validate(value, this.config.validators || []);
 	}
 
+	/**
+	 * Set validators dynamically for the form control
+	 * @param validators - array of `Validators` return value
+	 */
 	setValidators(validators: string[]) {
 		this._validators = validators;
 		const valueStr: string = this._value?.toString() || '';
