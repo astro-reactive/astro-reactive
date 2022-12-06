@@ -14,6 +14,9 @@ import type {
 } from '@astro-reactive/common';
 import ShortUniqueId from 'short-unique-id';
 
+/**
+ * Type of form controls
+ */
 export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
 export class FormControl {
@@ -41,6 +44,9 @@ export class FormControl {
 		return [];
 	};
 
+	/**
+	 * Create a form control object to build form element
+	 */
 	constructor(private config: ControlConfig, validateOnLoad = false) {
 		const {
 			name,
@@ -135,6 +141,10 @@ export class FormControl {
 		return this._cols;
 	}
 
+	/**
+	 * set the form control value dynamically
+	 * @param value - new value to set
+	 */
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
@@ -147,6 +157,9 @@ export class FormControl {
 		this._errors = this.validate(valueStr, this._validators || []);
 	}
 
+	/**
+	 * Set if a control should be validated and rendered on server side
+	 */
 	setValidateOnLoad(validateOnLoad: boolean) {
 		if (validateOnLoad) {
 			import('@astro-reactive/validator').then((validator) => {
@@ -166,10 +179,17 @@ export class FormControl {
 		}
 	}
 
+	/**
+	 * Clear all errors from a form contol
+	 */
 	clearErrors() {
 		this._errors = [];
 	}
 
+	/**
+	 * Set an error dynamically
+	 * @param error - A `ValidationError` object
+	 */
 	setError(error: ValidationError) {
 		this._errors = [...(this._errors || []), error];
 	}
