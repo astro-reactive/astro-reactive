@@ -31,7 +31,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	const inputs = [...document.querySelectorAll('body *[data-validation-on]')] as HTMLInputElement[];
 
 	inputs?.forEach((input) => {
-		input.addEventListener(input.dataset.validationOn, (e: Event) => {
+		input.addEventListener(input.dataset.validationOn ?? 'blur', (e: Event) => {
 			// NOTE: event target attribute names are converted to lowercase
 			const element = e.target as HTMLInputElement;
 			const attributeNames = element?.getAttributeNames() || [];
