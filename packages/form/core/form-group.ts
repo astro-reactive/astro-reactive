@@ -1,14 +1,17 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
 
+/**
+ *  Represents a group of controls that will be rendered as a fieldset element in a form.
+ */
 export class FormGroup {
 	controls: FormControl[];
 	name?: string;
 	id?: string;
 
 	/**
-	 * Create a form group that represents a `form` element for all controls
-	 * @param controls - an array of `FormControl`
+	 * Tracks the value and validity state of a group of `FormControl` instances.
+	 * @param controls - an array of `FormControl` configuration
 	 * @param name - optional form name
 	 */
 	constructor(controls: ControlConfig[], name = '') {
@@ -21,14 +24,14 @@ export class FormGroup {
 	}
 
 	/**
-	 * Get a form control by its name
+	 * Gets a form control by its name
 	 */
 	get(name: string): FormControl | undefined {
 		return this.controls.find((control) => control.name === name);
 	}
 
 	/**
-	 * Set the `FormGroup`'s form controls value
+	 * Sets the `FormGroup`'s form controls value
 	 */
 	setValue(values: object) {
 		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));

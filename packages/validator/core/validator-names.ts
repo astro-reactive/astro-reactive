@@ -42,7 +42,7 @@ export class Validators {
 	}
 
 	/**
-	 * Validator that requires the value to be in a proper email format.
+	 * Validator that requires the value to have a valid email format.
 	 */
 	static get email(): string {
 		return `validator-email`;

@@ -19,6 +19,9 @@ import ShortUniqueId from 'short-unique-id';
  */
 export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
+/**
+ * Represents an individual control that will be rendered as an input element.
+ */
 export class FormControl {
 	private _id = '';
 	private _name = '';
@@ -45,7 +48,9 @@ export class FormControl {
 	};
 
 	/**
-	 * Create a form control object to build form element
+	 * Tracks the value and validation status of an individual form control.
+	 * @param config - interface of a `FormControl`'s configuration.
+	 * @param validateOnLoad - determines if a control will be validated before rendering on the server. Defaults to `false`
 	 */
 	constructor(private config: ControlConfig, validateOnLoad = false) {
 		const {
@@ -142,7 +147,7 @@ export class FormControl {
 	}
 
 	/**
-	 * set the form control value dynamically
+	 * Sets the form control value dynamically
 	 * @param value - new value to set
 	 */
 	setValue(value: string) {
@@ -152,7 +157,7 @@ export class FormControl {
 	}
 
 	/**
-	 * Set validators dynamically for the form control
+	 * Sets validators dynamically for the form control
 	 * @param validators - array of `Validators` return value
 	 */
 	setValidators(validators: string[]) {
@@ -162,7 +167,7 @@ export class FormControl {
 	}
 
 	/**
-	 * Set if a control should be validated and rendered on server side
+	 * Sets the property that determines if control will be validated before rendering on the server
 	 */
 	setValidateOnLoad(validateOnLoad: boolean) {
 		if (validateOnLoad) {
@@ -184,14 +189,14 @@ export class FormControl {
 	}
 
 	/**
-	 * Clear all errors from a form contol
+	 * Clears all errors from a form contol
 	 */
 	clearErrors() {
 		this._errors = [];
 	}
 
 	/**
-	 * Set an error dynamically
+	 * Sets an error dynamically
 	 * @param error - A `ValidationError` object
 	 */
 	setError(error: ValidationError) {
