@@ -2,7 +2,7 @@ import type { ValidationError, ValidatorRules } from '@astro-reactive/common';
 import { Validators } from './validator-names';
 
 /**
- * given the value and validators, `validate()` returns an array of errors
+ * Given the value and validators, `validate()` returns an array of errors
  * @param value - value to be validated
  * @param validators - names of validation logic to be applied
  * @returns errors - array of errors `ValidationError`
@@ -60,7 +60,7 @@ export function validate(value: string, validators: ValidatorRules): ValidationE
 }
 
 /**
- * Clear all validation errors triggered by `Validator` component
+ * Clears all validation errors triggered by `Validator` component
  * @param event - A DOM event
  */
 export function clearErrors(event: Event) {
