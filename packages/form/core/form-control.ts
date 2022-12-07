@@ -14,8 +14,14 @@ import type {
 } from '@astro-reactive/common';
 import ShortUniqueId from 'short-unique-id';
 
+/**
+ * Type of form controls
+ */
 export type ControlConfig = ControlBase | Checkbox | Radio | Submit | Button | Dropdown | TextArea;
 
+/**
+ * Represents an individual control that will be rendered as an input element.
+ */
 export class FormControl {
 	private _id = '';
 	private _name = '';
@@ -41,6 +47,11 @@ export class FormControl {
 		return [];
 	};
 
+	/**
+	 * Tracks the value and validation status of an individual form control.
+	 * @param config - interface of a `FormControl`'s configuration.
+	 * @param validateOnLoad - determines if a control will be validated before rendering on the server. Defaults to `false`
+	 */
 	constructor(private config: ControlConfig, validateOnLoad = false) {
 		const {
 			name,
@@ -135,18 +146,29 @@ export class FormControl {
 		return this._cols;
 	}
 
+	/**
+	 * Sets the form control value dynamically
+	 * @param value - new value to set
+	 */
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
 		this._errors = this.validate(value, this.config.validators || []);
 	}
 
+	/**
+	 * Sets validators dynamically for the form control
+	 * @param validators - array of `Validators` return value
+	 */
 	setValidators(validators: string[]) {
 		this._validators = validators;
 		const valueStr: string = this._value?.toString() || '';
 		this._errors = this.validate(valueStr, this._validators || []);
 	}
 
+	/**
+	 * Sets the property that determines if control will be validated before rendering on the server
+	 */
 	setValidateOnLoad(validateOnLoad: boolean) {
 		if (validateOnLoad) {
 			import('@astro-reactive/validator').then((validator) => {
@@ -166,10 +188,17 @@ export class FormControl {
 		}
 	}
 
+	/**
+	 * Clears all errors from a form contol
+	 */
 	clearErrors() {
 		this._errors = [];
 	}
 
+	/**
+	 * Sets an error dynamically
+	 * @param error - A `ValidationError` object
+	 */
 	setError(error: ValidationError) {
 		this._errors = [...(this._errors || []), error];
 	}
