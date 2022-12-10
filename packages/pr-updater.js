@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import * as path from 'path';
-import semver from 'semver';
 import promptSync from 'prompt-sync';
 
 const prompt = promptSync({sigint: true});
@@ -9,25 +8,25 @@ const prompt = promptSync({sigint: true});
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-function writeReleaseMD(JSONfile, releaseFile, type, descriptionArr) {
-    const formJSON = JSON.parse(fs.readFileSync(JSONfile));
-    var version;
+function writeReleaseMD(releaseFile, featuresArr, fixesArr) {
+    var formattedMessage = "";
 
-    if (type == '1') {
-        version = semver.inc(formJSON.version, 'patch');
-    }
-    else if (type == '2') {
-        version = semver.inc(formJSON.version, 'minor');
-    }
-    else {
-        version = semver.inc(formJSON.version, 'major');
+    if (featuresArr.length != 0) {
+        formattedMessage += "Features";
+        for (var line of featuresArr) {
+            formattedMessage += "\n\t- " + line;
+        }
+        formattedMessage += "\n\n";
     }
 
-    var formattedMessage = "### v" + version;
-    for (var line of descriptionArr) {
-        formattedMessage += "\n- " + line;
+    if (fixesArr.length != 0)
+    {
+        formattedMessage += "Fixes";
+        for (var line of fixesArr) {
+            formattedMessage += "\n\t- " + line;
+        }
+        formattedMessage += "\n\n";
     }
-    formattedMessage += "\n\n";
 
     //write file
     var oldRelease = fs.readFileSync(releaseFile);
@@ -41,44 +40,58 @@ function writeReleaseMD(JSONfile, releaseFile, type, descriptionArr) {
 function main() {
     console.log("Astro Reactive PR Release Updater (ctrl-c to exit)");
 
-    console.log(`What package is changed? 
+    var noChanged, feature, fix, breakExisting;
+    var featuresArr = [];
+    var fixesArr = [];
+
+    do {
+        console.log(`What package is changed? 
     1. Common
     2. Form 
     3. Validator`);
-    const noChanged = prompt(": ");
-
-    console.log(`What is the type of PR? 
-    1. Fix
-    2. Minor Release/Feat
-    3. Major Release/Feat`);
-    const type = prompt(": ");
-
-    console.log("Description of changes (q to finish): ");
-    var descriptionArr = [];
-    var description;
+        noChanged = prompt(": ");
+    } while (isNaN(noChanged) || parseInt(noChanged) < 1 || parseInt(noChanged) > 3);
 
     do {
-        description = prompt(": ");
-        if (description != "q") {
-            descriptionArr.push(description);
+        console.log("Description of feature (q to finish): ");
+        feature = prompt(": ");
+        
+        if (feature != "q") {
+            console.log("Will this code change break existing examples and/or demo applications? Y/N");
+            breakExisting = prompt(": ");
+            if (breakExisting == "Y" || breakExisting == "y") {
+                feature += " (BREAKING CHANGE)";
+            }
+            featuresArr.push(feature);
         }
-    } while (description != "q");
+    } while (feature != "q");
+
+    do {
+        console.log("Description of fix (q to finish): ");
+        fix = prompt(": ");
+
+        if (fix != "q") {
+            console.log("Will this code change break existing examples and/or demo applications? Y/N");
+            breakExisting = prompt(": ");
+            if (breakExisting == "Y" || breakExisting == "y") {
+                fix += " (BREAKING CHANGE)";
+            }
+            fixesArr.push(fix);
+        }
+    } while (fix != "q");
 
     switch (noChanged) {
         case '1':
-            var JSONfile = path.resolve(__dirname, './common/package.json');
             var releaseFile = path.resolve(__dirname, './common/RELEASE.md');
-            writeReleaseMD(JSONfile, releaseFile, type, descriptionArr);
+            writeReleaseMD(releaseFile, featuresArr, fixesArr);
             break;   
         case '2':
-            var JSONfile = path.resolve(__dirname, './form/package.json');
             var releaseFile = path.resolve(__dirname, './form/RELEASE.md');
-            writeReleaseMD(JSONfile, releaseFile, type, descriptionArr);
+            writeReleaseMD(releaseFile, featuresArr, fixesArr);
             break;
         case '3':
-            var JSONfile = path.resolve(__dirname, './validator/package.json');
             var releaseFile = path.resolve(__dirname, './validator/RELEASE.md');
-            writeReleaseMD(JSONfile, releaseFile, type, descriptionArr);
+            writeReleaseMD(releaseFile, featuresArr, fixesArr);
             break;
         default:
             console.log("Invalid package specified.");
