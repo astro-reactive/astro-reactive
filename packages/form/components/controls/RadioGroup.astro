@@ -33,6 +33,7 @@ const options = control.options.map((option: string | ControlOption) => {
 				checked={option.value === control.value}
 				readonly={readOnly || null}
 				disabled={readOnly || null}
+				data-validation-on={control.triggerValidationOn ? control.triggerValidationOn : null}
 			/>
 			<label for={control.id + '-' + index}>{option.label}</label>
 		</div>

@@ -63,6 +63,7 @@ export const SIDEBAR: Sidebar = {
       { text: "Form", link: "en/api/form/form-component" },
       { text: "FormGroup", link: "en/api/form/form-group" },
       { text: "FormControl", link: "en/api/form/form-control" },
+      { text: "Validators", link: "en/api/validator/validators" },
     ],
   },
 };

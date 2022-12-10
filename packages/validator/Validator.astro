@@ -28,10 +28,10 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	import { clearErrors, validate } from './core';
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
-	const inputs = [...document.querySelectorAll('form input')] as HTMLInputElement[];
+	const inputs = [...document.querySelectorAll('body *[data-validation-on]')] as HTMLInputElement[];
 
 	inputs?.forEach((input) => {
-		input.addEventListener('blur', (e: Event) => {
+		input.addEventListener(input.dataset?.validationOn ?? 'blur', (e: Event) => {
 			// NOTE: event target attribute names are converted to lowercase
 			const element = e.target as HTMLInputElement;
 			const attributeNames = element?.getAttributeNames() || [];
