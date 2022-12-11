@@ -12,7 +12,7 @@ describe('RadioGroup.astro test', () => {
 	it('Should render all radio options', async () => {
 		// arrange
 		const expectedOptions = 3;
-		const element = /radio-option/g;
+		const element = /type="radio"/g;
 		const props = {
 			control: {
 				label: 'FAKE LABEL',
