@@ -21,11 +21,10 @@ const options = control.options.map((option: string | ControlOption) => {
 	return option;
 });
 ---
-
+<br>
 {
 	options.map((option: ControlOption, index: number) => (
-		<div class="radio-option">
-			<input
+		<input
 				type="radio"
 				id={control.id + '-' + index}
 				name={control.name}
@@ -36,6 +35,6 @@ const options = control.options.map((option: string | ControlOption) => {
 				data-validation-on={control.triggerValidationOn ? control.triggerValidationOn : null}
 			/>
 			<label for={control.id + '-' + index}>{option.label}</label>
-		</div>
+			<br>
 	))
 }
