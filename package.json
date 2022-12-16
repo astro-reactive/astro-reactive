@@ -28,7 +28,8 @@
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
-    "publish": "turbo run lint build check test && npm publish --access public -w"
+    "publish": "turbo run lint build check test && npm publish --access public -w",
+    "release": "node ./packages/pr-updater.js"
   },
   "license": "ISC",
   "workspaces": [
@@ -36,7 +37,8 @@
     "apps/*"
   ],
   "dependencies": {
-    "prettier-plugin-astro": "^0.7.0"
+    "prettier-plugin-astro": "^0.7.0",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
     "eslint-config-turbo": "^0.0.4",
