@@ -87,6 +87,7 @@ describe('Form.astro test', () => {
 			// assert
 			expect(matches.length).to.equal(expectedCount);
 		});
+
 		it('Should render readOnly fields if the flag is passed as true', async () => {
 			// arrange
 			const expectedCount = 3;
@@ -109,6 +110,51 @@ describe('Form.astro test', () => {
 
 			// assert
 			expect(matches.length).to.equal(expectedCount);
+		});
+
+		it('Should render a submit button correctly', async () => {
+			// arrange
+			const expectedType = 'type="submit"';
+			const expectedName = 'name="submitNameTest"';
+			const submit = {
+				name: 'submitNameTest',
+				type: 'submit',
+			};
+			const props = { submitControl: submit };
+			component = await getComponentOutput('./components/Form.astro', props);
+
+			// act
+			const actualResult = cleanString(component.html);
+
+			// assert
+			expect(actualResult).to.contain(expectedType);
+			expect(actualResult).to.contain(expectedName);
+		});
+
+		it('Should render an action property correctly', async () => {
+			// arrange
+			const expectedResult = 'action="https://localhost"';
+			const props = { action: 'https://localhost' };
+			component = await getComponentOutput('./components/Form.astro', props);
+
+			// act
+			const actualResult = cleanString(component.html);
+
+			// assert
+			expect(actualResult).to.contain(expectedResult);
+		});
+
+		it('Should render a method property correctly', async () => {
+			// arrange
+			const expectedResult = 'method="GET"';
+			const props = { method: 'GET' };
+			component = await getComponentOutput('./components/Form.astro', props);
+
+			// act
+			const actualResult = cleanString(component.html);
+
+			// assert
+			expect(actualResult).to.contain(expectedResult);
 		});
 	});
 });

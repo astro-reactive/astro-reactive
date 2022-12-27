@@ -1,5 +1,5 @@
 ---
-import type { Submit } from '@astro-reactive/common';
+import type { HTTPRequestMethodType, Submit } from '@astro-reactive/common';
 import { FormGroup, FormControl } from '../core';
 import FieldSet from './FieldSet.astro';
 import Field from './Field.astro';
@@ -12,6 +12,8 @@ export interface Props {
 	validateOnLoad?: boolean;
 	submitControl?: Submit;
 	theme?: 'light' | 'dark';
+	action?: string;
+	method?: HTTPRequestMethodType;
 }
 
 const {
@@ -21,6 +23,8 @@ const {
 	showValidationHints = false,
 	validateOnLoad = false,
 	readOnly = false,
+	action = "",
+	method = "GET"
 } = Astro.props;
 
 const uid = new ShortUniqueId({ length: 9 });
@@ -50,6 +54,8 @@ if (validateOnLoad) {
 	name={formName}
 	id={formId}
 	data-validator-hints={showValidationHints.toString()}
+	action={action}
+	method={method}
 >
 	{
 		Array.isArray(formGroups)
