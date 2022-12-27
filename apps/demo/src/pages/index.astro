@@ -4,6 +4,7 @@ import Form, {
   FormGroup,
   FormControl,
 } from "@astro-reactive/form";
+import type { Submit } from "@astro-reactive/common/types";
 import { Validators } from "@astro-reactive/validator";
 import Layout from "../components/Layout.astro";
 
@@ -94,6 +95,11 @@ form.get("email")?.setValue("invalid-email");
 // switch between light and dark mode
 const title = "Form Demo";
 const theme = "dark";
+
+const submit: Submit = {
+  name: "submit",
+  type: "submit",
+};
 ---
 
 <Layout title={title} theme={theme}>
@@ -102,5 +108,8 @@ const theme = "dark";
     showValidationHints={true}
     formGroups={form}
     theme={theme}
+    submitControl={submit}
+    action="https://localhost"
+    method="POST"
   />
 </Layout>

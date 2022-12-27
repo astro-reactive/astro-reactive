@@ -27,6 +27,17 @@ export type InputType =
   | "url"
   | "week";
 
+export type HTTPRequestMethodType = 
+  | "GET"
+  | "POST"
+  | "PUT"
+  | "PATCH"
+  | "DELETE"
+  | "TRACE"
+  | "OPTIONS"
+  | "CONNECT"
+  | "HEAD";
+
 export type ControlType = InputType | "dropdown" | "textarea";
 
 export interface ControlBase {
