@@ -1,3 +1,9 @@
+### v0.6.6
+- implement validation hooks with form's `triggerValidationOn` prop
+- types and intellisense improvements
+- validation support for RadioGroup
+- form's `action` and `method` props
+
 ### v0.6.5
 - fix deps
 

@@ -1,3 +1,7 @@
+### v0.2.6
+- implement validation hooks with form's `triggerValidationOn` prop
+- types and intellisense improvements
+
 ### v0.2.5
 - fix deps
 

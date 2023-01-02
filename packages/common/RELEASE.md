@@ -1,3 +1,7 @@
+### v0.1.4
+- form validation hook property `triggerValidationOn`
+- form properties `action` and `method`
+
 ### v0.1.2
 - make `Checkbox.checked` optional
 
