@@ -54,8 +54,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@astro-reactive/common": "latest",
-    "@astro-reactive/validator": "latest",
+    "@astro-reactive/common": "*",
+    "@astro-reactive/validator": "*",
     "short-unique-id": "^4.4.4"
   },
   "publishConfig": {
