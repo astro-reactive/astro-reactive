@@ -6,7 +6,7 @@ type Props = {
 const { path } = Astro.props as Props;
 const resolvedPath = `apps/docs/${path}`;
 const url = `https://api.github.com/repos/ayoayco/astro-reactive-library/commits?path=${resolvedPath}`;
-const commitsURL = `https://github.com/ayoayco/astro-reactive-library/commits/main/${resolvedPath}`;
+const commitsURL = `https://github.com/astro-reactive/astro-reactive/commits/main/${resolvedPath}`;
 
 type Commit = {
   author: {
@@ -180,3 +180,4 @@ const additionalContributors = unique.length - recentContributors.length; // lis
     margin-left: 0.75rem;
   }
 </style>
+

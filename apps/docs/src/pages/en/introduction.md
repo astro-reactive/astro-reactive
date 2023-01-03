@@ -18,11 +18,11 @@ We are in pursuit of an easy developer experience for implementing reactive UIs 
 
 This will be released as a core package of the library to support reactivity across our packages, and hopefully as a utility to use for your own components.
 
-As of now this is still a *goal*. In other words, we see this as researching the [hyperdrive](https://starwars.fandom.com/wiki/Hyperdrive/Legends) engine to explore new frontiers with Astro.
+As of now this is still a _goal_. In other words, we see this as researching the [hyperdrive](https://starwars.fandom.com/wiki/Hyperdrive/Legends) engine to explore new frontiers with Astro.
 
 And we're having fun.
 
-*👉 [Join us!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md#readme)*
+_👉 [Join us!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md#readme)_
 
 ## Project Motivation
 
@@ -34,24 +34,25 @@ However we also see that Astro has given us a good baseline framework to potenti
 
 The challenge right now is that there is no opinionated way to "resume" what your components did from the server to the browser. So I thought: What if there is a library of components and utilities to help us do this?
 
-In this project, our motivation is to get to this future. This is our *next frontier 🚀*
+In this project, our motivation is to get to this future. This is our _next frontier 🚀_
 
 ## Some Tradeoffs
 
 The Astro framework is very clear and focused on what they provide: top-tier performance for content-focused websites. In doing so, it has introduced a new world of architecture to a lot of developers.
 
 Once we take off in pursuit of our project goals, we are aware of some tradeoffs that will be made.
- 
+
 As we build, we aim to minimize the performance hit to your applications.
 
 We will also make this clear in our library documentation as we see them.
 
 ## Packages
 
-| Package | Release notes | Description |
-| --- | --- | --- |
-| [form](/en/api/form/form-component) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md) | a dynamic form which can be modified programmatically |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields |
-| data-grid | 🛠 | a dynamic data grid of values |
-| themes | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
-| viz | 🛠 | data visualization that emits and responds to events |
+| Package                                                                                              | Release notes                                                                                     | Description                                              |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [form](/en/api/form/form-component)                                                                  | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
+| [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
+| data-grid                                                                                            | 🛠                                                                                                 | a dynamic data grid of values                            |
+| themes                                                                                               | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                  | 🛠                                                                                                 | data visualization that emits and responds to events     |
+

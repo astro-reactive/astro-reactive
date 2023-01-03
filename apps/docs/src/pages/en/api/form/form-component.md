@@ -152,7 +152,7 @@ const submitControl: Submit = {
 <Form formGroups={form} submitControl={submitControl} />
 ```
 
-This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/ayoayco/astro-reactive-library/discussions).
+This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/astro-reactive/astro-reactive/discussions).
 
 ---
 
@@ -203,3 +203,4 @@ Type: `Submit`
 ### `theme`
 
 Type: `'light' | 'dark'`
+

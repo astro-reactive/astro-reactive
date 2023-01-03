@@ -4,4 +4,4 @@
 
 Start the dev server by running: `npm run landing-page`
 
-👉 _[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)_
+👉 _[Join our contributors!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md)_

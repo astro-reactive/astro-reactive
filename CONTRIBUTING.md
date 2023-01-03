@@ -1,6 +1,7 @@
 ![Astro Reactive Library](https://user-images.githubusercontent.com/4262489/193419437-6e437743-47bf-482b-8f7e-de3c7f5285f8.png)
 
 # Hi, explorer! 🚀
+
 Thanks for checking out the Astro Reactive Library! Welcome to a new adventure.
 
 This is a library of components and utilities for building reactive user interfaces with [Astro](https://astro.build)--a modern web framework.
@@ -11,11 +12,11 @@ There's a lot of opportunity to contribute. A good start will be to understand w
 
 Any contribution is welcome. Feel free to look around to find something that interests you. :)
 
-The [issues page](https://github.com/ayoayco/astro-reactive-library/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
+The [issues page](https://github.com/astro-reactive/astro-reactive/issues?q=is%3Aopen+is%3Aissue+label%3A%22accepting+PRs%22) contains some ideas, but they should not limit your contribution.
 
 If you don't find anything there, we are happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for your own idea, [post on our discussions](https://github.com/ayoayco/astro-reactive-library/discussions) or join our [Discord](https://discord.gg/yKyzCjNK).
+You can always [create a new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for your own idea, [post on our discussions](https://github.com/astro-reactive/astro-reactive/discussions) or join our [Discord](https://discord.gg/yKyzCjNK).
 
 # The Astro Reactive Library
 
@@ -26,20 +27,22 @@ The project is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using-n
 We are using [Turborepo](https://turbo.build/repo) as our monorepo build system.
 
 Packages:
-1. [demo](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/demo) in the directory `apps/demo`
-    - Astro web application that we use to test and demonstrate the library components
-1. [form](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/form) in the directory `packages/form`
-    - component that allows developers to programmatically build a form
-1. [validator](https://github.com/ayoayco/astro-reactive-library/tree/main/packages/validator) in the directory `packages/astro-reactive-validator`
-    - component that allows developers to set up validators for their forms easily
-1. [docs](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/docs) - in the directory `apps/docs` 
-    - Astro website for the library's extensive documentation
-1. [landing-page](https://github.com/ayoayco/astro-reactive-library/tree/main/apps/landing-page) - in the directory `apps/landing-page`
-    - Astro website for the library's introductory landing page
 
-   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git)
+1. [demo](https://github.com/astro-reactive/astro-reactive/tree/main/apps/demo) in the directory `apps/demo`
+   - Astro web application that we use to test and demonstrate the library components
+1. [form](https://github.com/astro-reactive/astro-reactive/tree/main/packages/form) in the directory `packages/form`
+   - component that allows developers to programmatically build a form
+1. [validator](https://github.com/astro-reactive/astro-reactive/tree/main/packages/validator) in the directory `packages/astro-reactive-validator`
+   - component that allows developers to set up validators for their forms easily
+1. [docs](https://github.com/astro-reactive/astro-reactive/tree/main/apps/docs) - in the directory `apps/docs`
+   - Astro website for the library's extensive documentation
+1. [landing-page](https://github.com/astro-reactive/astro-reactive/tree/main/apps/landing-page) - in the directory `apps/landing-page`
 
-# Running locally 
+   - Astro website for the library's introductory landing page
+
+   [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/astro-reactive/astro-reactive.git)
+
+# Running locally
 
 We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
 
@@ -73,9 +76,7 @@ npm start
 https://localhost:3000
 ```
 
-
 # Applications
-
 
 We also maintain the documentation website and the project landing page in this repository. The source for these applications is found in the `apps` directory.
 
@@ -119,13 +120,13 @@ Thank you again for your interest in contributing!
 
 ✍️ Read on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/); you'll see this used around issues, PRs, and commit messages
 
-🏘️ Read our [community guidelines](https://github.com/ayoayco/astro-reactive-library/blob/main/CODE_OF_CONDUCT.md)
+🏘️ Read our [community guidelines](https://github.com/astro-reactive/astro-reactive/blob/main/CODE_OF_CONDUCT.md)
 
-📝 Check the [discussion board](https://github.com/ayoayco/astro-reactive-library/discussions) for  announcements or post your messages and questions
+📝 Check the [discussion board](https://github.com/astro-reactive/astro-reactive/discussions) for announcements or post your messages and questions
 
 💬 Hang-out with the team on our [Discord](https://discord.gg/yKyzCjNK) to share feedback, get support, or just have some laughs over memes 😅
 
-🛠️ Create a [new issue](https://github.com/ayoayco/astro-reactive-library/issues/new/choose) for bugs found or improvement ideas
+🛠️ Create a [new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for bugs found or improvement ideas
 
 ## Play around examples:
 
@@ -141,3 +142,4 @@ Thank you again for your interest in contributing!
       alt="CodeSandbox"
     />
   </a>
+

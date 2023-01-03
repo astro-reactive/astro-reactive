@@ -17,9 +17,10 @@ Generate a dynamic form based on your data, and modify programatically.
 
 The Reactive Form component for [Astro](https://astro.build) 🔥
 
-_[All contributions are welcome.](https://github.com/ayoayco/astro-reactive-library/issues)_
+_[All contributions are welcome.](https://github.com/astro-reactive/astro-reactive/issues)_
 
 ## Installation
+
 In your Astro project:
 
 ```
@@ -27,6 +28,7 @@ npm i @astro-reactive/form
 ```
 
 ## Usage
+
 Use in an Astro page:
 
 ```astro
@@ -103,3 +105,4 @@ Currently this only supports very basic form creation, but the goal of the proje
 ... and so much more
 
 _All contributions are welcome. Let's make the fastest web form component powered by Astro_
+
