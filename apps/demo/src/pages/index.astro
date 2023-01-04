@@ -99,13 +99,14 @@ const theme = "dark";
 const submit: Submit = {
   name: "submit",
   type: "submit",
+  value: "Let's go!",
 };
 ---
 
 <Layout title={title} theme={theme}>
   <Form
-    validateOnLoad={true}
-    showValidationHints={true}
+    validateOnLoad
+    showValidationHints
     formGroups={form}
     theme={theme}
     submitControl={submit}

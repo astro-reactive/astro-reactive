@@ -99,6 +99,7 @@ const resume: ControlConfig = {
 const submit: Submit = {
   name: "submit",
   type: "submit",
+  value: "Let's go!",
 };
 
 const values = {
@@ -119,7 +120,7 @@ skillsForm.controls.push(new FormControl(resume));
 
 <Layout title="Programmer Job Application">
   <Form
-    showValidationHints={true}
+    showValidationHints
     formGroups={[infoForm, skillsForm]}
     submitControl={submit}
   />
