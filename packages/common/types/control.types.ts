@@ -27,16 +27,7 @@ export type InputType =
   | "url"
   | "week";
 
-export type HTTPRequestMethodType = 
-  | "GET"
-  | "POST"
-  | "PUT"
-  | "PATCH"
-  | "DELETE"
-  | "TRACE"
-  | "OPTIONS"
-  | "CONNECT"
-  | "HEAD";
+export type HTTPSubmitMethod = "get" | "post" | "dialog";
 
 export type ControlType = InputType | "dropdown" | "textarea";
 
@@ -48,7 +39,7 @@ export interface ControlBase {
   label?: string;
   placeholder?: string;
   validators?: ValidatorRules;
-  triggerValidationOn?: ValidationHooks; 
+  triggerValidationOn?: ValidationHooks;
 }
 
 export interface Checkbox extends ControlBase {
