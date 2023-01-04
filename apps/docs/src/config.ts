@@ -7,7 +7,7 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: "https://github.com/ayoayco/astro-reactive-library/blob/main/.github/assets/astro-reactive-library-cover.png?raw=true",
+    src: "https://github.com/astro-reactive/astro-reactive/blob/main/.github/assets/astro-reactive-library-cover.png?raw=true",
     alt: "astro logo and astro reactive library text on a starry expanse of space",
   },
   twitter: "astroreactive",
@@ -29,7 +29,7 @@ export const KNOWN_LANGUAGES = {
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
-export const GITHUB_EDIT_URL = `https://github.com/ayoayco/astro-reactive-library/tree/main/apps/docs`;
+export const GITHUB_EDIT_URL = `https://github.com/astro-reactive/astro-reactive/tree/main/apps/docs`;
 
 export const COMMUNITY_INVITE_URL = `https://discord.gg/yKyzCjNK`;
 
@@ -67,3 +67,4 @@ export const SIDEBAR: Sidebar = {
     ],
   },
 };
+

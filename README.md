@@ -6,13 +6,13 @@
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components and architecture.
   <br />
   <br />
-  <a href="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml">
-    <img src="https://github.com/ayoayco/astro-reactive-library/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
+  <a href="https://github.com/astro-reactive/astro-reactive/actions/workflows/build-and-test.yml">
+    <img src="https://github.com/astro-reactive/astro-reactive/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
-  <a href="https://github.com/ayoayco/astro-reactive-library">
+  <a href="https://github.com/astro-reactive/astro-reactive">
     <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library?logo=github" />
   </a>
-  <a href="https://gitpod.io/#https://github.com/ayoayco/astro-reactive-library.git">
+  <a href="https://gitpod.io/#https://github.com/astro-reactive/astro-reactive.git">
   <img
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
@@ -23,13 +23,13 @@
   <br />
 <p>
 
-| Package | Release notes | Description |
-| --- | --- | --- |
-| [form](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md) | a dynamic form which can be modified programmatically |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields |
-| data-grid | 🛠 | a dynamic data grid of values |
-| themes | 🛠 | easy-to-use, accessible, consistent cross-browser styles |
-| viz | 🛠 | data visualization that emits and responds to events |
+| Package                                                                                              | Release notes                                                                                     | Description                                              |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [form](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
+| [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
+| data-grid                                                                                            | 🛠                                                                                                 | a dynamic data grid of values                            |
+| themes                                                                                               | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                  | 🛠                                                                                                 | data visualization that emits and responds to events     |
 
 # Running locally
 
@@ -87,11 +87,11 @@ npm run landing-page
 
 This project is only possible because of the support and contribution of our community ❤️
 
-<a href="https://github.com/ayoayco/astro-reactive-library/graphs/contributors">
+<a href="https://github.com/astro-reactive/astro-reactive/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />
 </a>
 
-👉 _[Join our contributors!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md)_
+👉 _[Join our contributors!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md)_
 
 ## Play around examples:
 
@@ -107,3 +107,4 @@ This project is only possible because of the support and contribution of our com
       alt="CodeSandbox"
     />
   </a>
+
