@@ -1,3 +1,6 @@
+### v0.2.7
+- support form method type to accept: 'get', 'post', 'dialog'
+
 ### v0.2.6
 - implement validation hooks with form's `triggerValidationOn` prop
 - types and intellisense improvements

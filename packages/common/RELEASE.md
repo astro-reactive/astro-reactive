@@ -1,3 +1,6 @@
+### v0.1.5
+- fix form method type to accept: 'get', 'post', 'dialog'
+
 ### v0.1.4
 - form validation hook property `triggerValidationOn`
 - form properties `action` and `method`
