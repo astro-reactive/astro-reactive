@@ -67,7 +67,7 @@ form.controls.push(
 
 ---
 
-<Form showValidationHints={true} formGroups={form} />
+<Form showValidationHints formGroups={form} />
 <!-- 
   The `showValidationHints` attribute tells the Form component
   that you want to render validation hints. So far, these are:
