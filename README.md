@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   <br />
   <strong>Astro Reactive Library</strong>
   <br />
@@ -10,7 +10,7 @@
     <img src="https://github.com/astro-reactive/astro-reactive/actions/workflows/build-and-test.yml/badge.svg?branch=main" alt="Build & Test Result" />
   </a>
   <a href="https://github.com/astro-reactive/astro-reactive">
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ayoayco/astro-reactive-library?logo=github" />
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/astro-reactive/astro-reactive?logo=github" />
   </a>
   <a href="https://gitpod.io/#https://github.com/astro-reactive/astro-reactive.git">
   <img
@@ -88,7 +88,7 @@ npm run landing-page
 This project is only possible because of the support and contribution of our community ❤️
 
 <a href="https://github.com/astro-reactive/astro-reactive/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ayoayco/astro-reactive-library" />
+  <img src="https://contrib.rocks/image?repo=astro-reactive/astro-reactive" />
 </a>
 
 👉 _[Join our contributors!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md)_
