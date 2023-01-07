@@ -14,8 +14,8 @@
 	top: 0px;
 }
 
-.right-1 {
-	right: 0.25rem;
+.pr-4 {
+	padding-right: 1rem;
 }
 
 .bottom-1 {
@@ -108,6 +108,10 @@
 	flex-direction: column;
 }
 
+.items-start {
+	align-items: flex-start;
+}
+
 .items-end {
 	align-items: flex-end;
 }
@@ -151,10 +155,6 @@
 	background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-slate-100\/40 {
-	background-color: rgb(241 245 249 / 0.4);
-}
-
 .bg-black\/10 {
 	background-color: rgb(0 0 0 / 0.1);
 }
@@ -166,6 +166,16 @@
 .px-2 {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
+}
+
+.py-0\.5 {
+	padding-top: 0.125rem;
+	padding-bottom: 0.125rem;
+}
+
+.py-0 {
+	padding-top: 0px;
+	padding-bottom: 0px;
 }
 
 .py-1 {
@@ -206,19 +216,8 @@
 		var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.backdrop-blur-md {
-	--tw-backdrop-blur: blur(12px);
-	-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
-		var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
-		var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
-		var(--tw-backdrop-sepia);
-	backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast)
-		var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert)
-		var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-}
-
-.backdrop-saturate-150 {
-	--tw-backdrop-saturate: saturate(1.5);
+.backdrop-blur-sm {
+	--tw-backdrop-blur: blur(4px);
 	-webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness)
 		var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate)
 		var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate)
@@ -234,10 +233,6 @@
 		background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 	}
 
-	.dark\:bg-slate-900\/40 {
-		background-color: rgb(15 23 42 / 0.4);
-	}
-
 	.dark\:text-white {
 		--tw-text-opacity: 1;
 		color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -246,4 +241,26 @@
 	.dark\:text-white\/80 {
 		color: rgb(255 255 255 / 0.8);
 	}
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.sc::-webkit-scrollbar {
+	width: 12px;
+	background-color: #0000;
+}
+
+.sc::-webkit-scrollbar-thumb {
+	border-radius: 100px;
+	border: 3px dotted hsla(200deg, 100%, 20%, 0);
+	background-clip: content-box;
+	background-color: #598ca6b3;
+}
+
+.sc::-webkit-scrollbar-track {
+	background-color: #269dd91a;
+	border-radius: 100px;
 }

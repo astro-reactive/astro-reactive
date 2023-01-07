@@ -152,18 +152,33 @@ export function TOC(props: { headers: Omit<HEntry, 'children'>[] }) {
 	const normal = () => setExpansion(State.Normal);
 	const collapse = () => setExpansion(State.Collapsed);
 
+	let windowHeight = 624;
+	onMount(() => {
+		windowHeight = window?.innerHeight;
+	});
+
 	return (
-		<nav aria-label="Table of Contents" class="sticky top-0 right-1 flex flex-col items-end">
+		<nav aria-label="Table of Contents" class="sticky pr-4 top-0 flex flex-col items-start">
+			<div
+				role="heading"
+				class="px-2 py-0.5 bg-black/10 backdrop-blur-sm dark:text-white mb-2"
+				aria-level={6}
+			>
+				In this post:
+			</div>
 			<div
 				ref={(el: HTMLElement) => (scrollRef = el)}
-				class={`overflow-auto w-full max-w-xs bg-slate-100/40 dark:bg-slate-900/40 backdrop-blur-md backdrop-saturate-150 rounded-md ${blue_scrollbar_class}`}
+				class={`overflow-auto sc w-full max-w-xs rounded-md ${blue_scrollbar_class}`}
 				classList={{
-					'h-[calc(100vh-222px)] min-w-[180px] bottom-1 px-2': expansion() === State.Expanded,
-					'h-[unset] w-fit mr-2 ml-auto': expansion() === State.Collapsed,
-					'h-96 max-h-64 min-w-[180px] px-2': expansion() === State.Normal,
+					// 'h-[calc(100vh-222px)] min-w-[180px] bottom-1 px-2': expansion() === State.Expanded,
+					// 'h-[unset] w-fit mr-2 ml-auto': expansion() === State.Collapsed,
+					'min-w-[180px] px-2': expansion() === State.Normal,
+				}}
+				style={{
+					'max-height': `${windowHeight - (48 + 32 + 32 + 120)}px`,
 				}}
 			>
-				<Show when={expansion() != State.Collapsed} fallback={<Restore onClick={normal} />}>
+				{/* <Show when={expansion() != State.Collapsed} fallback={<Restore onClick={normal} />}>
 					<>
 						<div role="heading" class="absolute -top-0.5 p-2 dark:text-white" aria-level={6}>
 							In this post:
@@ -177,18 +192,18 @@ export function TOC(props: { headers: Omit<HEntry, 'children'>[] }) {
 							</div>
 						</div>
 					</>
-				</Show>
-				<Show when={!(expansion() == State.Collapsed)}>
-					<ul>
-						<For each={headings}>
-							{(h: HEntry) => (
-								<li key={h.slug}>
-									<H entry={h} inView={inViewId} scroll={scroll} onClick={dismissIfExpanded} />
-								</li>
-							)}
-						</For>
-					</ul>
-				</Show>
+				</Show> */}
+				{/* <Show when={!(expansion() == State.Collapsed)}> */}
+				<ul>
+					<For each={headings}>
+						{(h: HEntry) => (
+							<li key={h.slug}>
+								<H entry={h} inView={inViewId} scroll={scroll} onClick={dismissIfExpanded} />
+							</li>
+						)}
+					</For>
+				</ul>
+				{/* </Show> */}
 			</div>
 		</nav>
 	);
