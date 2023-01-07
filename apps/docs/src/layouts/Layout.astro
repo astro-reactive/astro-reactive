@@ -1,14 +1,14 @@
 ---
-import "../styles/index.css";
-import "../styles/theme.css";
-import Base from "./Base.astro";
-import { Frontmatter, GITHUB_EDIT_URL } from "../config";
-import Header from "../components/Header/Header.astro";
-import PageContent from "../components/PageContent/PageContent.astro";
-import LeftSidebar from "../components/LeftSidebar/LeftSidebar.astro";
-import RightSidebar from "../components/RightSidebar/RightSidebar.astro";
-import Footer from "../components/Footer/Footer.astro";
-import type { MarkdownHeading } from "astro";
+import '../styles/index.css';
+import '../styles/theme.css';
+import Base from './Base.astro';
+import { Frontmatter, GITHUB_EDIT_URL } from '../config';
+import Header from '../components/Header/Header.astro';
+import PageContent from '../components/PageContent/PageContent.astro';
+import LeftSidebar from '../components/LeftSidebar/LeftSidebar.astro';
+import RightSidebar from '../components/RightSidebar/RightSidebar.astro';
+import Footer from '../components/Footer/Footer.astro';
+import type { MarkdownHeading } from 'astro';
 
 interface Props extends Frontmatter {
 	headings: MarkdownHeading[];
@@ -21,7 +21,7 @@ interface Props extends Frontmatter {
 const { headings, layout } = Astro.props as Props;
 
 const currentPage = Astro.url.pathname;
-const currentFile = `src/pages${Astro.url.pathname.replace(/\/$/, "")}.md`;
+const currentFile = `src/pages${Astro.url.pathname.replace(/\/$/, '')}.md`;
 const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 ---
 
@@ -124,8 +124,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 </style>
 <Base class="" {...Astro.props}>
 	<!-- Scrollable a11y code helper -->
-	<script src="/make-scrollable-code-focusable.js" slot="preload" is:inline
-	></script>
+	<script src="/make-scrollable-code-focusable.js" slot="preload" is:inline></script>
 
 	<Header currentPage={currentPage} />
 	<main class="layout">
@@ -134,10 +133,9 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 		</aside>
 		<div id="grid-main">
 			<div class="warning">
-				<strong>🛠 Under Construction:</strong> This library and the documentation
-				are undergoing rigorous development. Read and join our <a
-					href="https://github.com/ayoayco/astro-reactive-library/discussions"
-					>discussions</a
+				<strong>🛠 Under Construction:</strong> This library and the documentation are undergoing rigorous
+				development. Read and join our <a
+					href="https://github.com/ayoayco/astro-reactive-library/discussions">discussions</a
 				> for questions, suggestions, or feedback.
 			</div>
 			<PageContent
