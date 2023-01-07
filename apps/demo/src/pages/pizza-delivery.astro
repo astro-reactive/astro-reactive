@@ -92,8 +92,5 @@ infoForm.get("contact")?.setValidators([Validators.minLength(9)]);
 ---
 
 <Layout title="Pizza Form Demo">
-  <Form
-    showValidationHints={true}
-    formGroups={[baseForm, toppingsForm, infoForm]}
-  />
+  <Form showValidationHints formGroups={[baseForm, toppingsForm, infoForm]} />
 </Layout>

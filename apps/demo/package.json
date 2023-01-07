@@ -22,14 +22,15 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ayoayco/astro-reactive-library.git"
+    "url": "git+https://github.com/astro-reactive/astro-reactive.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ayoayco/astro-reactive-library/issues"
+    "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
   "devDependencies": {
     "rimraf": "^3.0.2"
   }
 }
+

@@ -152,28 +152,47 @@ const submitControl: Submit = {
 <Form formGroups={form} submitControl={submitControl} />
 ```
 
-This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/ayoayco/astro-reactive-library/discussions).
+This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/astro-reactive/astro-reactive/discussions).
 
 ---
 
 ## Properties
 
-The following are input properties a `Form` component can take.
+The following are input properties a `Form` component can take. Only the `formGroups` property is required.
 
-| Property                                    | Type                       |          |
-| ------------------------------------------- | -------------------------- | -------- |
-| [formGroups](#formgroups)                   | `FormGroup \| FormGroup[]` | required |
-| [readOnly](#readonly)                       | `boolean`                  | optional |
-| [showValidationHints](#showvalidationhints) | `boolean`                  | optional |
-| [validateOnLoad](#validateOnLoad)           | `boolean`                  | optional |
-| [submitControl](#submitcontrol)             | `Submit`                   | optional |
-| [theme](#theme)                             | `'light' \| 'dark'`        | optional |
+| Property                                    | Type                       |                          |
+| ------------------------------------------- | -------------------------- | ----------------------------------- |
+| [formGroups](#formgroups)        | `FormGroup \| FormGroup[]` | required |
+| [action](#action)                           | `string`                   | optional                            |
+| [method](#method)                           | `'get' \| 'post' \| 'dialog'`    | optional                            |
+| [readOnly](#readonly)                       | `boolean`                  | optional                            |
+| [showValidationHints](#showvalidationhints) | `boolean`                  | optional                            |
+| [submitControl](#submitcontrol)             | `Submit`                   | optional                            |
+| [theme](#theme)                             | `'light' \| 'dark'`        | optional                            |
+| [validateOnLoad](#validateOnLoad)           | `boolean`                  | optional                            |
 
 ### `formGroups`
 
 Type: `FormGroup | FormGroup[]`
 
-Determines how the form is are rendered
+Determines how the form is rendered
+
+### action
+
+Type: `string`
+
+Sets the `action` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-action) for the form. Set this to the URL that processes the form submission.
+
+### method
+
+Type: HTTPSubmitMethod
+
+Sets the `method` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method) for the form. Set this to the HTTP method to submit the form: 'post', 'get', or 'dialog'.
+
+From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method):
+- `post` - The POST method; form data sent as the request body.
+- `get (default)` - The GET method; form data appended to the action URL with a ? separator. Use this method when the form has no side effects.
+- `dialog` - When the form is inside a <dialog>, closes the dialog and throws a submit event on submission without submitting data or clearing the form.
 
 ### `readOnly`
 
@@ -190,16 +209,28 @@ When used with our `validator` package, the `Form` component is able to render v
 -   asterisks on required controls' labels
 -   controls with validation errors are colored red
 
-### `validateOnLoad`
-
-Type: `boolean`
-
-When used with our `validator` package, the `Form` component is able to render validation errors on server-side rendering when `validateOnLoad` is set to true otherwise, the validation errors will only be rendered on the client-side.
-
 ### `submitControl`
 
 Type: `Submit`
 
+A special button that triggers the submit event for a form.
+
+```ts
+const submit: Submit = {
+  type: 'submit',
+  value: 'Let\'s go!'
+}
+```
+
 ### `theme`
 
 Type: `'light' | 'dark'`
+
+Sets the form to use light or dark mode.
+
+### `validateOnLoad`
+
+Type: `boolean`
+
+When used with our `validator` package, the `Form` component is able to render validation errors on server-side rendering when `validateOnLoad` is set to true. Otherwise, the validation errors will only be rendered on the client-side upon user interaction.
+

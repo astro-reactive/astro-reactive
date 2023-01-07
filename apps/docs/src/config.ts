@@ -5,11 +5,11 @@ export const SITE = {
 };
 
 export const OPEN_GRAPH = {
-	image: {
-		src: 'https://github.com/ayoayco/astro-reactive-library/blob/main/.github/assets/astro-reactive-library-cover.png?raw=true',
-		alt: 'astro logo and astro reactive library text on a starry expanse of space',
-	},
-	twitter: 'astroreactive',
+  image: {
+    src: "https://github.com/astro-reactive/astro-reactive/blob/main/.github/assets/astro-reactive-library-cover.png?raw=true",
+    alt: "astro logo and astro reactive library text on a starry expanse of space",
+  },
+  twitter: "astroreactive",
 };
 
 // This is the type of the frontmatter you put in the docs markdown files.
@@ -28,9 +28,9 @@ export const KNOWN_LANGUAGES = {
 } as const;
 export const KNOWN_LANGUAGE_CODES = Object.values(KNOWN_LANGUAGES);
 
-export const GITHUB_EDIT_URL = `https://github.com/ayoayco/astro-reactive-library/tree/main/apps/docs`;
+export const GITHUB_EDIT_URL = `https://github.com/astro-reactive/astro-reactive/tree/main/apps/docs`;
 
-export const COMMUNITY_INVITE_URL = `https://discord.gg/yKyzCjNK`;
+export const COMMUNITY_INVITE_URL = `https://discord.gg/fkpkKdPJ`;
 
 // See "Algolia" section of the README for more information.
 export const ALGOLIA = {

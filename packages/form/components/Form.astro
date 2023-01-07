@@ -1,19 +1,54 @@
 ---
-import type { HTTPRequestMethodType, Submit } from '@astro-reactive/common';
+import type { HTTPSubmitMethod, Submit } from '@astro-reactive/common';
 import { FormGroup, FormControl } from '../core';
 import FieldSet from './FieldSet.astro';
 import Field from './Field.astro';
 import ShortUniqueId from 'short-unique-id';
 
 export interface Props {
+	/**
+	 * Determines how the form is rendered
+	 */
 	formGroups: FormGroup | FormGroup[];
-	readOnly?: boolean;
-	showValidationHints?: boolean;
-	validateOnLoad?: boolean;
-	submitControl?: Submit;
-	theme?: 'light' | 'dark';
+
+	/**
+	 * Sets the `action` attribute for the form. Set this to the URL that processes the form submission.
+	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method
+	 */
 	action?: string;
-	method?: HTTPRequestMethodType;
+
+	/**
+	 * Sets the `method` attribute for the form. Set this to the HTTP method to submit the form: 'post', 'get', or 'dialog'.
+	 * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method
+	 */
+	method?: HTTPSubmitMethod;
+
+	/**
+	 * Sets the whole form as read-only.
+	 */
+	readOnly?: boolean;
+
+	/**
+	 * When used with our `validator` package, the `Form` component is able to render validation hints when `showValidationHints` is set to true:
+	 * - asterisks on required controls' labels
+	 * - controls with validation errors are colored red
+	 */
+	showValidationHints?: boolean;
+
+	/**
+	 * A special button that triggers the submit event for a form.
+	 */
+	submitControl?: Submit;
+
+	/**
+	 * Sets the form to use light or dark mode.
+	 */
+	theme?: 'light' | 'dark';
+
+	/**
+	 * When used with our `validator` package, the `Form` component is able to render validation errors on server-side rendering when `validateOnLoad` is set to true. Otherwise, the validation errors will only be rendered on the client-side upon user interaction.
+	 */
+	validateOnLoad?: boolean;
 }
 
 const {
@@ -23,8 +58,8 @@ const {
 	showValidationHints = false,
 	validateOnLoad = false,
 	readOnly = false,
-	action = "",
-	method = "GET"
+	action = '',
+	method = 'get',
 } = Astro.props;
 
 const uid = new ShortUniqueId({ length: 9 });
@@ -32,19 +67,15 @@ const formTheme = theme ?? 'light';
 const formName = Array.isArray(formGroups) ? null : formGroups?.name || null;
 const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 
-// if `validateOnLoad` prop is true, 
+// if `validateOnLoad` prop is true,
 // it should forced all FormControl to validate on load
 if (validateOnLoad) {
 	if (Array.isArray(formGroups)) {
-		formGroups.forEach(group =>
-			group.controls.forEach(control => 
-				control.setValidateOnLoad(validateOnLoad)
-			)
+		formGroups.forEach((group) =>
+			group.controls.forEach((control) => control.setValidateOnLoad(validateOnLoad))
 		);
 	} else {
-		formGroups.controls.forEach(control => 
-			control.setValidateOnLoad(validateOnLoad)
-		)
+		formGroups.controls.forEach((control) => control.setValidateOnLoad(validateOnLoad));
 	}
 }
 ---

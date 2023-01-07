@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayoayco/astro-reactive-library/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
+  <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   <br />
   <strong>Astro Reactive Form</strong>
   <br />
@@ -99,6 +99,7 @@ This Form component is designed to work with [Astro Reactive Validator](https://
 # We are opensource!
 
 
-👉 _All [contributions](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md) are welcome. Let's make the fastest web forms powered by Astro._
+👉 _All [contributions](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md) are welcome. Let's make the fastest web forms powered by Astro._
 
-👉 _This package is under rigorous development. See the [change log](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/form/RELEASE.md)._
+👉 _This package is under rigorous development. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/RELEASE.md)._
+

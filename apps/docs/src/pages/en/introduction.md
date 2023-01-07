@@ -22,7 +22,7 @@ As of now this is still a _goal_. In other words, we see this as researching the
 
 And we're having fun.
 
-_👉 [Join us!](https://github.com/ayoayco/astro-reactive-library/blob/main/CONTRIBUTING.md#readme)_
+_👉 [Join us!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md#readme)_
 
 ## Project Motivation
 
@@ -48,10 +48,11 @@ We will also make this clear in our library documentation as we see them.
 
 ## Packages
 
-| Package                                                                                               | Release notes                                                                                     | Description                                              |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [form](/en/api/form/form-component)                                                                   | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
-| [validator](https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
-| data-grid                                                                                             | 🛠                                                                                                 | a dynamic data grid of values                            |
-| themes                                                                                                | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
-| viz                                                                                                   | 🛠                                                                                                 | data visualization that emits and responds to events     |
+| Package                                                                                              | Release notes                                                                                     | Description                                              |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [form](/en/api/form/form-component)                                                                  | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
+| [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md) | validators for editable fields                           |
+| data-grid                                                                                            | 🛠                                                                                                 | a dynamic data grid of values                            |
+| themes                                                                                               | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                  | 🛠                                                                                                 | data visualization that emits and responds to events     |
+

@@ -1,9 +1,9 @@
 {
   "name": "@astro-reactive/validator",
   "description": "Form validation library for Astro 🔥",
-  "version": "0.2.6",
-  "repository": "https://github.com/ayoayco/astro-reactive-library",
-  "homepage": "https://github.com/ayoayco/astro-reactive-library/blob/main/packages/validator/README.md",
+  "version": "0.2.7",
+  "repository": "https://github.com/astro-reactive/astro-reactive",
+  "homepage": "https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md",
   "author": {
     "name": "Ayo Ayco",
     "email": "ayo@ayco.io",
@@ -59,7 +59,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ayoayco/astro-reactive-library/issues"
+    "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
   "publishConfig": {
     "access": "public"
