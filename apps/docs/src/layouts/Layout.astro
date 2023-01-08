@@ -122,7 +122,7 @@ const githubEditUrl = `${GITHUB_EDIT_URL}/${currentFile}`;
 		top: 2rem;
 	}
 </style>
-<Base class="" {...Astro.props}>
+<Base class="" {...(Astro?.props?.frontmatter ?? Astro?.props)}>
 	<!-- Scrollable a11y code helper -->
 	<script src="/make-scrollable-code-focusable.js" slot="preload" is:inline></script>
 
