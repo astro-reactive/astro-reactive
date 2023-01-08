@@ -229,6 +229,10 @@
 	color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.font-bold {
+	font-weight: 700;
+}
+
 .theme-dark .dark\:text-white\/80 {
 	color: rgb(255 255 255 / 0.8);
 }

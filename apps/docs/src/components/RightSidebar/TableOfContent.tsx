@@ -159,12 +159,8 @@ export function TOC(props: { headers: Omit<HEntry, 'children'>[] }) {
 
 	return (
 		<nav aria-label="Table of Contents" class="sticky pr-4 top-0 flex flex-col items-start">
-			<div
-				role="heading"
-				class="px-2 py-0.5 bg-black/10 backdrop-blur-sm dark:text-white mb-2"
-				aria-level={6}
-			>
-				In this post:
+			<div role="heading" class="px-2 py-0.5 font-bold dark:text-white mb-2" aria-level={6}>
+				ON THIS PAGE
 			</div>
 			<div
 				ref={(el: HTMLElement) => (scrollRef = el)}
