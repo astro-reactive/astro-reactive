@@ -51,6 +51,7 @@
     "astro": "^1.5.0"
   },
   "dependencies": {
+    "@astro-reactive/tsconfig": "*",
     "@astro-reactive/common": "*"
   },
   "main": "index.js",
