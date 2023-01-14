@@ -1,7 +1,7 @@
 ---
 title: Form
 type: component
-package: "@astro-reactive/form"
+package: '@astro-reactive/form'
 description: The Reactive Form component for Astro
 layout: ../../../../layouts/MainLayout.astro
 ---
@@ -10,7 +10,7 @@ The `Form` component renders a form element and various control components (e.g.
 
 ```astro
 ---
-import Form, { FormGroup } from "@astro-reactive/form";
+import Form, { FormGroup } from '@astro-reactive/form';
 const form = new FormGroup();
 // your controls configuration data
 ---
@@ -36,26 +36,26 @@ Assigning a `FormGroup` object to the `formGroup` property will set up a form.
 
 ```astro
 ---
-import Form, { FormGroup } from "@astro-reactive/form";
+import Form, { FormGroup } from '@astro-reactive/form';
 
 const form = new FormGroup([
   {
-    name: "username",
-    label: "Username",
-    value: "awesome_dev",
+    name: 'username',
+    label: 'Username',
+    value: 'awesome_dev',
   },
   {
-    name: "comment",
-    label: "Feedback",
-    type: "textarea",
-    value: "Nice!",
+    name: 'comment',
+    label: 'Feedback',
+    type: 'textarea',
+    value: 'Nice!',
   },
   {
-    name: "size",
-    label: "Size",
-    type: "dropdown",
-    options: ["S", "M", "L", "XL", "XXL"],
-    placeholder: "-- Please choose an option --",
+    name: 'size',
+    label: 'Size',
+    type: 'dropdown',
+    options: ['S', 'M', 'L', 'XL', 'XXL'],
+    placeholder: '-- Please choose an option --',
   },
 ]);
 ---
@@ -77,48 +77,48 @@ To render a form with multiple field sets, assign an array `FormGroup[]` to the 
 
 ```astro
 ---
-import Form, { FormGroup } from "@astro-reactive/form";
+import Form, { FormGroup } from '@astro-reactive/form';
 
 const nameForm = new FormGroup(
   [
     {
-      name: "firstName",
-      label: "First Name",
-      value: "John",
+      name: 'firstName',
+      label: 'First Name',
+      value: 'John',
     },
     {
-      name: "lastName",
-      label: "Last Name",
-      value: "Doe",
+      name: 'lastName',
+      label: 'Last Name',
+      value: 'Doe',
     },
   ],
-  "Name"
+  'Name'
 );
 
 const skills = new FormGroup(
   [
     {
-      name: "JavaScript",
-      type: "checkbox",
-      label: "JavaScript",
+      name: 'JavaScript',
+      type: 'checkbox',
+      label: 'JavaScript',
     },
     {
-      name: "TypeScript",
-      type: "checkbox",
-      label: "TypeScript",
+      name: 'TypeScript',
+      type: 'checkbox',
+      label: 'TypeScript',
     },
     {
-      name: "React",
-      type: "checkbox",
-      label: "React",
+      name: 'React',
+      type: 'checkbox',
+      label: 'React',
     },
     {
-      name: "Vue",
-      type: "checkbox",
-      label: "Vue",
+      name: 'Vue',
+      type: 'checkbox',
+      label: 'Vue',
     },
   ],
-  "Skills"
+  'Skills'
 );
 ---
 
@@ -139,13 +139,13 @@ This implementation is to distinguish the submit button from other buttons and l
 
 ```astro
 ---
-import Form, { FormGroup } from "@astro-reactive/form";
+import Form, { FormGroup } from '@astro-reactive/form';
 
 const form = new FormGroup([]);
 
 const submitControl: Submit = {
-  name: "submit",
-  type: "submit",
+  name: 'submit',
+  type: 'submit',
 };
 ---
 
@@ -160,16 +160,16 @@ This is a very crude solution to prevent having multiple submit buttons. For sug
 
 The following are input properties a `Form` component can take. Only the `formGroups` property is required.
 
-| Property                                    | Type                       |                          |
-| ------------------------------------------- | -------------------------- | ----------------------------------- |
-| [formGroups](#formgroups)        | `FormGroup \| FormGroup[]` | required |
-| [action](#action)                           | `string`                   | optional                            |
-| [method](#method)                           | `'get' \| 'post' \| 'dialog'`    | optional                            |
-| [readOnly](#readonly)                       | `boolean`                  | optional                            |
-| [showValidationHints](#showvalidationhints) | `boolean`                  | optional                            |
-| [submitControl](#submitcontrol)             | `Submit`                   | optional                            |
-| [theme](#theme)                             | `'light' \| 'dark'`        | optional                            |
-| [validateOnLoad](#validateOnLoad)           | `boolean`                  | optional                            |
+| Property                                    | Type                          |          |
+| ------------------------------------------- | ----------------------------- | -------- |
+| [formGroups](#formgroups)                   | `FormGroup \| FormGroup[]`    | required |
+| [action](#action)                           | `string`                      | optional |
+| [method](#method)                           | `'get' \| 'post' \| 'dialog'` | optional |
+| [readOnly](#readonly)                       | `boolean`                     | optional |
+| [showValidationHints](#showvalidationhints) | `boolean`                     | optional |
+| [submitControl](#submitcontrol)             | `Submit`                      | optional |
+| [theme](#theme)                             | `'light' \| 'dark'`           | optional |
+| [validateOnLoad](#validateOnLoad)           | `boolean`                     | optional |
 
 ### `formGroups`
 
@@ -190,6 +190,7 @@ Type: HTTPSubmitMethod
 Sets the `method` [attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method) for the form. Set this to the HTTP method to submit the form: 'post', 'get', or 'dialog'.
 
 From [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method):
+
 - `post` - The POST method; form data sent as the request body.
 - `get (default)` - The GET method; form data appended to the action URL with a ? separator. Use this method when the form has no side effects.
 - `dialog` - When the form is inside a <dialog>, closes the dialog and throws a submit event on submission without submitting data or clearing the form.
@@ -218,8 +219,8 @@ A special button that triggers the submit event for a form.
 ```ts
 const submit: Submit = {
   type: 'submit',
-  value: 'Let\'s go!'
-}
+  value: "Let's go!",
+};
 ```
 
 ### `theme`
@@ -233,4 +234,3 @@ Sets the form to use light or dark mode.
 Type: `boolean`
 
 When used with our `validator` package, the `Form` component is able to render validation errors on server-side rendering when `validateOnLoad` is set to true. Otherwise, the validation errors will only be rendered on the client-side upon user interaction.
-

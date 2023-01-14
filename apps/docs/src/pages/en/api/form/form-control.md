@@ -1,7 +1,7 @@
 ---
 title: FormControl
 type: class
-package: "@astro-reactive/form"
+package: '@astro-reactive/form'
 description: FormControl class
 layout: ../../../../layouts/MainLayout.astro
 ---
