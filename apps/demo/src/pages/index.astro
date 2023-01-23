@@ -1,116 +1,112 @@
 ---
-import Form, {
-  ControlConfig,
-  FormGroup,
-  FormControl,
-} from "@astro-reactive/form";
-import type { Submit } from "@astro-reactive/common/types";
-import { Validators } from "@astro-reactive/validator";
-import Layout from "../components/Layout.astro";
+import Form, { ControlConfig, FormGroup, FormControl } from '@astro-reactive/form';
+import type { Submit } from '@astro-reactive/common/types';
+import { Validators } from '@astro-reactive/validator';
+import Layout from '../components/Layout.astro';
 
 const form = new FormGroup([
-  {
-    name: "username",
-    label: "Username",
-    validators: [
-      {
-        validator: Validators.required,
-        category: "info",
-      },
-    ],
-  },
-  {
-    name: "email",
-    label: "Email",
-    validators: [
-      { validator: Validators.required },
-      { validator: Validators.email, category: "warn" },
-    ],
-  },
-  {
-    name: "password",
-    label: "Password",
-    type: "password",
-    validators: [Validators.required, Validators.minLength(8)],
-  },
-  {
-    name: "rating",
-    label: "Rating",
-    type: "radio",
-    value: "5",
-    options: ["1", "2", "3", "4", "5"],
-  },
-  {
-    name: "agreement",
-    label: "Agreement",
-    type: "radio",
-    value: "yes",
-    options: [
-      { label: "Agree", value: "yes" },
-      { label: "Disagree", value: "no" },
-    ],
-  },
-  {
-    name: "size",
-    label: "Size",
-    type: "dropdown",
-    options: ["S", "M", "L", "XL", "XXL"],
-    placeholder: "-- Please choose an option --",
-  },
-  {
-    name: "comment",
-    label: "Feedback",
-    type: "textarea",
-    value: "Nice!",
-  },
-  {
-    name: "terms",
-    label: "Terms and Conditions",
-    type: "checkbox",
-    validators: [Validators.requiredChecked],
-  },
+	{
+		name: 'username',
+		label: 'Username',
+		validators: [
+			{
+				validator: Validators.required,
+				category: 'info',
+			},
+		],
+	},
+	{
+		name: 'email',
+		label: 'Email',
+		validators: [
+			{ validator: Validators.required },
+			{ validator: Validators.email, category: 'warn' },
+		],
+	},
+	{
+		name: 'password',
+		label: 'Password',
+		type: 'password',
+		validators: [Validators.required, Validators.minLength(8)],
+	},
+	{
+		name: 'rating',
+		label: 'Rating',
+		type: 'radio',
+		value: '5',
+		options: ['1', '2', '3', '4', '5'],
+	},
+	{
+		name: 'agreement',
+		label: 'Agreement',
+		type: 'radio',
+		value: 'yes',
+		options: [
+			{ label: 'Agree', value: 'yes' },
+			{ label: 'Disagree', value: 'no' },
+		],
+	},
+	{
+		name: 'size',
+		label: 'Size',
+		type: 'dropdown',
+		options: ['S', 'M', 'L', 'XL', 'XXL'],
+		placeholder: '-- Please choose an option --',
+	},
+	{
+		name: 'comment',
+		label: 'Feedback',
+		type: 'textarea',
+		value: 'Nice!',
+	},
+	{
+		name: 'terms',
+		label: 'Terms and Conditions',
+		type: 'checkbox',
+		validators: [Validators.requiredChecked],
+	},
 ]);
 
-form.name = "Simple Form";
+form.name = 'Simple Form';
 
 const config: ControlConfig = {
-  type: "checkbox",
-  name: "is-awesome",
-  label: "is Awesome?",
+	type: 'checkbox',
+	name: 'is-awesome',
+	label: 'is Awesome?',
 };
 
 // insert a control
 form.controls.push(new FormControl(config));
 
 // get the FormControl object
-const userNameControl = form.get("username");
+const userNameControl = form.get('username');
 
 // set values dynamically
-userNameControl?.setValue("RAMOOOON");
-form.get("is-awesome")?.setValue("checked");
+userNameControl?.setValue('RAMOOOON');
+form.get('is-awesome')?.setValue('checked');
 
 // setting an invalid value will cause errors as server-rendered
-form.get("email")?.setValue("invalid-email");
+form.get('email')?.setValue('invalid-email');
 
 // switch between light and dark mode
-const title = "Form Demo";
-const theme = "dark";
+const title = 'Form Demo';
+const theme = 'dark';
 
 const submit: Submit = {
-  name: "submit",
-  type: "submit",
-  value: "Let's go!",
+	name: 'submit',
+	type: 'submit',
+	value: "Let's go!",
 };
 ---
 
 <Layout title={title} theme={theme}>
-  <Form
-    validateOnLoad
-    showValidationHints
-    formGroups={form}
-    theme={theme}
-    submitControl={submit}
-    action="https://localhost"
-    method="post"
-  />
+	<Form
+		validateOnLoad
+		showValidationHints
+		formGroups={form}
+		theme={theme}
+		submitControl={submit}
+		action="https://localhost"
+		method="post"
+	/>
 </Layout>

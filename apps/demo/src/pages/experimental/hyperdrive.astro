@@ -1,23 +1,23 @@
 ---
-import Layout from "../../components/Layout.astro";
+import Layout from '../../components/Layout.astro';
 const Counter = {
-  count: 0,
-  increment() {
-    this.count++;
-  },
-  decrement() {
-    this.count--;
-  },
+	count: 0,
+	increment() {
+		this.count++;
+	},
+	decrement() {
+		this.count--;
+	},
 };
 ---
 
 <Layout title="Hyperdrive Experiment">
-  <!-- PROBLEM STATEMENT
+	<!-- PROBLEM STATEMENT
     This is the problem that `hyperdrive` is trying to solve.
     After this is rendered in the server, the Counter object is not serialized.
     When the HTML reaches the browser, it has no idea what Counter is.
    -->
-  <button onclick="Counter.increment()">
-    {Counter.count}
-  </button>
+	<button onclick="Counter.increment()">
+		{Counter.count}
+	</button>
 </Layout>

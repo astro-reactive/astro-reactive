@@ -1,7 +1,6 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "@astro-reactive/tsconfig/astro-library.json",
   "compilerOptions": {
-    "jsx": "preserve",
-    "skipLibCheck": true
+    "jsx": "preserve"
   }
 }

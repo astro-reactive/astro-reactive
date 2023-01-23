@@ -33,45 +33,44 @@ Use in an Astro page:
 
 ```astro
 ---
-import { FormControl, FormGroup } from "@astro-reactive/form/core";
-import Form from "@astro-reactive/form";
+import { FormControl, FormGroup } from '@astro-reactive/form/core';
+import Form from '@astro-reactive/form';
 
 // create a form group
 const form = new FormGroup([
   {
-    name: "username",
-    label: "Username",
+    name: 'username',
+    label: 'Username',
   },
   {
-    name: "password",
-    label: "Password",
-    type: "password",
+    name: 'password',
+    label: 'Password',
+    type: 'password',
   },
 ]);
 
 // set the name optionally
-form.name = "Simple Form";
+form.name = 'Simple Form';
 
 // you can insert a control at any point
 form.controls.push(
   new FormControl({
-    type: "checkbox",
-    name: "is-awesome",
-    label: "is Awesome?",
+    type: 'checkbox',
+    name: 'is-awesome',
+    label: 'is Awesome?',
   })
 );
 
 // you can get a FormControl object
-const userNameControl = form.get("username");
+const userNameControl = form.get('username');
 
 // you can set values dynamically
-userNameControl?.setValue("RAMOOOON");
-form.get('is-awesome')?.setValue("checked");
+userNameControl?.setValue('RAMOOOON');
+form.get('is-awesome')?.setValue('checked');
 ---
 
 <!-- the formGroups attribute takes an array of FormGroup-->
 <Form formGroups={[form]} />
-
 ```
 
 # Screenshots
@@ -105,4 +104,3 @@ Currently this only supports very basic form creation, but the goal of the proje
 ... and so much more
 
 _All contributions are welcome. Let's make the fastest web form component powered by Astro_
-

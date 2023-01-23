@@ -5,4 +5,3 @@
 Start the dev server by running: `npm run docs`
 
 👉 _[Join our contributors!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md)_
-

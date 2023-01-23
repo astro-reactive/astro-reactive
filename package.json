@@ -34,7 +34,8 @@
   "license": "ISC",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "configs/*"
   ],
   "dependencies": {
     "@changesets/cli": "^2.26.0",

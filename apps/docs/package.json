@@ -11,6 +11,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "format": "prettier -w .",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint --fix . --ext .ts,.js",
     "clean": "rimraf node_modules .turbo dist"
   },
   "dependencies": {
@@ -24,7 +27,6 @@
     "@types/react-dom": "^18.0.0",
     "astro": "^1.4.4",
     "preact": "^10.7.3",
-    "prettier-plugin-astro": "^0.7.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   },
@@ -41,7 +43,13 @@
   },
   "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
   "devDependencies": {
+    "@astro-reactive/eslint-config-custom": "*",
+    "@astro-reactive/tsconfig": "*",
+    "@types/eslint": "^8.4.10",
+    "@types/prettier": "^2.7.2",
+    "eslint": "^8.31.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.7.2",
     "rimraf": "^3.0.2"
   }
 }
-
