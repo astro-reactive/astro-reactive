@@ -49,39 +49,43 @@ const form = new FormGroup([
   },
 ]);
 
-// set the name optionally
-form.name = "Simple Form";
-
 // you can insert a control at any point
 form.controls.push(
   new FormControl({
     type: "checkbox",
-    name: "is-awesome",
+    name: "isAwesome",
     label: "is Awesome?",
   })
 );
 
+// set the value of multiple controls
+form.setValue({
+	username: 'DEFAULT',
+	isAwesome: 'checked',
+});
+
 // you can get a FormControl object
 const userNameControl = form.get("username");
 
-// you can set values dynamically
+// you can set value of specific control
 userNameControl?.setValue("RAMOOOON");
-form.get('is-awesome')?.setValue("checked");
+
 ---
 
 <Form
   formGroups={form}
+  validateOnLoad
+  showValidationHints
+  action="/submission"
+  method="post"
   submitControl={{
-    type: "submit",
-    name: "submit",
+    name: 'submit',
+    type: 'submit',
   }}
 />
-<!-- 
-  The `formGroups` attribute can take a single FormGroup
-  or an array of FormGroup for multiple fieldset blocks;
-  we are using a single FormGroup for now in this example.
--->
 ```
+
+👉 For more examples and explanations of the component properties, see the [Form API Docs](https://docs.astro-reactive.dev/en/api/form/form-component/).
 
 # Screenshots
 Result of example above:

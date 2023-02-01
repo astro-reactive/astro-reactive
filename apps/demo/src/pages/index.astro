@@ -33,7 +33,6 @@ const form = new FormGroup([
 		name: 'rating',
 		label: 'Rating',
 		type: 'radio',
-		value: '5',
 		options: ['1', '2', '3', '4', '5'],
 	},
 	{
@@ -71,19 +70,22 @@ form.name = 'Simple Form';
 
 const config: ControlConfig = {
 	type: 'checkbox',
-	name: 'is-awesome',
+	name: 'isAwesome',
 	label: 'is Awesome?',
 };
 
 // insert a control
 form.controls.push(new FormControl(config));
 
-// get the FormControl object
-const userNameControl = form.get('username');
+// set the value of multiple controls
+form.setValue({
+	username: 'RAMOOOON',
+	isAwesome: 'checked',
+});
 
-// set values dynamically
-userNameControl?.setValue('RAMOOOON');
-form.get('is-awesome')?.setValue('checked');
+// set the value of a specific control
+const ratingControl = form.get('rating');
+ratingControl?.setValue('5');
 
 // setting an invalid value will cause errors as server-rendered
 form.get('email')?.setValue('invalid-email');
