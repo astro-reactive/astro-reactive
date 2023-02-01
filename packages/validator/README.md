@@ -80,6 +80,8 @@ form.controls.push(
 -->
 ```
 
+👉 For more examples and explanations of the component properties, see the [Validators API Docs](https://docs.astro-reactive.dev/en/api/validator/validators/).
+
 # Screenshots
 
 ![Screen Shot 2022-10-15 at 1 31 11 PM](https://user-images.githubusercontent.com/4262489/195984173-c19e8cf0-bc55-41d5-8267-e3de44c6bf64.png)
