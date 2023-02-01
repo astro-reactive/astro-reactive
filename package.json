@@ -25,6 +25,7 @@
     "check": "turbo run check",
     "clean": "turbo clean",
     "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test:coverage",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
@@ -43,6 +44,7 @@
     "short-unique-id": "^4.4.4"
   },
   "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.28.3",
     "eslint-config-turbo": "^0.0.4",
     "rimraf": "^3.0.2",
     "turbo": "^1.7.1"
