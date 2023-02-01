@@ -67,7 +67,7 @@ form.setValue({
 // you can get a FormControl object
 const userNameControl = form.get("username");
 
-// you can set value of specific control
+// you can set the value of specific control
 userNameControl?.setValue("RAMOOOON");
 
 ---
