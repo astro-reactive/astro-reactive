@@ -1,9 +1,9 @@
 {
-  "name": "astro-reactive-library",
+  "name": "astro-reactive",
   "description": "Astro components for building reactive user interfaces 🚀",
   "version": "0.0.0",
   "repository": "https://github.com/astro-reactive/astro-reactive",
-  "homepage": "https://ayco.io/showcase/astro-reactive-library#readme",
+  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
   "author": {
     "name": "Ayo Ayco",
     "email": "ayo@ayco.io",
@@ -48,4 +48,3 @@
     "turbo": "^1.6.3"
   }
 }
-
