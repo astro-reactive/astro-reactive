@@ -35,7 +35,8 @@
   "workspaces": [
     "packages/*",
     "apps/*",
-    "configs/*"
+    "configs/*",
+    "resolvers"
   ],
   "dependencies": {
     "prettier-plugin-astro": "^0.7.0",
@@ -48,4 +49,3 @@
     "turbo": "^1.6.3"
   }
 }
-

@@ -7,7 +7,11 @@ import Form, {
 import type { Submit } from "@astro-reactive/common/types";
 import { Validators } from "@astro-reactive/validator";
 import Layout from "../components/Layout.astro";
+import { zodResolver } from "../../../../packages/resolvers";
+import { z } from "zod";
 
+
+zodResolver(z.object({id : z.string(), name : z.string()}))
 const form = new FormGroup([
   {
     name: "username",

@@ -4,6 +4,8 @@ export type ValidationHooks = "" | "blur" | "keypress" | "click"; // More to be 
 
 export type CategoryType = "error" | "warn" | "info";
 
+export type SchemaResolver = "zod" | "joi" | "yup";
+
 export type ValidatorRules =
   | string[]
   | { validator: string; category?: CategoryType }[];
