@@ -43,7 +43,7 @@
     "prettier-plugin-astro": "^0.7.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.8.3",
-    "vitest": "^0.25.2"
+    "vitest": "^0.28.3"
   },
   "peerDependencies": {
     "astro": "^1.5.0"
@@ -54,7 +54,8 @@
     "@astro-reactive/eslint-config-custom": "*",
     "@astro-reactive/tsconfig": "*",
     "@astro-reactive/validator": "*",
-    "short-unique-id": "^4.4.4"
+    "short-unique-id": "^4.4.4",
+    "vite": "^4.1.1"
   },
   "publishConfig": {
     "access": "public"
