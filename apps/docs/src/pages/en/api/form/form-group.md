@@ -20,3 +20,10 @@ The `FormGroup` class represents a group of controls that will be rendered as a 
 ### controls
 
 ### name
+
+## Methods
+
+| Method        | Parameters   | Returns      |
+| ------------- | ------------ | ------------ |
+| [get](#get)   | name: string | `FormControl | undefined` |
+| [name](#name) | `string`     | optional     |
