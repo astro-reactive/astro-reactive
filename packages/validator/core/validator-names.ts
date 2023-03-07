@@ -2,8 +2,6 @@
  * Provides a set of built-in validators that can be used by form controls.
  */
 
-import type { SchemaResolver } from '@astro-reactive/common';
-
 // improvement: implement min&max inclusive/exclusive
 export class Validators {
 	/**
@@ -73,10 +71,6 @@ export class Validators {
 			return `${label}:${maxLength}`;
 		}
 		return label;
-	}
-
-	static resolver(resolverName: SchemaResolver): string {
-		return 'validator-' + resolverName;
 	}
 
 	// static pattern(pattern: string | RegExp): string {

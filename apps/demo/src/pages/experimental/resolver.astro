@@ -1,0 +1,38 @@
+---
+import type { Submit } from "@astro-reactive/common";
+import Form, { FormGroup } from "@astro-reactive/form";
+import { z } from "zod";
+import { zodResolver } from "@astro-reactive/resolvers";
+import Layout from "../../components/Layout.astro";
+
+const zodFormGroup = FormGroup.from(
+  zodResolver(
+    z.object({
+      id: z.string().min(3).max(20),
+      name: z.string().optional(),
+      age: z.number(),
+      email : z.string().email().optional()
+    })
+  )
+);
+
+const submit: Submit = {
+  name: "submit",
+  type: "submit",
+  value: "Let's go!",
+};
+---
+
+<Layout title="Schema Builder Resolver">
+  <Form
+    validateOnLoad
+    showValidationHints
+    formGroups={zodFormGroup}
+    submitControl={submit}
+  />
+  <pre>{JSON.stringify(zodFormGroup, null, 2)}</pre>
+</Layout>
+
+<script>
+
+</script>
