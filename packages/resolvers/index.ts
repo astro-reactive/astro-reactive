@@ -1,2 +1,1 @@
-import zodResolver from "./zod";
-export { zodResolver };
+export * from "./zod";

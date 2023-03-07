@@ -1,4 +1,4 @@
-import type { ValidationError, ValidatorRules } from '@astro-reactive/common';
+import type { ResolvedValidator, ValidationError, ValidatorRules } from '@astro-reactive/common';
 import { Validators } from './validator-names';
 
 /**
@@ -179,4 +179,21 @@ function validateMaxLength(value: string, limit: number, category: string): Vali
 	}
 
 	return null;
+}
+
+export function transformToValidatorRules(
+	validators: ResolvedValidator[] | ValidatorRules
+): ValidatorRules {
+	return validators.map((validator) => {
+		// this means doesn't use resolver
+		if (typeof validator === 'string' || !('kind' in validator)) return validator;
+
+		if (validator.kind === 'min') return Validators.min(Number(validator.value));
+		if (validator.kind === 'max') return Validators.max(Number(validator.value));
+		if (validator.kind === 'required') return Validators.required;
+		if (validator.kind === 'email') return Validators.email;
+
+		// TODO: handle when no validator exists
+		return '';
+	});
 }

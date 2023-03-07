@@ -4,9 +4,10 @@ export type ValidationHooks = "" | "blur" | "keypress" | "click"; // More to be 
 
 export type CategoryType = "error" | "warn" | "info";
 
-export type ValidatorRules =
-  | string[]
-  | { validator: string; category?: CategoryType }[];
+export type ValidatorRules = (
+  | string
+  | { validator: string; category?: CategoryType }
+)[];
 
 export type ValidationResult = true | ValidationError;
 

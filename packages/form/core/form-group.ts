@@ -1,7 +1,7 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
-import { Validators } from '@astro-reactive/validator';
-import type { ResolvedSchema } from '@astro-reactive/common';
+import { transformToValidatorRules } from '@astro-reactive/validator';
+import type { ResolvedField } from '@astro-reactive/common';
 
 /**
  *  Represents a group of controls that will be rendered as a fieldset element in a form.
@@ -39,22 +39,14 @@ export class FormGroup {
 		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));
 	}
 
-	static from(resolvedSchema: ResolvedSchema[]) {
-		const FormControls: ControlConfig[] = [];
+	static from(resolvedSchema: ResolvedField[]) {
+		const controls: ControlConfig[] = [];
 
 		for (const field of resolvedSchema) {
 			const fieldName = field.name;
 			const validators = field.validators;
 
-			const transformedValidators = validators.map((validator) => {
-				if (validator.kind === 'min') return Validators.min(Number(validator.value));
-				if (validator.kind === 'max') return Validators.max(Number(validator.value));
-				if (validator.kind === 'required') return Validators.required;
-				if (validator.kind === 'email') return Validators.email;
-
-				// TODO: handle when no validator exists
-				return '';
-			});
+			const transformedValidators = transformToValidatorRules(validators);
 
 			const control: ControlConfig = {
 				name: fieldName,
@@ -62,9 +54,9 @@ export class FormGroup {
 				validators: transformedValidators,
 			};
 
-			FormControls.push(control);
+			controls.push(control);
 		}
 
-		return new FormGroup(FormControls);
+		return new FormGroup(controls);
 	}
 }
