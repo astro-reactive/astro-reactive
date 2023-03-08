@@ -1,7 +1,5 @@
 export interface ResolvedField {
-  name: string;
-  type?: string;
-  validators: ResolvedValidator[];
+  [x: string]: ResolvedValidator[];
 }
 
 export type Kind = "max" | "min" | "required" | "email";

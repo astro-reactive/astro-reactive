@@ -1,12 +1,15 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
-import { transformToValidatorRules } from '@astro-reactive/validator';
 import type { ResolvedField } from '@astro-reactive/common';
+
+type TypedControlName<T> = Omit<ControlConfig, 'name'> & {
+	name: Extract<keyof T, string>;
+} & ControlConfig;
 
 /**
  *  Represents a group of controls that will be rendered as a fieldset element in a form.
  */
-export class FormGroup {
+export class FormGroup<FormValues> {
 	controls: FormControl[];
 	name?: string;
 	id?: string;
@@ -16,13 +19,25 @@ export class FormGroup {
 	 * @param controls - an array of `FormControl` configuration
 	 * @param name - optional form name
 	 */
-	constructor(controls: ControlConfig[], name = '') {
+	constructor(
+		controls: TypedControlName<FormValues>[],
+		{
+			name = '',
+			resolver = [] as unknown as ResolvedField,
+		}: { name?: string; resolver?: ResolvedField }
+	) {
 		const uid = new ShortUniqueId({ length: 9 });
 		this.name = name;
 		this.id = 'arl-' + uid();
 		this.controls = controls
 			.filter((control) => control.type !== 'submit')
-			.map((control) => new FormControl(control));
+			.map(
+				(control) =>
+					new FormControl({
+						...control,
+						validators: resolver && resolver[control.name] ? resolver[control.name]! : [],
+					})
+			);
 	}
 
 	/**
@@ -37,26 +52,5 @@ export class FormGroup {
 	 */
 	setValue(values: object) {
 		Object.keys(values).forEach((name) => this.get(name)?.setValue(values[name as keyof object]));
-	}
-
-	static from(resolvedSchema: ResolvedField[]) {
-		const controls: ControlConfig[] = [];
-
-		for (const field of resolvedSchema) {
-			const fieldName = field.name;
-			const validators = field.validators;
-
-			const transformedValidators = transformToValidatorRules(validators);
-
-			const control: ControlConfig = {
-				name: fieldName,
-				label: fieldName,
-				validators: transformedValidators,
-			};
-
-			controls.push(control);
-		}
-
-		return new FormGroup(controls);
 	}
 }

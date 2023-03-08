@@ -1,23 +1,33 @@
 ---
 import type { Submit } from "@astro-reactive/common";
-import Form, { FormControl, FormGroup } from "@astro-reactive/form";
+import Form, { FormGroup } from "@astro-reactive/form";
 import { z } from "zod";
-import { zodResolver } from "@astro-reactive/resolvers";
 import Layout from "../../components/Layout.astro";
-import { withZod } from "@astro-reactive/resolvers";
+import { zodResolver } from "@astro-reactive/resolvers";
 
-console.log({ name: z.string() });
+const zodSchema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+  age: z.number().optional(),
+  familySize: z.any(),
+});
 
-const zodFormGroup = FormGroup.from(
-  zodResolver({
-    id: z.string().min(3).max(20),
-    name: z.string().optional(),
-    age: z.number(),
-    email: z.string().email().optional(),
-  })
+type FieldValues = z.infer<typeof zodSchema>;
+
+const formGroup = new FormGroup<FieldValues>(
+  [
+    { name: "name", label: "Name" },
+    { name: "email", label: "Email", placeholder: "Please type your email" },
+    { name: "age", label: "Age" },
+    {
+      name: "familySize",
+      label: "Family Size",
+      type: "dropdown",
+      options: ["1", "2", "3", "4"],
+    },
+  ],
+  { resolver: zodResolver(zodSchema) }
 );
-
-zodFormGroup.controls.push(new FormControl({ name : "lastName", label : "Last Name", validators : withZod(z.string().min(5).optional())}))
 
 const submit: Submit = {
   name: "submit",
@@ -30,10 +40,10 @@ const submit: Submit = {
   <Form
     validateOnLoad
     showValidationHints
-    formGroups={zodFormGroup}
+    formGroups={[formGroup]}
     submitControl={submit}
   />
-  <pre>{JSON.stringify(zodFormGroup, null, 2)}</pre>
+  <pre>{JSON.stringify(formGroup, null, 2)}</pre>
 </Layout>
 
 <script></script>
