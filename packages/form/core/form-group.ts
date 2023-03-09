@@ -9,7 +9,7 @@ type TypedControlName<T> = Omit<ControlConfig, 'name'> & {
 /**
  *  Represents a group of controls that will be rendered as a fieldset element in a form.
  */
-export class FormGroup<FormValues> {
+export class FormGroup<FormValues = Record<string, never>> {
 	controls: FormControl[];
 	name?: string;
 	id?: string;
