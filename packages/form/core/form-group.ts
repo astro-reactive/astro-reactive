@@ -1,6 +1,6 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
-import type { ResolvedField } from '@astro-reactive/common';
+import type { ResolvedField, ResolvedValidator } from '@astro-reactive/common';
 
 type TypedControlName<T> = Omit<ControlConfig, 'name'> & {
 	name: Extract<keyof T, string>;
@@ -21,13 +21,10 @@ export class FormGroup<FormValues> {
 	 */
 	constructor(
 		controls: TypedControlName<FormValues>[],
-		{
-			name = '',
-			resolver = [] as unknown as ResolvedField,
-		}: { name?: string; resolver?: ResolvedField }
+		formConfig?: { name?: string; resolver?: ResolvedField }
 	) {
 		const uid = new ShortUniqueId({ length: 9 });
-		this.name = name;
+		this.name = formConfig?.name ?? '';
 		this.id = 'arl-' + uid();
 		this.controls = controls
 			.filter((control) => control.type !== 'submit')
@@ -35,7 +32,10 @@ export class FormGroup<FormValues> {
 				(control) =>
 					new FormControl({
 						...control,
-						validators: resolver && resolver[control.name] ? resolver[control.name]! : [],
+						validators:
+							formConfig?.resolver && formConfig.resolver[control.name]
+								? formConfig.resolver[control.name] ?? ([] as ResolvedValidator[])
+								: [],
 					})
 			);
 	}
