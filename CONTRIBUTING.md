@@ -16,7 +16,7 @@ The [issues page](https://github.com/astro-reactive/astro-reactive/issues?q=is%3
 
 If you don't find anything there, we are happy to help you get your contribution in.
 
-You can always [create a new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for your own idea, [post on our discussions](https://github.com/astro-reactive/astro-reactive/discussions) or join our [Discord](https://discord.gg/fkpkKdPJ).
+You can always [create a new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for your own idea, [post on our discussions](https://github.com/astro-reactive/astro-reactive/discussions) or join our [Discord](https://discord.gg/kkvW7GYNAp).
 
 # The Astro Reactive Library
 
@@ -49,13 +49,13 @@ We mainly use the `demo` app to see changes we make on the packages. Do the foll
 1. Fork the project then clone to your computer
 
 ```
-git clone git@github.com:<your-user-name>/astro-reactive-library.git
+git clone git@github.com:<your-user-name>/astro-reactive.git
 ```
 
 2. Go into the project directory
 
 ```
-cd astro-reactive-library
+cd astro-reactive
 ```
 
 3. Install the node dependencies
@@ -124,9 +124,11 @@ Thank you again for your interest in contributing!
 
 📝 Check the [discussion board](https://github.com/astro-reactive/astro-reactive/discussions) for announcements or post your messages and questions
 
-💬 Hang-out with the team on our [Discord](https://discord.gg/fkpkKdPJ) to share feedback, get support, or just have some laughs over memes 😅
+💬 Hang-out with the team on our [Discord](https://discord.gg/kkvW7GYNAp) to share feedback, get support, or just have some laughs over memes 😅
 
 🛠️ Create a [new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for bugs found or improvement ideas
+
+<!--
 
 ## Play around examples:
 
@@ -143,3 +145,4 @@ Thank you again for your interest in contributing!
     />
   </a>
 
+-->

@@ -1,96 +1,96 @@
 ---
-import Form, { FormGroup } from "@astro-reactive/form";
-import { Validators } from "@astro-reactive/validator";
-import Layout from "../components/Layout.astro";
+import Form, { FormGroup } from '@astro-reactive/form';
+import { Validators } from '@astro-reactive/validator';
+import Layout from '../components/Layout.astro';
 
 const baseForm = new FormGroup([
-  {
-    name: "crust",
-    label: "Crust",
-    type: "radio",
-    options: [{ label: "Garlic", value: "garlic" }],
-  },
-  {
-    name: "size",
-    label: "Size",
-    type: "radio",
-    options: ["Small", "Medium", "Large"],
-  },
-  {
-    name: "sauce",
-    label: "Sauce",
-    type: "radio",
-    options: ["Tomato", "Barbeque"],
-  },
+	{
+		name: 'crust',
+		label: 'Crust',
+		type: 'radio',
+		options: [{ label: 'Garlic', value: 'garlic' }],
+	},
+	{
+		name: 'size',
+		label: 'Size',
+		type: 'radio',
+		options: ['Small', 'Medium', 'Large'],
+	},
+	{
+		name: 'sauce',
+		label: 'Sauce',
+		type: 'radio',
+		options: ['Tomato', 'Barbeque'],
+	},
 ]);
 
 const toppingsForm = new FormGroup([
-  {
-    name: "mushrooms",
-    label: "Mushrooms",
-    type: "checkbox",
-  },
-  {
-    name: "extraCheese",
-    label: "Extra Cheese",
-    type: "checkbox",
-  },
-  {
-    name: "onions",
-    label: "Onions",
-    type: "checkbox",
-  },
-  {
-    name: "peppers",
-    label: "Peppers",
-    type: "checkbox",
-  },
-  {
-    name: "pepperoni",
-    label: "Pepperoni",
-    type: "checkbox",
-  },
-  {
-    name: "sausage",
-    label: "Sausage",
-    type: "checkbox",
-  },
-  {
-    name: "chicken",
-    label: "Chicken",
-    type: "checkbox",
-  },
-  {
-    name: "pineapple",
-    label: "Pineapple",
-    type: "checkbox",
-  },
+	{
+		name: 'mushrooms',
+		label: 'Mushrooms',
+		type: 'checkbox',
+	},
+	{
+		name: 'extraCheese',
+		label: 'Extra Cheese',
+		type: 'checkbox',
+	},
+	{
+		name: 'onions',
+		label: 'Onions',
+		type: 'checkbox',
+	},
+	{
+		name: 'peppers',
+		label: 'Peppers',
+		type: 'checkbox',
+	},
+	{
+		name: 'pepperoni',
+		label: 'Pepperoni',
+		type: 'checkbox',
+	},
+	{
+		name: 'sausage',
+		label: 'Sausage',
+		type: 'checkbox',
+	},
+	{
+		name: 'chicken',
+		label: 'Chicken',
+		type: 'checkbox',
+	},
+	{
+		name: 'pineapple',
+		label: 'Pineapple',
+		type: 'checkbox',
+	},
 ]);
 
 const infoForm = new FormGroup([
-  {
-    name: "name",
-    label: "Name",
-    validators: [Validators.required],
-  },
-  {
-    name: "address",
-    label: "Delivery Address",
-    validators: [Validators.required],
-  },
-  {
-    name: "contact",
-    label: "Contact Number",
-    validators: [Validators.required],
-  },
+	{
+		name: 'name',
+		label: 'Name',
+		validators: [Validators.required],
+	},
+	{
+		name: 'address',
+		label: 'Delivery Address',
+		validators: [Validators.required],
+	},
+	{
+		name: 'contact',
+		label: 'Contact Number',
+		validators: [Validators.required],
+	},
 ]);
 
-baseForm.name = "Base";
-toppingsForm.name = "Toppings";
-infoForm.name = "Customer Info";
-infoForm.get("contact")?.setValidators([Validators.minLength(9)]);
+baseForm.name = 'Base';
+toppingsForm.name = 'Toppings';
+infoForm.name = 'Customer Info';
+infoForm.get('contact')?.setValidators([Validators.minLength(9)]);
 ---
 
 <Layout title="Pizza Form Demo">
-  <Form showValidationHints formGroups={[baseForm, toppingsForm, infoForm]} />
+	<Form showValidationHints formGroups={[baseForm, toppingsForm, infoForm]} />
 </Layout>

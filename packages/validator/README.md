@@ -80,6 +80,8 @@ form.controls.push(
 -->
 ```
 
+👉 For more examples and explanations of the component properties, see the [Validators API Docs](https://docs.astro-reactive.dev/en/api/validator/validators/).
+
 # Screenshots
 
 ![Screen Shot 2022-10-15 at 1 31 11 PM](https://user-images.githubusercontent.com/4262489/195984173-c19e8cf0-bc55-41d5-8267-e3de44c6bf64.png)
@@ -101,5 +103,5 @@ This validation library is designed to work with [Astro Reactive Form](https://w
 
 👉 _All [contributions](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md) are welcome. Let's make the validation library for Astro._
 
-👉 _This package is under rigorous development. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md)_.
+👉 _This package is a work in progress. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md)_.
 

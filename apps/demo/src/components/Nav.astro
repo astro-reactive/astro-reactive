@@ -1,25 +1,25 @@
 ---
 const links = [
-  { label: "Home", url: "/" },
-  { label: "Pizza Delivery", url: "/pizza-delivery" },
-  { label: "Job Application", url: "/job-application" },
-  { label: "Docs Examples", url: "/examples" },
-  { label: "Experimental", url: "/experimental" },
+	{ label: 'Home', url: '/' },
+	{ label: 'Pizza Delivery', url: '/pizza-delivery' },
+	{ label: 'Job Application', url: '/job-application' },
+	{ label: 'Docs Examples', url: '/examples' },
+	{ label: 'Experimental', url: '/experimental' },
 ];
 ---
 
 <nav>
-  {links.map((link) => <a href={link.url}>{link.label}</a>)}
+	{links.map((link) => <a href={link.url}>{link.label}</a>)}
 </nav>
 
 <style>
-  nav a::after {
-    content: " | ";
-  }
-  nav a {
-    text-decoration: none;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
+	nav a::after {
+		content: ' | ';
+	}
+	nav a {
+		text-decoration: none;
+	}
+	nav a:hover {
+		text-decoration: underline;
+	}
 </style>
