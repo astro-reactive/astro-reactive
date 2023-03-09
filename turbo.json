@@ -21,6 +21,7 @@
       "cache": false
     },
     "test": {
+      "dependsOn": ["^build"],
       "env": ["CI"],
       "outputs": []
     },
