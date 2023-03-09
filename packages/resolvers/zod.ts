@@ -15,13 +15,13 @@ export function zodResolver(schema: ZodObject<any>) {
 
     const validators: ResolvedValidator[] = [];
 
-    if (fieldDefinition.checks.length <= 0) break;
-    if (isAny) break;
+    if (isAny) continue;
     if (!isOptional) validators.push({ kind: "required" });
 
-    fieldDefinition.checks.forEach((validation: any) => {
-      validators.push(validation);
-    });
+    fieldDefinition.checks.length &&
+      fieldDefinition.checks.forEach((validation: any) => {
+        validators.push(validation);
+      });
 
     resolvedMap.set(field, validators);
   }

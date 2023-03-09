@@ -5,7 +5,8 @@
   "main": "index.ts",
   "dependencies": {
     "@astro-reactive/common": "*",
-    "@astro-reactive/tsconfig": "*"
+    "@astro-reactive/tsconfig": "*",
+    "vitest": "^0.25.2"
   },
   "devDependencies": {
     "tsup": "^6.6.3",
@@ -24,7 +25,10 @@
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
     "check": "astro check && tsc --noEmit",
-    "clean": "rimraf node_modules .turbo dist"
+    "clean": "rimraf node_modules .turbo dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "repository": {
     "type": "git"
