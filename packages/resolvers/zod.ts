@@ -5,7 +5,7 @@ export function zodResolver(schema: ZodObject<any>) {
   const resolvedMap = new Map();
   const schemaDefinition = schema._def.shape();
 
-  for (let field in schemaDefinition) {
+  for (const field in schemaDefinition) {
     const definition = schemaDefinition[field]!._def;
     const isOptional =
       definition.typeName === ZodFirstPartyTypeKind.ZodOptional;
@@ -18,7 +18,7 @@ export function zodResolver(schema: ZodObject<any>) {
     if (fieldDefinition.checks.length <= 0) break;
     if (isAny) break;
     if (!isOptional) validators.push({ kind: "required" });
-    
+
     fieldDefinition.checks.forEach((validation: any) => {
       validators.push(validation);
     });

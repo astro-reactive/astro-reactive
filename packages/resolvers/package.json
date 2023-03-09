@@ -4,13 +4,28 @@
   "description": "",
   "main": "index.ts",
   "dependencies": {
-    "@astro-reactive/tsconfig": "*",
-    "@astro-reactive/common": "*"
+    "@astro-reactive/common": "*",
+    "@astro-reactive/tsconfig": "*"
   },
   "devDependencies": {
+    "tsup": "^6.6.3",
     "zod": "^3.20.2"
   },
-  "scripts": {},
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "tsup index.ts --minify --format esm,cjs,iife",
+    "format": "prettier -w .",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint --fix . --ext .ts,.js",
+    "check": "astro check && tsc --noEmit",
+    "clean": "rimraf node_modules .turbo dist"
+  },
   "repository": {
     "type": "git"
   },
