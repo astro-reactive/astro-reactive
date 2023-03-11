@@ -2,7 +2,6 @@
   "name": "@astro-reactive/resolvers",
   "version": "0.0.0",
   "description": "",
-  "main": "index.ts",
   "dependencies": {
     "@astro-reactive/common": "*",
     "@astro-reactive/tsconfig": "*",
@@ -13,14 +12,20 @@
     "zod": "^3.20.2"
   },
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./index.ts"
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
   },
   "files": [
-    "dist/"
+    "dist/",
+    "zod/"
   ],
   "scripts": {
-    "build": "tsup index.ts --minify --format esm,cjs,iife",
+    "build": "tsup index.ts --minify --format esm,cjs,iife --dts",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
