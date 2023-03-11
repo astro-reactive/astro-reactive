@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { z } from "zod";
-import { zodResolver } from "../zod";
+import { zodResolver } from "..";
 
 describe("Zod Resolver", () => {
   test("resolves given zod schema properly", () => {
