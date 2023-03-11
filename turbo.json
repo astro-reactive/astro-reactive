@@ -28,6 +28,8 @@
     "check": {
       "dependsOn": ["^build"]
     },
-    "clean": {}
+    "clean": {
+      "cache": false
+    }
   }
 }

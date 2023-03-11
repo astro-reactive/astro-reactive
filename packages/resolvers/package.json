@@ -4,11 +4,11 @@
   "description": "",
   "dependencies": {
     "@astro-reactive/common": "*",
-    "@astro-reactive/tsconfig": "*",
-    "vitest": "^0.25.2"
+    "@astro-reactive/tsconfig": "*"
   },
   "devDependencies": {
     "tsup": "^6.6.3",
+    "vitest": "^0.25.2",
     "zod": "^3.20.2"
   },
   "type": "module",
@@ -44,5 +44,8 @@
   "bugs": {
     "url": "https://github.com/ayoayco/astro-reactive-library/issues"
   },
-  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme"
+  "homepage": "https://github.com/ayoayco/astro-reactive-library#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
