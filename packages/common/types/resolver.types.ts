@@ -1,11 +1,11 @@
+import type { ValidationType } from "./validator.types";
+
 export interface ResolvedField {
   [x: string]: ResolvedValidator[];
 }
 
-export type Kind = "max" | "min" | "required" | "email";
-
 export interface ResolvedValidator {
-  kind: Kind;
+  kind: ValidationType;
   value?: string | number;
   message?: string;
 }

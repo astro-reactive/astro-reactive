@@ -2,9 +2,17 @@ import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
 import type { ResolvedField, ResolvedValidator } from '@astro-reactive/common';
 
+/**
+ * Generate `ControlConfig`s with typed name property.
+ */
 type TypedControlName<T> = Omit<ControlConfig, 'name'> & {
 	name: Extract<keyof T, string>;
 } & ControlConfig;
+
+interface FormConfig {
+	name?: string;
+	resolver?: ResolvedField;
+}
 
 /**
  *  Represents a group of controls that will be rendered as a fieldset element in a form.
@@ -19,10 +27,7 @@ export class FormGroup<FormValues = Record<string, never>> {
 	 * @param controls - an array of `FormControl` configuration
 	 * @param name - optional form name
 	 */
-	constructor(
-		controls: TypedControlName<FormValues>[],
-		formConfig?: { name?: string; resolver?: ResolvedField }
-	) {
+	constructor(controls: TypedControlName<FormValues>[], formConfig?: FormConfig) {
 		const uid = new ShortUniqueId({ length: 9 });
 		this.name = formConfig?.name ?? '';
 		this.id = 'arl-' + uid();
