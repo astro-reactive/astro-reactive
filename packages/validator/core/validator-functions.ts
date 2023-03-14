@@ -1,4 +1,4 @@
-import type { ResolvedValidator, ValidationError, ValidatorRules } from '@astro-reactive/common';
+import type { ResolvedValidator, ValidationError, ValidatorRule } from '@astro-reactive/common';
 import { Validators } from './validator-names';
 
 /**
@@ -7,7 +7,7 @@ import { Validators } from './validator-names';
  * @param validators - names of validation logic to be applied
  * @returns errors - array of errors `ValidationError`
  */
-export function validate(value: string, validators: ValidatorRules): ValidationError[] {
+export function validate(value: string, validators: ValidatorRule[]): ValidationError[] {
 	return validators
 		.map((validator) => {
 			if (typeof validator === 'string') {
@@ -182,8 +182,8 @@ function validateMaxLength(value: string, limit: number, category: string): Vali
 }
 
 export function transformToValidatorRules(
-	validators: ResolvedValidator[] | ValidatorRules
-): ValidatorRules {
+	validators: ResolvedValidator[] | ValidatorRule[]
+): ValidatorRule[] {
 	return validators.map((validator) => {
 		// this means doesn't use resolver
 		if (typeof validator === 'string' || !('kind' in validator)) return validator;

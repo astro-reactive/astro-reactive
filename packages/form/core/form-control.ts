@@ -9,7 +9,7 @@ import type {
 	ValidationError,
 	TextArea,
 	ControlBase,
-	ValidatorRules,
+	ValidatorRule,
 	ValidationHooks,
 } from '@astro-reactive/common';
 import { transformToValidatorRules } from '@astro-reactive/validator';
@@ -32,16 +32,16 @@ export class FormControl {
 	private _isValid = true;
 	private _isPristine = true;
 	private _placeholder: string | null = null;
-	private _validators: ValidatorRules = [];
+	private _validators: ValidatorRule[] = [];
 	private _triggerValidationOn: ValidationHooks;
 	private _errors: ValidationError[] = [];
 	private _options: string[] | ControlOption[] = [];
 	private _rows: number | null = null;
 	private _cols: number | null = null;
 
-	private validate: (value: string, validators: ValidatorRules) => ValidationError[] = (
+	private validate: (value: string, validators: ValidatorRule[]) => ValidationError[] = (
 		value: string,
-		validators: ValidatorRules
+		validators: ValidatorRule[]
 	) => {
 		value;
 		validators;
