@@ -1,6 +1,6 @@
 import { ControlConfig, FormControl } from './form-control';
 import ShortUniqueId from 'short-unique-id';
-import type { ResolvedField, ResolvedValidator } from '@astro-reactive/common';
+import type { ValidatorRule } from '@astro-reactive/common';
 
 /**
  * Generate `ControlConfig`s with typed name property.
@@ -11,7 +11,7 @@ type TypedControlName<T> = Omit<ControlConfig, 'name'> & {
 
 interface FormConfig {
 	name?: string;
-	resolver?: ResolvedField;
+	resolver?: Map<string, ValidatorRule[]>;
 }
 
 /**
@@ -33,16 +33,13 @@ export class FormGroup<FormValues = Record<string, never>> {
 		this.id = 'arl-' + uid();
 		this.controls = controls
 			.filter((control) => control.type !== 'submit')
-			.map(
-				(control) =>
-					new FormControl({
-						...control,
-						validators:
-							formConfig?.resolver && formConfig.resolver[control.name]
-								? formConfig.resolver[control.name] ?? ([] as ResolvedValidator[])
-								: [],
-					})
-			);
+			.map((control) => {
+				if (!formConfig?.resolver) return new FormControl(control);
+				return new FormControl({
+					...control,
+					validators: formConfig.resolver.get(control.name) ?? [],
+				});
+			});
 	}
 
 	/**

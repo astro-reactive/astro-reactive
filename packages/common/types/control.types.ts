@@ -1,4 +1,3 @@
-import type { ResolvedValidator } from "./resolver.types";
 import type { ValidationHooks, ValidatorRule } from "./validator.types";
 
 /**
@@ -39,7 +38,7 @@ export interface ControlBase {
   value?: string | number | string[];
   label?: string;
   placeholder?: string;
-  validators?: ValidatorRule[] | ResolvedValidator[];
+  validators?: ValidatorRule[];
   triggerValidationOn?: ValidationHooks;
 }
 

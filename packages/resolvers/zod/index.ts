@@ -1,7 +1,10 @@
 import { ZodFirstPartyTypeKind, ZodObject } from "zod";
-import type { ResolvedField, ResolvedValidator } from "@astro-reactive/common";
+import type { ResolvedValidator, ValidatorRule } from "@astro-reactive/common";
+import { transformToValidatorRules } from "@astro-reactive/validator/core";
 
-export function zodResolver(schema: ZodObject<any>): ResolvedField {
+export function zodResolver(
+  schema: ZodObject<any>
+): Map<string, ValidatorRule[]> {
   const resolvedMap = new Map();
   const schemaDefinition = schema._def.shape();
 
@@ -23,7 +26,8 @@ export function zodResolver(schema: ZodObject<any>): ResolvedField {
         validators.push(validation);
       });
 
-    resolvedMap.set(field, validators);
+    resolvedMap.set(field, transformToValidatorRules(validators));
   }
-  return Object.fromEntries(resolvedMap.entries());
+
+  return resolvedMap;
 }

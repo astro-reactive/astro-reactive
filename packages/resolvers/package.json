@@ -4,7 +4,8 @@
   "description": "",
   "dependencies": {
     "@astro-reactive/common": "*",
-    "@astro-reactive/tsconfig": "*"
+    "@astro-reactive/tsconfig": "*",
+    "@astro-reactive/validator": "*"
   },
   "devDependencies": {
     "tsup": "^6.6.3",
@@ -25,7 +26,7 @@
     "zod/"
   ],
   "scripts": {
-    "build": "tsup index.ts --minify --format esm,cjs,iife --dts --treeshake",
+    "build": "tsup index.ts --minify --format esm,cjs --loader '.astro=empty' --dts --treeshake",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",

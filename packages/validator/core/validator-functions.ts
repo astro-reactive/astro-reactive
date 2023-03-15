@@ -181,9 +181,7 @@ function validateMaxLength(value: string, limit: number, category: string): Vali
 	return null;
 }
 
-export function transformToValidatorRules(
-	validators: ResolvedValidator[] | ValidatorRule[]
-): ValidatorRule[] {
+export function transformToValidatorRules(validators: ResolvedValidator[]): ValidatorRule[] {
 	return validators.map((validator) => {
 		// this means doesn't use resolver
 		if (typeof validator === 'string' || !('kind' in validator)) return validator;

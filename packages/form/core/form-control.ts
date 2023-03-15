@@ -12,7 +12,6 @@ import type {
 	ValidatorRule,
 	ValidationHooks,
 } from '@astro-reactive/common';
-import { transformToValidatorRules } from '@astro-reactive/validator';
 import ShortUniqueId from 'short-unique-id';
 
 /**
@@ -72,7 +71,7 @@ export class FormControl {
 		this._label = label;
 		this._placeholder = placeholder;
 		this._triggerValidationOn = triggerValidationOn;
-		this._validators = transformToValidatorRules(validators);
+		this._validators = validators;
 
 		if (type === 'radio' || type === 'dropdown') {
 			const { options = [] } = config as Radio | Dropdown;
@@ -154,7 +153,7 @@ export class FormControl {
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
-		this._errors = this.validate(value, transformToValidatorRules(this.config.validators ?? []));
+		this._errors = this.validate(value, this.config.validators ?? []);
 	}
 
 	/**
@@ -162,7 +161,7 @@ export class FormControl {
 	 * @param validators - array of `Validators` return value
 	 */
 	setValidators(validators: string[]) {
-		this._validators = transformToValidatorRules(validators);
+		this._validators = validators;
 		const valueStr: string = this._value?.toString() || '';
 		this._errors = this.validate(valueStr, this._validators || []);
 	}
