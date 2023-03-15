@@ -1,8 +1,6 @@
-import type { ValidationType } from "./validator.types";
+import type { ValidationType, ValidatorRule } from "./validator.types";
 
-export interface ResolvedField {
-  [x: string]: ResolvedValidator[];
-}
+export type ResolvedField = Map<string, ValidatorRule[]>;
 
 export interface ResolvedValidator {
   kind: ValidationType;
