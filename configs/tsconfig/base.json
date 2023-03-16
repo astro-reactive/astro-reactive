@@ -3,5 +3,6 @@
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
     "skipLibCheck": true
-  }
+  },
+  "exclude": ["node_modules"]
 }
