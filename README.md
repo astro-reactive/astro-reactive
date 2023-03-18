@@ -1,5 +1,3 @@
-*FYI: We still have not published support for Astro v2. We will get to this soon. Thanks!*
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   <br />
