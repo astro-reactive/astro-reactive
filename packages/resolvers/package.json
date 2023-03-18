@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "tsup": "^6.6.3",
-    "vitest": "^0.25.2",
+    "vitest": "^0.29.3",
     "zod": "^3.20.2"
   },
   "type": "module",
