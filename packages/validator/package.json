@@ -34,7 +34,7 @@
     "lint:fix": "eslint --fix . --ext .ts,.js",
     "check": "astro check && tsc --noEmit",
     "clean": "rimraf node_modules .turbo dist",
-    "build:core": "tsup ./core/index.ts -d core/dist --format esm,cjs --treeshake --dts",
+    "build:core": "tsup ./core/index.ts -d core/dist --format esm,cjs --treeshake --dts --minify",
     "build": "npm run build:core"
   },
   "devDependencies": {

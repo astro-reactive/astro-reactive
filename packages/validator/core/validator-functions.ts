@@ -181,6 +181,10 @@ function validateMaxLength(value: string, limit: number, category: string): Vali
 	return null;
 }
 
+/**
+ * @param validators resolved validators from resolver function
+ * @returns array of ValidatorRule
+ */
 export function transformToValidatorRules(validators: ResolvedValidator[]): ValidatorRule[] {
 	return validators.map((validator) => {
 		// this means doesn't use resolver
@@ -191,7 +195,6 @@ export function transformToValidatorRules(validators: ResolvedValidator[]): Vali
 		if (validator.kind === 'required') return Validators.required;
 		if (validator.kind === 'email') return Validators.email;
 
-		// TODO: handle when no validator exists
 		return '';
 	});
 }

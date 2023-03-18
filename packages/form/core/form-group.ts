@@ -20,7 +20,7 @@ interface FormConfig {
 /**
  *  Represents a group of controls that will be rendered as a fieldset element in a form.
  */
-export class FormGroup<FormValues = Record<string, never>> {
+export class FormGroup<T = Record<string, never>> {
 	controls: FormControl[];
 	name?: string;
 	id?: string;
@@ -30,7 +30,7 @@ export class FormGroup<FormValues = Record<string, never>> {
 	 * @param controls - an array of `FormControl` configuration
 	 * @param name - optional form name
 	 */
-	constructor(controls: TypedControlName<FormValues>[], formConfig?: FormConfig) {
+	constructor(controls: TypedControlName<T>[], formConfig?: FormConfig) {
 		const uid = new ShortUniqueId({ length: 9 });
 		this.name = formConfig?.name ?? '';
 		this.id = 'arl-' + uid();
