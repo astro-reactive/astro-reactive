@@ -171,7 +171,7 @@ export class FormControl {
 	 */
 	setValidateOnLoad(validateOnLoad: boolean) {
 		if (validateOnLoad) {
-			import('@astro-reactive/validator').then((validator) => {
+			import('@astro-reactive/validator/core').then((validator) => {
 				if (validator) {
 					this.validate = validator.validate;
 
