@@ -9,7 +9,7 @@ Consider the following code:
 ```astro
 ---
 import Form, { FormGroup } from '@astro-reactive/form';
-import { Validators } from '@astro-reactive/validator/core';
+import { Validators } from '@astro-reactive/validator';
 
 const form = new FormGroup([
   {
