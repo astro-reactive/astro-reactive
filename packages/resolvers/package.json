@@ -8,6 +8,7 @@
     "@astro-reactive/validator": "*"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "tsup": "^6.6.3",
     "vitest": "^0.29.3",
     "zod": "^3.20.2"
@@ -19,14 +20,22 @@
     ".": {
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
+    },
+    "./zod": {
+      "types": "./zod/dist/index.d.ts",
+      "require": "./zod/dist/index.cjs",
+      "import": "./zod/dist/index.js"
     }
   },
   "files": [
-    "dist/",
-    "zod/"
+    "dist",
+    "src",
+    "zod"
   ],
   "scripts": {
-    "build": "tsup index.ts --minify --format esm,cjs --loader '.astro=empty' --dts --treeshake",
+    "build:src": "tsup src/index.ts --minify --format esm,cjs --loader '.astro=empty' --dts --treeshake",
+    "build:zod": "tsup zod/index.ts --minify --format esm,cjs --loader '.astro=empty' --dts --treeshake -d zod/dist",
+    "build": "run-s build:*",
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
@@ -39,7 +48,10 @@
   "repository": {
     "type": "git"
   },
-  "keywords": [],
+  "keywords": [
+    "astro",
+    "zod"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {

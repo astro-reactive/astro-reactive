@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ResolvedField, ResolvedValidator } from "@astro-reactive/common";
-import { transformToValidatorRules } from "@astro-reactive/validator/core";
+import { transformToValidatorRules } from "..";
 
 /**
  * @param schema zod schema to resolve

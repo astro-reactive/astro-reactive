@@ -25,7 +25,7 @@ Import your resolver of choice from `@astro-reactive/resolvers` and pass it your
 ```astro
 ---
 import Form, { FormGroup } from '@astro-reactive/form';
-import { zodResolver } from '@astro-reactive/resolvers';
+import { zodResolver } from '@astro-reactive/resolvers/zod';
 import { z } from 'zod';
 
 // define your zod schema
