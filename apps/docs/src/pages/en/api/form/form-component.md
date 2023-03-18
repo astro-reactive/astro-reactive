@@ -92,7 +92,7 @@ const nameForm = new FormGroup(
       value: 'Doe',
     },
   ],
-  'Name'
+  { name: 'Name' }
 );
 
 const skills = new FormGroup(
@@ -118,7 +118,7 @@ const skills = new FormGroup(
       label: 'Vue',
     },
   ],
-  'Skills'
+  { name: 'Skills' }
 );
 ---
 

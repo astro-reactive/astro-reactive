@@ -12,18 +12,25 @@ The `FormGroup` class represents a group of controls that will be rendered as a 
 
 ## Properties
 
-| Property              | Type            |          |
-| --------------------- | --------------- | -------- |
-| [controls](#controls) | `FormControl[]` | required |
-| [name](#name)         | `string`        | optional |
+| Property                  | Type            |          |
+| ------------------------- | --------------- | -------- |
+| [controls](#controls)     | `FormControl[]` | required |
+| [formConfig](#formConfig) | `FormConfig`    | optional |
 
 ### controls
 
-### name
+### formConfig
+
+| Property              | Type              |          |
+| --------------------- | ----------------- | -------- |
+| [name](#)             | `string`          | optional |
+| [validationSchema](#) | `ResolvedField` | optional |
+
+####
 
 ## Methods
 
-| Method        | Parameters   | Returns      |
-| ------------- | ------------ | ------------ |
+| Method        | Parameters   | Returns      |            |
+| ------------- | ------------ | ------------ | ---------- |
 | [get](#get)   | name: string | `FormControl | undefined` |
-| [name](#name) | `string`     | optional     |
+| [name](#name) | `string`     | optional     |            |
