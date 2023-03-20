@@ -18,6 +18,7 @@
     "demo": "turbo run dev --filter=demo",
     "docs": "turbo run dev --filter=docs",
     "landing-page": "turbo run dev --filter=landing-page",
+    "playground": "turbo run dev --filter=playground",
     "test": "turbo run test",
     "lint": "turbo run lint",
     "lint:fix": "turbo run lint:fix",
