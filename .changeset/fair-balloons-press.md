@@ -5,4 +5,4 @@
 "@astro-reactive/common": patch
 ---
 
-Add resolver package to validate form with 3rd party schema builder
+Add `resolver` package to validate form with 3rd party schema builder
