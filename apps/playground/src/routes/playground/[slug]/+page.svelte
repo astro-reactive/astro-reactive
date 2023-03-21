@@ -8,7 +8,6 @@
 
 	$: selectedFile = data.content;
 	$: {
-		console.log(data.content)
 		if (editorView) {
 			editorView.$set({ selectedFile: data.content });
 		}
