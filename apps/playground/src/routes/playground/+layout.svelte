@@ -1,5 +1,10 @@
+<script>
+	import { page } from '$app/stores';
+</script>
+
 <ul>
-    <li><a href="/playground/welcome-to-arl">Welcome</a></li>
-    <li><a href="/playground/pizza-delivery">Pizza</a></li>
+	{#each $page.data.contentTitles as link}
+		<li><a href={`/playground/${link}`}>{link}</a></li>
+	{/each}
 </ul>
-<slot></slot>
+<slot />

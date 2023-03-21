@@ -4,10 +4,20 @@
 
 	export let data;
 
+	let editorView: Editor;
+
+	$: selectedFile = data.content;
+	$: {
+		console.log(data.content)
+		if (editorView) {
+			editorView.$set({ selectedFile: data.content });
+		}
+	}
+
 	onMount(() => {
-		new Editor({
+		editorView = new Editor({
 			target: document.querySelector('main') as HTMLElement,
-			props: { selectedFile: data.content }
+			props: { selectedFile }
 		});
 	});
 </script>

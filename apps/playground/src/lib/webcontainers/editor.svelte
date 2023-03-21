@@ -3,7 +3,7 @@
 	import { files } from '$lib/files';
 	import { onMount } from 'svelte';
 
-	export let selectedFile : string;
+	export let selectedFile: string;
 
 	let iframeEl: HTMLIFrameElement | null;
 
@@ -11,13 +11,20 @@
 
 	let webcontainerInstance: WebContainer;
 
+	
+	$: {
+		if (webcontainerInstance) {
+			textareaEl!.value = selectedFile;
+			writeIndexJS(selectedFile);
+		}
+	}
+	
 	onMount(async () => {
 		const { WebContainer } = await import('@webcontainer/api');
-
+		
 		async function loadHandler() {
-			const entry = files['src'].directory.pages.directory['index.astro'].file;
+			let entry = files['src'].directory.pages.directory['index.astro'].file;
 			entry.contents = selectedFile;
-
 			textareaEl!.value = entry.contents;
 
 			webcontainerInstance = await WebContainer.boot();
