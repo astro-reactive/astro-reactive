@@ -135,7 +135,8 @@ export const files: FileSystemTree = {
         "dependencies": {
           "astro": "^2.1.3",
           "@astro-reactive/form" : "latest",
-          "@astro-reactive/validator" : "latest"
+          "@astro-reactive/validator" : "latest",
+          "@astro-reactive/common" : "latest"
         }
       }`
 		}

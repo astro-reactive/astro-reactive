@@ -1,35 +1,41 @@
 <script lang="ts">
-	import { type FileNode, WebContainer } from '@webcontainer/api';
+	import type { WebContainer } from '@webcontainer/api';
 	import { files } from '$lib/files';
 	import { onMount } from 'svelte';
+
+	export let selectedFile : string;
 
 	let iframeEl: HTMLIFrameElement | null;
 
 	let textareaEl: HTMLTextAreaElement | null;
 
-	let webcontainerInstance: WebContainer | null;
+	let webcontainerInstance: WebContainer;
 
 	onMount(async () => {
+		const { WebContainer } = await import('@webcontainer/api');
+
+		async function loadHandler() {
+			const entry = files['src'].directory.pages.directory['index.astro'].file;
+			entry.contents = selectedFile;
+
+			textareaEl!.value = entry.contents;
+
+			webcontainerInstance = await WebContainer.boot();
+			await webcontainerInstance.mount(files);
+
+			const exitCode = await installDependencies();
+			if (exitCode !== 0) {
+				throw new Error('Installation failed');
+			}
+
+			startDevServer();
+		}
+
 		webcontainerInstance?.teardown();
 
 		await loadHandler();
 		return () => webcontainerInstance?.teardown();
 	});
-
-	async function loadHandler() {
-		textareaEl!.value = (files['src'].directory.pages.directory['index.astro'] as FileNode).file
-			.contents as string;
-
-		webcontainerInstance = await WebContainer.boot();
-		await webcontainerInstance.mount(files);
-
-		const exitCode = await installDependencies();
-		if (exitCode !== 0) {
-			throw new Error('Installation failed');
-		}
-
-		startDevServer();
-	}
 
 	async function installDependencies() {
 		const installProcess = await webcontainerInstance!.spawn('pnpm', ['install']);
