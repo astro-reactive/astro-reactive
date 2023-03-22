@@ -1,35 +1,44 @@
 <script lang="ts">
 	import type { FileSystemTree, WebContainer } from '@webcontainer/api';
 	import { onMount } from 'svelte';
+	import { EditorView } from '@codemirror/view';
+	import { basicSetup } from 'codemirror';
+	import { javascript } from '@codemirror/lang-javascript';
+	import './codemirror.css';
 
 	export let selectedFile: string;
-	export let commonFiles : FileSystemTree;
+	export let commonFiles: FileSystemTree;
 
 	let iframeEl: HTMLIFrameElement | null;
 
-	let textareaEl: HTMLTextAreaElement | null;
-
 	let webcontainerInstance: WebContainer;
 
-	
+	let editorContainer: HTMLElement;
+
+	let editorView;
+
 	$: {
 		if (webcontainerInstance) {
-			textareaEl!.value = selectedFile;
 			writeIndexJS(selectedFile);
 		}
 	}
-	
+
 	onMount(async () => {
 		const { WebContainer } = await import('@webcontainer/api');
-		
+
+		const mountedFiles = commonFiles;
+		Object.assign(mountedFiles, {
+			src: {
+				directory: {
+					pages: { directory: { 'index.astro': { file: { contents: selectedFile } } } }
+				}
+			}
+		});
+
+		const entryFile =
+			mountedFiles['src']['directory']['pages']['directory']['index.astro'].file.contents;
+
 		async function loadHandler() {
-			const mountedFiles = commonFiles;
-			Object.assign(mountedFiles, { src : { directory : { pages : { directory : { 'index.astro' : { file : { contents : selectedFile} } }} }} })
-			
-			let entry = mountedFiles['src']["directory"]["pages"]["directory"]['index.astro'].file;
-
-			textareaEl!.value = entry.contents;
-
 			webcontainerInstance = await WebContainer.boot();
 			await webcontainerInstance.mount(mountedFiles);
 
@@ -43,7 +52,14 @@
 
 		webcontainerInstance?.teardown();
 
+		editorView = new EditorView({
+			parent: editorContainer,
+			doc: entryFile,
+			extensions: [basicSetup, EditorView.lineWrapping, javascript()]
+		});
+
 		await loadHandler();
+
 		return () => webcontainerInstance?.teardown();
 	});
 
@@ -74,49 +90,30 @@
 	}
 </script>
 
-<div class="container">
-	<div class="editor">
-		<textarea
-			bind:this={textareaEl}
-			on:input={async (e) => {
-				await writeIndexJS(e.currentTarget.value);
-			}}>I am a textarea</textarea
-		>
-	</div>
-	<div class="preview">
-		<iframe bind:this={iframeEl} src="" title="code result" />
-	</div>
+<div class="editor" bind:this={editorContainer} />
+<div class="preview">
+	<iframe bind:this={iframeEl} src="" title="code result" />
 </div>
 
 <style>
-	.container {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		height: 100%;
-		width: 100%;
-	}
-
 	.editor {
-		width: 100%;
-	}
-
-	textarea {
-		font-family: var(--font-mono);
-		width: 100%;
+		display: flex;
 		height: 100%;
-		resize: none;
-		background: black;
-		color: white;
+		width: 100%;
 	}
 
 	.preview {
 		width: 100%;
+		height: 100%;
 	}
 
 	iframe {
-		height: 100%;
 		width: 100%;
+		height: 100%;
+		resize: none;
+		margin: 0;
+		padding: 0;
 		border: none;
-		background-color: white;
+		box-sizing: border-box;
 	}
 </style>

@@ -1,0 +1,9 @@
+.editor .cm-editor {
+	height: 100%;
+	color: black;
+	background-color: white;
+}
+
+.cm-editor .cm-scroller {
+	overflow: auto;
+}

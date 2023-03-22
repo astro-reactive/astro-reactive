@@ -32,7 +32,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@codemirror/commands": "^6.2.2",
+		"@codemirror/lang-javascript": "^6.1.4",
+		"@codemirror/state": "^6.2.0",
+		"@codemirror/view": "^6.9.3",
 		"@webcontainer/api": "^1.1.0",
+		"codemirror": "^6.0.1",
 		"tiny-glob": "^0.2.9"
 	}
 }

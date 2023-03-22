@@ -12,7 +12,10 @@
 
 <style>
   .sidebar{
-    height: 100%;
+     height: 100%; 
     background-color: #24282f;
+  }
+  ul {
+    margin: 0;
   }
 </style>
