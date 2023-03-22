@@ -91,28 +91,32 @@
 <style>
 	.container {
 		display: grid;
-		grid-template-columns: 1fr;
-		gap: 1rem;
+		grid-template-columns: repeat(2, 1fr);
 		height: 100%;
+		width: 100%;
+	}
+
+	.editor {
 		width: 100%;
 	}
 
 	textarea {
+		font-family: var(--font-mono);
 		width: 100%;
-		height: 20rem;
+		height: 100%;
 		resize: none;
-		border-radius: 0.5rem;
 		background: black;
 		color: white;
-		padding: 0.5rem 1rem;
 	}
 
 	.preview {
-		min-height: 50vh;
+		width: 100%;
 	}
+
 	iframe {
 		height: 100%;
 		width: 100%;
-		border-radius: 0.5rem;
+		border: none;
+		background-color: white;
 	}
 </style>

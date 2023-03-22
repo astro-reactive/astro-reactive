@@ -1,21 +1,20 @@
 <script lang="ts">
 	import Editor from './Editor.svelte';
-	import { onMount } from 'svelte';
+	import Sidebar from './Sidebar.svelte';
 
 	export let data;
-
-	let editorView: Editor;
-
-	$: {
-		if (editorView) {
-			editorView.$set({ selectedFile : data.content });
-		}
-	}
-
-	onMount(() => {
-		editorView = new Editor({
-			target: document.querySelector('main') as HTMLElement,
-			props: { selectedFile : data.content, commonFiles : data.commonFiles }
-		}); 
-	});
 </script>
+
+<div class="container">	
+	<Sidebar fileNames={data.contentTitles} />
+	<Editor commonFiles={data.commonFiles} selectedFile={data.content} />
+</div>
+
+<style>
+	.container {
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 1fr 4fr;
+	}
+</style>
