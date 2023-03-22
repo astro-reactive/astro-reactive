@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { WebContainer } from '@webcontainer/api';
-	import { files } from '$lib/files';
+	import type { FileSystemTree, WebContainer } from '@webcontainer/api';
 	import { onMount } from 'svelte';
 
 	export let selectedFile: string;
+	export let commonFiles : FileSystemTree;
 
 	let iframeEl: HTMLIFrameElement | null;
 
@@ -23,12 +23,15 @@
 		const { WebContainer } = await import('@webcontainer/api');
 		
 		async function loadHandler() {
-			let entry = files['src'].directory.pages.directory['index.astro'].file;
-			entry.contents = selectedFile;
+			const mountedFiles = commonFiles;
+			Object.assign(mountedFiles, { src : { directory : { pages : { directory : { 'index.astro' : { file : { contents : selectedFile} } }} }} })
+			
+			let entry = mountedFiles['src']["directory"]["pages"]["directory"]['index.astro'].file;
+
 			textareaEl!.value = entry.contents;
 
 			webcontainerInstance = await WebContainer.boot();
-			await webcontainerInstance.mount(files);
+			await webcontainerInstance.mount(mountedFiles);
 
 			const exitCode = await installDependencies();
 			if (exitCode !== 0) {
