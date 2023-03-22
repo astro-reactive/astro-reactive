@@ -1,107 +1,111 @@
 ---
-import Form, { type ControlConfig, FormControl, FormGroup } from '@astro-reactive/form';
+import Form, { type ControlConfig, FormGroup, FormControl } from '@astro-reactive/form';
+import type { Submit } from '@astro-reactive/common/types';
 import { Validators } from '@astro-reactive/validator';
 
-const infoForm = new FormGroup([
+const form = new FormGroup([
 	{
-		name: 'firstName',
-		label: 'First Name',
-		placeholder: 'ex. John',
-		validators: [Validators.required],
-	},
-	{
-		name: 'lastName',
-		label: 'Last Name',
-		placeholder: 'ex. Doe',
-		validators: [Validators.required],
+		name: 'username',
+		label: 'Username',
+		validators: [
+			{
+				validator: Validators.required,
+				category: 'info',
+			},
+		],
 	},
 	{
 		name: 'email',
 		label: 'Email',
-		placeholder: 'ex. john.doe@email.com',
-		validators: [Validators.email, Validators.required],
-	},
-	{
-		name: 'whyHire',
-		label: 'Why should we hire you?',
-	},
-	{
-		name: 'country',
-		label: 'Country of Residence',
-		type: 'dropdown',
-		options: ['U.S.A', 'Canada', 'Mexico', 'Cuba', 'Guatamala', 'Greenland', 'Haiti'],
-		placeholder: 'Choose Your Country',
-	},
-	{
-		name: 'eligible',
-		label: 'Are you eligible to work?',
-		type: 'radio',
-		options: [
-			{ label: 'Yes', value: 'yes' },
-			{ label: 'No', value: 'no' },
+		validators: [
+			{ validator: Validators.required },
+			{ validator: Validators.email, category: 'warn' },
 		],
 	},
+	{
+		name: 'password',
+		label: 'Password',
+		type: 'password',
+		validators: [Validators.required, Validators.minLength(8)],
+	},
+	{
+		name: 'rating',
+		label: 'Rating',
+		type: 'radio',
+		options: ['1', '2', '3', '4', '5'],
+	},
+	{
+		name: 'agreement',
+		label: 'Agreement',
+		type: 'radio',
+		value: 'yes',
+		options: [
+			{ label: 'Agree', value: 'yes' },
+			{ label: 'Disagree', value: 'no' },
+		],
+	},
+	{
+		name: 'size',
+		label: 'Size',
+		type: 'dropdown',
+		options: ['S', 'M', 'L', 'XL', 'XXL'],
+		placeholder: '-- Please choose an option --',
+	},
+	{
+		name: 'comment',
+		label: 'Feedback',
+		type: 'textarea',
+		value: 'Nice!',
+	},
+	{
+		name: 'terms',
+		label: 'Terms and Conditions',
+		type: 'checkbox',
+		validators: [Validators.requiredChecked],
+	},
 ]);
 
-const skillsForm = new FormGroup([
-	{
-		name: 'js',
-		label: 'Javascript',
-		type: 'checkbox',
-	},
-	{
-		name: 'java',
-		label: 'Java',
-		type: 'checkbox',
-	},
-	{
-		name: 'astro',
-		label: 'Astro',
-		type: 'checkbox',
-	},
-	{
-		name: 'cpp',
-		label: 'C/C++',
-		type: 'checkbox',
-	},
-	{
-		name: 'sql',
-		label: 'SQL',
-		type: 'checkbox',
-	},
-	{
-		name: 'devops',
-		label: 'DevOps',
-		type: 'checkbox',
-	},
-]);
+form.name = 'Simple Form';
 
-const resume: ControlConfig = {
-	name: 'resume',
-	label: 'Upload Resume',
-	type: 'file',
+const config: ControlConfig = {
+	type: 'checkbox',
+	name: 'isAwesome',
+	label: 'is Awesome?',
 };
 
-const submit = {
+// insert a control
+form.controls.push(new FormControl(config));
+
+// set the value of multiple controls
+form.setValue({
+	username: 'RAMOOOON',
+	isAwesome: 'checked',
+});
+
+// set the value of a specific control
+const ratingControl = form.get('rating');
+ratingControl?.setValue('5');
+
+// setting an invalid value will cause errors as server-rendered
+form.get('email')?.setValue('invalid-email');
+
+// switch between light and dark mode
+const title = 'Form Demo';
+const theme = 'dark';
+
+const submit: Submit = {
 	name: 'submit',
 	type: 'submit',
 	value: "Let's go!",
 };
-
-const values = {
-	firstName: 'James',
-	lastName: 'Bond',
-	email: 'james.bond@gmail.com',
-	country: 'U.S.A',
-	eligible: 'yes',
-};
-
-infoForm.setValue(values);
-
-infoForm.name = 'Application Form';
-skillsForm.name = 'Skills';
-
-skillsForm.controls.push(new FormControl(resume));
 ---
 
-	<Form showValidationHints formGroups={[infoForm, skillsForm]} submitControl={submit as any} />
+	<Form
+		validateOnLoad
+		showValidationHints
+		formGroups={form}
+		theme={theme}
+		submitControl={submit}
+		action="https://localhost"
+		method="post"
+	/>

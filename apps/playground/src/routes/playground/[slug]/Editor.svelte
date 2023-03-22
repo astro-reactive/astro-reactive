@@ -5,6 +5,8 @@
 	import { basicSetup } from 'codemirror';
 	import { javascript } from '@codemirror/lang-javascript';
 	import './codemirror.css';
+	import { EditorState, type EditorStateConfig } from '@codemirror/state';
+	import { afterNavigate } from '$app/navigation';
 
 	export let selectedFile: string;
 	export let commonFiles: FileSystemTree;
@@ -15,7 +17,13 @@
 
 	let editorContainer: HTMLElement;
 
-	let editorView;
+	let editorView: EditorView;
+
+	const extensions: EditorStateConfig['extensions'] = [
+		basicSetup,
+		EditorView.lineWrapping,
+		javascript({ typescript: true })
+	];
 
 	$: {
 		if (webcontainerInstance) {
@@ -55,12 +63,27 @@
 		editorView = new EditorView({
 			parent: editorContainer,
 			doc: entryFile,
-			extensions: [basicSetup, EditorView.lineWrapping, javascript()]
+			extensions,
+			async dispatch(tr) {
+				editorView.update([tr]);
+				if (tr.docChanged) {
+					selectedFile = tr.state.doc.toString();
+				}
+			}
 		});
 
 		await loadHandler();
 
-		return () => webcontainerInstance?.teardown();
+		return () => {
+			editorView.destroy();
+			webcontainerInstance?.teardown();
+		};
+	});
+
+	afterNavigate(() => {
+		if (editorView) {
+			editorView.setState(EditorState.create({ doc: selectedFile, extensions }));
+		}
 	});
 
 	async function installDependencies() {
@@ -115,5 +138,6 @@
 		padding: 0;
 		border: none;
 		box-sizing: border-box;
+		background-color: white;
 	}
 </style>
