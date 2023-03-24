@@ -4,9 +4,7 @@
   "description": "Create a new astro-reactive app",
   "main": "index.js",
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/astro-reactive/astro-reactive.git"
