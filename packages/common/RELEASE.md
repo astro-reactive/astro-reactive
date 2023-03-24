@@ -1,3 +1,6 @@
+### v0.1.7
+- fix dependencies 🤣
+
 ### v0.1.6
 - updates on how packages share files
 

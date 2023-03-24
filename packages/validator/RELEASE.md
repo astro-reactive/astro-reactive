@@ -1,3 +1,6 @@
+### v0.3.1
+- fix dependencies 🤣
+
 ## v0.3.0
 - project chores: updates on how the packages share common files, initial codecov set up
 - documentation updates: Readme examples and API docs update

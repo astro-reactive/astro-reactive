@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@astro-reactive/eslint-config-custom": "*",
+    "@astro-reactive/tsconfig": "*",
     "@astrojs/tailwind": "^3.1.1",
     "@types/eslint": "^8.4.10",
     "@types/micromodal": "^0.3.3",
@@ -30,7 +31,6 @@
     "tailwindcss-fluid-type": "^2.0.3"
   },
   "dependencies": {
-    "@astro-reactive/tsconfig": "*",
     "micromodal": "^0.4.10",
     "tailwindcss": "^3.1.8"
   },

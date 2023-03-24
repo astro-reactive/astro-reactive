@@ -1,13 +1,11 @@
 {
   "name": "@astro-reactive/common",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.ts",
   "types": "./types/index.ts",
   "devDependencies": {
-    "rimraf": "^3.0.2"
-  },
-  "dependencies": {
+    "rimraf": "^3.0.2",
     "@astro-reactive/tsconfig": "*"
   },
   "exports": {
