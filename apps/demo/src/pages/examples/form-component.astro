@@ -1,69 +1,69 @@
 ---
-import type { Submit } from "@astro-reactive/common";
-import Form, { FormGroup } from "@astro-reactive/form";
-import Layout from "../../components/Layout.astro";
+import type { Submit } from '@astro-reactive/common';
+import Form, { FormGroup } from '@astro-reactive/form';
+import Layout from '../../components/Layout.astro';
 
 const simpleForm = new FormGroup([
-  {
-    name: "username",
-    label: "Username",
-    value: "awesome_dev",
-  },
-  {
-    name: "comment",
-    label: "Feedback",
-    type: "textarea",
-    value: "Nice!",
-  },
-  {
-    name: "size",
-    label: "Size",
-    type: "dropdown",
-    options: ["S", "M", "L", "XL", "XXL"],
-    placeholder: "-- Please choose an option --",
-  },
+	{
+		name: 'username',
+		label: 'Username',
+		value: 'awesome_dev',
+	},
+	{
+		name: 'comment',
+		label: 'Feedback',
+		type: 'textarea',
+		value: 'Nice!',
+	},
+	{
+		name: 'size',
+		label: 'Size',
+		type: 'dropdown',
+		options: ['S', 'M', 'L', 'XL', 'XXL'],
+		placeholder: '-- Please choose an option --',
+	},
 ]);
 
 const nameForm = new FormGroup(
-  [
-    {
-      name: "firstName",
-      label: "First Name",
-      value: "John",
-    },
-    {
-      name: "lastName",
-      label: "Last Name",
-      value: "Doe",
-    },
-  ],
-  "Name"
+	[
+		{
+			name: 'firstName',
+			label: 'First Name',
+			value: 'John',
+		},
+		{
+			name: 'lastName',
+			label: 'Last Name',
+			value: 'Doe',
+		},
+	],
+	'Name'
 );
 
 const skills = new FormGroup(
-  [
-    {
-      name: "JavaScript",
-      type: "checkbox",
-      label: "JavaScript",
-    },
-    {
-      name: "TypeScript",
-      type: "checkbox",
-      label: "TypeScript",
-    },
-    {
-      name: "React",
-      type: "checkbox",
-      label: "React",
-    },
-    {
-      name: "Vue",
-      type: "checkbox",
-      label: "Vue",
-    },
-  ],
-  "Skills"
+	[
+		{
+			name: 'JavaScript',
+			type: 'checkbox',
+			label: 'JavaScript',
+		},
+		{
+			name: 'TypeScript',
+			type: 'checkbox',
+			label: 'TypeScript',
+		},
+		{
+			name: 'React',
+			type: 'checkbox',
+			label: 'React',
+		},
+		{
+			name: 'Vue',
+			type: 'checkbox',
+			label: 'Vue',
+		},
+	],
+	'Skills'
 );
 
 /**
@@ -71,15 +71,15 @@ const skills = new FormGroup(
  */
 
 const submitControl: Submit = {
-  name: "submit",
-  type: "submit",
+	name: 'submit',
+	type: 'submit',
 };
 ---
 
 <Layout title="Form API examples">
-  <h2>Simple Form</h2>
-  <Form formGroups={simpleForm} submitControl={submitControl} />
+	<h2>Simple Form</h2>
+	<Form formGroups={simpleForm} submitControl={submitControl} />
 
-  <h2>Form with nested form groups</h2>
-  <Form formGroups={[nameForm, skills]} />
+	<h2>Form with nested form groups</h2>
+	<Form formGroups={[nameForm, skills]} />
 </Layout>

@@ -38,13 +38,13 @@ We mainly use the `demo` app to see changes we make on the packages. Do the foll
 1. Fork the project then clone to your computer
 
 ```
-git clone git@github.com:<your-user-name>/astro-reactive-library.git
+git clone git@github.com:<your-user-name>/astro-reactive.git
 ```
 
 2. Go into the project directory
 
 ```
-cd astro-reactive-library
+cd astro-reactive
 ```
 
 3. Install the node dependencies
@@ -93,6 +93,8 @@ This project is only possible because of the support and contribution of our com
 
 👉 _[Join our contributors!](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md)_
 
+<!--
+
 ## Play around examples:
 
   <a href="https://stackblitz.com/edit/github-ze9ebb-tthuka?file=package.json,src%2Fpages%2Findex.astro">
@@ -108,3 +110,4 @@ This project is only possible because of the support and contribution of our com
     />
   </a>
 
+-->

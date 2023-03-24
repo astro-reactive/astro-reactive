@@ -1,9 +1,9 @@
 {
-  "name": "astro-reactive-library",
+  "name": "astro-reactive",
   "description": "Astro components for building reactive user interfaces 🚀",
   "version": "0.0.0",
   "repository": "https://github.com/astro-reactive/astro-reactive",
-  "homepage": "https://ayco.io/showcase/astro-reactive-library#readme",
+  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
   "author": {
     "name": "Ayo Ayco",
     "email": "ayo@ayco.io",
@@ -25,6 +25,7 @@
     "check": "turbo run check",
     "clean": "turbo clean",
     "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test:coverage",
     "patch": "npm version patch -w",
     "minor": "npm version minor -w",
     "major": "npm version major -w",
@@ -34,17 +35,19 @@
   "license": "ISC",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "configs/*"
   ],
   "dependencies": {
+    "@changesets/cli": "^2.26.0",
     "prettier-plugin-astro": "^0.7.0",
     "prompt-sync": "^4.2.0",
     "short-unique-id": "^4.4.4"
   },
   "devDependencies": {
+    "@vitest/coverage-istanbul": "^0.28.3",
     "eslint-config-turbo": "^0.0.4",
     "rimraf": "^3.0.2",
-    "turbo": "^1.6.3"
+    "turbo": "^1.7.1"
   }
 }
-

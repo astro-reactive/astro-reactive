@@ -67,7 +67,7 @@ form.controls.push(
 
 ---
 
-<Form showValidationHints={true} formGroups={form} />
+<Form showValidationHints formGroups={form} />
 <!-- 
   The `showValidationHints` attribute tells the Form component
   that you want to render validation hints. So far, these are:
@@ -79,6 +79,8 @@ form.controls.push(
   and gives you have the freedom to style it yourself.
 -->
 ```
+
+👉 For more examples and explanations of the component properties, see the [Validators API Docs](https://docs.astro-reactive.dev/en/api/validator/validators/).
 
 # Screenshots
 
@@ -101,5 +103,5 @@ This validation library is designed to work with [Astro Reactive Form](https://w
 
 👉 _All [contributions](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md) are welcome. Let's make the validation library for Astro._
 
-👉 _This package is under rigorous development. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md)_.
+👉 _This package is a work in progress. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md)_.
 

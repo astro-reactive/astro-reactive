@@ -1,3 +1,8 @@
+## v0.3.0
+- project chores: updates on how the packages share common files, initial codecov set up
+- documentation updates: Readme examples and API docs update
+- support for Astro v2
+
 ### v0.2.7
 - support form method type to accept: 'get', 'post', 'dialog'
 

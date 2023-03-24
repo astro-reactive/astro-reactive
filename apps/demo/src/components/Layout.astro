@@ -1,30 +1,30 @@
 ---
-import Nav from "./Nav.astro";
+import Nav from './Nav.astro';
 
 export interface Props {
-  title: string;
-  theme?: "dark" | "light";
+	title: string;
+	theme?: 'dark' | 'light';
 }
-const { theme = "light", title } = Astro.props;
+const { theme = 'light', title } = Astro.props;
 ---
 
 <html lang="en" class={theme}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title} | Astro Reactive Demo</title>
-  </head>
-  <body class={theme}>
-    <Nav />
-    <h1>{title}</h1>
-    <slot />
-  </body>
-  <style>
-    html.dark,
-    body.dark {
-      color-scheme: dark;
-    }
-  </style>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Astro Reactive Demo</title>
+	</head>
+	<body class={theme}>
+		<Nav />
+		<h1>{title}</h1>
+		<slot />
+	</body>
+	<style>
+		html.dark,
+		body.dark {
+			color-scheme: dark;
+		}
+	</style>
 </html>
