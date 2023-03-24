@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
   <br />
   <strong>Create Astro Reactive</strong>
-  <em>⚠️ WORK IN PROGRESS</em>
+  <em>⚠️ WORK IN PROGRESS. This does not do anything yet.</em>
   <br />
   Create a new astro-reactive app
   <br />
