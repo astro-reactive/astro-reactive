@@ -1,0 +1,3 @@
+{
+  "extends": "@astro-reactive/tsconfig/astro-library.json"
+}

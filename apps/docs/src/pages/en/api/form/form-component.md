@@ -92,7 +92,7 @@ const nameForm = new FormGroup(
       value: 'Doe',
     },
   ],
-  'Name'
+  { name: 'Name' }
 );
 
 const skills = new FormGroup(
@@ -118,7 +118,7 @@ const skills = new FormGroup(
       label: 'Vue',
     },
   ],
-  'Skills'
+  { name: 'Skills' }
 );
 ---
 
@@ -153,6 +153,41 @@ const submitControl: Submit = {
 ```
 
 This is a very crude solution to prevent having multiple submit buttons. For suggestions to improve this, join our [discussions](https://github.com/astro-reactive/astro-reactive/discussions).
+
+### Typescript
+
+#### Strictly type your FormGroup field's name
+
+You can constraint the allowed values for the field's name by providing types into `FormGroup` generics.
+
+```astro
+---
+type FieldValues = {
+  firstName: string;
+  email: string;
+  birthDate: number;
+};
+
+const infoForm = new FormGroup<FieldValues>([
+  {
+    name: 'firstName',
+    label: 'First Name',
+    placeholder: 'ex. John',
+    validators: [Validators.required],
+  },
+  {
+    name: 'email',
+    label: 'Email',
+    placeholder: 'ex. john.doe@email.com',
+    validators: [Validators.email, Validators.required],
+  },
+  {
+    name: 'birthYear', // ❌ Will raise typecheck error
+    label: 'Birth Year',
+  },
+]);
+---
+```
 
 ---
 

@@ -1,4 +1,4 @@
-import type { ValidationHooks, ValidatorRules } from "./validator.types";
+import type { ValidationHooks, ValidatorRule } from "./validator.types";
 
 /**
  * `ControlType` determines the type of form control
@@ -38,7 +38,7 @@ export interface ControlBase {
   value?: string | number | string[];
   label?: string;
   placeholder?: string;
-  validators?: ValidatorRules;
+  validators?: ValidatorRule[];
   triggerValidationOn?: ValidationHooks;
 }
 

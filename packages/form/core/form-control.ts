@@ -9,7 +9,7 @@ import type {
 	ValidationError,
 	TextArea,
 	ControlBase,
-	ValidatorRules,
+	ValidatorRule,
 	ValidationHooks,
 } from '@astro-reactive/common';
 import ShortUniqueId from 'short-unique-id';
@@ -31,16 +31,16 @@ export class FormControl {
 	private _isValid = true;
 	private _isPristine = true;
 	private _placeholder: string | null = null;
-	private _validators: ValidatorRules = [];
+	private _validators: ValidatorRule[] = [];
 	private _triggerValidationOn: ValidationHooks;
 	private _errors: ValidationError[] = [];
 	private _options: string[] | ControlOption[] = [];
 	private _rows: number | null = null;
 	private _cols: number | null = null;
 
-	private validate: (value: string, validators: ValidatorRules) => ValidationError[] = (
+	private validate: (value: string, validators: ValidatorRule[]) => ValidationError[] = (
 		value: string,
-		validators: ValidatorRules
+		validators: ValidatorRule[]
 	) => {
 		value;
 		validators;
@@ -70,8 +70,8 @@ export class FormControl {
 		this._value = value;
 		this._label = label;
 		this._placeholder = placeholder;
-		this._validators = validators;
 		this._triggerValidationOn = triggerValidationOn;
+		this._validators = validators;
 
 		if (type === 'radio' || type === 'dropdown') {
 			const { options = [] } = config as Radio | Dropdown;
@@ -153,7 +153,7 @@ export class FormControl {
 	setValue(value: string) {
 		this._value = value;
 		this._isPristine = false;
-		this._errors = this.validate(value, this.config.validators || []);
+		this._errors = this.validate(value, this.config.validators ?? []);
 	}
 
 	/**
@@ -171,7 +171,7 @@ export class FormControl {
 	 */
 	setValidateOnLoad(validateOnLoad: boolean) {
 		if (validateOnLoad) {
-			import('@astro-reactive/validator').then((validator) => {
+			import('@astro-reactive/validator/core').then((validator) => {
 				if (validator) {
 					this.validate = validator.validate;
 

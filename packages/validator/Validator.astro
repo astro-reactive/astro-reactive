@@ -24,7 +24,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 	// TODO: handle hooks / when to attach event listeners
 	// const form = document.querySelector('form');
 
-	import type { ValidatorRules } from '@astro-reactive/common';
+	import type { ValidatorRule } from '@astro-reactive/common';
 	import { clearErrors, validate } from './core';
 
 	// const hook: HookType = (document.getElementById('hook') as HTMLInputElement).value as HookType;
@@ -48,7 +48,7 @@ const { hook = 'all', displayErrorMessages = false } = Astro.props;
 
 			const value =
 				element.type === 'checkbox' ? (element.checked ? 'checked' : '') : element.value;
-			const errors = validate(value, validators as ValidatorRules);
+			const errors = validate(value, validators as ValidatorRule[]);
 
 			// set element hasErrors
 			if (errors.length) {

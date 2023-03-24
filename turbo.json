@@ -21,12 +21,15 @@
       "cache": false
     },
     "test": {
+      "dependsOn": ["^build"],
       "env": ["CI"],
       "outputs": []
     },
     "check": {
       "dependsOn": ["^build"]
     },
-    "clean": {}
+    "clean": {
+      "cache": false
+    }
   }
 }
