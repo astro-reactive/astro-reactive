@@ -23,12 +23,12 @@
     "type": "git",
     "url": "git+https://github.com/astro-reactive/astro-reactive.git"
   },
-  "author": "Ayo Ayco",
+  "author": "astro-reactive",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
-  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
+  "homepage": "https://astro-reactive.dev",
   "publishConfig": {
     "access": "public"
   }

@@ -36,12 +36,12 @@
     "type": "git",
     "url": "git+https://github.com/astro-reactive/astro-reactive.git"
   },
-  "author": "",
+  "author": "astro-reactive",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
-  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
+  "homepage": "https://astro-reactive.dev",
   "devDependencies": {
     "@astro-reactive/eslint-config-custom": "*",
     "@astro-reactive/tsconfig": "*",

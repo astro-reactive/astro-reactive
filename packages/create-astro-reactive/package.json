@@ -1,0 +1,20 @@
+{
+  "name": "create-astro-reactive",
+  "version": "0.0.1",
+  "description": "Create a new astro-reactive app",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/astro-reactive/astro-reactive.git"
+  },
+  "author": "astro-reactive",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/astro-reactive/astro-reactive/issues"
+  },
+  "homepage": "https://astro-reactive.dev"
+}
