@@ -5,9 +5,7 @@
   "main": "index.ts",
   "types": "./types/index.ts",
   "devDependencies": {
-    "rimraf": "^3.0.2"
-  },
-  "dependencies": {
+    "rimraf": "^3.0.2",
     "@astro-reactive/tsconfig": "*"
   },
   "exports": {

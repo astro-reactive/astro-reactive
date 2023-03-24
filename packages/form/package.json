@@ -34,6 +34,8 @@
     "clean": "rimraf node_modules .turbo dist"
   },
   "devDependencies": {
+    "@astro-reactive/eslint-config-custom": "*",
+    "@astro-reactive/tsconfig": "*",
     "@types/eslint": "^8.4.6",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
@@ -52,8 +54,6 @@
   "license": "MIT",
   "dependencies": {
     "@astro-reactive/common": "*",
-    "@astro-reactive/eslint-config-custom": "*",
-    "@astro-reactive/tsconfig": "*",
     "@astro-reactive/validator": "*",
     "short-unique-id": "^4.4.4"
   },
