@@ -1,7 +1,7 @@
 {
   "name": "@astro-reactive/validator",
   "description": "Form validation library for Astro 🔥",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": "https://github.com/astro-reactive/astro-reactive",
   "homepage": "https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md",
   "author": {
