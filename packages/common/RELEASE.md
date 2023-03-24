@@ -1,3 +1,6 @@
+### v0.1.6
+- updates on how packages share files
+
 ### v0.1.5
 - fix form method type to accept: 'get', 'post', 'dialog'
 
