@@ -103,5 +103,5 @@ This validation library is designed to work with [Astro Reactive Form](https://w
 
 👉 _All [contributions](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md) are welcome. Let's make the validation library for Astro._
 
-👉 _This package is a work in progress. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/RELEASE.md)_.
+👉 _This package is a work in progress. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/CHANGELOG.md)_.
 
