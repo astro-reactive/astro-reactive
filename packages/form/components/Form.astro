@@ -72,10 +72,18 @@ const formId = Array.isArray(formGroups) ? uid() : formGroups?.id || null;
 if (validateOnLoad) {
 	if (Array.isArray(formGroups)) {
 		formGroups.forEach((group) =>
-			group.controls.forEach((control) => control.setValidateOnLoad(validateOnLoad))
+			group.controls.forEach((control) => {
+				if ('setValidateOnLoad' in control) {
+					control.setValidateOnLoad(validateOnLoad);
+				}
+			})
 		);
 	} else {
-		formGroups.controls.forEach((control) => control.setValidateOnLoad(validateOnLoad));
+		formGroups.controls.forEach((control) => {
+			if ('setValidateOnLoad' in control) {
+				control.setValidateOnLoad(validateOnLoad);
+			}
+		});
 	}
 }
 ---
