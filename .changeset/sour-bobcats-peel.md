@@ -1,5 +1,5 @@
 ---
-"@astro-reactive/form": major
+"@astro-reactive/form": minor
 "@astro-reactive/demo": patch
 ---
 
