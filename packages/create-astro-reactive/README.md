@@ -34,4 +34,3 @@ npm create astro-reactive@latest
  _All [contributions](https://github.com/astro-reactive/astro-reactive/blob/main/CONTRIBUTING.md) are welcome. Let's make the fastest web forms powered by Astro._
 
 👉 _This package is a work in progress. See the [change log](https://github.com/astro-reactive/astro-reactive/blob/main/packages/create-astro-reactive/CHANGELOG.md)._
-
