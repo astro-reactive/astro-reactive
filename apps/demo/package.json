@@ -3,7 +3,7 @@
   "description": "Demo App for Astro Reactive Library",
   "type": "module",
   "version": "0.0.1",
-  "author": "Ayo Ayco <ayo@ayco.io> (https://ayco.io)",
+  "author": "astro-reactive",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
-  "homepage": "https://github.com/astro-reactive/astro-reactive#readme",
+  "homepage": "https://astro-reactive.dev",
   "devDependencies": {
     "@astro-reactive/eslint-config-custom": "*",
     "@astro-reactive/tsconfig": "*",

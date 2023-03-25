@@ -3,12 +3,8 @@
   "description": "The Reactive Form component for Astro 🔥",
   "version": "0.7.2",
   "repository": "https://github.com/astro-reactive/astro-reactive",
-  "homepage": "https://docs.astro-reactive.dev/en/api/form/form-component/",
-  "author": {
-    "name": "Ayo Ayco",
-    "email": "ayo@ayco.io",
-    "url": "https://ayco.io"
-  },
+  "homepage": "https://astro-reactive.dev",
+  "author": "astro-reactive",
   "type": "module",
   "exports": {
     ".": "./index.ts"
