@@ -3,7 +3,7 @@
   <br />
   <strong>Astro Reactive Library</strong>
   <br />
-  Server-Side Rendered, Dynamic Components
+  Server-Side Rendered, Dynamic Components 🚀
   <br />
   Let your data build your UI with native <a href="https://astro.build">Astro</a> components.
   <br />
