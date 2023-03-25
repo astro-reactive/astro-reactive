@@ -1,6 +1,6 @@
 {
   "name": "create-astro-reactive",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Create a new astro-reactive app",
   "main": "index.js",
   "devDependencies": {},
