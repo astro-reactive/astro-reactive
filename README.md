@@ -5,7 +5,7 @@
   <br />
   Server-Side Rendered, Dynamic Components
   <br />
-  Let your data build your UI with native <a href="https://astro.build">Astro</a> components.
+  Let your data build your UI with <a href="https://astro.build">Astro</a>
   <br />
   <br />
   <a href="https://github.com/astro-reactive/astro-reactive/actions/workflows/build-and-test.yml">
@@ -27,8 +27,8 @@
 
 | Package                                                                                              | Release notes                                                                                     | Description                                              |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| [form](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/RELEASE.md)           | a dynamic form which can be modified programmatically    |
-| [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/RELEASE.md) | validators for editable fields                           |
+| [form](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/CHANGELOG.md)           | a dynamic form which can be modified programmatically    |
+| [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/CHANGELOG.md) | validators for editable fields                           |
 | data-grid                                                                                            | 🛠                                                                                                 | a dynamic data grid of values                            |
 | themes                                                                                               | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
 | viz                                                                                                  | 🛠                                                                                                 | data visualization that emits and responds to events     |
