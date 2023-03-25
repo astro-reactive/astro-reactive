@@ -50,9 +50,8 @@ export class FormControl {
 	/**
 	 * Tracks the value and validation status of an individual form control.
 	 * @param config - interface of a `FormControl`'s configuration.
-	 * @param validateOnLoad - determines if a control will be validated before rendering on the server. Defaults to `false`
 	 */
-	constructor(private config: ControlConfig, validateOnLoad = false) {
+	constructor(private config: ControlConfig) {
 		const {
 			name,
 			type = 'text',
@@ -83,11 +82,6 @@ export class FormControl {
 			this._rows = rows;
 			this._cols = cols;
 		}
-
-		// TODO: implement independence
-		// form should try to import validator,
-		// but handle error when it's not installed
-		this.setValidateOnLoad(validateOnLoad);
 	}
 
 	get id() {
@@ -178,6 +172,7 @@ export class FormControl {
 					const valueStr: string = this._value?.toString() || '';
 					this._errors = this.validate(valueStr, this._validators);
 				} else {
+					// give a console warning that the validator package needs to be installed
 					// if user did not install the validator, then errors should be empty
 					this._errors = [];
 				}
