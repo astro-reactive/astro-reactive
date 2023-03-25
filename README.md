@@ -3,7 +3,9 @@
   <br />
   <strong>Astro Reactive Library</strong>
   <br />
-  Server-Side Rendered, Dynamic Components. Let your data build your UI with native <a href="https://astro.build">Astro</a> components.
+  Server-Side Rendered, Dynamic Components
+  <br />
+  Let your data build your UI with native <a href="https://astro.build">Astro</a> components.
   <br />
   <br />
   <a href="https://github.com/astro-reactive/astro-reactive/actions/workflows/build-and-test.yml">
