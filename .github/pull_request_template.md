@@ -23,6 +23,7 @@ Tag a reviewer: @
 Tasks:
 - [ ] I have ran the build command to make sure apps are working: `npm run build`
 - [ ] I have ran the tests to make sure nothing is broken: `npm run test`
+- [ ] I have ran the Astro checker: `npm run check`
 - [ ] I have ran the linter to make sure code is clean: `npm run lint`
 - [ ] I have reviewed my own code to remove changes that are not needed
 
