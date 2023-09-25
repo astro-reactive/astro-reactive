@@ -1,7 +1,6 @@
 {
   "name": "@astro-reactive/demo",
   "description": "Demo App for Astro Reactive Library",
-  "type": "module",
   "version": "0.0.2",
   "author": "astro-reactive",
   "private": true,
