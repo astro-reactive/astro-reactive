@@ -8,7 +8,7 @@ This is a library of components and utilities for building reactive user interfa
 
 There's a lot of opportunity to contribute. A good start will be to understand what Astro is, and how to set up a basic Astro project. For this, the [Astro website](https://astro.build) and [documentation](https://docs.astro.build/en/getting-started/) are good places to start.
 
-# Contributing
+## Contributing
 
 Any contribution is welcome. Feel free to look around to find something that interests you. :)
 
@@ -18,7 +18,7 @@ If you don't find anything there, we are happy to help you get your contribution
 
 You can always [create a new issue](https://github.com/astro-reactive/astro-reactive/issues/new/choose) for your own idea, [post on our discussions](https://github.com/astro-reactive/astro-reactive/discussions) or join our [Discord](https://discord.gg/kkvW7GYNAp).
 
-# The Astro Reactive Library
+## The Astro Reactive Library
 
 This project aims to be a library that developers will use to create reactive UIs with Astro.
 
@@ -26,7 +26,7 @@ The project is made up of [NPM workspaces](https://docs.npmjs.com/cli/v7/using-n
 
 We are using [Turborepo](https://turbo.build/repo) as our monorepo build system.
 
-Packages:
+### Packages:
 
 1. [demo](https://github.com/astro-reactive/astro-reactive/tree/main/apps/demo) in the directory `apps/demo`
    - Astro web application that we use to test and demonstrate the library components
@@ -34,6 +34,8 @@ Packages:
    - component that allows developers to programmatically build a form
 1. [validator](https://github.com/astro-reactive/astro-reactive/tree/main/packages/validator) in the directory `packages/astro-reactive-validator`
    - component that allows developers to set up validators for their forms easily
+
+### Apps
 1. [docs](https://github.com/astro-reactive/astro-reactive/tree/main/apps/docs) - in the directory `apps/docs`
    - Astro website for the library's extensive documentation
 1. [landing-page](https://github.com/astro-reactive/astro-reactive/tree/main/apps/landing-page) - in the directory `apps/landing-page`
@@ -42,7 +44,7 @@ Packages:
 
    [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/astro-reactive/astro-reactive.git)
 
-# Running locally
+## Running locally
 
 We mainly use the `demo` app to see changes we make on the packages. Do the following to start hacking:
 
@@ -90,7 +92,7 @@ npm run docs
 npm run landing-page
 ```
 
-# Running the linter and tests
+## Running the linter and tests
 
 Please run the linter and tests before creating a PR to avoid delays in PR reviews. Fix all linting errors or failing tests whey you run the following commands.
 
@@ -108,7 +110,7 @@ npm test
 npm run lint:fix
 ```
 
-# Hacking with the packages
+## Hacking with the packages
 
 As mentioned above, this project involves packages that are intended to be used in Astro applications. The demo app is our way to test and play with the packages.
 
@@ -116,7 +118,7 @@ If you plan to add features or fix bugs that are found in the packages, such as 
 
 Thank you again for your interest in contributing!
 
-# Next Actions
+## Next Actions
 
 ✍️ Read on [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/); you'll see this used around issues, PRs, and commit messages
 
