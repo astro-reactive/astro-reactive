@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "@astro-reactive/tsconfig": "*",
-    "@astrojs/netlify": "^3.0.1",
     "@astrojs/tailwind": "^5.0.0",
     "astro-iconify": "^1.2.0",
     "micromodal": "^0.4.10",
