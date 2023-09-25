@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = import('tailwindcss/defaultTheme');
 
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],
@@ -35,5 +35,5 @@ module.exports = {
 	corePlugins: {
 		fontSize: false,
 	},
-	plugins: [require('tailwindcss-fluid-type')],
+	plugins: [import('tailwindcss-fluid-type')],
 };
