@@ -1,3 +1,6 @@
 {
-  "extends": "@astro-reactive/tsconfig/base.json"
+  "extends": "@astro-reactive/tsconfig/base.json",
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
 }

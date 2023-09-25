@@ -20,7 +20,9 @@
   "dependencies": {
     "@astro-reactive/form": "*",
     "@astro-reactive/validator": "*",
-    "astro": "^3.1.2"
+    "@astrojs/check": "^0.2.0",
+    "astro": "^3.1.2",
+    "typescript": "^5.2.2"
   },
   "main": "index.js",
   "repository": {
