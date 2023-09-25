@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "docs": "astro dev",
-    "check": "astro check && tsc --noEmit && astro build",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -17,18 +17,18 @@
     "clean": "rimraf node_modules .turbo dist"
   },
   "dependencies": {
-    "@algolia/client-search": "^4.13.1",
-    "@astrojs/preact": "^1.1.1",
-    "@astrojs/react": "^1.1.4",
-    "@docsearch/css": "^3.1.0",
-    "@docsearch/react": "^3.1.0",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.0",
-    "astro": "^2.1.3",
-    "preact": "^10.7.3",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@algolia/client-search": "^4.20.0",
+    "@astrojs/preact": "^3.0.0",
+    "@astrojs/react": "^3.0.2",
+    "@docsearch/css": "^3.5.2",
+    "@docsearch/react": "^3.5.2",
+    "@types/node": "^20.6.5",
+    "@types/react": "^18.2.22",
+    "@types/react-dom": "^18.2.7",
+    "astro": "^3.1.2",
+    "preact": "^10.17.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "description": "```bash npm create astro@latest -- --template docs ```",
   "main": "index.js",
@@ -45,11 +45,11 @@
   "devDependencies": {
     "@astro-reactive/eslint-config-custom": "*",
     "@astro-reactive/tsconfig": "*",
-    "@types/eslint": "^8.4.10",
-    "@types/prettier": "^2.7.2",
-    "eslint": "^8.31.0",
-    "prettier": "^2.8.3",
-    "prettier-plugin-astro": "^0.7.2",
+    "@types/eslint": "^8.44.3",
+    "@types/prettier": "^2.7.3",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
     "rimraf": "^3.0.2"
   }
 }

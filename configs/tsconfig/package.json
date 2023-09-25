@@ -1,3 +1,6 @@
 {
-  "name": "@astro-reactive/tsconfig"
+  "name": "@astro-reactive/tsconfig",
+  "dependencies": {
+    "astro": "^3.1.3"
+  }
 }

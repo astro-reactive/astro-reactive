@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const defaultTheme = require('tailwindcss/defaultTheme');
+import * as defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,svelte,ts,tsx,vue}'],

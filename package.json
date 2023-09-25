@@ -22,9 +22,6 @@
     "clean": "turbo clean",
     "test:watch": "turbo run test:watch",
     "test:coverage": "turbo run test:coverage",
-    "patch": "npm version patch -w",
-    "minor": "npm version minor -w",
-    "major": "npm version major -w",
     "publish": "turbo run lint build check test && npm publish --access public -w",
     "release": "node ./packages/pr-updater.js"
   },
@@ -35,15 +32,15 @@
     "configs/*"
   ],
   "dependencies": {
-    "@changesets/cli": "^2.26.0",
-    "prettier-plugin-astro": "^0.7.0",
-    "prompt-sync": "^4.2.0",
-    "short-unique-id": "^4.4.4"
+    "@changesets/cli": "^2.26.2",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^0.28.3",
-    "eslint-config-turbo": "^0.0.4",
-    "rimraf": "^3.0.2",
-    "turbo": "^1.7.1"
+    "@vitest/coverage-istanbul": "^0.34.5",
+    "eslint-config-turbo": "^1.10.14",
+    "rimraf": "^5.0.1",
+    "turbo": "^1.10.14"
   }
 }

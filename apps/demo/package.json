@@ -1,14 +1,13 @@
 {
   "name": "@astro-reactive/demo",
   "description": "Demo App for Astro Reactive Library",
-  "type": "module",
   "version": "0.0.2",
   "author": "astro-reactive",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "check": "astro check && tsc --noEmit && astro build",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -20,7 +19,9 @@
   "dependencies": {
     "@astro-reactive/form": "*",
     "@astro-reactive/validator": "*",
-    "astro": "^2.1.3"
+    "@astrojs/check": "^0.2.0",
+    "astro": "^3.1.2",
+    "typescript": "^5.2.2"
   },
   "main": "index.js",
   "repository": {
@@ -35,11 +36,11 @@
   "devDependencies": {
     "@astro-reactive/eslint-config-custom": "*",
     "@astro-reactive/tsconfig": "*",
-    "@types/eslint": "^8.4.10",
-    "@types/prettier": "^2.7.2",
-    "eslint": "^8.31.0",
-    "prettier": "^2.8.3",
-    "prettier-plugin-astro": "^0.7.2",
-    "rimraf": "^3.0.2"
+    "@types/eslint": "^8.44.3",
+    "@types/prettier": "^3.0.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "rimraf": "^5.0.1"
   }
 }
