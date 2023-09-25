@@ -1,5 +1,15 @@
 # @astro-reactive/landing-page
 
+## 1.0.0
+
+### Major Changes
+
+- 6e27739: Make the npm install script shorter
+
+### Minor Changes
+
+- 4d2a577: Support Astro 3
+
 ## 0.0.2
 
 ### Patch Changes
