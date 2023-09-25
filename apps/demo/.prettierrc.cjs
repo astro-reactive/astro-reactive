@@ -6,12 +6,13 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'es5',
   useTabs: true,
-  plugins: ['../../node_modules/prettier-plugin-astro'],
+  plugins: ['prettier-plugin-astro'],
   overrides: [
     {
       files: '*.astro',
       options: {
         parser: 'astro',
+        astroAllowShorthand: false,
       },
     },
     {
