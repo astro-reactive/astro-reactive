@@ -4,5 +4,8 @@
     "source.fixAll": true
   },
   "cSpell.words": ["Astro", "maxlength"],
-  "prettier.documentSelectors": ["**/*.astro"]
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
