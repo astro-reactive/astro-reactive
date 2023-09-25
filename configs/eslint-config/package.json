@@ -1,6 +1,7 @@
 {
   "name": "@astro-reactive/eslint-config-custom",
   "main": "./index.cjs",
+  "type": "module",
   "dependencies": {
     "@types/eslint": "^8.4.10",
     "@typescript-eslint/eslint-plugin": "^5.48.1",

@@ -4,6 +4,7 @@
   "description": "Common code for Astro Reactive Packages",
   "main": "index.ts",
   "types": "./types/index.ts",
+  "type": "module",
   "devDependencies": {
     "@astro-reactive/tsconfig": "*",
     "rimraf": "^3.0.2"

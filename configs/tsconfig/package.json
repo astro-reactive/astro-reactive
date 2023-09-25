@@ -1,5 +1,6 @@
 {
   "name": "@astro-reactive/tsconfig",
+  "type": "module",
   "dependencies": {
     "astro": "^3.1.3"
   }
