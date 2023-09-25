@@ -1,5 +1,17 @@
 # @astro-reactive/form
 
+## 0.9.0
+
+### Minor Changes
+
+- 4d2a577: Support Astro 3
+
+### Patch Changes
+
+- Updated dependencies [4d2a577]
+  - @astro-reactive/validator@0.4.0
+  - @astro-reactive/common@0.2.0
+
 ## 0.8.1
 
 ### Patch Changes
