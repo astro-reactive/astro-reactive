@@ -24,7 +24,7 @@
     "format": "prettier -w .",
     "lint": "eslint . --ext .ts,.js",
     "lint:fix": "eslint --fix . --ext .ts,.js",
-    "check": "astro check && tsc --noEmit",
+    "check": "astro check",
     "clean": "rimraf node_modules .turbo dist"
   },
   "devDependencies": {

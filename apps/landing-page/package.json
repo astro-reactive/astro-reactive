@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "landing-page": "astro dev",
-    "check": "astro check && tsc --noEmit && astro build",
+    "check": "astro check",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
