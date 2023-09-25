@@ -22,9 +22,6 @@
     "clean": "turbo clean",
     "test:watch": "turbo run test:watch",
     "test:coverage": "turbo run test:coverage",
-    "patch": "npm version patch -w",
-    "minor": "npm version minor -w",
-    "major": "npm version major -w",
     "publish": "turbo run lint build check test && npm publish --access public -w",
     "release": "node ./packages/pr-updater.js"
   },
