@@ -20,6 +20,7 @@
     "build": "turbo run build",
     "check": "turbo run check",
     "clean": "turbo clean",
+    "simulate:ci": "npm run check && npm run build && npm run test && npm run lint",
     "test:watch": "turbo run test:watch",
     "test:coverage": "turbo run test:coverage",
     "publish": "turbo run lint build check test && npm publish --access public -w",
