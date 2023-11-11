@@ -3,7 +3,7 @@
   "description": "Form validation library for Astro 🔥",
   "version": "0.4.0",
   "repository": "https://github.com/astro-reactive/astro-reactive",
-  "homepage": "https://astro-reactive.dev",
+  "homepage": "https://astro-reactive.js.org",
   "author": "astro-reactive",
   "type": "module",
   "exports": {

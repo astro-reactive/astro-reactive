@@ -80,7 +80,7 @@ form.controls.push(
 -->
 ```
 
-👉 For more examples and explanations of the component properties, see the [Validators API Docs](https://docs.astro-reactive.dev/en/api/validator/validators/).
+👉 For more examples and explanations of the component properties, see the [Validators API Docs](https://astro-reactive-docs.netlify.app/en/api/validator/validators/).
 
 # Screenshots
 
