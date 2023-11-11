@@ -10,5 +10,5 @@ export default defineConfig({
 		// Enable React for the Algolia search component.
 		react(),
 	],
-	site: `https://docs.astro-reactive.dev`,
+	site: `https://astro-reactive-docs.netlify.app`,
 });
