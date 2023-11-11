@@ -1,5 +1,11 @@
 # @astro-reactive/landing-page
 
+## 1.0.1
+
+### Patch Changes
+
+- a1cc4b0: Update homepage to https://astro-reactive.js.org
+
 ## 1.0.0
 
 ### Major Changes

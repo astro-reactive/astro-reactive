@@ -1,5 +1,11 @@
 # @astro-reactive/docs
 
+## 0.1.1
+
+### Patch Changes
+
+- a1cc4b0: Update homepage to https://astro-reactive.js.org
+
 ## 0.1.0
 
 ### Minor Changes

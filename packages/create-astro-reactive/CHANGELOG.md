@@ -1,5 +1,11 @@
 # create-astro-reactive
 
+## 0.0.4
+
+### Patch Changes
+
+- a1cc4b0: Update homepage to https://astro-reactive.js.org
+
 ## 0.0.3
 
 ### Patch Changes

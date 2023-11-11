@@ -1,6 +1,6 @@
 {
   "name": "@astro-reactive/common",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Common code for Astro Reactive Packages",
   "main": "index.ts",
   "types": "./types/index.ts",
