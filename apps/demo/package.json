@@ -1,7 +1,7 @@
 {
   "name": "@astro-reactive/demo",
   "description": "Demo App for Astro Reactive Library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "astro-reactive",
   "private": true,
   "scripts": {
