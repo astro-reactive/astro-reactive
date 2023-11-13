@@ -85,7 +85,7 @@ userNameControl?.setValue("RAMOOOON");
 />
 ```
 
-👉 For more examples and explanations of the component properties, see the [Form API Docs](https://astro-reactive-docs.netlify.app/en/api/form/form-component/).
+👉 For more examples and explanations of the component properties, see the [Form API Docs](https://docs.astro-reactive.js.org/en/api/form/form-component/).
 
 # Screenshots
 Result of example above:
