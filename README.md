@@ -1,4 +1,5 @@
-*As of now we still are in an exploratory phase and the library is not ready for production. We appreciate the interest. We look forward to your feedback and welcome all kinds of contribution. :)*
+> [!WARNING]
+> *As of now we still are in an exploratory phase and the library is not ready for production. We appreciate the interest. We look forward to your feedback and welcome all kinds of contribution. :)*
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
