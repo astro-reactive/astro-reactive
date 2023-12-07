@@ -3,7 +3,6 @@
   "version": "0.0.4",
   "description": "Create a new astro-reactive app",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {},
   "repository": {
     "type": "git",
@@ -14,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/astro-reactive/astro-reactive/issues"
   },
-  "homepage": "https://astro-reactive.js.org"
+  "homepage": "https://astro-reactive.js.org",
+  "dependencies": {
+    "astro": "^4.0.3"
+  }
 }

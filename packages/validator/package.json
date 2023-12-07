@@ -1,7 +1,7 @@
 {
   "name": "@astro-reactive/validator",
   "description": "Form validation library for Astro 🔥",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "repository": "https://github.com/astro-reactive/astro-reactive",
   "homepage": "https://astro-reactive.js.org",
   "author": "astro-reactive",
@@ -33,18 +33,18 @@
     "@types/eslint": "^8.4.6",
     "@types/node": "^18.7.18",
     "@types/prettier": "^2.7.0",
-    "astro": "^3.1.2",
+    "@vitest/coverage-istanbul": "^0.34.5",
+    "astro": "^4.0.3",
     "astro-component-tester": "^0.6.0",
     "eslint": "^8.23.1",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.8.3",
-    "vitest": "^0.34.5",
-    "@vitest/coverage-istanbul": "^0.34.5"
+    "vitest": "^0.34.5"
   },
   "peerDependencies": {
-    "astro": "^3.1.2"
+    "astro": "^4.0.3"
   },
   "dependencies": {
     "@astro-reactive/common": "*"

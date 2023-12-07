@@ -20,7 +20,7 @@
     "@types/eslint": "^8.44.3",
     "@types/micromodal": "^0.3.3",
     "@types/prettier": "^3.0.0",
-    "astro": "^3.1.2",
+    "astro": "^4.0.3",
     "eslint": "^8.50.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
