@@ -29,10 +29,10 @@
   },
   "dependencies": {
     "@astro-reactive/tsconfig": "*",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/tailwind": "^5.0.3",
     "astro-iconify": "^1.2.0",
     "micromodal": "^0.4.10",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.6"
   },
   "description": "[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)",
   "main": "index.js",
