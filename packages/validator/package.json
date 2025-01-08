@@ -44,7 +44,7 @@
     "vitest": "^0.34.5"
   },
   "peerDependencies": {
-    "astro": "^4.0.3"
+    "astro": ">=4.0.3"
   },
   "dependencies": {
     "@astro-reactive/common": "*"
