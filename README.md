@@ -1,7 +1,7 @@
 > [!WARNING]
-> 
-> Please read: [an important announcement about the project](https://github.com/orgs/astro-reactive/discussions/304)
-> 
+>
+> Please read: [an important announcement about the project](https://github.com/astro-reactive/astro-reactive/discussions/304)
+>
 > *As of now we still are in an exploratory phase and the library is not ready for production. We appreciate the interest. We look forward to your feedback and welcome all kinds of contribution. :)*
 
 <p align="center">
