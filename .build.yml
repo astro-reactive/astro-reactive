@@ -1,0 +1,11 @@
+image: alpine/edge
+secrets:
+  - bbfcb6dc-7c4a-42ee-a11a-022f0339a133
+environment:
+  REPO: astro-reactive
+  GH_USER: ayoayco
+tasks:
+  - push-mirror: |
+      cd ~/"${REPO}"
+      git config --global credential.helper store
+      git push --mirror "https://github.com/${GH_USER}/${REPO}"
