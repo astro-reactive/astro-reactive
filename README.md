@@ -1,8 +1,5 @@
-> [!WARNING]
->
-> Please read: [an important announcement about the project](https://github.com/astro-reactive/astro-reactive/discussions/304)
->
-> *As of now we still are in an exploratory phase and the library is not ready for production. We appreciate the interest. We look forward to your feedback and welcome all kinds of contribution. :)*
+> [!NOTE]
+> _This Project is Archived._ Possible developments might happen at https://git.ayo.run/ayo/astro-reactive-form; if interested, you can find how to contact me at https://ayco.io/about#contact
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/astro-reactive/astro-reactive/main/.github/assets/logo/min-banner.png" alt="Astro Reactive Library Logo">
@@ -31,13 +28,13 @@
   <br />
 <p>
 
-| Package                                                                                              | Release notes                                                                                     | Description                                              |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Package                                                                                              | Release notes                                                                                       | Description                                              |
+| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | [form](https://github.com/astro-reactive/astro-reactive/blob/main/packages/form/README.md)           | [![npm](https://img.shields.io/npm/v/@astro-reactive/form)](./packages/form/CHANGELOG.md)           | a dynamic form which can be modified programmatically    |
 | [validator](https://github.com/astro-reactive/astro-reactive/blob/main/packages/validator/README.md) | [![npm](https://img.shields.io/npm/v/@astro-reactive/validator)](./packages/validator/CHANGELOG.md) | validators for editable fields                           |
-| data-grid                                                                                            | 🛠                                                                                                 | a dynamic data grid of values                            |
-| themes                                                                                               | 🛠                                                                                                 | easy-to-use, accessible, consistent cross-browser styles |
-| viz                                                                                                  | 🛠                                                                                                 | data visualization that emits and responds to events     |
+| data-grid                                                                                            | 🛠                                                                                                  | a dynamic data grid of values                            |
+| themes                                                                                               | 🛠                                                                                                  | easy-to-use, accessible, consistent cross-browser styles |
+| viz                                                                                                  | 🛠                                                                                                  | data visualization that emits and responds to events     |
 
 # Running locally
 
